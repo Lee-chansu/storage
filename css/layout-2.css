@@ -37,26 +37,88 @@ content-box (기본값);
 ul, ol, li{list-style: none;} 
 /*목록 태그의 리스트 기호/알파벳 모양을 지정 - none지정 : 서식X*/
 a{text-decoration: none;} /*a태그 기본 서식 - 밑줄을 없애겠다.*/
-.header{width: 100%; ;background-color: #ddd;}
-.inner{width: 1170px; margin: 0 auto;}
+
 
 /*처음부터 공통서식을 어떤 것으로 사용할지 정해놓고 -> 기록 -> 개별
     작업 도중 -> 공통된게 보여서 정리하는 방법
 */
 
+.header{width: 100%; ;background-color: #ddd;}
+
+.inner{width: 1170px; margin: 0 auto;}
 .content{width: 100%; padding: 150px 0;}
-.content .wrap{display:flex; flex-direction: row;/*기본값*/justify-content: space-between;}
-.content .box{height:300px; background-color: #ddd;}
+.content .wrap{
+    display:flex; 
+    flex-direction: row;/*가로방향으로 배치*/
+    justify-content: space-between; /*양쪽으로 정렬해준다.*/
+    flex-wrap: wrap; /*너비가 부족하면 자동으로 줄 바꿈 해준다.*/}
+.content .box{height: 500px; background-color: #ddd; margin-bottom: 24px;}
 .content .box:hover{transition: 0.5s;
-    height:300px; background-color: yellow; box-shadow: 10px 10px 20px 20px yellow;}
+    height:500px; background-color: yellow; box-shadow: 10px 10px 20px 20px yellow;}
 .content .title{margin-bottom: 40px; font: bold 24px 'inherit'; text-align: center;}
+.bestItem .box{width: 25%;}
+.newItem .box{width: 33.3%;}
+.board .box{width : 50%;}
 /* inherit: 부모의 내용을 상속받는다. 기본글꼴 - 맑은 고딕*/
 
-.visual{width: 100%; height: 500px; background-color: lightblue;}
+/* 반응형 css 만들어주는 역할
 
-.bestItem .box{width: 270px;}
-.newItem .box{width: 370px;}
-.board .box{width : 570px;}
+미디어 쿼리(조건) 중단점
+    - 해당 미디어에 조건을 지정해서, css 바뀌는 지점을 만들어 주는 것
+    @media screen and (max-width: 1200px) {}
+
+ - 미디어가 스크린인 것에 = 해당하는 조건이 맞으면 css 적용
+ - 조건 붙이는 방법 : and (속성 : 값) {}
+
+    - 최대 너비가 1200px 이면, {}의 css 적용
+    - 상위에 써뒀던 css가 상속이 된다.(그대로 내려와서 적용이 된다.)
+    - 그래서 변경되는 부분의 css만 작성해주면 된다.
+
+*/
+@media screen and (max-width: 1200px) {
+    .inner{width: 100%; margin: 0 auto; background-color: yellow;}
+    .content{padding: 120px 40px;}
+}
+
+@media screen and (max-width: 768px){
+    .content{width: 100%; padding: 80px 20px;}
+    .content .title{font-size: 20px;}
+
+}
+
+
+
+
+.bestItem .box{width: 25%;}
+@media screen and (max-width: 1200px) {
+    .bestItem .box{width: 22.25%;}
+}
+
+@media screen and (max-width: 768px) {
+    .bestItem .box{width: 48.5%;}
+}
+
+.newItem .box{width: 33.3%;}
+@media screen and (max-width: 1200px) {
+    .newItem .box{width: 31.333%;}
+}
+
+@media screen and (max-width: 768px) {
+    .newItem .box{width: 100%;}
+}
+
+
+
+.board .box{width : 50%;}
+@media screen and (max-width: 1200px) {
+    .board .box{width: 48.5%;}
+}
+
+@media screen and (max-width: 768px) {
+    .board .box{width: 31.333%;}
+}
+
+.visual{width: 100%; height: 500px; background-color: lightblue;}
 
 #banner{width: 450px; margin: 0 auto; display: block;}
 
