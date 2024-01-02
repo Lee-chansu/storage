@@ -32,13 +32,32 @@ content-box (기본값);
 */
 
 
+
 *{margin: 0; padding: 0; box-sizing: border-box;}
-ul, ol, li{list-style: none;} /*목록 태그의 리스트 기호/알파벳 모양을 지정 - none지정 : 서식X*/
+ul, ol, li{list-style: none;} 
+/*목록 태그의 리스트 기호/알파벳 모양을 지정 - none지정 : 서식X*/
 a{text-decoration: none;} /*a태그 기본 서식 - 밑줄을 없애겠다.*/
-.header{width: 100%; height: 100% ;background-color: #ddd;}
+.header{width: 100%; ;background-color: #ddd;}
 .inner{width: 1170px; margin: 0 auto;}
 
-.content{width: 100%; padding: 150px 0;}
-.content .inner{height: 100px; background-color: lightblue;}
+/*처음부터 공통서식을 어떤 것으로 사용할지 정해놓고 -> 기록 -> 개별
+    작업 도중 -> 공통된게 보여서 정리하는 방법
+*/
 
-.footer{width: 100%; height: 100px; background-color: #666;}
+.content{width: 100%; padding: 150px 0;}
+.content .wrap{display:flex; flex-direction: row;/*기본값*/justify-content: space-between;}
+.content .box{height:300px; background-color: #ddd;}
+.content .box:hover{transition: 0.5s;
+    height:300px; background-color: yellow; box-shadow: 10px 10px 20px 20px yellow;}
+.content .title{margin-bottom: 40px; font: bold 24px 'inherit'; text-align: center;}
+/* inherit: 부모의 내용을 상속받는다. 기본글꼴 - 맑은 고딕*/
+
+.visual{width: 100%; height: 500px; background-color: lightblue;}
+
+.bestItem .box{width: 270px;}
+.newItem .box{width: 370px;}
+.board .box{width : 570px;}
+
+#banner{width: 450px; margin: 0 auto; display: block;}
+
+.footer{width: 100%; background-color: #666;}

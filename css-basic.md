@@ -48,3 +48,23 @@ Q. 똑같은 요소에 같은 속성이 적용된 경우, 어떤 것이 적용�
 
 .box{width: 300px; hegith: 300px; background-color : pink}
 .item{}
+
+답 : 우선순위가 더 높다면, 우선순위가 높은 것이 적용되지만,
+같은 레벨이라면, 마지막으로 기재해준 것이 적용된다.
+
+선택자가 더 넓은 범위보다 좁은 범위가 우선순위가 높다.
+ex) 
+    content .inner{background-color : red}
+    .inner{background-color : blue}
+
+    .content .inner가 더 구체적인 선택자이기 때문에,
+    나중에 기독된 blue가 아니라
+    의미가 더 구체적인 .content .inner의 red가 적용된다.
+
+## 선택자 혼합
+    .content.board = 띄어쓰기 없음
+    - content와 board 클래스가 둘 다 있는 요소를 선택해라.
+
+    .content .board = 띄어쓰기 있음
+    - 자식요소 중에서
+    - content <자식 요소> 중에서 이름이 board인 요소를 선택해라.
