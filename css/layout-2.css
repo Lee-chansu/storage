@@ -76,7 +76,7 @@ a{text-decoration: none;} /*a태그 기본 서식 - 밑줄을 없애겠다.*/
 
 */
 @media screen and (max-width: 1200px) {
-    .inner{width: 100%; margin: 0 auto; background-color: yellow;}
+    .inner{width: 100%; margin: 0 auto;}
     .content{padding: 120px 40px;}
 }
 
@@ -85,9 +85,6 @@ a{text-decoration: none;} /*a태그 기본 서식 - 밑줄을 없애겠다.*/
     .content .title{font-size: 20px;}
 
 }
-
-
-
 
 .bestItem .box{width: 25%;}
 @media screen and (max-width: 1200px) {
@@ -98,6 +95,9 @@ a{text-decoration: none;} /*a태그 기본 서식 - 밑줄을 없애겠다.*/
     .bestItem .box{width: 48.5%;}
 }
 
+
+
+
 .newItem .box{width: 33.3%;}
 @media screen and (max-width: 1200px) {
     .newItem .box{width: 31.333%;}
@@ -106,8 +106,6 @@ a{text-decoration: none;} /*a태그 기본 서식 - 밑줄을 없애겠다.*/
 @media screen and (max-width: 768px) {
     .newItem .box{width: 100%;}
 }
-
-
 
 .board .box{width : 50%;}
 @media screen and (max-width: 1200px) {
