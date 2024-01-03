@@ -1,0 +1,19 @@
+*{margin: 0; padding: 0; box-sizing: border-boxing;}
+ul, ol, li{list-style: none;}
+a{text-decoration: none;}
+
+
+/*헤더, 섹션, 푸터*/
+
+
+.inner{width: 1170px; height: 100px; margin: 0 auto; border: 1px solid blue}
+.content{width: 100%; padding: 120px 0;}
+.content .title{font: bold 24px 'inherit'; text-align: center; color: #444;}
+
+.header{width: 100%; height: 100px; background-color: #ddd;}
+
+.visual{width: 100%; height: 500px; background-color: salmon;}
+
+
+
+.footer{width: 100%; height: 100px; background-color: #ddd;}
