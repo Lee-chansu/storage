@@ -7,26 +7,24 @@ a{text-decoration: none;}
 
 
 /*Common*/
-.inner{
-    width: 100%;
-    flex-flow: row wrap;
-}
+.inner{width: 1170px; flex-flow: row wrap; }
 .content{width: 100%; padding: 120px 0;}
 .content .title{margin: 0 0 40px; font: bold 'inherit'}
 .content .wrap{display: flex; justify-content: space-between;}
 .content .wrap .box{padding: 0 120px; background-color: aqua;}
 
 @media screen and (max-width : 1200px) {
-    
+    /*고정 px -> %로 바꾼다.
+    상하 크기 또는 세로크기는 - 고정px, 
+    상대크기로 바꿔도 적용 제대로 되지 않는다.*/
+.inner{width: 100%; flex-flow: row wrap; }
+.content{padding: 100px 40px;}
 }
 
 @media screen and (max-width : 768px) {
-    
+    .content .title{margin: 0 0 30px; font-size: 20px;}
 }
 
-@media screen and (max-width : 480px) {
-    
-}
     
 /*헤더 영역*/
 .header{width: 100%;}
@@ -60,36 +58,36 @@ a{text-decoration: none;}
 .visual{}
 
 
-
+/*section*/
 .con1 .box{width: 270px;}
 @media screen and (max-width : 1200px) {
-    
+    .con1 .box{width: 22.75%;}
 }
 
 @media screen and (max-width : 768px) {
-    
+    .con1 .box{width: 48.5%; margin: 0 0 30px;}
 }
 
 @media screen and (max-width : 480px) {
-    
+    .con1 .box{width: 100%;}
 }
 
 .con2 .box{width: 270px;}
 @media screen and (max-width : 1200px) {
-    
+    .con2 .box{width: 22.75%;}
 }
 
 @media screen and (max-width : 768px) {
-    
+    .con2 .box{width: 48.5%; margin: 0 0 30px;}
 }
 
 @media screen and (max-width : 480px) {
-    
+    .con2 .box{width: 100%;}
 }
 
 .con3 .box{width: 570px; padding: 0 0 30px;}
 @media screen and (max-width : 1200px) {
-    
+    .con3 .box{width: 48.5%}
 }
 
 @media screen and (max-width : 768px) {
@@ -97,17 +95,17 @@ a{text-decoration: none;}
 }
 
 @media screen and (max-width : 480px) {
-    
+    .con3 .box{width: 100%}
 }
 
-.con4 .box{width: 370px;}
+.con4 .box{width: 370px; margin: 0 0 30px;}/*3->2*/
 
 @media screen and (max-width : 1200px) {
-    
+    .con4 .box{width : 31.333%}
 }
 
 @media screen and (max-width : 768px) {
-    
+    .con4 .box{width: 48.5%;}
 }
 
 @media screen and (max-width : 480px) {

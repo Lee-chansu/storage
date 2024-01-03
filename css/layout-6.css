@@ -1,0 +1,58 @@
+*{margin: 0; padding: 0; box-sizing: border-boxing;}
+ul, ol, li{list-style: none;}
+a{text-decoration: none;}
+
+
+/*헤더, 섹션, 푸터*/
+
+/*Common*/
+.inner{width: 1170px; margin-bottom: 170px; background-color: aqua;}
+
+.content{width: 100%;}
+.content.full{padding: 0;}
+.content.full .inner{width: 100%;}
+
+.content .title{font: 17px 'interit' bold;}
+.wrap{display: flex;}
+
+    
+/*헤더 영역*/
+.header{width: 100%;}
+.header .inner{display: flex; justify-content: space-between;}
+.header .logo{}
+.header .logo > a{display: block; line-height: 80px;}
+.header .gnb-wrap{}
+
+
+#gnb{display: flex;}
+#gnb > li{}
+#gnb > li > a{display: block; line-height: 80px; padding: 0 30px;}
+
+
+
+/*visual*/
+.visual{}
+
+
+/*section*/
+/*한줄에 몇 개인가? 박스 사이에 마진이 있는가?
+여러줄인가?*/
+.con1 .box{width: 570px; margin: 0 0 30px;}
+
+.con2 .box{width: 50%;}
+
+.con3 .box{width: 370px;}
+
+.con4 .box{width: 50%;}
+
+.con5 .box{width: 100%;}
+
+
+
+
+/*footer*/
+.footer{width: 100%; padding: 80px 0; background-color: #ddd;}
+.footer .inner{display: flex; justify-content: space-between;}
+.footer .fmenu{}
+.footer .fmenu .ls{}
+.footer .fmenu .fSns{}
