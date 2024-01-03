@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        블록요소 : 기본크기는
+        - 너비 : 부모 크기의 100% / 높이 : 자식 크기만큼 자동으로 잡힌다.
+        인라인 요소 - 너비 / 자식 : 자기 크기만큼 잡힌다.
+        - 글자처럼 취급, 나란히 배치
+
+        flex 적용 (방향 : row / 줄바꿈 : nowrap)
+        - row : 너비 : 자기크기 / 높이 : 부모크기
+        - wrap : 줄바꿈 / 높이는 부모높이 / 줄 수
+
+        */
+        .wrap{width: 600px; height: 600px;
+        margin: 0 auto; border: 5px solid black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; /*flex-start, flex-end, center, space-between, space-around*/
+        align-items: center; /*flex-start, flex-end, center, baseline*/
+    }
+
+        .box{width: 100px; height: 100px; background-color: pink; border: 1px solid red;}
+    </style>
+</head>
+<body>
+     <div class="wrap">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box" style="font-size: 48px;">3</div>
+                <div class="box">4</div>
+            </div>
+</body>
+</html>

@@ -6,14 +6,41 @@ a{text-decoration: none;}
 /*헤더, 섹션, 푸터*/
 
 
-.inner{width: 1170px; height: 100px; margin: 0 auto; border: 1px solid blue}
+.inner{width: 1170px; margin: 0 auto; border: 1px solid blue}
 .content{width: 100%; padding: 120px 0;}
 .content .title{font: bold 24px 'inherit'; text-align: center; color: #444;}
 
+/* flex방식으로 자식요소를 배열 - 방향 : row방향 - 정렬 : 양쪽으로 붙여서 균등분배*/
+.content .wrap{display: flex; flex-direction: row; justify-content: space-between;}
+.content .wrap .box{width: 25%; height: 300px; border: 1px solid red; 
+    background-color: #444;}
+
 .header{width: 100%; height: 100px; background-color: #ddd;}
+.header .inner{display: flex;}
+.header .logo{width: 100px; background-color: pink;}
+.header .menuWrap{width: calc(100% - 100px); background-color: yellow;}
+
+/*선택자를ㄹ 구조의 순서대로 쓴다
+선택자
+
+#gnb li - #gnb 요소의 모든 li요소 찾아서 전부다 적용
+#gnb > li - #gnb의 바로 아래 있는 요소 중에서 li요소만 적용
+*/
+
+.header .menuWrap .util{display: flex; justify-content: flex-end;}
+.header .menuWrap .util .ls{font-size: 14px; color: #777;}
+
+.header .menuWrap .gnbWrap{}
+#gnb{display: flex; justify-content: flex-end;}
+#gnb > li{border: 2px solid blue;}
+#gnb > li > a{font : bold 18px 'inherit'; color: #444;}
 
 .visual{width: 100%; height: 500px; background-color: salmon;}
 
 
 
-.footer{width: 100%; height: 100px; background-color: #ddd;}
+.footer{width: 100%; padding: 80px 0; background-color: #ddd;}
+.footer .inner{display: flex;}
+.footer .fLogo{border: 1px solid blue;}
+.footer .fMenu{width: 65%;}
+.footer .fSns{width: 25%;}
