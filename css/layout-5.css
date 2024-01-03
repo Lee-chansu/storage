@@ -15,6 +15,18 @@ a{text-decoration: none;}
 .content .title{margin: 0 0 40px; font: bold 'inherit'}
 .content .wrap{display: flex; justify-content: space-between;}
 .content .wrap .box{padding: 0 120px; background-color: aqua;}
+
+@media screen and (max-width : 1200px) {
+    
+}
+
+@media screen and (max-width : 768px) {
+    
+}
+
+@media screen and (max-width : 480px) {
+    
+}
     
 /*헤더 영역*/
 .header{width: 100%;}
@@ -23,7 +35,7 @@ a{text-decoration: none;}
     display: flex;
     justify-content: center;
 }
-.header.top.logo{}
+.header.top.logo{font: bold 20px;}
 .header .top .logo a{display: block; line-height: 50px;}
 
 /*
@@ -49,15 +61,62 @@ a{text-decoration: none;}
 
 
 
-.con1 .box{width: 270px; height: 500px;}
+.con1 .box{width: 270px;}
+@media screen and (max-width : 1200px) {
+    
+}
+
+@media screen and (max-width : 768px) {
+    
+}
+
+@media screen and (max-width : 480px) {
+    
+}
 
 .con2 .box{width: 270px;}
+@media screen and (max-width : 1200px) {
+    
+}
 
-.con3 .box{width: 270px; padding: 0 120px;}
+@media screen and (max-width : 768px) {
+    
+}
 
-.con4 .box{width: 270px;}
+@media screen and (max-width : 480px) {
+    
+}
+
+.con3 .box{width: 570px; padding: 0 0 30px;}
+@media screen and (max-width : 1200px) {
+    
+}
+
+@media screen and (max-width : 768px) {
+    
+}
+
+@media screen and (max-width : 480px) {
+    
+}
+
+.con4 .box{width: 370px;}
+
+@media screen and (max-width : 1200px) {
+    
+}
+
+@media screen and (max-width : 768px) {
+    
+}
+
+@media screen and (max-width : 480px) {
+    
+}
 
 .footer{}
+.footer.info.flogo{}
+.footer.info.flogo{}
 
 
 /* font 속성
