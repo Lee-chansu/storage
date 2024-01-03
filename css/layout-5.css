@@ -1,0 +1,80 @@
+*{margin: 0; padding: 0; box-sizing: border-boxing;}
+ul, ol, li{list-style: none;}
+a{text-decoration: none;}
+
+
+/*헤더, 섹션, 푸터*/
+
+
+/*Common*/
+.inner{
+    width: 100%;
+    flex-flow: row wrap;
+}
+.content{width: 100%; padding: 120px 0;}
+.content .title{margin: 0 0 40px; font: bold 'inherit'}
+.content .wrap{display: flex; justify-content: space-between;}
+.content .wrap .box{padding: 0 120px; background-color: aqua;}
+    
+/*헤더 영역*/
+.header{width: 100%;}
+.header .top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.header.top.logo{}
+.header .top .logo a{display: block; line-height: 50px;}
+
+/*
+    인라인 태그 : am span, 가상요소 / input
+    -나란히 배치 -> 글자처럼 취급
+    -width, height, margin-상하, padding-상하 - 작용X
+    -해결방법 : display 속성의 block으로 바꿔준다. = 갖에로 block요소로 바꾼다.
+
+    -블록ㅇ소에서 글자가 세로 가운데 정렬 속성X
+    - 글자를 세로 가운데 정렬하는 효과 : line-hegith 줄간격 속성을 높이와 동히라게 선정
+
+*/
+.header .gnb-wrap{width: 100%;}
+.header .inner .gnb-wrap #gnb{
+    display: flex;
+    justify-content: center;
+}
+#gnb > li{}
+#gnb > li > a{padding: 0 30px; font: bold 18px/50px 'inherit';; color: #444}
+
+/*visual*/
+.visual{}
+
+
+
+.con1 .box{width: 270px; height: 500px;}
+
+.con2 .box{width: 270px;}
+
+.con3 .box{width: 270px; padding: 0 120px;}
+
+.con4 .box{width: 270px;}
+
+.footer{}
+
+
+/* font 속성
+font size : 16px;
+font -family : '글자이름'; - 폰트
+font - weight : bold; - 굵게
+font -style : italic; -기울임
+line-height : 숫자; 줄 간격
+
+font : 크기 '글꼴'; ---- 2가지는 무조건 기본
+font : 크기/줄간격 '글꼴'
+font : 굵기 크기/줄간격 '글꼴
+font : 굵기 기울임 크기/줄간격 '글꼴';
+*/
+
+/*
+    margin / padding
+    1       2           3              
+    4방향 / 상하.좌우 / 상. 좌우. 하 / 상. 우. 하. 좌
+*/
