@@ -11,7 +11,7 @@
   <header class="header">
     <div class="inner">
       <h1 class="logo"><a href="#">LOGO</a></h1>
-      <button type="button" class="toggle-btn">
+      <button type="button" class="toggle-btn" id="toggle">
         <span></span>
         <span></span>
         <span></span>
@@ -106,13 +106,23 @@
     </div>
   </footer>
 
+  <script src="javascript/test.js"></script>
   <script>
     /*
         자바 스크립트로 내가 원하는 요소 선택하기
+
+        1) 요소선택
+        2) 
+
+
+        toggle-btn을 선택해서
+        클릭하면 (이벤트 연결)
+        .gnb-wrap 보인다.
     */
    
-    document.querySelector('.toggle-btn').addEventListener('click', function(){ 
 
+   if(window.addEventListener("resize", function{
+    document.querySelector('.toggle-btn').addEventListener('click', function(){ 
         if(document.querySelector('.gnb-wrap').style.display == 'block'){
             document.querySelector('.gnb-wrap').style.display='none';
         }
@@ -120,8 +130,21 @@
             document.querySelector('.gnb-wrap').style.display='block';
         }
     });
-
+} else{
+    document.querySelector('.gnb-wrap').style.display='';
+}
+   }))) {
     
+
+/*
+    1) 토글버튼을 선택
+    2) 상태 저장
+    3) 토글버튼에 클릭 이벤트 연결
+    4) 동작할 내용을 쓴다.
+    - gnb-wrap을 보인다.
+    - gnb-wrap이 안보인다.
+*/
+
 
   </script>
 </body>
