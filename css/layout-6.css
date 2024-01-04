@@ -19,17 +19,59 @@ a{text-decoration: none;}
 상대크기 : 폰트기준, 상대크기
 em : 부모의 폰트 크기를 = 1em 기준 잡는다.(직속 부모의 영향만 받는다.)
 rem : html의 최상의 태그의 폰트 크기를 1em 잡는다.(최상위의 크기를 받는다.)
+*/
+
+/*차이점
+  p:nth-child(n)
+  - 자식 중에서 n번째 요소가 p태그면 선택
+
+  p:nth-of-type()
+  - p태그 중 n번재 요소 선택
 
 */
 
-.header{width: 100%; background-color: #ddd;}
-.header .inner{display: flex; justify-content: space-between;}
-.header .logo a{display: block; line-height: 80px;}
+@media screen and (max-width:1200px) {
+  .content{padding: 120px 40px;}
+  .inner{width: 100%;}
+}
 
-.header .gnb-wrap{}
+@media screen and (max-width: 768px) {
+  html{font-size: 10px;}
+}
+
+@media screen and (max-width: 486px) {
+  
+}
+
+/* header */
+.header{width: 100%; }
+.header .inner{display: flex; justify-content: space-between;}
+.header .logo a{display: block; line-height: 50px;}
+
+.header .gnb-wrap{background-color: #ddd;}
 #gnb{display: flex;}
 #gnb > li{}
-#gnb > li > a{display: block; line-height: 80px; padding: 0 30px;}
+#gnb > li > a{display: block; line-height: 50px; padding: 0 30px;}
+
+.header .toggle-btn{
+  display: none; width: 30px; height: 30px; padding: 0; right: 0;
+  background-color: transparent; border: 0; 
+}
+
+.header .toggle-btn span{
+  display: block; width: 100%; height: 3px; margin: 7px 0;
+  background-color: #444;
+}
+
+@media screen and (max-width:1024px) {
+  .header{padding: 0 80px;}
+  .header .gnb-wrap{display: none; position: fixed;
+  right: 0; top: 80px;  width: 300px; height: 100%;}
+  #gnb{display: block;}
+  
+  #gnb > li > a{display: block; line-height: 50px; padding: 0 0 0 40px;}
+  .header .toggle-btn{display: block;}
+}
 
 .visual{width: 100%; height: 500px; background-color: lightblue;} 
 
@@ -40,11 +82,43 @@ rem : html의 최상의 태그의 폰트 크기를 1em 잡는다.(최상위의 �
  */
 .con1 .box{width: 570px; margin: 0 0 30px;}
 
+@media screen and (max-width: 1200px) {
+  .con1 .box{width : 48.5%}
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
+  .con1 .box{width: 100%;}
+}
+
+
 .con2 .box{width: 50%;}
 
+
+@media screen and (max-width: 768px) {
+  .con2 .box{width: 100%;}
+}
+
+
 .con3 .box{width: 370px;}
+@media screen and (max-width: 1200px) {
+  .con3 .box{width: 31.333%;}
+}
+
+@media screen and (max-width: 768px) {
+  .con3 .wrap{justify-content: center;}
+  .con3 .box{width: 100%; max-width: 370px; margin: 0 0 1.5em;}
+}
+
+@media screen and (max-width: 480px) {
+
+}
 
 .con4 .box{width: 50%;}
+@media screen and (max-width: 768px) {
+  .con4 .box{width: 100%;}
+}
 
 .con5 .box{width: 100%;}
 

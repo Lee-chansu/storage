@@ -11,6 +11,11 @@
   <header class="header">
     <div class="inner">
       <h1 class="logo"><a href="#">LOGO</a></h1>
+      <button type="button" class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
       <nav class="gnb-wrap">
         <ul id="gnb">
           <li><a href="#">home</a></li>
@@ -18,6 +23,8 @@
           <li><a href="#">blog</a></li>
           <li><a href="#">about</a></li>
           <li><a href="#">conacts</a></li>
+          <!--toggle - switch on/off시 다른 효과를 줄 수 있다.-->
+        
         </ul>
       </nav>
     </div>
@@ -98,5 +105,24 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    /*
+        자바 스크립트로 내가 원하는 요소 선택하기
+    */
+   
+    document.querySelector('.toggle-btn').addEventListener('click', function(){ 
+
+        if(document.querySelector('.gnb-wrap').style.display == 'block'){
+            document.querySelector('.gnb-wrap').style.display='none';
+        }
+        else{
+            document.querySelector('.gnb-wrap').style.display='block';
+        }
+    });
+
+    
+
+  </script>
 </body>
 </html>
