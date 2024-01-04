@@ -7,7 +7,6 @@ a{text-decoration: none;}
 
 
 
-
 /*header*/
 .header{width: 100%; margin: 0 auto; padding: 0 5vw; background-color: #ddd;}
 
@@ -16,8 +15,27 @@ a{text-decoration: none;}
 
 /*main*/
 main{width: 100%; height: 500px; margin: 0 auto; padding: 0 5vw;}
+.content{width: 100%; padding: 5vw 0;}
 
+.con1{width: 1170px; margin: 0 0.9vw;}
+.con1 .title-wrap{}
+.con1 .item-wrap .title{font-size: 32px; text-align: center;}
+.con1 .item-wrap{width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.con1 .item-wrap .item{width: calc((100% - 60px) / 3); height: 300px; margin: 0 0 30px;}
+/*calc 계산식
+    calc((n - n) * / n)을 할 때 띄어쓰기를 해주지 않으면 숫자 계산을 잘 못한다.
+*/
+.con1 .item-wrap .item > img{width: 100%; height: 100%;}
 
+.con2{}
+
+.con3{}
+
+.con4{}
+.con4 .pic > img{width:200px; height: 200px;}
+.con5{}
+
+.con6{}
 
 
 /*footer*/
