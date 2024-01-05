@@ -1,47 +1,67 @@
-*{margin: 0; padding: 0; box-sizing: border-box;}
+*{margin: 0; padding: 0; box-sizing: border-box; color: #fff;}
 ul, li, ol{list-style: none;}
 a{text-decoration: none;}
 
 /*common*/
+header, main, footer{
+    background-color: black;
+}
 
 
 
 
 /*header*/
 .header{width: 100%; margin: 0 auto; padding: 0 5vw; background-color: #ddd;}
-
+.header .nav-pre .nav-list .nav-item > button{max-width: 100%; height: auto; left: 0;}
 
 
 
 /*main*/
-main{width: 100%; height: 500px; margin: 0 auto; padding: 0 5vw;}
+main{width: 100%; margin: 0 auto; padding: 0 5vw;}
 .content{width: 100%; padding: 5vw 0;}
+.item-wrap{width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap;}
 
 .con1{width: 1170px; margin: 0 0.9vw;}
 .con1 .title-wrap{}
-.con1 .item-wrap .title{font-size: 32px; text-align: center;}
-.con1 .item-wrap{width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
-.con1 .item-wrap .item{width: calc((100% - 60px) / 3); height: 300px; margin: 0 0 30px; border-radius: 25px;}
+.con1 .title-wrap .title{font-size: 32px; text-align: center; margin: 0 0 20px;}
+.con1 .item-wrap .item{width: calc((100% - 60px) / 3); margin: 0 0 20px;}
 /*calc 계산식
 calc((n - n) * / n)을 할 때 띄어쓰기를 해주지 않으면 숫자 계산을 잘 못한다.
 */
-.con1 .item-wrap .item > img{max-width: 100%; height: auto; border-radius: 25px;}
+.con1 .item-wrap .item > img{width: 100%; height: auto; border-radius: 10px;}
 
 @media screen and (max-width: 1024px) {
-    .con1 .item-wrap .item{width: calc((100% - 48px) / 3); height: 300px; margin: 0 0 30px;}
+    .con1 .item-wrap .item{width: calc((100% - 48px) / 3); margin: 0 0 30px;}
 }
 /*거터 24px 줄이기*/
 @media screen and (max-width: 768px) {
-    .con1 .item-wrap .item{width: calc((100% - 48px) / 3); height: 300px; margin: 0 0 30px;}
+    .con1 .item-wrap .item{width: calc((100% - 48px) / 2); margin: 0 0 30px;}
 }
 
+/*
+가상요소
+요소 = element = 태그
+html 태그 존재x 
+
+*/
 
 
 .con2{padding: 3vh 3vw;}
-.con2 .item-wrap{display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
-.con2 .item-wrap .item{width: calc((100% - 60px) / 4); height: auto; margin: 0 0 20px;}
-.con2 .item-wrap .item > h3{font-size: 32px; text-align: center;}
-.con2 .item-wrap .item > p{font-size: 16px; text-align: center;}
+.con2 .item-wrap .item{position:relative; width: calc((100% - 60px) / 4); height: auto; margin: 0 0 20px; padding: 0 20px;}
+.con2 .item-wrap .item > h3{font-size: 30px; text-align: center; margin: 0 0 20px;}
+.con2 .item-wrap .item > p{font-size: 14px; text-align: center;}
+.con2 .item-wrap .item::after{
+    content: ''; display: block;
+    position: absolute; right: 0; top: 25%;
+    width: 1px; height: 50%;
+    background-color: #444;
+}
+.con2 .item-wrap .item:last-of-type::after{
+    content: none; display: block;
+    position: absolute; right: 0; top: 25%;
+    width: 1px; height: 50%;
+    background-color: #444;
+}
 
 @media screen and (max-width: 1024px) {
     .con2 .item-wrap .item > h3{font-size: 28px; text-align: center;}
@@ -50,10 +70,52 @@ calc((n - n) * / n)을 할 때 띄어쓰기를 해주지 않으면 숫자 계산
 }
 @media screen and (max-width: 768px) {
 
-    .con2 .item-wrap .item{width: 100%; }
+    .con2 .item-wrap .item{width: 100%; padding: 20px 0;}
+    .con2 .item-wrap .item::after{
+        content: ''; 
+        width: 150px; height: 1px;
+        top: 100%; right: 37%;
+    }
 }
 
-.con3{}
+.con3 .title-wrap{text-align: center; margin: 20px 0 30px; font-size: 32px;}
+.con3 .title-wrap > p{margin: 20px 0; font-size: 14px;}
+.con3 .info-wrap{}
+.con3 .info-wrap .info-title{
+    display: flex; 
+    justify-content: flex-end; 
+    border-bottom: 1px solid white;
+}
+.con3 .info-wrap .info-title-cell{
+    width: 33.3333%; height: 100px; padding: 30px;
+    text-align: center;
+}
+
+.con3 .info-wrap .info-content{
+    display: flex; 
+    justify-content: flex-end; 
+    border-bottom: 1px solid white;
+    flex-wrap: wrap;
+}
+.con3 .info-wrap .info-content .info-cell{
+    width: 33.3333%; height: 100px;
+    padding: 30px 10px;
+}
+
+.con3 .info-wrap .first{text-align: left;}
+.con3 .info-wrap .second{text-align: center;}
+.con3 .info-wrap .third{text-align: cneter;}
+
+@media screen and (max-width: 768px) {
+    .con3 .info-wrap .info-content .info-cell{width: 50%;}
+    .con3 .info-wrap .info-content .info-cell .third{background-color: #eee;}
+
+    .con3 .info-wrap .info-content .info-cell{width: 50%;}
+    .con3 .info-wrap .info-contnet .info-cell .first{width: 100%; text-align: center;}
+    .con3 .info-wrap .info-contnet .info-cell .third{background-color: transparent;}
+    
+}
+
 
 .con4{display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;}
 .con4 .info{width: 50%; height: auto;}
@@ -86,6 +148,32 @@ calc((n - n) * / n)을 할 때 띄어쓰기를 해주지 않으면 숫자 계산
 }
 
 .con6{}
+.con6 .title{text-align: center; 
+    font-size: 28px; 
+    margin: 0 0 20px;}
+.con6 .question{ 
+    width: 100%;
+    padding: 20px;
+    font: bold 24px 'inherit';
+    background-color: blue; }
+
+.con6 .answer{
+    width: 100%; max-height: 0; overflow: hidden;
+    padding-top: 0 30px; margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 1.5;
+    background-color: burlywood;
+    transition: all .3s;
+}
+.con6 .question-list> li.view .answer{
+    height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .con6 .question-list > li .question{font-size: 20px;}
+    .con6 .question-list > li .answer{font-size: 16px;}
+}
+
 
 
 /*footer*/

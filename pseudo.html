@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseuo</title>
+    <style>
+
+        /*
+        ::after{content : ''} = 가상요소
+        가상요소는 인라인 - 너비, 높이 적용x
+        적용하고 싶어서? display : block
+        width, hieght 적용
+
+        보여야 하니까 : 배경 넣어 놓음
+
+        위치를 부모기준으로 좌표값 지정해서 배치(absolute)
+        가상요소의 부모? 원본 요소
+        - 원본 .box - position : relative 적용
+        - 자식 가상요소 - box::after{} --position : absolute 적용
+
+        top 위치 - (부모높이 - 자식높이) / 2 = 숫자 (가운데 효과)
+            (100 - 50) / 2 = 25%
+        */
+
+        .box{position: relative;
+        width: 200px; height: 100px; background-color: pink;}
+        .box::after{
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0; top: 25%;
+            width: 10px; height: 50%;
+            background-color: red;
+        }
+        .list p::before{content: '-';}
+        .member .name::after{content: '님 귀하';}
+    </style>
+</head>
+<body>
+    <h2>가상요소 - pseudo</h2>
+    <div class="box">pseudo</div>
+
+    <div class="list">
+        <p href="#">테스트</p>
+        <p href="#">테스트</p>
+        <p href="#">테스트</p>
+        <p href="#">테스트</p>
+        <p href="#">테스트</p>
+    </div>
+
+    <div class="member">
+        <p class="name">홍길동</p>
+        <p class="name">홍길동</p>
+        <p class="name">홍길동</p>
+        <p class="name">홍길동</p>
+    </div>
+
+</body>
+</html>
