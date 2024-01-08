@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>js 함수</h1>
+    <p id="text">test</p>
+    <button type="button" id="btn">버튼</button>
+    <script>
+        //함수 정의
+        function 함수이름(그릇1, 그릇2, 그릇3){ //매개변수, parameter, param
+            document.getElementById('text').innerText = 그릇1+'/'+그릇2+'/'+그릇3;
+        }
+
+        // 함수 실행 - 호출
+        document.getElementById('btn').addEventListener('click', function(){
+            함수이름('강아지','고양이','호랑이'); //인자, 인수, argument, args
+        });
+        
+    </script>
+</body>
+</html>

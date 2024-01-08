@@ -71,33 +71,6 @@
         </div>
     </div>
 
-
-    <script>
-        let menu = document.getElementsByClassName('menu');
-
-        for (const i of menu) {
-            
-        
-        i.addEventListener('click', function(){
-            this.classList.toggle('on');
-
-            //클릭한 것, 다음에 있는 panel을 선택해야 한다.
-            let panel = this.nextElementSibling;// == panel
-
-            if(panel.style.maxHeight){
-                panel.style.maxHeight = null;
-                // 60px -> null
-                // true -> false 상태를 만든다.
-
-            }
-            else{
-                panel.style.maxHeight = panel.scrollHeight +"px";
-                //scrollHeight : 높이를 박스의 현재 크기로 설정한다.
-                //  null -> 60px;
-                //  false -> true 상태가 된다.
-            }
-        });
-        }
-    </script>
+    <script src="javascript/js-basic_1-ex-1.js"></script>
 </body>
 </html>
