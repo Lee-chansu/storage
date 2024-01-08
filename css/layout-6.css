@@ -67,8 +67,9 @@ rem : html의 최상의 태그의 폰트 크기를 1em 잡는다.(최상위의 �
   .header{padding: 0 80px;}
   .header .gnb-wrap{display: none; position: fixed;
   right: 0; top: 80px;  width: 300px; height: 100%;}
-  #gnb{display: block;}
+  .header .gnb-wrap.active{display: block;}
   
+  #gnb{display: block;}
   #gnb > li > a{display: block; line-height: 50px; padding: 0 0 0 40px;}
   .header .toggle-btn{display: block;}
 }
@@ -131,3 +132,4 @@ rem : html의 최상의 태그의 폰트 크기를 1em 잡는다.(최상위의 �
 
 .footer .menu .sns{text-align: right; background-color: pink;}
 .footer .menu .sns a{padding: 0 10px; line-height: 30px;}
+

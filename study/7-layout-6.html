@@ -106,7 +106,7 @@
     </div>
   </footer>
 
-  <script src="javascript/test.js"></script>
+  <script src="../javascript/test.js"></script>
   <script>
     /*
         자바 스크립트로 내가 원하는 요소 선택하기
@@ -119,9 +119,9 @@
         클릭하면 (이벤트 연결)
         .gnb-wrap 보인다.
     */
-   
+  
 
-   if(window.addEventListener("resize", function{
+  if(window.addEventListener("resize", function(){
     document.querySelector('.toggle-btn').addEventListener('click', function(){ 
         if(document.querySelector('.gnb-wrap').style.display == 'block'){
             document.querySelector('.gnb-wrap').style.display='none';
@@ -130,10 +130,10 @@
             document.querySelector('.gnb-wrap').style.display='block';
         }
     });
-} else{
+  }));
+  else{
     document.querySelector('.gnb-wrap').style.display='';
-}
-   }))) {
+  };
     
 
 /*
@@ -144,6 +144,7 @@
     - gnb-wrap을 보인다.
     - gnb-wrap이 안보인다.
 */
+
 
 
   </script>

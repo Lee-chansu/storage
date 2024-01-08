@@ -52,3 +52,25 @@
 
     //queryInner.style.color = 'red';
     //classBox[0].style.color = '#ddd';
+
+    let toggle = document.querySelector('.toggle-btn');
+let gnbWrap = document.querySelector('.gnbWrap');
+let isOpen = false;
+
+toggle.addEventListener('click', function(){
+  //T인지 F인지 체크를 해서, 동작을 다르게 해준다.
+  isOpen == !isOpen;
+  if(isOpen){
+    gnbWrap.classList.add('active'); //active클래스 추가
+  }else{
+    gnbWrap.classList.remove('active'); //active클래스 제거
+  }
+})
+
+window.addEventListener('resize', function(){
+  //브라우저 사이즈 변경 될 때마다
+  let winWidth = this.innerWidth;
+  if(winWidth < 1024){
+    gnbWrap.classList.remove('active');
+  }
+})
