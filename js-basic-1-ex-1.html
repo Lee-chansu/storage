@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        .box{width: 300px; border: 1px solid #444;}
+        .box .menu{
+            width: 100%; padding: 10px;
+            background-color: transparent;
+            border: none; outline: none;
+            cursor: pointer;
+        }
+        .box .panel{
+            width: 100%;
+            background-color: #eee;
+            max-height: 0; overflow: hidden;
+            transition: 0.3s;
+            /*overflow : hidden
+            부모요소보다 넘치는 자식요소의 부분들은 다 가려라*/
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <button class="menu">메뉴1</button>
+        <div class="panel">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi sed corporis laboriosam quae nesciunt eveniet repellendus iusto, id culpa quaerat eos omnis corrupti pariatur unde excepturi porro dolores delectus?
+        </div>
+    </div>
+    <div class="box">
+        <button class="menu">메뉴2</button>
+        <div class="panel">
+            내용
+        </div>
+    </div>
+    <div class="box">
+        <button class="menu">메뉴3</button>
+        <div class="panel">
+            내용
+        </div>
+    </div>
+
+
+    <script>
+        let menu = document.getElementsByClassName('menu');
+
+        for (const i of menu) {
+            
+        
+        i.addEventListener('click', function(){
+            this.classList.toggle('on');
+
+            //클릭한 것, 다음에 있는 panel을 선택해야 한다.
+            let panel = this.nextElementSibling;// == panel
+
+            if(panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            }
+            else{
+                panel.style.maxHeight = panel.scrollHeight +"px";
+                //scrollHeight : 높이를 박스의 현재 크기로 설정한다.
+            }
+        });
+        }
+    </script>
+</body>
+</html>
