@@ -7,39 +7,39 @@
 </head>
     <button type="button" class="btn-1 name1 name2">버튼1</button>
     <input class="inputName"> <br><br>
-    <button type="button" class="btn-2" onclick="myWork(this, '24px')">버튼2</button> <br></br>
-    <button type="button" class="btn-3" onclick="myWork(this, '32px')">버튼3</button>
+    <button type="button" class="btn-2" onclick="myWork(this, input)">버튼2</button> <br></br>
+    <button type="button" class="btn-3" onclick="myWork(this, input)">버튼3</button>
 
     <script>
         let btn1 = document.getElementsByClassName('btn-1')[0];
         console.log(btn1.classList);
         
         
-        btn1.classList.add('on');
-        console.log(btn1.classList);
-        //on클래스 삭제
-        //파란색 박스 : 요소, 속성 = 값;
-        //보라색 박스 : 요소, 메서드(값);
-        btn1.classList.remove('on');
-        console.log(btn1.classList);
+        // btn1.classList.add('on');
+        // console.log(btn1.classList);
+        // //on클래스 삭제
+        // //파란색 박스 : 요소, 속성 = 값;
+        // //보라색 박스 : 요소, 메서드(값);
+        // btn1.classList.remove('on');
+        // console.log(btn1.classList);
 
-        btn1.classList.add('on');
-        console.log(btn1.classList.contains('on'));
+        // btn1.classList.add('on');
+        // console.log(btn1.classList.contains('on'));
         
-        btn1.classList.remove('on');
-        console.log(btn1.classList.contains('on'));
+        // btn1.classList.remove('on');
+        // console.log(btn1.classList.contains('on'));
         
 
-        var val = document.getElementsByClassName('inputName')[0].value;
+        let input = document.getElementsByClassName("inputName")[0].val;
         btn1.addEventListener('click', function(){
-            console.log(val);
-            if(val == ''){
+            console.log(input);
+            if(input == ""){
                 alert('값을 넣어라 닝겐');
                 return;
-            }
-            btn1.style.fontSize = val;   //변수(속성)의 값을 바꾸는 것
-
-            btn1.classList.add('on');   // 메서드라는 것을 통해 변수(속성)의 값을 바꾸는
+            }else{
+            btn1.style.fontSize = input+"px";   //변수(속성)의 값을 바꾸는 것
+            //btn1.classList.add('on');   // 메서드라는 것을 통해 변수(속성)의 값을 바꾸는
+        }
         });
 
         // 동작할 내용을 따로 묶어서 기록을 해두고 연결한다.

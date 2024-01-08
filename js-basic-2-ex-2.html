@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>test</p>
+    <script>
+
+        //false로 취급하는 것들 -- undefined, 0, null, NaN
+
+        let 변수 = null;
+        console.log(변수);
+
+        if(변수) {
+            console.log('그래그래 놀랍게도 그건 사실이야');
+        }
+
+        if(변수){   //변수, 조건식 >, <, >=, <=, ==, !=
+            console.log('정답이다');
+        } else{
+            console.log('오답이다')
+        }
+
+        //반복문
+        // for(카운트; 종료조건; 증감조건) {
+        //     실행할 구문;
+        // }
+
+        for(let i = 0; i < 3; i++) {
+            console.log(i);
+        }
+    </script>
+</body>
+</html>
