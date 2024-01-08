@@ -3,39 +3,40 @@ ul, li, ol{list-style: none;}
 a{text-decoration: none;}
 
 /*common*/
-header, main, footer{
-    background-color: black;
+main, footer{
+    background-color: #040814;
 }
 
 
 
 
 /*header*/
-.header{width: 100%; margin: 0 auto; padding: 0 5vw; background-color: #ddd;}
+.header{width: 100%; margin: 0 auto; padding: 0 5vw;}
 .header .nav-pre .nav-list .nav-item > button{max-width: 100%; height: auto; left: 0;}
 
 
 
 /*main*/
-main{width: 100%; margin: 0 auto; padding: 0 5vw;}
-.content{width: 100%; padding: 5vw 0;}
+main{width: 100%; margin: 0 auto;}
+.content{width: 100%; padding: 5vw 0; padding: 5vw;}
 .item-wrap{width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap;}
 
-.con1{width: 1170px; margin: 0 0.9vw;}
-.con1 .title-wrap{}
+.con1{width: 100%; padding: 10vh 5vw;}
 .con1 .title-wrap .title{font-size: 32px; text-align: center; margin: 0 0 20px;}
 .con1 .item-wrap .item{width: calc((100% - 60px) / 3); margin: 0 0 20px;}
+
 /*calc 계산식
 calc((n - n) * / n)을 할 때 띄어쓰기를 해주지 않으면 숫자 계산을 잘 못한다.
 */
-.con1 .item-wrap .item > img{width: 100%; height: auto; border-radius: 10px;}
+.con1 .item-wrap .item > img{width: 100%; border-radius: 10px;}
 
 @media screen and (max-width: 1024px) {
-    .con1 .item-wrap .item{width: calc((100% - 48px) / 3); margin: 0 0 30px;}
+    .con1 .item-wrap .item{width: calc((100% - 48px) / 3);
+    margin: 16px;}
 }
 /*거터 24px 줄이기*/
 @media screen and (max-width: 768px) {
-    .con1 .item-wrap .item{width: calc((100% - 48px) / 2); margin: 0 0 30px;}
+    .con1 .item-wrap .item{width: calc((100% - 20px) / 2); margin: 10px;}
 }
 
 /*
@@ -56,6 +57,7 @@ html 태그 존재x
     width: 1px; height: 50%;
     background-color: #444;
 }
+
 .con2 .item-wrap .item:last-of-type::after{
     content: none; display: block;
     position: absolute; right: 0; top: 25%;
@@ -78,18 +80,42 @@ html 태그 존재x
     }
 }
 
+/*con3*/
+.con3{padding: 9vh 9vw;}
+.con3 .first, .con3 .second, .con3 .third{
+    color: #d4d3d4;
+    font-size: 18px;
+}
 .con3 .title-wrap{text-align: center; margin: 20px 0 30px; font-size: 32px;}
 .con3 .title-wrap > p{margin: 20px 0; font-size: 14px;}
-.con3 .info-wrap{}
+.con3 .info-wrap{
+    width: 100%; max-width: 992px;
+    height: auto;
+}
 .con3 .info-wrap .info-title{
     display: flex; 
     justify-content: flex-end; 
+    align-items: center;
     border-bottom: 1px solid white;
 }
 .con3 .info-wrap .info-title-cell{
-    width: 33.3333%; height: 100px; padding: 30px;
+    width: 33.3333%; height: 100px;
     text-align: center;
 }
+.con3 .info-wrap .info-content{margin-bottom: 20px;}
+.con3 .info-wrap .info-content .info-cell>a, 
+.con3 .info-title-cell > a{
+    display: inline-flex;
+    width: 200px; height: 45px;
+    border: #fff 1px solid; border-radius: 4px;
+    justify-content: center; align-items: center;
+    padding: 10px 10px;
+    background-color: #12151c;
+    color: #fff;
+}
+.con3 .info-title-cell > a{background-color: #0063e5;}
+.con3 .info-title-cell > p{font-size: 20px; margin-bottom: 5px;}
+
 
 .con3 .info-wrap .info-content{
     display: flex; 
@@ -97,30 +123,41 @@ html 태그 존재x
     border-bottom: 1px solid white;
     flex-wrap: wrap;
 }
-.con3 .info-wrap .info-content .info-cell{
-    width: 33.3333%; height: 100px;
-    padding: 30px 10px;
+
+.con3 .info-wrap .first{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 50%; height: 200px;
+}
+.con3 .info-wrap .second,
+.con3 .info-wrap .third{
+    text-align: center;
+    width: 25%; height: 200px;}
+
+.con3 .info-wrap .info-content .second, 
+.con3 .info-wrap .info-content .third{
+    padding: 20px 0;
 }
 
-.con3 .info-wrap .first{text-align: left;}
-.con3 .info-wrap .second{text-align: center;}
-.con3 .info-wrap .third{text-align: cneter;}
-
 @media screen and (max-width: 768px) {
-    .con3 .info-wrap .info-content .info-cell{width: 50%;}
-    .con3 .info-wrap .info-content .info-cell .third{background-color: #eee;}
-
-    .con3 .info-wrap .info-content .info-cell{width: 50%;}
-    .con3 .info-wrap .info-contnet .info-cell .first{width: 100%; text-align: center;}
-    .con3 .info-wrap .info-contnet .info-cell .third{background-color: transparent;}
+    .con3 .info-wrap{padding: 3vh 0;}
+    .con3 .info-wrap .info-content .info-cell{
+        display: flex;
+        width: 50%;}
+    .con3 .info-wrap .info-contnet .info-cell .first{
+        display: block;
+        width: 100%; text-align: center;}
     
 }
 
 
-.con4{display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;}
-.con4 .info{width: 50%; height: auto;}
-.con4 .info .title{text-align: center; font-size: 32px;}
-.con4 .info > p{text-align: center; font-size: 20px;}
+.con4{display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center; padding: 8vh 8vw;}
+.con4 .info{width: 50%;}
+.con4 .info .title{font-size: 36px; margin: 0 25px 30px 0;}
+.con4 .info > p{font-size: 18px;
+    margin: 0 25px 0 0;
+    color: #d4d3d4;}
 .con4 .pic{width: 50%; height: auto;}
 .con4 .pic > img{max-width: 100%; height: auto;}
 
@@ -132,10 +169,10 @@ html 태그 존재x
     .con4 .pic{width: 100%; height: auto;}
 }
 
-.con5{}
+.con5{padding: 3vh 3vw;;}
 .con5 .title-wrap{}
-.con5 .title-wrap .title{font: 32px bold; text-align: center; margin: 15px 0;}
-.con5 .title-wrap .txt{font-size: 20px; text-align: center; margin: 15px 0;}
+.con5 .title-wrap .title{font: 40px bold; text-align: center; margin: 15px 0;}
+.con5 .title-wrap .txt{font-size: 18px; text-align: center; margin: 15px 0; color: #d4d3d4;}
 .con5 .item-wrap{display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
 .con5 .item-wrap .item{width: calc((100% - 60px) / 3); height: 300px; margin: 0 0 30px; background-color: #ddd;}
 
@@ -147,25 +184,38 @@ html 태그 존재x
     .con1 .item-wrap .item{width: calc((100% - 48px) / 3); height: 300px; margin: 0 0 30px;}
 }
 
-.con6{}
+.con6{padding: 5vh 5vw;;}
 .con6 .title{text-align: center; 
-    font-size: 28px; 
-    margin: 0 0 20px;}
+    font-size: 40px; 
+    margin: 0 0 30px;}
+    
 .con6 .question{ 
+    position: relative;
     width: 100%;
-    padding: 20px;
-    font: bold 24px 'inherit';
-    background-color: blue; }
+    padding: 25px;
+    font: bold 18px 'inherit';
+    background-color: #12151c;}
+
+.con6 .question > h3::after{
+    content: '+';
+    display: block;
+    position: absolute;
+    font-size: 40px;
+    right: 0;
+    top: 19%;
+    padding: 0 10px;
+
+}
 
 .con6 .answer{
-    width: 100%; max-height: 0; overflow: hidden;
-    padding-top: 0 30px; margin-bottom: 30px;
-    font-size: 20px;
+    width: 100%; height: 0; overflow: hidden;
+    padding: 0 30px; margin-bottom: 30px;
+    font-size: 18px;
     line-height: 1.5;
-    background-color: burlywood;
+    background-color: #12151c;
     transition: all .3s;
 }
-.con6 .question-list> li.view .answer{
+.con6 .question-list > li:hover .answer{
     height: 100px;
 }
 
@@ -177,7 +227,18 @@ html 태그 존재x
 
 
 /*footer*/
-.footer{width: 100%; margin: 0 auto; padding: 40px 5vw; background-color: #ddd;}
+.footer{width: 100%; margin: 0 auto; padding: 40px 5vw;
+display: flex; flex-direction: column; align-items: center; flex-wrap: wrap;}
+/*flex-direction : column인 경우 align-items와 justify-content가 반대로 적요이 된다.*/
+
+.footer .menu-list .list{margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center;}
+.footer .menu-list .list > a{padding: 10px 12px; font-size: 13px;}
+.footer .info{display: flex; flex-wrap: wrap; justify-content: center;}
+.footer .info p{text-align: center; margin: 0 0 20px;}
+.footer .info span{font-size: 13px; font-weight: normal; font-size: normal; line-height: 1.5; text-align: center;}
+.footer .info address{display: inline;}
+.footer .info span::after{content: ' | ';}
+
 .footer .list{display: flex;}
 
 /*

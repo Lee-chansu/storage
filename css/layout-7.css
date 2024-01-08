@@ -1,0 +1,58 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} 
+a{text-decoration: none;} 
+
+
+.header{width: 100%; margin: 0 auto; padding: 0 5vw ;background-color: #ddd;}
+
+main{width: 100%; margin: 0 auto;  padding: 0 5vw ;}
+
+.content{width: 100%; padding: 5vw 0;}
+
+
+/* 
+  calc(계산식)
+  - 연산자 앞뒤로 띄어쓰기 반드시 있어야 함. 
+  - 단위 반드시 써야함.
+*/
+
+.con-1{}
+.con-1 .title-wrap{}
+.con-1 .title-wrap .title{font-size: 32px; text-align: center; margin: 0 0 40px;}
+.con-1 .item-wrap{width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.con-1 .item-wrap .item{
+  width: calc((100% - 60px) / 3); height: 240px; margin: 0 0 30px; background-color: #ddd;
+  border-radius: 10px;
+}
+
+/* 거터 24px 줄이기 */
+@media screen and (max-width: 1024px){
+  .con-1 .item-wrap .item{width: calc((100% - 48px) / 3); margin: 0 0 24px;}
+}
+@media screen and (max-width: 768px){
+  .con-1 .item-wrap .item{width: calc((100% - 24px) / 2);}
+}
+
+
+.footer{width: 100% ;margin: 0 auto;  padding: 40px 5vw ; background-color: #ddd;}
+
+
+
+
+/* 
+  상대크기 : em, rem - 기준 : 폰트크기
+
+  브라우저의 너비/높이를 기준으로 하는 단위 : 
+  - viewport width : vw
+  - viewport height : vh
+
+  100vw = 현재 뷰포트의 전체 너비
+  100vh = 현재 뷰포트의 전체 높이
+
+  고정 : px
+  가변 :
+  - .box의 너비 : % 
+  - 좌우패딩 : vw, vh, rem
+  - 폰트 : vw, vh, rem
+
+*/
