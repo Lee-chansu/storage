@@ -30,8 +30,6 @@ padding: 0 10px;}
 .menu-list{width: 100%; height: 100%; margin: 0; padding: 0;
     display: flex; justify-content: center; align-items: center;
 }
-.left{text-align: left;}
-.right{text-align: right;}
 .leftheader .logo{color: #e5ca33;}
 
 
