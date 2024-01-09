@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>js 변수, 조건문, 반복문 </h1>
+  <script>
+    // 변수 - 값을 저장하고 있는 메모리 공간 ( 값을 담는 그릇)
+    // undefined 값 기본값 -  값이 정의되지 않았다.
+    // true - false로 처리하는 것 외에 다  true임
+    // false로 취급하는 값들 - undefined, 0, null, NaN
+    
+    let 변수 = 'test';
+    console.log(변수)
+
+    // if - 조건에 따라서 처리할 구문을 나눠주는 역할이다
+
+    // 조건이 맞을 때만, 처리할 구문이 있다.
+    // 변수 OR 조건식 (>, <, >=, <=, ==, !=) OR true/false 결과값인 것들
+    if( 변수 ){  
+      console.log('1-맞아')
+    }
+
+    // 조건이 맞을때와 다를때 처리할 구문이 각각 다르다.
+    if( 변수 ){
+      console.log(true)
+    }else{
+      console.log(false)
+    }
+
+
+    // 반복문 - 원하는 횟수만큼 반복을 해주는 코드 / 시작값
+
+    // for(카운트-초기화; 종료조건; 증감조건){
+    //   실행할구문
+    // }
+
+    for(let i = 0; i < 10; i++){
+      console.log(i)
+    }
+
+
+    
+
+  </script>
+</body>
+</html>

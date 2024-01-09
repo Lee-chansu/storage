@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>배열</h1>
+  <script>
+    let arr = ['apple', 'banana','cherry']
+    console.log(arr)
+    console.log("arr 길이(갯수) : " + arr.length)
+    console.log(arr[0])
+    
+
+    arr.push('durian') // 마지막에 값추가
+    arr.push('grape')
+    arr.push('kiwi')
+    arr.push('lemon')
+
+    // if, while 섞여서 사용
+    console.log(arr.includes('apple')) // 찾는 값이 있냐? true/false
+    console.log(arr.includes('avocado'))
+
+    console.log(arr.indexOf('banana')) // 해당 값의 인덱스번호를 찾아준다
+    console.log(arr.indexOf('cherry')) 
+
+    // slice : 자르기, 원하는 구간을 자른다
+    // (시작점, 종료점-1) 잘라오기
+    let arr_slice = arr.slice(2,5) // 2, 3, 4 위치 값이 새로운 배열로 저장되어 출력
+    console.log(arr)
+    console.log(arr_slice) 
+
+    // splice : (시작점, 갯수) 시작점부터~개수만큼 배열에서 아이템 제거
+    // indexOf - 원하는 값의 인덱스번호를 찾아주는 역할
+    
+    arr.splice(3,5)
+    console.log(arr) // 제거하고 남은 것만 출력된다.
+
+    for(let i = 0; i < arr.length; i++){
+      console.log(arr[i])
+    }
+
+  </script>
+</body>
+</html>

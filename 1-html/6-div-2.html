@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2{background-color: yellow;}
+    p{background-color: pink;}
+    /* 영역을 묶어 놓으면, 한꺼번에 제어가 가능한 효과 
+      물건들을 - 바구니에 담아 놓고 크기를 정하거나 옮기는 효과가 생긴다
+      - 바구니 = 부모요소 / 물건 = 자식요소
+    */
+    /* 내용에 따라서 영역을 나누는 역할 */
+    *{margin: 0; padding: 0; box-sizing:border-box;}
+    .header{width: 100%; height: 100px; background-color: #ddd}
+    .content{width: 100%; display: flex;}
+    .content .aside{width: 30%; height: 500px;background-color: tomato;}
+    .content .main{width: 70%; height: 500px;background-color: turquoise;}
+    .footer{width: 100%; height: 100px; background-color: #ddd}
+  </style>
+</head>
+<body>
+  <!-- 웹페이지 레이아웃 작성 -->
+
+  <div class="header"></div>
+  <div class="content">
+    <div class="aside"></div>
+    <div class="main">
+      <div class="sec1">섹션1</div>
+      <div class="sec2">섹션2</div>
+      <div class="sec3">섹션3</div>
+      <div class="sec4">섹션4</div>
+    </div>
+  </div>
+  <div class="footer"></div>
+ 
+</body>
+</html>

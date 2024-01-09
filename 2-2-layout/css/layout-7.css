@@ -1,0 +1,195 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} 
+a{text-decoration: none;} 
+
+
+.header{width: 100%; margin: 0 auto; padding: 0 5vw ;background-color: #ddd;}
+
+/* h3{cursor: pointer;} */
+
+main{width: 100%; margin: 0 auto; }
+
+.content{width: 100%; padding: 5vw;}
+.content .title-wrap{margin: 0 0 40px;}
+.content .title-wrap .title{font-size: 32px; text-align: center; margin: 0 0 20px;}
+.content .item-wrap{width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+
+
+/* 
+  calc(계산식)
+  - 연산자 앞뒤로 띄어쓰기 반드시 있어야 함. 
+  - 단위 반드시 써야함.
+*/
+
+.visual{width: 100%; height: 500px; background-color: lightblue;}
+
+.con-1 .item-wrap .item{
+  width: calc((100% - 60px) / 3); height: 240px; margin: 0 0 30px; background-color: #ddd;
+  border-radius: 10px;
+}
+
+/* 거터 24px 줄이기 */
+@media screen and (max-width: 1024px){
+  .con-1 .item-wrap .item{width: calc((100% - 48px) / 3); margin: 0 0 24px;}
+}
+@media screen and (max-width: 768px){
+  .con-1 .item-wrap .item{width: calc((100% - 24px) / 2);}
+}
+
+/* 가상요소
+  요소 = element = 태그
+  html태그 존재x - css만들어주는 가상 요소
+  태그 1개당 - 2개씩 - after , before
+*/
+
+/* con2 영역 */
+.con-2 .item-wrap .item{position: relative; width: 25%; padding: 30px; text-align: center;}
+.con-2 .item-wrap .item::after{
+  content: ''; display: block;
+  position: absolute; right: 0; top: 25%;
+  width: 1px; height: 50%;
+  background-color: #444;
+}
+.con-2 .item-wrap .item:last-of-type::after{display: none;}
+
+.con-2 .item-wrap .item h3{margin: 0 0 20px; font-size: 28px;}
+.con-2 .item-wrap .item p{font-size: 18px;}
+
+/* 
+  .item -> 4 -> 1개  / 너비가 최대크기 제한
+  .item::after --> 오른쪽배치-> 아래쪽 가운데 / 너비 50%, 높이 1px
+
+  바꿔야 하는 속성들이 무엇인지? 체크하면서, 천천히 하나하나 생각하면서
+  그냥 막 작성x
+
+  그 다음에 만들어 보세요
+*/
+@media screen and (max-width:768px){
+  .con-2 .item-wrap{justify-content: center;}
+  .con-2 .item-wrap .item{width: 100%; max-width: 500px;}
+  .con-2 .item-wrap .item::after{width: 50%; height: 1px; left: 25%; top: 100%;}
+  /* (전체너비-자식너비)/2 = 숫자 - 가운데효과 */
+}
+
+
+.con-3 .info-wrap{}
+.con-3 .info-wrap .info-title{
+  display: flex; justify-content: flex-end; 
+  border-top: 2px solid #444;
+  border-bottom: 1px solid #444;
+}
+.con-3 .info-wrap .info-title .info-title-cell{width: 33.3333%;  padding: 30px 10px;}
+
+.con-3 .info-wrap .info-content{
+  display: flex; justify-content: flex-end; flex-wrap: wrap; 
+  border-bottom: 1px solid #444;
+}
+.con-3 .info-wrap .info-content .info-cell{width: 33.3333%; padding: 30px 10px;}
+
+.con-3 .info-wrap .second{text-align: center; }
+.con-3 .info-wrap .third{text-align: center; background-color: #eee;}
+
+@media screen and (max-width: 768px){
+  .con-3 .info-wrap .info-title .info-title-cell{width: 50%;}
+
+  .con-3 .info-wrap .info-content .info-cell{width: 50%;}
+  .con-3 .info-wrap .info-content .info-cell.first{width: 100%; text-align: center;}
+  .con-3 .info-wrap .info-content .info-cell.third{background-color: transparent;}
+  
+}
+
+
+
+
+
+
+
+.con-4 .item{
+  width: 50%; height: 300px; border: 1px solid black;
+  display: flex; flex-direction: column; 
+  justify-content: center; align-items: center;
+}
+.con-4 .item h2{
+  font: bold 40px 'inherit'; 
+}
+.con-4 .item p{font-size: 24px;}
+
+@media screen and (max-width: 1200px){
+  .con-4 .item h2{font-size: 28px;}
+  .con-4 .item p{font-size: 18px;}
+}
+@media screen and (max-width: 768px){
+  .con-4 .item{width: 100%; text-align: center;}
+}
+
+
+
+.con-5 .item-wrap .item{
+  width: calc((100% - 60px) / 3); height: 240px; margin: 0 0 30px; background-color: #ddd;
+  border-radius: 10px;
+}
+
+/* 거터 24px 줄이기 */
+@media screen and (max-width: 1024px){
+  .con-5 .item-wrap .item{width: calc((100% - 48px) / 3); margin: 0 0 24px;}
+}
+@media screen and (max-width: 768px){
+  .con-5 .item-wrap .item{width: calc((100% - 24px) / 2);}
+}
+
+.con-6{}
+.con-6 .question-list{width: 100%; ;}
+.con-6 .question-list .question-item {width: 100%; margin: 0 0 30px;background-color: #eee;}
+.con-6 .question-list .question-item .question{
+  padding: 30px; 
+  font: bold 24px 'inherit';
+}
+.con-6 .question-list .question-item .answer{ 
+  width: 100%; height: 0; overflow: hidden;
+  font-size: 20px; line-height: 1.5;
+  transition: 0.3s;
+}
+.con-6 .question-list .question-item .answer p{ padding : 0 30px 30px; }
+.con-6 .question-list .question-item .answer.view{ height: 100px;}
+
+@media screen and (max-width: 768px){
+
+  .con-6 .question-list .question-item .question{font-size: 20px}
+  .con-6 .question-list .question-item .answer{font-size: 16px}
+}
+
+
+
+
+.footer{
+  width: 100% ;margin: 0 auto;  padding: 40px 5vw ; background-color: #ddd;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.footer .logo{}
+.footer .menu{}
+.footer .menu .list{margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center;}
+.footer .menu .list li a{padding: 10px 12px; font-size: 13px;}
+.footer .info{display: flex;flex-wrap: wrap; justify-content: center;}
+.footer .info p{text-align: center; margin: 0 0 20px;}
+.footer .info p span{font-size: 13px;line-height: 1.5; text-align: center;}
+.footer .info p span::after{content: ' | ';}
+
+
+/* 
+  상대크기 : em, rem - 기준 : 폰트크기
+
+  브라우저의 너비/높이를 기준으로 하는 단위 : 
+  - viewport width : vw
+  - viewport height : vh
+
+  100vw = 현재 뷰포트의 전체 너비
+  100vh = 현재 뷰포트의 전체 높이
+
+  고정 : px
+  가변 :
+  - .box의 너비 : % 
+  - 좌우패딩 : vw, vh, rem
+  - 폰트 : vw, vh, rem
+
+*/

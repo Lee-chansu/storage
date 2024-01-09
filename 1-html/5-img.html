@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 이미지 넣기 -->
+  <!-- 
+    구글에서 좋아하는 이미지 3개 저장해놓으세요. 
+    images 폴더 안에 넣기.
+
+    src와 alt 필수 속성 - 절대 생략x, 반드시 써야함.
+    src : 이미지 경로
+    alt : 대체 텍스트 (시각장애인, 이미지를 이해할 수 있는 수준의 텍스트를 제공)
+  -->
+
+  <img src="images/1.png" alt="뜸 합니다, 개바쁨, 도장이미지">
+  
+  <div>
+    <img src="images/2.png" alt="더 나은 미래를 위한 일, 2019.12.3~4. 서울특별시청 다목적홀">
+    <h3>Decent Work City</h3>
+    <p>더 나은 미래를 위한 일</p>
+    <p>포스터에 대한 주요 내용 안내</p>
+  </div>
+  
+  <img src="images/3.jpg" alt="seoul forum 2023, 보건의로, 경제 안보의 핵심, 첨단 바이오 시대를 열자, 워커힐 서울 호텔, 2023.5.31-6.1">
+
+  <!-- alt 내용을 안써도 경우, 옵션자체는 무조건 써준다
+    alt =""
+  -->
+  
+  <!-- case1 -->
+  <div>
+    <!-- 이미지에 준하는 내용이 뒤에 텍스트 제공이 된다면 생략도 가능하다 -->
+    <img src="images/2.png" alt="">
+    <p>직장인 속마음</p>
+  </div>
+  <!-- case2 -->
+  <!-- 이미지가 장식용도 넣는 것일때, 의미가 없는 이미지 -->
+  <div>
+    <p><img src="images/icon.png" alt="" style="width:16px"><span> 이 내용은 이미지를 넣는 실습이에요</span></p>
+    <p><img src="images/icon.png" alt="" style="width:16px"><span> 이 내용은 이미지를 넣는 실습이에요</span></p>
+    <p><img src="images/icon.png" alt="" style="width:16px"><span> 이 내용은 이미지를 넣는 실습이에요</span></p>
+  </div>
+  
+
+</body>
+</html>

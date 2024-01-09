@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{width: 800px; border-spacing: 0; border-collapse: collapse;}
+    td{border: 1px solid black;}
+    
+    td[colspan]{background-color: pink;}
+    td[rowspan]{background-color: yellow;}
+
+  </style>
+</head>
+<body>
+  <!-- emmet  : 자동완성
+  
+    태그 
+    > : 자식요소
+    * : 개수
+    {} : 내용
+    $ : 순번
+  
+  -->
+  <h2>표연습2</h2>
+  <table>
+    <tr>
+      <td colspan="3">1-1</td>
+      <td colspan="3">1-2</td>
+    </tr>
+    <tr>
+      <td rowspan="2">2-1</td>
+      <td colspan="2">2-2</td>
+      <td rowspan="2">2-3</td>
+      <td colspan="2">2-4</td>
+    </tr>
+    <tr>
+      <td>3-1</td>
+      <td>3-2</td>
+      <td>3-3</td>
+      <td>3-4</td>
+    </tr>
+    <tr>
+      <td rowspan="2">4-1</td>
+      <td>4-2</td>
+      <td>4-3</td>
+      <td rowspan="2">4-4</td>
+      <td>4-5</td>
+      <td>4-6</td>
+    </tr>
+    <tr>
+      <td>5-1</td>
+      <td>5-2</td>
+      <td>5-3</td>
+      <td>5-4</td>
+    </tr>
+    <tr>
+      <td>6-1</td>
+      <td colspan="2">6-2</td>
+      <td>6-3</td>
+      <td colspan="2">6-4</td>
+    </tr>
+  
+  </table>
+  <h2>표연습3</h2>
+  <table>
+    +
+  </table>
+</body>
+</html>

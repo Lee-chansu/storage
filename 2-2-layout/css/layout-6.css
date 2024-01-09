@@ -1,0 +1,173 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} 
+a{text-decoration: none;} 
+
+/* common */
+html{font-size: 16px;}
+.content{width: 100%; padding: 120px 0;}
+.inner{width: 1170px; margin: 0 auto;}
+
+.content.full{padding: 0;}
+.content.full .inner{width: 100%;}
+
+.content .title{margin: 0 0 40px; font: bold 1.75rem 'inherit'; text-align: center; color: #444;}
+.content .wrap{display: flex; flex-direction: row; flex-wrap: wrap;justify-content: space-between;}
+.content .box{height: 300px; border: 1px solid red;}
+
+
+@media screen and (max-width: 1200px) {
+  .content{padding: 120px 40px;}
+  .inner{width: 100%;}
+}
+@media screen and (max-width: 768px) {
+  html{font-size: 14px;}
+}
+
+/* 
+  부모에게 flex 지정
+  - 자식들 배치 row방향
+  - 세로 가운데 정렬 
+  nowrap -  align-item
+  wrap - align-content
+*/
+
+
+
+/* header */
+.header{width: 100%; }
+.header .inner{height: 80px; display: flex; justify-content: space-between; align-items: center;}
+.header .logo a{display: block; line-height: 50px;}
+
+.header .gnb-wrap{background-color: yellow;}
+#gnb{display: flex;}
+#gnb > li{}
+#gnb > li > a{display: block; line-height: 50px; padding: 0 30px;}
+
+.header .toggle-btn{
+  display: none; width: 30px; height: 36px; padding: 0;
+  background-color: transparent; border: 0;
+}
+
+.header .toggle-btn span{ /* 인라인 태그 - 블록으로 바꾸는 이유? 너비, 높이 지정*/
+  display: block; width: 100%; height: 3px; margin: 7px 0;
+  background-color: #444; 
+}
+
+@media screen and (max-width:1024px) {
+  .header{padding: 0 40px;}
+  .header .gnb-wrap{
+    display: none; /*화면에서 안보이게*/
+    position: fixed; right: 0; top: 80px;
+    width: 300px; height: 100%;
+  }
+  
+  .header .gnb-wrap.active{display: block;}
+
+
+  #gnb > li > a{display: block; line-height: 50px; padding: 0 0 0 40px;}
+  #gnb{display: block;}
+
+  .header .toggle-btn{display: block;}
+}
+
+
+/* visual */
+.visual{width: 100%; height: 500px; background-color: lightblue;}
+
+/* con1 */
+.con1 .box{width: 570px; margin: 0 0 1.875rem;}
+
+@media screen and (max-width: 1200px) {
+  .con1 .box{width: 48.5%; }
+}
+@media screen and (max-width:768px) { 
+  
+}
+
+@media screen and (max-width:480px) {
+  .con1 .box{width: 100%;}
+}
+
+
+/* con2 */
+.con2 .box{width: 50%;}
+@media screen and (max-width:768px) { 
+  .con2 .box{width: 100%;}
+}
+
+/* con3 */
+.con3 .box{width: 370px;}
+@media screen and (max-width: 1200px) {
+  .con3 .box{width: 31.333%; }
+}
+@media screen and (max-width:768px) { 
+  .con3 .wrap{justify-content: center;}
+  .con3 .box{width: 100%; max-width: 370px; margin:  0 0 1.5em;}
+}
+
+@media screen and (max-width:480px) {
+  
+}
+
+/* con4 */
+.con4 .box{width: 50%;}
+@media screen and (max-width: 768px) {
+  .con4 .box{width: 100%; }
+}
+
+/* con5 */
+.con5 .box{width: 100%;}
+
+
+
+/* footer */
+.footer{width: 100%; padding: 80px 0; background-color: #ddd;}
+.footer .inner{display: flex; justify-content: space-between;}
+
+.footer .menu .info-menu .list{display: flex;}
+.footer .menu .info-menu .list > li{}
+.footer .menu .info-menu .list > li > a{display: block; padding: 0 30px; line-height: 30px;}
+
+.footer .menu .sns{text-align: right; background-color: pink;}
+.footer .menu .sns a{padding: 0 10px; line-height: 30px;}
+
+
+
+
+
+/* em, rem 단위
+  상대크기 : 폰트기준. 상대크기
+  em : 부모의 폰트 크기를 = 1em 기준 잡는다.
+  rem : html의 최상의 태그의 폰트 크기를 1em 잡는다.
+
+
+  * 차이점
+  p:nth-child(n)
+  - 자식 중에서 li가 n번째 요소면 선택
+   ex)  p:nth-child(3)  --> 3번자식에 p태그이면 선택 - 적용x
+        p:nth-child(4) --> 4번자식에 p태그이면 선택 - 적용o
+
+  p:nth-of-type()
+  - p태그만 다 선택 - 그 중에서 n번째 선택
+
+  ex)   p:nth-of-type(3) ---  <p>4</p>
+        p:nth-of-type(4) ---  <p>6</p>
+
+    <p>1</p>  -- p1
+    <p>2</p>  -- p2
+    <p>4</p>  -- p3
+    <p>6</p>  -- p4
+  
+
+  <div>
+    <p>1</p>
+    <p>2</p>
+    <a href="">3</a>
+    <p>4</p>
+    <a href="">5</a>
+    <p>6</p>
+    <a href="">7</a>
+  </div>
+
+*/
+

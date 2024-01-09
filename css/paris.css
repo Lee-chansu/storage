@@ -41,8 +41,8 @@ padding: 0 10px;}
 
 /*visual*/
 .visual{width: 100%;}
-.visual .inner{width: 100%; padding-bottom: 80px;}
-.visual .inner .container{width: 100%; padding: 0; flex-wrap: nowrap;
+.visual .inner{width: 100%; padding: 0 0 80px;}
+.visual .inner .container{width: 100%; padding: 0; margin: 0; flex-wrap: nowrap;
 overflow: hidden;}
 .visual .inner .container > .banner{width: 33.3%;}
 

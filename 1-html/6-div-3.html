@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2{background-color: yellow;}
+    p{background-color: pink;}
+    /* 영역을 묶어 놓으면, 한꺼번에 제어가 가능한 효과 
+      물건들을 - 바구니에 담아 놓고 크기를 정하거나 옮기는 효과가 생긴다
+      - 바구니 = 부모요소 / 물건 = 자식요소
+    */
+    /* 내용에 따라서 영역을 나누는 역할 */
+    *{margin: 0; padding: 0; box-sizing:border-box;}
+    .header{width: 100%; height: 100px; background-color: #ddd}
+    .content{width: 100%; display: flex;}
+    .content .aside{width: 30%; height: 500px;background-color: tomato;}
+    .content .main{width: 70%; height: 500px;background-color: turquoise;}
+    .footer{width: 100%; height: 100px; background-color: #ddd}
+  </style>
+</head>
+<body>
+  <!-- 웹페이지 레이아웃 작성 -->
+  <!-- 
+    div : 영역태그 , 일반적으로 묶을 때
+
+    시맨틱 태그 = 의미를 부여한 태그 (화면 낭독기=스크린 리더, 읽어줌)
+
+    (영역)
+    header : 헤더 영역
+    footer : 푸터 영역
+    aside : 사이드바 
+    main : 메인 컨텐츠가 들어가는 곳
+    section : 주제별로 묶을 때
+    article : 블로그, 뉴스 등, 별도의 독립적인 컨텐츠로 분리가능한 내용을 묶을 때
+    nav : 메뉴 영역을 묶을 때
+
+    (내용)
+    strong : 강한 강조
+    em : 약한 강조
+
+   -->
+
+  <!-- 
+    태그.클래스명 
+    태그#아이디명 
+  -->
+  <!-- section.sec-$*4 -->
+
+  <header class="header"></header>
+  <div class="content">
+    <aside class="aside"></aside>
+    <main class="main">
+      <section class="sec-1">섹션1</section>
+      <section class="sec-2">섹션2</section>
+      <section class="sec-3">섹션3</section>
+      <section class="sec-4">섹션4</section>
+    </main>
+  </div>
+  <footer class="footer"></footer>
+ 
+</body>
+</html>

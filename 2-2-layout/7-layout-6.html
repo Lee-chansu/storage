@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/layout-6.css">
+</head>
+<body>
+  
+  <header class="header">
+    <div class="inner">
+      <h1 class="logo"><a href="#">LOGO</a></h1>
+      <nav class="gnb-wrap">
+        <ul id="gnb">
+          <li><a href="#">home</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">blog</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">conacts</a></li>
+        </ul>
+      </nav>
+      <!-- toggle - switch / on/off 반복 -->
+      <button type="button" class="toggle-btn" id="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <section class="visual"></section>
+  <section class="con1 content">
+    <div class="inner">
+      <h2 class="title">Title1</h2>
+      <div class="wrap">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+    </div>
+  </section>
+  <section class="con2 content full">
+    <div class="inner">
+      <div class="wrap">
+        <div class="box">1</div>
+        <div class="box">
+          <h2 class="title">Title2</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="con3 content">
+    <div class="inner">
+      <h2 class="title">Title3</h2>
+      <div class="wrap">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+    </div>
+  </section>
+  <section class="con4 content">
+    <div class="inner">
+      <h2 class="title">Title4</h2>
+      <div class="wrap">
+        <div class="box">1</div>
+      </div>
+    </div>
+  </section>
+  <section class="con5 content">
+    <div class="inner">
+      <h2 class="title">Title5</h2>
+      <div class="wrap">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="inner">
+      <div class="info">
+        <h1 class="logo"><a href="#">logo</a></h1>
+        <p class="copyright">@copyright</p>
+      </div>
+      <div class="menu">
+        <nav class="info-menu">
+          <ul class="list">
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Plugins</a></li>
+            <li><a href="#">Themes</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">GitHub</a></li>
+          </ul>
+        </nav>
+        <div class="sns">
+          <a href="#">★</a>
+          <a href="#">★</a>
+          <a href="#">★</a>
+          <a href="#">★</a>
+          <a href="#">★</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- 외부 스크립트 파일 연결 -->
+  <script>
+    /*
+      1) 토글버튼 선택하고
+      2) 상태 저장 ( 열린, 닫힌 상태인지 )
+      3) 토글버튼에 클릭 이벤트 연결 
+      4) 동작할 내용을 쓴다
+        isOpen 상태가
+        - true 이면 gnb-wrap을 보인다
+        - false 이면 gnb-wrap이 안 보인다
+    */
+
+    let toggle = document.querySelector('.toggle-btn')
+    let gnbWrap = document.querySelector('.gnb-wrap')
+    let isOpen = false;
+
+    toggle.addEventListener('click', function(){
+      // true, false를 체크를 해서, 동작을 다르게 해준다.
+
+      isOpen = !isOpen // T->F, F->T
+      if(isOpen){
+        gnbWrap.classList.add('active') // active클래스 추가
+      }else{
+        gnbWrap.classList.remove('active') // active클래스 제거
+      }
+    });
+
+    window.addEventListener('resize', function(){
+      // 브라우저 사이즈 변경 될 때마다
+      let winWidth = this.innerWidth
+      if(winWidth > 1024){
+        gnbWrap.classList.remove('active')
+      }
+
+    })
+
+  </script>
+</body>
+</html>

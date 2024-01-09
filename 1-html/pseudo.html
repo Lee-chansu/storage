@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      블록태그 
+      - 위아래로 쌓인다
+      - 기본너비 : 100%, 높이 : 자식 크기 합산
+      Q. 나란히 배치?
+      - 부모요소 : display: flex 적용
+      - grid 방식도 있음
+
+      인라인
+      - 글자처럼 취급(자간 0), 나란히 
+      - 기본 너비/크기 - 자기 크기만큼만
+      - 너비, 높이, 마진, 패딩 -x   (좌우 적용0)
+      Q. 인라인 -> 블록으로 변경하는 경우 많다. 왜? 너비/높이 적용
+      - a, span, 가상요소 (strong, em)
+
+
+      인라인블록
+      - img, input
+      - 기본 너비/크기 - 자기 크기만큼만 / 나란히 배치  /글자처럼 취급(자간0)
+      - 너비, 높이, 마진, 패딩 0
+    
+      가상요소 : html 존재x, css 만들어준 요소
+      - 원본요소의 [내용]을 중심으로 앞/뒤에 생성된다.
+      - 가상요소의 부모는 원본이다
+
+      포지션 : absolute 지정했을 때, 부모를 따로 지정 안하면,
+      body태그가 부모가 된다.
+    
+    */
+
+
+    /* 
+      ::after{content : ''}  = 가상요소
+      가상요소는 인라인 - 너비, 높이 적용x
+      적용하고 싶어서? display : block
+      width, height 적용
+
+      보여야 하니까 : 배경넣어놓음
+
+      위치를 부모기준으로 좌표값 지정해서 배치
+      가상요소의 부모? 원본요소
+      - 원본 .box - position : relative 적용
+      - 자식 가상요소 - .box::after{}  -- position : absolute 적용
+
+      top 위치 - (부모높이-자식높이) / 2 = 숫자 (가운데 효과)
+              (100 - 50) / 2 = 25%
+    
+    */
+  
+    .box{ 
+      position: relative ;
+      width: 200px;height: 100px; background-color: pink;
+      transition: 0.3s; overflow: hidden;
+    }
+    .box:hover{height: 200px;}
+    .box::after{ content: ''; 
+      display: block;
+      position: absolute; right: 0; top: 25%;
+      width: 10px; height: 50%;
+      background-color: red;
+  }
+  
+
+    .list p::before{content:'- '}
+    .member .name::after{content: '님 귀하';}
+
+    
+
+  </style>
+</head>
+<body>
+  
+<h2>가상요소 - pseudo</h2>
+<div class="box">pseudo</div>
+
+<div class="list">
+  <p href="#">테스트</p>
+  <p href="#">테스트</p>
+  <p href="#">테스트</p>
+  <p href="#">테스트</p>
+ 
+</div>
+
+<div class="member">
+  <p class="name">홍길동</p>
+  <p class="name">홍길동</p>
+  <p class="name">홍길동</p>
+  <p class="name">홍길동</p>
+</div>
+
+</body>
+</html>

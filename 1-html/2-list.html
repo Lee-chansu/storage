@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>목록태그</h1>
+  <h2>기호 목록</h2>
+  <p>웹표준 규칙 : ul, ol 바로 밑의 하위에는 li 태그만 적을 수 있다.</p>
+  <ul>
+    <li>사과</li>
+    <li>배</li>
+    <li>대추</li>
+  </ul>
+
+  <h2>숫자 목록</h2>
+  <ol>
+    <li>사과</li>
+    <li>배</li>
+    <li>대추</li>
+  </ol>
+
+  <h2>제목 목록</h2>
+  <!-- dl 하위에는 dt, dd만 적을 수 있다. -->
+  <h3>코리아 it 아카데지 지점 소개</h3>
+  <dl>
+    <dt>강남지점</dt>
+    <dd>서울시 강남구 000 </dd>
+    <dd>02-000-0000</dd>
+
+    <dt>신촌지점</dt>
+    <dd>서울시 마포구 000</dd>
+    <dd>02-000-0000</dd>
+
+    <dt>인천지점</dt>
+    <dd>인천광역시 부평구 000</dd>
+    <dd>032-000-0000</dd>
+  </dl>
+
+  <h2>중첩 목록</h2>
+  <ul>
+    <li>과일
+      <ul>
+        <li>키위</li>
+        <li>바나나</li>
+        <li>파인애플</li>
+      </ul>
+    </li>
+    <li>야채
+      <ol>
+        <li>치커리</li>
+        <li>배추</li>
+        <li>상추</li>
+      </ol>
+    </li>
+  </ul>
+
+  <h2>잘못된 중첩 목록 코드</h2>
+  <p>case 1  - 이렇게 코딩x</p>
+  <ul class="list">
+    <li>과일</li>
+    <ul>
+      <li>사과</li>
+      <li>사과</li>
+      <li>사과</li>
+    </ul>
+    <li>야채</li>
+    <ul>
+      <li>배추</li>
+      <li>배추</li>
+      <li>배추</li>
+    </ul>
+    <p>case 2  - 이렇게 코딩x</p>
+    <ul>
+      <p>야채</p>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </ul>
+</body>
+</html>

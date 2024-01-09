@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .box{width: 300px; border: 1px solid #444;}
+    
+    .box .menu{
+      width: 100%; padding: 10px; 
+      background-color: transparent;
+      border: none; outline: none;
+      text-align: left;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .box .menu.on{background-color: pink;}
+
+    /* 패딩이 높이 안에 포함이 안되기 때문에,
+       max-height를 0을 적용해도, padding이 남아 있다.
+       max-height를 통해서 값을 감추는 요소의 경우, padding을 적용x
+    */
+    .box .panel{
+      width: 100%;
+      background-color: #eee;
+      max-height: 0; 
+      overflow: hidden; /* 자식 요소가 부모보다 넘치면 감춰라 */
+      transition: 0.3s;
+    }
+    /* 자식요소가 부모의 높이 안에 포함이 되기 때문에 감출수 있다. */
+    .box .panel > div{padding: 30px;}
+    
+    /* box와 on클래스가 동시에 적용된 경우 css */
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <button class="menu">메뉴1</button>
+    <div class="panel">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo provident fuga nostrum modi maiores fugit explicabo? Veniam ratione nisi ea! Eligendi beatae ipsa rem enim nam accusantium quis tenetur aliquam.</div>
+      
+    </div>
+  </div>
+  <div class="box">
+    <button class="menu">메뉴2</button>
+    <div class="panel">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo provident fuga nostrum modi maiores fugit explicabo? Veniam ratione nisi ea! Eligendi beatae ipsa rem enim nam accusantium quis tenetur aliquam.</div>
+      
+    </div>
+  </div>
+  <div class="box">
+    <button class="menu">메뉴3</button>
+    <div class="panel">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo provident fuga nostrum modi maiores fugit explicabo? Veniam ratione nisi ea! Eligendi beatae ipsa rem enim nam accusantium quis tenetur aliquam.</div>
+      
+    </div>
+  </div>
+  <script src="javascript/js-basic-1-ex-1.js"></script>
+  
+</body>
+</html>

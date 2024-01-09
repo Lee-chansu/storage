@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- href="" 안에 css파일 경로 적어주기 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 레이아웃 작성할 때, 아래와 같이 기본 태그를 잡는다. -->
+  <header class="header">
+    <div class="inner">
+      <h1 class="logo"><a href="#">LOGO</a></h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portpolio</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="visual"></section>
+    
+    <!-- section.con$*3.content>.inner -->
+    <section class="board content">
+      <div class="inner">
+        <h2 class="title">게시판</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>날짜</th>
+              <th>조회수</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- tr*5>td{$}+td{제목$}+td{작성자$}+td{2024-01-02}+td{3} -->
+            <tr>
+              <td>1</td>
+              <td>제목1</td>
+              <td>작성자1</td>
+              <td>2024-01-02</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>제목2</td>
+              <td>작성자2</td>
+              <td>2024-01-02</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>제목3</td>
+              <td>작성자3</td>
+              <td>2024-01-02</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>제목4</td>
+              <td>작성자4</td>
+              <td>2024-01-02</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>제목5</td>
+              <td>작성자5</td>
+              <td>2024-01-02</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+
+
+        </table>
+      </div>
+    </section>
+    <section class="bestItem content">
+      <div class="inner">
+        <h2 class="title">Best 아이템</h2>
+        <!-- 큰 영역 외에는 나머지는 묶어주려면 div로 구분한다 / span으로 하는 경우도 있음(나중에 설명) -->
+        <div class="wrap">
+          <div class="box">
+            <div class="pic"><img src="images/ddockbbocki.jpg" alt="오리지널 국물 떡볶이"></div>
+            <div class="info">
+              <p>오리지널 떡볶이</p>
+              <p>가격 : 3000원</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="pic"><img src="images/ddockbbocki.jpg" alt="오리지널 국물 떡볶이"></div>
+            <div class="info">
+              <p>오리지널 떡볶이</p>
+              <p>가격 : 3000원</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="pic"><img src="images/ddockbbocki.jpg" alt="오리지널 국물 떡볶이"></div>
+            <div class="info">
+              <p>오리지널 떡볶이</p>
+              <p>가격 : 3000원</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="con3 content">
+      <div class="inner"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="inner">
+
+    </div>
+  </footer>
+</body>
+</html>

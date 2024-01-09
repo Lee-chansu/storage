@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>for문</h1>
+  <p>일반적인 for문</p>
+  <p>향상된 for문</p>
+  <p>향상된 for문으로 배열 or 객체 출력할 때</p>
+  
+  <script>
+    let arr = [10, 20, 30]
+    let obj = { a : 'apple', b : 'banana', c:'cherry'}
+
+    // 일반적인 for문
+    console.log('------일반적인 for문 -------')
+    for(let i = 0; i < arr.length; i++){
+      console.log(arr[i])
+    }
+
+    // 향상된 for문 - 배열
+    console.log('------향상된 for문 - 배열-------')
+    for(let 변수 in arr){
+      console.log(변수, arr[변수]) // array는 변수에 인덱스가 담긴다.
+    }
+
+    // 향상된 for문 - 객체
+    console.log('------향상된 for문 - 객체-------')
+    for(let 변수 in obj){
+      console.log(변수, obj[변수]) // object는 변수에 key가 담긴다.
+    }
+
+
+    let element = {
+      name : 'noname',
+      age : 20,
+      array : [100, 200, 300],
+      object : {a : 'apple', b : 'banana', c : 'cherry'},
+      method : function(){
+        console.log('---객체 안의 배열 출력----')
+        for(let idx in this.array){
+          console.log(this.array[idx])
+        }
+        console.log('----객체 안의 객체 출력----')
+        for(let key in this.object){
+          console.log(this.object[key])
+        }
+      }
+    }
+    console.log('-------객체의 메서드 호출 -------')
+    element.method()
+
+
+    
+    
+    
+  </script>
+</body>
+</html>

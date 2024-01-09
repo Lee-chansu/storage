@@ -1,0 +1,125 @@
+/*
+  * :모든 선택자, 모든 요소 선택해라 
+  margin: 바깥여백, 
+  padding: 안쪽여백.
+
+  margin : 20px;  --> 4방향 적용
+  margin : 20px 30px;  --> 상하, 좌우 방향 적용
+  margin : 20px atuo; --> 좌우를 균등분할 -> 가운데 맞춤 효과
+ 
+  box-sizing: border-box;
+  
+  - content-box (기본값)
+  - 내용영역 / 패딩/ 테두리 - 다 별도로 계산을 함. 
+    ex) 너비, 300px, 패딩 20px, 태두리 10px
+    300 + 20* 2 + 10*2 = 360px 화면을 차지하게 된다.
+
+  ★★★★★ border-box (옵션)
+  - 내용영역 / 패딩/ 테두리 
+  - 내용영역에 패딩, 테두리를 포함해서 계산을 함(내용 영역이 줄어듦)
+    ex) 너비, 300px, 패딩 20px, 태두리 10px
+    300안에 20* 2 + 10*2 모두 포함이 된다
+    - 내용영역이 줄어든다. 
+    - 300 - 20*2 - 10*2 = 240px ---- 실제 내용영역이 된다.
+ */
+ /* 
+  width : 너비 - px(고정크기) , %(상대크기)
+  hegiht : 높이
+  margin : 바깥여백 - 옆의 요소들과의 간격이 생긴다
+      - ex) margin : 0 auto;  ---> 위아래 마진 없음, 좌우 auto니까 가운데 정렬 효과
+
+  padding : 안쪽여백 - 테두리와 내용 사이에 간격이 샌긴다.
+    - ex) padding : 150px 0 ; ----> 위아래 패딩 150px, 좌우 없음
+
+  border : 1px solid blue; -  테두리 속성 지정 - 순서 상관없음, 선굵기/선종류/선색
+*/
+
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} /* 목록태그의 리스트 기호/알파벳 모양을 지정 - none 지정x*/
+a{text-decoration: none;} /* a태그 기본 서식 - 밑줄을 없애겠다 */
+
+/*  처음부터 공통서식을 어떤 것으로 사용할지 정해놓고 -> 기록 -> 개별
+    하다보니-> 공통된게 보여서 정리하는 방법
+*/
+/* inherit : 부모의 내용을 상속받다 - 
+  기본글꼴 - 맑은 고딕
+*/
+
+/* 반응형 css 만들어주는 역할 
+
+미디어 쿼리(조건) 중단점
+  - 해당 미디어에 조건을 지정해서, css 바뀌는 지점을 만들어 주는 것
+  
+  @media screen and (max-width: 1200px) {}
+  
+  - 미디어가 스크린인 것에 = 해당하는 조건이 맞으면 css 적용
+  - 조건 붙이는 방법 :  and (속성 : 값) {}
+
+    - 최대 너비가 1200px 일 때 까지는, {}의 css 적용
+    - 상위에 써주었던 css가 상속이 된다(그대로 내려와서 적용이 된다.)
+    - 그래서 변경되는 부분의 css만 작성해주면 된다.
+
+*/
+
+.inner{width: 1170px; margin: 0 auto;}
+
+.content{width: 100%; padding: 150px 0;}
+.content .title{margin-bottom: 40px; font: bold 24px 'inherit'; text-align: center;}
+
+.content .wrap{
+  display: flex; 
+  flex-direction: row;  /* 가로 방향으로 배치 */
+  justify-content:space-between; /* 양쪽정렬-균등분배*/
+  flex-wrap: wrap; /* 너비가 부족하면 자동으로 줄바꿈 해준다.*/
+}
+.content .box{height: 300px; margin-bottom: 24px; background-color: #ddd;}
+
+@media screen and (max-width: 1200px){
+
+  .inner{width: 100%;}
+  .content{padding: 120px 40px;}
+
+}
+@media screen and (max-width: 768px){
+  .content{padding: 80px 20px;}
+  .content .title{font-size: 20px;}
+}
+
+
+
+
+.header{width: 100%; height: 100px; background-color: #ddd;}
+
+
+.visual{width: 100%; height: 500px; background-color: lightblue;}
+
+.bestItem .box{width: 270px; }
+@media screen and (max-width: 1200px){
+  .bestItem .box{width: 22.25%; }
+}
+@media screen and (max-width: 768px){
+  .bestItem .box{width: 48.5%; }
+}
+
+
+.newItem .box{width: 370px; }
+@media screen and (max-width: 1200px){
+  .newItem .box{width: 31.333% }
+}
+@media screen and (max-width: 768px){
+  .newItem .box{width: 100% }
+}
+
+
+
+.board .box{width: 570px; }
+@media screen and (max-width: 1200px){
+  .board .box{width: 48.5%; }
+}
+
+
+
+
+.footer{width: 100%; height: 100px; background-color: #666;}

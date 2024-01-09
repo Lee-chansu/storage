@@ -1,0 +1,23 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} /* 목록태그의 리스트 기호/알파벳 모양을 지정 - none 지정x*/
+a{text-decoration: none;} /* a태그 기본 서식 - 밑줄을 없애겠다 */
+
+.header{width: 100%; height: 100px; background-color: #ddd;}
+.inner{width: 1170px; margin: 0 auto;}
+.inner.full{width: 100%;}
+
+.content{width: 100%;}
+.content .title{margin-bottom: 40px; font: bold 24px 'inherit'; text-align: center;}
+
+.content .wrap{display: flex; flex-direction: row; justify-content:space-between;}
+.content .box{height: 500px; background-color: #ddd; border: 1px solid black;}
+
+
+.visual{width: 100%; height: 500px; background-color: lightblue;}
+
+.bestItem .box{width: 25%; }
+.newItem .box{width: 33.3333%; }
+.board .box{width: 50%;}
+
+
+.footer{width: 100%; height: 100px; background-color: #666;}

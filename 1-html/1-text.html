@@ -1,0 +1,102 @@
+<!-- html5 버전이야! -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 문서 정보, 외부 파일 연결 -->
+  <meta charset="UTF-8">
+  <!-- 반응형 페이지를 만들기 위한 코드 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 페이지 제목, 웹브라우저 탭 표시될 문자 -->
+  <title>첫번째 실습</title>
+</head>
+<body>
+  <!-- 실제 내용이 표시되는 영역 -->
+  <!-- 주석 실습 : ctrl + / -->
+
+  <!-- 내용에 맞는 태그들을 붙여주어야 한다. -->
+  <!-- 
+
+    1. 텍스트 태그들
+      h1~h6 : h1 페이지내에서 한번만 사용한다( 로고 부분에)
+              h2 태그 - 각 섹션의 제목역할
+              순차적으로 자식으로 내려갈때마다 h의 숫자가 올라간다.
+              h1의 자식요소에서 ---- 제목 : h2
+              h2의 자식요소 중에서 --- 제목이 있다면 : h3...
+      p : 일반적인 텍스트 
+
+      2:30~40분까지 : 워드 4-5페이지 읽기  
+
+
+    2. 목록태그
+      1) 기호 목록
+      2) 숫자 목록
+      3) 제목 목록
+
+   -->
+
+  <h1>안녕! 프론트엔드!</h1>
+  <p>배울 내용 소개하겠습니다.</p>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ul>
+  <p>live Server 단축키 : Alt + L, O</p>
+  
+  <h2>설치한 플러그인들</h2>
+  <ul>
+    <li>korean - 한국어 패치</li>
+    <li>prettier - 들여쓰기 라인 정리</li>
+    <li>auto tag - 태그 수정하면, 닫는 태그 자동으로 수정.</li>
+    <li>indent rainbow - 들여쓰기 할때마다 같은 색상으로 라인을 보여줌.</li>
+    <li>Live Server - save를 하면 바로 결과물이 브라우저에 반영된다.</li>
+  </ul>
+
+  <h3>단축키</h3>
+  <p>ctrl + ,(콤마)  : 설정</p>
+  <p> brow 로 검색 - Liver Server : Chorome 설정 / </p>
+  <p> wrap 로 검색 - wrap - on 설정</p>
+
+  
+  <h3 style="background-color: yellow;">기타 텍스트 태그</h3>
+  
+  <p>dummy text. <strong>로렘입숨</strong> lorem ipsum. </p>
+  
+  <p style="border: 1px solid blue;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam neque excepturi sint voluptatem, velit maxime exercitationem iusto qui sit officia incidunt voluptates nemo consequatur necessitatibus esse accusantium? Aut, blanditiis. Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Dicta numquam neque excepturi sint voluptatem, velit maxime exercitationem iusto qui sit officia incidunt voluptates nemo consequatur necessitatibus esse accusantium? Aut, blanditiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam neque excepturi sint voluptatem, velit maxime exercitationem iusto qui sit officia incidunt voluptates nemo consequatur necessitatibus esse accusantium? Aut, blanditiis. </p>`
+
+  <p style="border: 1px solid red;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam neque excepturi sint voluptatem, velit maxime exercitationem iusto qui sit officia incidunt voluptates nemo consequatur necessitatibus esse accusantium? Aut, blanditiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam neque excepturi sint voluptatem, velit maxime exercitationem iusto qui sit officia incidunt voluptates nemo consequatur necessitatibus esse accusantium? Aut, blanditiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam neque excepturi sint voluptatem, velit maxime exercitationem iusto qui sit officia incidunt voluptates nemo consequatur necessitatibus esse accusantium? Aut, blanditiis. </p>
+
+
+  
+  <!-- pre 태그는 
+      텍스트 작성한 그대로 출력 
+      엔터, 들여쓰기 그대로 모두 출력이 된다.
+      - 코드를 브라우저에 표시하고 싶을때 - pre 태그
+      
+      p태그는 엔터, 들여쓰기
+      - 무시하고 출력된다. 브라우저 너비보다 내용이 많으면 자동 줄바꿈 한다.
+      -
+
+  -->
+  <pre>
+    &lt; script &gt;
+      alert('hello world');
+    &lt; /script &gt;
+  </pre>
+
+  <blockquote>
+    책, 기사, 뉴스 등 인용문을 쓸때, 이 태그를 사용한다. 자동으로 들여쓰기가 적용된다.
+  </blockquote>
+
+  <h2>인라인 태그</h2>
+
+  <ruby> 李蘭姬 <rt>이난희</rt></ruby>
+  <p> 일본어, 한자 표시를 하고, 히라가나 표기할 때 </p>
+
+
+  <abbr title="Internet of Things">IoT</abbr>
+  <p>약자 표시, title 속성에 단어의 의미를 작성한다.</p>
+ 
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>변수 선언 - let, const, var </h1>
+  <p>결론 : 일본적인 변수는 let으로 선언해 사용해라.</p>
+  <p>왜? var 선언은 호이스팅 문제 또는 기타 문제들이 있기 때문에.</p>
+  <script>
+  // 프로그래밍 - 기본 - 순차구조 = 위에서 아래로 순서대로 실행
+    /* 
+    호이스팅
+    - 함수에서 함수 정의(= 함수 선언)가 프로그램 아래쪽했어도, 최상단에 정의된 것처럼 끌어올리는 것.
+    - 그래서 함수 실행을 함수 정의보다 먼저해도 실행이 가능한 것이다. 
+    - 왜? 함수정의를 프로그램이 최상단으로 이미 끌어 올렸기 때문에 가능.
+    */
+  /* 
+    var 변수 선언은 호이스팅 ok 
+    - 아래 코드를 끌고 와서, i가 메모리상에 있는 것처럼 된다
+    - i를 선언하지 않고 사용하면, 기본값인 undefined로 출력된다.
+    - let  변수 선언은 호이스팅 허락x - 에러가 난다.
+  */
+  
+  // case 1
+  console.log(x)  // undefined 출력  
+  var x = 10;
+  console.log(x) // 10 출력
+
+  // case2
+
+  var a = 1;
+  document.write(a + '<br>')
+  var a = 2; // 재선언 하면 재선언한 것으로 바뀐다
+  document.write(a)
+
+  // case 3
+ // 전역변수 : {} 밖에서 선언 : 
+ // 지역변수 : {} 안에서 선언 - {} 안에서만 유효하다. 
+ // {} 안에서만 사용할 수 있다. 벗어나면 사용 못함(사라지기 때문에)
+  var n = 2
+  function foo(){
+    var m = 1
+  }
+  console.log(m) // 전역변수 - 출력
+  // console.log(m) // 에러 난다 - 정상, m 변수가 {} 벗어났기 때문에 사용x
+
+  for(var i = 1; i < 5 ; i++){
+    console.log(i)
+  }
+  // var로 선언하면 i가 소멸되지 않고 나타난다 - 비정상
+  // let으로 선언을 바꾸면 아래 값이 에러난다
+  console.log(i) // {}  벗어났는데 출력이됨 - 비정상
+
+  </script>
+</body>
+</html>

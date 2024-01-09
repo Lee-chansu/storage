@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* em 바로 직속부모의 기준
+      숫자가 같아도 크기가 다를 수 있다.
+      계층으로 내려갈 수록 배수가 될 수 있다.
+
+      root em 
+      root = 최상위 태그 = html태그
+      html태그의 폰트 사이즈를 기준으로 배수를 잡는다
+    */
+    .depth-1{font-size: 32px;}
+    .depth-2{font-size: 2em;}
+    .depth-3{font-size: 2em;}
+
+    html{font-size: 16px;}
+    .rem-1{font-size: 1rem;}
+    .rem-2{font-size: 2rem;}
+    .rem-3{font-size: 3rem;}
+    /* 
+    기준 크기 : 16px = 1 rem
+
+    24px
+
+    24 / 16 = 1.5rem
+    16 / 16 = 1rem
+    14 / 16 = 0.875rem
+    
+    */
+
+  </style>
+</head>
+<body>
+  <div class="depth-1">
+    폰트크기 16px
+    <div class="depth-2">
+      폰트크기 2em - 부모기준
+      <div class="depth-3">
+        폰트크기 2em - 부모기준
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="rem-1">
+    html 16px
+    <div class="rem-2">
+      rem폰트크기 2rem - root기준
+      <div class="rem-3">
+        rem폰트크기 3rem - root기준
+      </div>
+    </div>
+  </div>
+</body>
+</html>

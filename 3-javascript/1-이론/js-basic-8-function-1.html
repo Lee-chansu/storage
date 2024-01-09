@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>함수 - fuction</h1>
+  <p>일반적인 함수</p>
+  <p>이벤트에 함수 연결</p>
+  <p>객체 안에도 함수가 들어 갈 수 있다</p>
+  <button id="btn-1" type="button">버튼 클릭</button>
+  <script>
+
+/* 함수
+    - 어떤 일의 단위
+    - 자주 쓰는 내용을 묶어서 필요할 때 불러서 실행
+    - 변수 : 상태 값 저장 / 함수 : 동작
+
+  이름있는 함수 0 
+  이름 없는 함수  = 익명함수
+
+  // 익명함수를 써줄 수도 있고,
+  // 함수를 미리 정의해서 - 함수이름(매개변수) - 호출해서 넣어도 된다.
+*/
+
+
+// 2. 이벤트에 함수연결
+document.getElementById('btn-1').addEventListener('click', function(){
+  console.log('매개변수값1');
+} );
+
+document.getElementById('btn-1').addEventListener('click', 클릭 );
+
+function 클릭(){
+  console.log('매개변수값2')
+}
+
+// 3. 객체 안에 함수 = 메서드
+let student = {
+  이름 : '이아무개',
+  나이 : 36,
+  hobby : ['독서','스쿼시','음악감상'],
+  score : { 수학:80, 국어:95, 과학 : 75 },
+  printHobby : function(){
+    // 아래 구문을 향상된 for문으로 바꿔서 출력해보세요
+    for(let index in this.hobby){
+      console.log(this.hobby[index])
+    }
+  },
+  printScore : function(){
+    // 향상된 for문으로 score의 과목이름과 점수를 함께 출력하시오. 
+    for(let key in this.score){
+      console.log(key, " : ", this.score[key])
+    }
+  }
+}
+
+student.printHobby()
+student.printScore()
+
+
+/*
+function 함수이름( 변수1, 변수2 ){
+  // 실행할 동작
+  console.log(변수1)
+  console.log(변수2)
+}
+
+함수이름(1, 2)
+
+*/
+
+
+
+
+  </script>
+</body>
+</html>
