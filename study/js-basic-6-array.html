@@ -28,8 +28,39 @@
     
     //6.
     document.writeln(animals.indexOf("Red deer"));
-    
+    let idx = animals.indexOf("Red deer");
+    document.writeln("인덱스 번호 : "+animals[77]);
+    // document.writeln("변수에 담아서" + animals[idx]);
+    // document.writeln("indexOf이용 : " + animals[animals.indexOf('Red deer')]);
 
+    animals[idx] = 'Deer' //값 바꾸기
+    console.log(animals[77]);
+
+    //7.
+    start_i = animals.indexOf('Spider');
+    console.log(start_i);
+    console.log(animals.slice(start_i, start_i+3))
+    animals.splice(start_i, 3);
+
+    //8.
+    start_t = animals.indexOf('Tiger');
+    document.writeln(start_t);
+    animals.slice(start_t); //종료번호 생략하면 지정위치붙터 끝까지 삭제
+    document.writeln(animals.length)
+
+    //9.
+    //변수 선언한적이 없는데 사용이 가능? 어째서?
+    //var 선언이 붙은 것과 같은 효과가 적용된다.
+    x = animals.indexOf('Baboon');
+    y = animals.indexOf('Bison');
+
+    // slice(시작 인덱스, 종료인덱스)
+    // splice(시작 인덱스, 갯수)
+    arr_slice= animals.slice(x,y+1) //지운 부분만 따로 저장 가능
+    arr_splice= animals.splice(x,y-x+1) 
+
+    console.log(arr_slice);
+    console.log(arr_splice);
 
 </script>
 </body>
