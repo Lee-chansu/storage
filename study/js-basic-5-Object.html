@@ -6,11 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-<script src="../animal.js"></script>
 <script>
-    /*
-        
-    */
+let people = [
+    {name : '윤정현', age : 5, address : "bucheon"},
+    {name : '이찬수', age : 6, address : "incheon"},
+    {name : '유아린', age : 7, address : "bupyeong"}
+]
+console.log(people[0].name);
+console.log(people[1].age);
+console.log(people[2].address);
+
+let stList = [{
+    name : '이아무개',
+    score : {국어:85, 수학:75, 영어:80}
+},
+    
+    {name : '박아무개',
+    score : {국어:85, 수학:75, 영어:80}
+}]
+
+for(let i = 0; i < stList.length; i++){
+    document.write('<div class="box">')
+    document.write('<p> 국어 : '+stList[i].score.국어+'</p>')
+    document.write('<p> 수학 : '+stList[i].score.수학+'</p>')
+    document.write('<p> 영어 : '+stList[i].score.영어+'</p>')
+    document.write('</div>')
+
+}
+
 </script>
 </body>
 </html>

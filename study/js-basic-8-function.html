@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수</h1>
+    <button type="button" id="btn-1">버튼1</button>
+<script>
+    /*
+        -어떤 일의 단위
+        -자주 쓰는 내용을 묶어서 필요할 때 불러서 실행
+        -변수 상태 값 저장 / 함수 : 동작
+    */
+document.getElementById('btn-1').addEventListener('click', 클릭('매개변수값'));
+
+function 클릭(요소){
+    console.log(요소.innerText)
+}
+
+
+function 함수이름(변수1, 변수2) {
+    //실행할 동작
+    console.log(변수1);
+    console.log(변수2);
+}
+
+함수이름(1,2);
+</script>
+</body>
+</html>
