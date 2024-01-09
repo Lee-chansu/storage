@@ -38,6 +38,8 @@ padding: 0 10px;}
 
 /*body*/
 .main{width: 100%;}
+.section{width: 100%;}
+.section .inner{width: 100%; padding: 80px 0;}
 
 /*visual*/
 .visual{width: 100%;}
@@ -64,6 +66,25 @@ overflow: hidden;}
     padding: 5px;
     font-size: 0;
 }
+
+
+/*section 1*/
+.inner .title-wrap{display: flex; align-items: center; margin: 0 0 30px;}
+.title-wrap .title{text-align: left;}
+.title-wrap > span{text-align: right; text-decoration: underline;}
+
+/*section 2*/
+
+
+/*section 3*/
+
+
+/*section 4*/
+
+
+/*section 5*/
+
+
 
 /*footer*/
 .footer{width: 100%;}
