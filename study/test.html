@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //case 1
+        console.log(10 * i);    //nan; : not a number
+        console.log(i * 10);    //nan;
+        console.log(i);         //undefined;
+        var i = 10;
+        console.log(i);
+
+        //case 2
+        var a = 1;
+        document.write(a + '<br>');
+        var a= 2; //재선언하면 재선언한 것으로 바뀐다.
+        document.write(a);
+
+        //case 3
+        //전역변수 : {}밖에서 선언
+        //지역변수 : {}안에서 선언 -> {} 안에서만 사용이 가능하다.
+
+        var n = 2;
+        document.write('<br>'+n);
+
+        function foo(){
+            var m = '정신차리세요~~ 졸면 나가요!!';
+        }
+        // document.write(m);
+        for(var i = 0; i < 5; i++){
+            document.write(i + '<br>')
+        }
+        document.write(i + '<br>') //원래 출력이 되면 안된다.<-비정상
+        
+        for (var j = 0; j < 5; j++) {
+            document.write('출력해줘' + '<br>');
+        }
+        document.write(j) //출력할 수 없음.
+    </script>
+</body>
+</html>

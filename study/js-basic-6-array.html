@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src="../animal.js"></script>
+<script>
+    //1.
+    animals.pop('Zebra');
+    document.writeln(animals.includes('Zebra'))
+    
+    //2.
+    animals.push('Dog');
+    document.writeln(animals.includes('Dog'))
+
+    //3. 
+    animals.push('Mosquito', 'Mouse', 'Mull');
+    document.writeln(animals.includes('Mosquito'&& 'Mouse'&&'Mull'))
+
+    //4.
+    document.writeln(animals.includes("Human"));
+    
+    //5.
+    document.writeln(animals.includes("Cat"));
+    
+    //6.
+    document.writeln(animals.indexOf("Red deer"));
+    
+
+
+</script>
+</body>
+</html>
