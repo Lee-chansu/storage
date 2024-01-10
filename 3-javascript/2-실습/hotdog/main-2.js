@@ -11,8 +11,11 @@ for(let i of hotdog){
     let tag = ['', [], ''];
     
     tag [0] = `<div class="box">
+            <div class='img_box'>
             <img src="${i.img}" alt="${i.title}">
-            <p class="name">${i.title}${new_tag}${best_tag} </p>
+            </div>
+            <div class='content_box'>
+            <p class="name">${i.title} <br> ${new_tag}${best_tag}</p>
             <p>${i.content}</p>
             <p class="hashtag">`
 
@@ -23,7 +26,7 @@ for(let i of hotdog){
 
 
 
-    tag[2] = `</p></div>`
+    tag[2] = `</p></div></div>`
 
     result += tag[0] + tag[1] + tag[2];
 }
