@@ -1,10 +1,8 @@
 import hotdog from "./hotdog.js";
 
-
 let result = '';
 
 for(let i of hotdog){
-    
     let new_tag = (i.new) ? '<span class="new icon">New</span>' : '';
     let best_tag = (i.best) ? '<span class="best icon">Best</span>' : '';
 
@@ -19,12 +17,9 @@ for(let i of hotdog){
             <p>${i.content}</p>
             <p class="hashtag">`
 
-
     for(let j of i.hashtag){
         tag[1] += `<span>${j}</span>`
     }
-
-
 
     tag[2] = `</p></div></div>`
 
