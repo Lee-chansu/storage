@@ -6,12 +6,19 @@
     <title>Document</title>
     <style>
         *{margin: 0; padding: 0; box-sizing: border-box;}
-        .content{width: 100%; padding: 120px 0;}
+        body{background-color: black;}
+        .content{width: 100%; padding: 120px 0; display: flex; justify-content: center;}
         .inner{width: 1170px; margin: 0 auto;}
-        .content .title{margin: 0 0 40px; text-align: center;}
+        .content .title{
+            width: 500px;
+            margin: 0 0 40px; text-align: center; 
+            border-radius: 10px;
+            background-color: white}
         
+        .wrap{display: flex; justify-content: space-between; align-items: center;}
         .member .box{
-            width: 570px; margin: 0 0 30px; 
+            width: 570px; margin: 0 30px; 
+            background-color: white;
             border: 10px solid #eee; padding: 30px;
             border-radius: 10px;
         }
@@ -22,7 +29,9 @@
 <body>
     <section class="member">
         <div class="inner">
-            <h2>회원정보</h2>
+            <div class="content">
+            <h2 class="title">회원정보</h2>
+            </div>
             <div class="wrap">
                 
             </div>
