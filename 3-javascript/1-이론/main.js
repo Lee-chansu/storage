@@ -10,11 +10,15 @@ console.log(`전공 : ${member[0].전공}`); //백틱
 let tag = '';
 
 for(let i of member){
-    tag += `<div class="box"
+    let gender = (i.성별) ? '남자':'여자';
+    let check = (i.임원) ? 'check':'';
+
+    tag += `<div class="box ${check}"
         <p class="name">이름 : <span>${i.이름}</span></p>
         <p class="birth">생일 : <span>${i.생일}</span></p>
         <p class="master">전공 :  <span>${i.전공}</span></p>
         <p class="hoby">관심사 : <span>${i.관심사}</span></p>
+        <p class="gender">성별 : <span> ${gender} </span></p>
         </div>
         <hr>`;
 }
@@ -22,3 +26,6 @@ for(let i of member){
 let member_box = document.querySelector('.member .wrap');
 
 member_box.innerHTML = tag
+
+
+

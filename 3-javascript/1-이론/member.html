@@ -23,6 +23,9 @@
             border-radius: 10px;
         }
         .member .box p{margin: 0 0 5px;}
+        .member .box .check .name::after{content: '(임원)';
+        color: aqua;}
+
         .member .box:hover{box-shadow: 0 0 20px #ddd; border-color: transparent;}
     </style>
 </head>
@@ -32,8 +35,18 @@
             <div class="content">
             <h2 class="title">회원정보</h2>
             </div>
+            <div class="left">
+                <button class="left_btn" type="button">
+                    <
+                </button>
+            </div>
             <div class="wrap">
                 
+            </div>
+            <div class="right">
+                <button class="right_btn" type="button">
+                    >
+                </button>
             </div>
         </div>
     </section>
