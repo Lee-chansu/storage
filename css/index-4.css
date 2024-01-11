@@ -1,0 +1,76 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} 
+a{text-decoration: none;} 
+
+/* common */
+
+.inner{width: 100%; margin: 0 auto;}
+.content{width: 100%; padding: 120px 0;}
+
+/* .content.full{padding: 0;}
+.content.full .inner{width: 100%;} */
+
+@media screen and (max-width: 1200px) {
+    .content{padding: 120px 40px;}
+    .inner{width: 100%;}
+}
+
+@media screen and (max-width: 768px) {
+    html{font-size: 10px;}
+}
+
+.content .title{margin: 0 0 40px; font: bold 24px 'inherit'; text-align: center; color: #444;}
+.content .wrap{display: flex; flex-flow: row wrap;justify-content: space-between;}
+
+
+.hotdog .box{
+    width: calc((100% - 30px * 1) / 2); 
+    background-color: #f5f5f5;
+    display: flex;
+    position: relative;
+    margin: 20px 0;
+}
+.hotdog .box:hover{box-shadow: 0 0 20px #ddd; cursor:pointer;}
+.hotdog .box .pic{
+    width: 50%;
+    position: absolute; right: -60px;
+}
+
+/* img 태그 - 인라인블록
+    - 너비, 높이, 마진, 패딩 모두 적용 0
+    - 글자처럼 취급, 자간 0
+*/
+
+.hotdog .box .pic img{width: 100%; object-fit: contain; display: block;}
+
+.hotdog .box .info{width: 100%; padding: 30px 30% 30px 30px;}
+.hotdog .box .info .name{font-size: 18px; margin: 0 0 5px;}
+/*높이 = 줄간격 * 최대줄수 설정한다.
+    ex) line-height : 20px; 최대 줄수 : 4줄 / 높이=80px;
+*/
+
+.hotdog .box .info .txt{
+    font-size: 14px; 
+    margin: 0 0 5px; 
+    line-height: 20px;
+}
+.hotdog .box .info .hashtag{padding: 5px;}
+.hotdog .box .info .hashtag span{
+    background-color: #ddd; 
+    border-radius: 5px; 
+    border-color: transparent;
+}
+
+@media screen and (max-width:1024px) {
+    .hotdog .box{width: 100%;}
+    .hotdog .box .pic{height: 100%;}
+}
+
+@media screen and (max-width: 768px) {
+    .hotdog .box{flex-flow: wrap;}
+    /* 부모 태그 = flex 적용,
+    order-순서변경 - 기본값이 0, 숫자가 커지면 점점 (우선순위가) 아래로 내려간다.
+    */
+    .hotdog .box .pic{width: 100%; position: static; order: 1;}
+    .hotdog .box .info{width: 100%; padding: 30px; text-align: center;}
+}

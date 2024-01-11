@@ -47,7 +47,9 @@ a{text-decoration: none;}
 }
 
 @media screen and (max-width:1200px) {
-
+    .hotdog .box .pic{overflow: hidden}
+    .hotdog .box .info{width: auto; height: 240px;}
+    .hotdog .box 
 }
 
 @media screen and (max-width: 768px) {
