@@ -27,6 +27,19 @@ a{text-decoration: none;}
 .hotdog .box{width: calc((100% - 30px * 1) / 2); 
     display: flex;
     padding: 10px;
+    position: relative;
+}
+.hotdog .box::before{
+    text-align: capitalize; font-size: 12px;
+    padding: 5px 3px;
+    position: absolute;
+    left: 0; top: 0;
+}
+.hotdog .box.new::before{content: 'new'; 
+    background-color: yellow;
+}
+.hotdog .box.best::before{content: 'after';
+    background-color: tomato;
 }
 
 .hotdog .box .pic{width: 100%;}

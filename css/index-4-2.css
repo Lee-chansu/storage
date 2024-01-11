@@ -19,12 +19,12 @@ a{text-decoration: none;}
     html{font-size: 10px;}
 }
 
-.content .title{margin: 0 0 40px; font: bold 24px 'inherit'; text-align: center; color: #444;}
+.content .title{margin: 0 0 40px; font: bold 40px 'inherit'; text-align: center; color: #444;}
 .content .wrap{display: flex; flex-flow: row wrap;justify-content: space-between;}
 
 
 .hotdog .box{
-    width: calc((100% - 30px * 2) / 3); 
+    width: calc((100% - 30px * 1) / 2); 
     background-color: #f5f5f5;
     position: relative;
 }
@@ -50,22 +50,27 @@ a{text-decoration: none;}
     color: #f5f5f5;
     opacity: 0;
     transition: 0.1s;
+    overflow: hidden;
 
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
 }
-.hotdog .box .info .name{font-size: 18px; margin: 0 0 5px;}
+.hotdog .box .info .name{font-size: 40px; margin: 0 0 5px;}
 /*높이 = 줄간격 * 최대줄수 설정한다.
     ex) line-height : 20px; 최대 줄수 : 4줄 / 높이=80px;
 */
 
 .hotdog .box .info .txt{
-    font-size: 14px; 
-    margin: 0 0 5px; 
-    line-height: 20px;
+    font-size: 32px;  line-height: 40px;
+    margin: 0 0 5px;
+    display: -webkit-box; /*배치방법*/
+    -webkit-line-clamp: 2; /*텍스트 라인 수 조절*/
+    -webkit-box-orient: vertical; 
+    overflow: hidden;
 }
 .hotdog .box .info .hashtag{padding: 5px;}
 .hotdog .box .info .hashtag span{
+    font-size: 20px;
     background-color: #ddd; 
     border-radius: 5px; 
     border-color: transparent;
@@ -91,4 +96,8 @@ a{text-decoration: none;}
     */
     .hotdog .box .pic{width: 100%; position: static; order: 1;}
     .hotdog .box .info{width: 100%; padding: 30px; text-align: center;}
+}
+
+@media screen and (max-width: 640px) {
+    .hotdog .box{display: block;}
 }
