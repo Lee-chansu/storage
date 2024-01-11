@@ -24,16 +24,14 @@ a{text-decoration: none;}
 
 
 .hotdog .box{
-    width: calc((100% - 30px * 1) / 2); 
+    width: calc((100% - 30px * 2) / 3); 
     background-color: #f5f5f5;
-    display: flex;
     position: relative;
-    margin: 20px 0;
 }
 .hotdog .box:hover{box-shadow: 0 0 20px #ddd; cursor:pointer;}
 .hotdog .box .pic{
-    width: 50%;
-    position: absolute; right: -60px;
+    width: 100%;
+    order: 1;
 }
 
 /* img 태그 - 인라인블록
@@ -41,9 +39,21 @@ a{text-decoration: none;}
     - 글자처럼 취급, 자간 0
 */
 
-.hotdog .box .pic img{width: 100%; object-fit: contain; display: block;}
+.hotdog .box .pic img{
+    width: 100%; object-fit: contain; display: block;}
 
-.hotdog .box .info{width: 100%; padding: 30px 30% 30px 30px;}
+.hotdog .box .info{
+    width: 100%; height: 100%; padding: 30px;
+    text-align: center;
+    position: absolute; left: 0; top: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f5f5f5;
+    opacity: 0;
+    transition: 0.1s;
+
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+}
 .hotdog .box .info .name{font-size: 18px; margin: 0 0 5px;}
 /*높이 = 줄간격 * 최대줄수 설정한다.
     ex) line-height : 20px; 최대 줄수 : 4줄 / 높이=80px;
@@ -59,30 +69,15 @@ a{text-decoration: none;}
     background-color: #ddd; 
     border-radius: 5px; 
     border-color: transparent;
+    color: black;
 }
 
-.hotdog .box .view{
-    position: absolute;
-    display: flex;
-    justify-content: center; align-items: center;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: 0.4s;
-    opacity: 0;
-}
 
-.hotdog .box:hover .view{
+.hotdog .box:hover .info{
     opacity: 1;
+    top: 0;
 }
 
-.hotdog .box .view a{
-    color: #fff; width: 120px; line-height: 40px;
-    text-align: center;
-    border: 1px solid white; border-radius: 4px;
-    display: block; position: relative; top: 20px;
-    transition: 0.4s;
-}
-.hotdog .box:hover .view a{top: 0;}
 
 @media screen and (max-width:1024px) {
     .hotdog .box{width: 100%;}
