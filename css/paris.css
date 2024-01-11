@@ -11,7 +11,9 @@ a{text-decoration: none;}
     justify-content: center; 
     align-items: center; 
     text-align: center; 
-    padding: 0 25px;}
+    padding: 0 25px;
+}
+
 
 /*header*/
 .header{width: 100%; height: 90px; 
@@ -44,7 +46,16 @@ padding: 0 10px;}
 /*body*/
 .main{width: 100%;}
 .section{width: 100%;}
-.section .inner{width: 100%; padding: 80px 0;}
+.section .inner{width: 100%;
+    padding: 80px 0; margin: 0 0 80px;
+}
+.box{position: relative;}
+.inner .title-wrap{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    margin: 0 0 30px;
+}
 
 /*visual*/
 .visual{width: 100%;}
@@ -75,41 +86,45 @@ overflow: hidden;}
 
 /*section 1*/
 
-.section .inner{padding: 0 20px; margin: 0 0 80px;}
-
-.inner .title-wrap{
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
-    margin: 0 0 30px;}
-
 .title-wrap .title{text-align: left;}
 .title-wrap > span{text-align: right; text-decoration: underline;}
 
 .promotion{
     display: flex;
     flex-flow: row nowrap;
-    overflow: hidden;
 }
+
 .promotion .content-wrap{
 width: calc((100% - 30px * 3) / 4);
 margin: 0 30px;
-position: relative;
-}
-
-.cover{
-    background: linear-gradient( to bottom, rgba(0,0,0,0.8), transparent);
-    height: 100%;
 }
 
 .promotion .content-wrap img{
-    width: 100%;
-    height: 100%;
+    width: 100%; 
+    height: auto;
     display: block;
 }
 
-.promotion .content-wrap::before{
-    font-size : 12px; color: white;
+.cover{
+    background: linear-gradient(to top, rgba(0,0,0,0.6),
+    rgba(0,0,0,0));
+    width: 100%; height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+.promotion .content-wrap:hover .cover{
+    opacity: 1;
+    cursor: pointer;
+}
+.promotion .content-wrap >p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.promotion .content-wrap .box::before{
+    font-size : 12px; color: rgb(232, 223, 223);
     width: 50px;
     position: absolute; top: 0; left: 0;
     background-color: #023586;
@@ -117,13 +132,37 @@ position: relative;
     text-align: center;
 }
 
-.promotion .content-wrap.ing::before{content: '진행 중';}
-.promotion .content-wrap.maybe::before{content: '예 정';}
+.promotion .content-wrap .box.ing::before{content: '진행 중';}
+.promotion .content-wrap .box.maybe::before{content: '예 정';}
 
 
 
 /*section 2*/
+.product .content-wrap{
+    width: calc(100% / 5);
+    padding: 20px;
+}
 
+.product .content-wrap .box span{
+    background: linear-gradient(to top, rgba(0,0,0,0.6),
+    rgba(0,0,0,0));
+    width: 100%; height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+.product .content-wrap .box:hover span{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.product .content-wrap .box img{
+    width: 100%;
+}
+
+.product .content-wrap:hover h3{
+    cursor: pointer;
+    text-decoration: underline;
+}
 
 /*section 3*/
 
