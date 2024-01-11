@@ -1,0 +1,47 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} 
+a{text-decoration: none;} 
+
+/* common */
+
+.inner{width: 1170px; margin: 0 auto;}
+.content{width: 100%; padding: 120px 0;}
+
+/* .content.full{padding: 0;}
+.content.full .inner{width: 100%;} */
+
+
+.content .title{margin: 0 0 40px; font: bold 24px 'inherit'; text-align: center; color: #444;}
+.content .wrap{display: flex; flex-flow: row wrap;justify-content: space-between;}
+
+@media screen and (max-width:1200px) {
+.content{padding: 120px 40px;}
+.inner{width: 100%;}
+}
+
+@media screen and (max-width: 768px) {
+html{font-size: 10px;}
+}
+
+@media screen and (max-width: 486px) {
+  
+}
+
+.hotdog .box{width: calc((100% - 30px *3) / 4);}
+.hotdog .box:hover{box-shadow: 0 0 20px #ddd; cursor:pointer;}
+.hotdog .box .pic{width: 100%;}
+.hotdog .box .pic img{width: 100%;}
+
+.hotdog .box .info{width: 100%; padding: 10px;}
+.hotdog .box .info .name{font-size: 18px; margin: 0 0 5px;}
+/*높이 = 줄간격 * 최대줄수 설정한다.
+    ex) line-height : 20px; 최대 줄수 : 4줄 / 높이=80px;
+*/
+
+.hotdog .box .info .txt{font-size: 14px; margin: 0 0 5px; line-height: 20px;}
+.hotdog .box .info .hashtag{padding: 5px;}
+.hotdog .box .info .hashtag span{
+    background-color: #ddd; 
+    border-radius: 5px; 
+    border-color: transparent;
+}
