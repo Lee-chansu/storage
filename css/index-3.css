@@ -1,0 +1,55 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} 
+a{text-decoration: none;} 
+
+/* common */
+
+.inner{width: 100%; margin: 0 auto;}
+.content{width: 100%; padding: 120px 0;}
+
+/* .content.full{padding: 0;}
+.content.full .inner{width: 100%;} */
+
+@media screen and (max-width:1200px) {
+    .content{padding: 120px 40px;}
+    .inner{width: 100%;}
+}
+
+@media screen and (max-width: 768px) {
+    html{font-size: 10px;}
+}
+
+.content .title{margin: 0 0 40px; font: bold 24px 'inherit'; text-align: center; color: #444;}
+
+.content .wrap{display: flex; flex-flow: row wrap;justify-content: space-between;}
+
+
+.hotdog .box{width: calc((100% - 30px * 1) / 2); 
+    display: flex;
+    padding: 10px;
+}
+
+.hotdog .box .pic{width: 100%;}
+.hotdog .box .pic img{width: 100%;}
+
+.hotdog .box .info{
+    width: 100%; line-height: 20px; padding: 20px 30px;
+}
+.hotdog .box .info .name{font: 28px bold; margin: 0 0 15px;}
+.hotdog .box .info .txt{font-size: 20px; line-height: 20px; margin: 0 0 15px;}
+.hotdog .box .info .hashtag{
+    display: flex; 
+    flex-flow: row column;
+}
+.hotdog .box .info .hashtag span{
+    font-size: 15px;
+    background-color: #ddd;
+}
+
+@media screen and (max-width:1200px) {
+
+}
+
+@media screen and (max-width: 768px) {
+
+}
