@@ -57,6 +57,14 @@ padding: 0 10px;}
     margin: 0 0 30px;
 }
 
+.cover{
+    background: linear-gradient(to top, rgba(0,0,0,0.6),
+    rgba(0,0,0,0));
+    width: 100%; height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
 /*visual*/
 .visual{width: 100%;}
 .visual .inner{width: 100%; padding: 0 0 80px;}
@@ -105,13 +113,7 @@ margin: 0 30px;
     display: block;
 }
 
-.cover{
-    background: linear-gradient(to top, rgba(0,0,0,0.6),
-    rgba(0,0,0,0));
-    width: 100%; height: 100%;
-    position: absolute;
-    opacity: 0;
-}
+
 
 .promotion .content-wrap:hover .cover{
     opacity: 1;
@@ -143,13 +145,6 @@ margin: 0 30px;
     padding: 20px;
 }
 
-.product .content-wrap .box span{
-    background: linear-gradient(to top, rgba(0,0,0,0.6),
-    rgba(0,0,0,0));
-    width: 100%; height: 100%;
-    position: absolute;
-    opacity: 0;
-}
 .product .content-wrap .box:hover span{
     opacity: 1;
     cursor: pointer;
@@ -165,7 +160,15 @@ margin: 0 30px;
 }
 
 /*section 3*/
+.story .content-wrap{
+    display: flex;
+    flex-flow: row wrap;
+}
 
+.story .content-wrap{
+    display: flex;
+    
+}
 
 /*section 4*/
 
