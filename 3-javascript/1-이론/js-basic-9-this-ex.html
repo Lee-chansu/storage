@@ -14,22 +14,33 @@
 <script>
 
 function printThisTitle() {
-  console.log(this)
   console.log(this.title)
 }
-
-
+printThisTitle() 
 // 객체의 함수에 printThisTitle이름의 함수를 연결
 const courseA = {
   title: '프로그래밍 기초 in JavaScript',
   printTitle: printThisTitle, // 함수연결
 };
-
-printThisTitle() 
+// 여기서의 this는 상위 부모가 전역이므로 window를 가리킴.
 // undefined - window를 가리키고 있고 , title 없음
-courseA.printTitle()
+courseA.printTitle();
+
+// 여기서의 this는 호출한 대상이 courseA이므로 이곳에서의 title을 연결하게 된다.
 // 함수가 객체에 연결되면서 this가 객체에  연결됨.
 
+const courseB = {
+  title: '컴퓨터 개론',
+  printTitle: printThisTitle, // 함수연결
+};
+courseB.printTitle();
+
+
+const courseC = {
+  title: '웹 퍼블리싱',
+  printTitle: printThisTitle, // 함수연결
+};
+courseC.printTitle();
 </script>
 </body>
 </html>

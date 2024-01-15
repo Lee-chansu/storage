@@ -11,9 +11,12 @@
   
 
   <script>
+    //변수값 초기화되어 있지 않을 때도 undefined
+    //해당하는 속성의 값이 없어도 - undefined가 출력됨.
+    
   function printThisTitle(){
-    console.log(this)
-    console.log(this.title)
+    console.log(this) //window를 출력
+    console.log(this.title) //undefined - window 안에는 title이라는 속성이 없기 때문에
   }
 
   const courseA = {
