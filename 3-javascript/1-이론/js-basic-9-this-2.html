@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>this 연습문제</h1>
+  
+  
+
+  <script>
+  function printThisTitle(){
+    console.log(this)
+    console.log(this.title)
+  }
+
+  const courseA = {
+    title : '프로그래밍 기초 in JavaScript',
+    printTitle : printThisTitle //함수 연결
+  };
+
+  printThisTitle();
+  //undefined - this : window를 가리키고 있으며, window에는 title이라는 속성이 없기 때문.
+  courseA.printTitle();
+  //함수가 객체에 연결되면서 this도 함수에 연결됨.
+  
+
+  /*
+    function : 함수 안에서 this 위치에 따라 다르다.
+    - 전역 위치 : window
+    - 객체 안에서 : 객체정보
+    - 이벤트 안에서 : 이벤트가 발생한 요소
+
+    화살표ㅛ 함수 안에서 this
+    - ※부모 요소의 this 값을 그대로 가져온다.※
+  */
+  </script>
+</body>
+</html>

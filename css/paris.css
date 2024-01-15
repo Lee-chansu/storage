@@ -39,6 +39,7 @@ a{text-decoration: none;}
 }
 .gnb .rightgnb{width: 33.333%; 
     display: flex; justify-content: flex-end;
+    align-items: center;
 }
 
 .menu-list{
@@ -49,8 +50,7 @@ a{text-decoration: none;}
 .menu-item{width: 100%;}
 .menu-item > a{
     display: block;
-    width: 20%;
-    color: #fff; font-size: 14px; 
+    color: #fff; font-size: 14px; text-align: center;
     padding: 0 10px;
     line-height: 90px;
     position: relative;
@@ -58,10 +58,11 @@ a{text-decoration: none;}
 .menu-item > a::after{
     content: '';
     height: 2px; width: 0;
-    border-bottom: #fff 1px solid;
+    background-color: #fff;
     position: absolute; bottom: 0; left: 0;
-    transition: width .2s;
+    transition: width .2s ease-in-out;
 }
+
 
 .leftgnb .menu-list .menu-item .logo{color: #e5ca33;}
 
@@ -81,7 +82,7 @@ a{text-decoration: none;}
     'opsz' 24;
     font-size: 24px;
     color: #fff;
-
+    display: inline-block;
 }
 
 /*body*/

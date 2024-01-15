@@ -19,13 +19,14 @@
 console.log("전역 : window")
 console.log(this)
 
+//함수 선언
 function myThis(){
   console.log("함수 : window")
   console.log(this)
 }
 myThis()
 
-
+// 객체 - 일반 함수표현식
 let obj = {
   myObjThis : function(){
     console.log("객체-function : 현재 객체")
@@ -34,7 +35,7 @@ let obj = {
 }
 obj.myObjThis()
 
-
+// 객체 - 화살표 함수
 let objArrow = {
   myObjThis : () => {
     console.log("객체-화살표함수 : 상위 스코프의 this 상속")
@@ -52,9 +53,17 @@ objArrow.myObjThis()
 let btn1 = document.getElementById('btn-1')
 let btn2 = document.getElementById('btn-2')
 
+
 btn1.addEventListener('click', function() {
+  // 3) 이벤트 클릭한 요소 - this
   console.log('클릭한 대상 : ')
-  console.log(this)
+  console.log(this) //클릭한 그 요소 - 해당 html이 출력됨.
+
+  let test = () => {
+    console.log('화살표 함수는 부모의 this를 가져옴')
+    console.log(this) // 부모의 this가 클릭한 요소를 가져옴 -> btn-1을 출력하게 됨.
+  }
+  test();
 });
 
 // 화살표 함수로 쓰면 - 상위 this 상속
