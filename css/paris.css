@@ -19,6 +19,8 @@ a{text-decoration: none;}
     z-index: 99; position: relative;
 }
 
+.header .container{padding: 0 25px;}
+
 .brand{
     width: 25%; padding: 0 10px; z-index: 2;
     font-size: 28px; white-space: nowrap;
@@ -32,19 +34,33 @@ a{text-decoration: none;}
     justify-content: space-between;
 }
 
-.gnb .leftgnb{width: 33.333%;}
-.gnb .rightgnb{width: 33.333%;}
+.gnb .leftgnb{width: 33.333%; 
+    display: flex; justify-content: flex-start;
+}
+.gnb .rightgnb{width: 33.333%; 
+    display: flex; justify-content: flex-end;
+}
 
 .menu-list{
     width: 100%;
-    display: flex; justify-content: center; align-items: center;
+    display: flex; align-items: center;
 }
 
 .menu-item{width: 100%;}
 .menu-item > a{
-    width: 25%;
+    display: block;
+    width: 20%;
     color: #fff; font-size: 14px; 
     padding: 0 10px;
+    line-height: 90px;
+    position: relative;
+}
+.menu-item > a::after{
+    content: '';
+    height: 2px; width: 0;
+    border-bottom: #fff 1px solid;
+    position: absolute; bottom: 0; left: 0;
+    transition: width .2s;
 }
 
 .leftgnb .menu-list .menu-item .logo{color: #e5ca33;}
@@ -52,14 +68,20 @@ a{text-decoration: none;}
 @media screen and (max-width: 988px) {
     .menu-item{display: none;}
 }
-.search_icon{
+.serach_icon{
     width: 24px; height: 24px;
+    margin-left: 12px;
     display: inline-block;
 }
-.search{
-    font-family: 'Material Icons';
+.material-symbols-outlined{
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
     font-size: 24px;
-    white-space: nowrap;
+    color: #fff;
+
 }
 
 /*body*/
@@ -96,7 +118,7 @@ a{text-decoration: none;}
     width: 100%;
     overflow: hidden;
 }
-.visual .inner .container .box{width: 33.33%}
+.visual .inner .container .box{width: calc(100% / 3);}
 .visual .inner .container .box .banner{
     width: 100%; 
     display: block;

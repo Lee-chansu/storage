@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>함수 2 - fuction</h1>
+  <h2>함수 만드는 방식</h2>
+  <p>함수선언</p>
+  <pre>
+    fuction 함수이름 (){
+
+    }
+  </pre>
+  <p>함수표현식</p>
+  <pre>
+    let 함수명 = function() {
+
+    }
+  </pre>
+
+  <h2>화살표 함수</h2>
+  <pre>
+    let 함수명 = () => {
+      
+    }
+  </pre>
+  <button type="button" id="btn-1">버튼 - function</button>
+  <button type="button" id="btn-2">버튼 - 화살표함수</button>
+
+<script>
+
+// 함수선언했을 때 - 호이스팅 가능하다.
+// 호이스팅 : 선언하기 이전에 호출 가능한 것
+
+myFunc() // 선언 이전에 호출ok = 호이스팅 ok
+
+function myFunc(){
+  console.log('myFunc : 함수선언')
+}
+
+
+
+// 함수표현식 1 - 호이스팅x
+
+let myFunc2 = function () {
+  console.log('myFunc2 : 함수표현식 -1')
+}
+
+// 함수표현식 2 - 화살표 함수
+let myFunc3 = () => {
+  console.log('myFunc3 : 함수표현식 -2')
+}
+
+// 생성하기 이전에 호출하면 에러 - 호이스팅x
+myFunc2() 
+myFunc3() 
+
+
+// 2) 다른 코드 블록 {} 안에 있어도 호출 가능 - 전역함수
+const x = 4;
+if(x < 5) {
+
+  // 함수선언
+  function printJs(){
+    console.log('javascript')
+  }
+
+} 
+// 함수선언 한것이 전역함수처럼 사용된다.
+// 조건에 맞으면 전역함수처럼 호출되어 실행된다.
+printJs() 
+
+
+if( x < 5){
+
+  // 함수표현식
+  // 이 범위 안에서 사용가능
+  let printKorea = function(){
+    console.log('korea')
+  }
+
+}
+// 변수의 사용범위와 일치 - { }범위 벗어나면 사용 불가능
+printKorea() // 에러
+
+
+// 변수명 = 값
+// 값 대신 함수가 들어감 =  함수가 값처럼 쓰였다 = 함수표현식
+let btn1 = document.getElementById('btn-1')
+
+btn1.addEventListener('click', () => {
+  console.log(this)
+});
+
+
+
+
+
+
+</script>
+</body>
+</html>

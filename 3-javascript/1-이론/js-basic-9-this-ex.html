@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>this 연습문제</h1>
+
+<script>
+
+function printThisTitle() {
+  console.log(this)
+  console.log(this.title)
+}
+
+
+// 객체의 함수에 printThisTitle이름의 함수를 연결
+const courseA = {
+  title: '프로그래밍 기초 in JavaScript',
+  printTitle: printThisTitle, // 함수연결
+};
+
+printThisTitle() 
+// undefined - window를 가리키고 있고 , title 없음
+courseA.printTitle()
+// 함수가 객체에 연결되면서 this가 객체에  연결됨.
+
+</script>
+</body>
+</html>

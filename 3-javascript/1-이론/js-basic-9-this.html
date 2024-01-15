@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>this</h1>
+  
+  <button type="button" id="btn-1">버튼 - function</button>
+  <button type="button" id="btn-2">버튼 - 화살표함수</button>
+
+<script>
+// 전역
+console.log("전역 : window")
+console.log(this)
+
+function myThis(){
+  console.log("함수 : window")
+  console.log(this)
+}
+myThis()
+
+
+let obj = {
+  myObjThis : function(){
+    console.log("객체-function : 현재 객체")
+    console.log(this)
+  }
+}
+obj.myObjThis()
+
+
+let objArrow = {
+  myObjThis : () => {
+    console.log("객체-화살표함수 : 상위 스코프의 this 상속")
+    console.log("ㄴ화살표 함수는 this를 현재 객체, 매개변수에 연결하지 않는다.")
+    console.log("ㄴ상위 범위(스코프)의 this를 그대로 상속한다.")
+    console.log(this)
+    
+  }
+}
+objArrow.myObjThis()
+
+// 스코프 = { }범위
+
+// fuction으로 사용할 때 - 이벤트 핸들러가 적용되는 대상을 가리킴
+let btn1 = document.getElementById('btn-1')
+let btn2 = document.getElementById('btn-2')
+
+btn1.addEventListener('click', function() {
+  console.log('클릭한 대상 : ')
+  console.log(this)
+});
+
+// 화살표 함수로 쓰면 - 상위 this 상속
+btn2.addEventListener('click', () => {
+  console.log('상위 this 상속 : ')
+  console.log(this) // = windows
+});
+
+
+
+</script>
+</body>
+</html>
