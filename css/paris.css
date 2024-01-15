@@ -367,10 +367,72 @@ a{text-decoration: none;}
 
 /*footer*/
 .footer{background-color: #464a56;}
-.footer .container{padding: 0 25px;}
+.footer .container{
+    padding: 0 25px;
+    align-items: flex-start;
+}
 .footer .widgets{
     padding: 70px 0;
 }
 .footer .widget{
     width: 25%;
+    color: white;
+}
+
+.footer .widget .widgetheader{
+    font: 24px white;
+    margin: 0 0 20px;
+}
+
+.footer .widget .list li{
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+.footer .widget .list li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer .flogo a:first-of-type{
+    display: block;
+    width: 100%;
+}
+.footer .flogo a:first-of-type img{
+    height: 40px;
+}
+
+.footer .flogo a > img{
+    width: auto;
+    height: 34px;
+    margin: 0 10px 20px 0;
+}
+
+.widget .container{
+    padding: 0 20px 0 0;
+    justify-content: flex-start;
+}
+
+.footer .widget .follow a{
+    display: block;
+    width: 44px; height: 44px;
+    background: #fff; color: black;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 15px;
+}
+
+.footer .widget .follow a span img{
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.footer .widget .follow a span .sns1{
+    width: 16px; padding-top: 7px;
+}
+.footer .widget .follow a span .sns2{
+    width: 24px; padding-top: 11px;
+}
+.footer .widget .follow a span .sns3{
+    width: 27px; padding-top: 12px;
 }
