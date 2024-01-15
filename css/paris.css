@@ -52,6 +52,15 @@ a{text-decoration: none;}
 @media screen and (max-width: 988px) {
     .menu-item{display: none;}
 }
+.search_icon{
+    width: 24px; height: 24px;
+    display: inline-block;
+}
+.search{
+    font-family: 'Material Icons';
+    font-size: 24px;
+    white-space: nowrap;
+}
 
 /*body*/
 .main{width: 100%;}
