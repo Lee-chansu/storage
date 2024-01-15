@@ -65,6 +65,12 @@ a{text-decoration: none;}
     transition: width .2s ease-in-out;
 }
 
+.menu-item > .logo::after{
+    background-color: #e5ca33;
+}
+.menu-item > a:hover::after{
+    width: 100%;
+}
 
 .leftgnb .menu-list .menu-item .logo{color: #e5ca33;}
 
@@ -120,6 +126,7 @@ a{text-decoration: none;}
 .visual .inner .container{
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 .visual .inner .container .box{width: calc(100% / 3);}
 .visual .inner .container .box .banner{
@@ -133,6 +140,13 @@ a{text-decoration: none;}
 .visual .container .box:hover .cover{
     opacity: 0;
     cursor: pointer;
+}
+
+.visual .container .next_btn{
+    position: absolute; right: 0; top: 25%;
+    width: 50px; height: 160px;
+    background-color: transparent;
+
 }
 
 @media screen and (max-width: 819px) {

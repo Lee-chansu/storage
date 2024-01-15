@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>함수 3 - 매개변수</h1>
+  <p>매개변수 = parameter</p>
+  <p>넘겨주는 값 = arguments</p>
+
+
+<script>
+
+//매개변수의 기본값 설정
+//매개변수 값이 채워지면 앞쪽부터 값을 채우기 때문에
+//기본값 설정이 필요한 매개변수는 뒤 쪽으로 보낸다.
+function sayHi(money, name = '누군지 모르겠지만'){
+  console.log(`${name} 안녕~! / 현재 잔액 : ${money}원`);
+}
+
+sayHi('아이유', 1000);
+sayHi('홍길동',10000);
+sayHi(30000);
+
+//매개변수 여러개 처리할 수 있다.
+function printArguments( ...args ){
+  for(const arg of args){
+    console.log(arg)//arguments 형태로 가져오기
+    //배열관련 함수 불가능
+  }
+}
+printArguments('monday', 'sunday', 'friday');
+//호출할 때 넘겨준 값을 인자, arguments
+
+// rest parameter = 변수로 받아와서 처리하기
+function printRestArguments(first, second, ...args ){
+  console.log(args)
+  for(const arg of args){
+    console.log("1등 : "+ first) 
+    console.log("2등 : "+ second) 
+    console.log("참가자 : " + args) 
+  }
+}
+function printRestArguments2(first, second, ...args ){
+  console.log(args)
+  for(const arg of args){
+    console.log("참가자 : " + args) 
+  }
+}
+
+printRestArguments("홍길동", "이몽룡", "성춘향", "방자", "향단이");
+printRestArguments2("홍길동", "이몽룡", "성춘향", "방자", "향단이");
+
+printRestArguments('friday', 'saturday', 'sunday')
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>this 연습문제</h1>
+  
+  
+
+  <script>
+
+
+    function sumNumber(){
+      const sum = (a,b) => a + b
+      return sum(40, 10)
+    }
+    console.log(sumNumber())
+
+    let sumNumber2 = ()=>{
+      // 호출 되기 전에 반드시 존재해야 하기 때문에
+      let addNumber = (a) => (b) => (c) =>  a + b + c
+      return addNumber (1)(2)(3)
+    }
+
+    console.log(sumNumber2());
+
+
+
+    let getFullName = function() {
+      return this.firstName + ' ' + this.lastName
+    }
+
+    const user = {
+      firstName : 'Ted',
+      lastName : 'Chang',
+      getFullName : getFullName,
+    };
+    
+    console.log(user.getFullName())
+
+  </script>
+</body>
+</html>
