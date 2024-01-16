@@ -39,24 +39,21 @@ printArguments('monday', 'sunday', 'friday');
 
 // rest parameter = 변수로 받아와서 처리하기
 function printRestArguments(first, second, ...args ){
-  console.log(args)
   for(const arg of args){
-    console.log("1등 : "+ first) 
-    console.log("2등 : "+ second) 
-    console.log("참가자 : " + args) 
+    console.log("1등 : ", first) 
+    console.log("2등 : ", second) 
+    console.log("참가자 : " , args) 
   }
 }
-function printRestArguments2(first, second, ...args ){
-  console.log(args)
+function printRestArguments2(...args ){
   for(const arg of args){
-    console.log("참가자 : " + args) 
+    console.log("참가자 : ", args) 
   }
 }
 
 printRestArguments("홍길동", "이몽룡", "성춘향", "방자", "향단이");
 printRestArguments2("홍길동", "이몽룡", "성춘향", "방자", "향단이");
 
-printRestArguments('friday', 'saturday', 'sunday')
 
 </script>
 </body>
