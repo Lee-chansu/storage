@@ -63,12 +63,10 @@ myFunc3()
 // 2) 다른 코드 블록 {} 안에 있어도 호출 가능 - 전역함수
 const x = 4;
 if(x < 5) {
-
   // 함수선언
   function printJs(){
     console.log('javascript')
   }
-
 } 
 // 함수선언 한것이 전역함수처럼 사용된다.
 // 조건에 맞으면 전역함수처럼 호출되어 실행된다.
@@ -76,7 +74,6 @@ printJs()
 
 
 if( x < 5){
-
   // 함수표현식
   // 이 범위 안에서 사용가능
   let printKorea = function(){

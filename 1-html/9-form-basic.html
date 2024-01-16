@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    main{display: flex; justify-content: center; align-items: center;}
+    input[type="text"]{border-color: red;}
+    input[type="password"]{border-color: blue;}
+  </style>
+</head>
+<body>
+<form action="test.jsp">
+  <p>기본적인 텍스트 입력</p>
+  <input type="text" placeholder="아이디">
+  <p>비밀번호 입력</p>
+  <input type="password" placeholder="비밀번호">
+  <p>검색창 입력</p>
+  <input type="search" placeholder="검색창을 입력하시오">
+  <p>이메일 입력 - 제출버튼 누를 때 형식제 맞지 않으면 안내 메시지 띄워줌</p>
+  <input type="email" placeholder="ㅗㅗㅗㅗㅗ">
+  <p>URL - http:// 이렇게 시작하지 않으면 안내메시지</p>
+  <input type="URL"> <br>
+  <p>첨부 파일</p>
+  <input type="file"/>
+
+  <p>날짜선택</p>
+  <input type="date">
+  
+  <p>라디오버튼 - 여러개 옵션 중 1개만 선택</p>
+  <input type="radio" name="test" id="test01-01">
+  <label for="test01-01">아빠</label>
+  <input type="radio" name="test" id="test01-02">
+  <label for="test01-02">엄마</label>
+  <input type="radio" name="test" id="test01-03">
+  <label for="test01-03">동생</label>
+
+  <input type="checkbox" name="test02" id="test02-01">
+  <label for="test02-01">아빠</label>
+  <input type="checkbox" name="test02" id="test02-02">
+  <label for="test02-02">엄마</label>
+  <input type="checkbox" name="test02" id="test02-03">
+  <label for="test02-03">동생</label>
+  <hr>
+  <select name="" id="">
+    <option>-----------</option>
+    <option value="55">55</option>
+    <option value="66">66</option>
+    <option value="77">77</option>
+    <option value="88">88</option>
+  </select>
+  <textarea name="" id="" cols="30" rows="20" readonly>
+    
+  </textarea>
+  
+  <br><br><br>
+  <button>제출</button>
+</form>
+</body>
+</html>
