@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <section class="login content">
+        <div class="inner">
+            <h2 class="title">LOGIN</h2>
+            <!-- form 안의 내용들을 묶어서 action의 파일로 데이터 값을 넘겨주고 처리한다 -->
+            <form action="#">
+                <div class="loginBox">
+                    <div class="idBox boxColor">
+                        <label for="id">아이디</label>
+                        <input type="text" id="id" placeholder="아이디" class="inputBox">
+                    </div>
+                    <div class="pwBox boxColor">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" placeholder="비밀번호" class="inputBox">
+                        
+                    </div>
+                    <div class="errorBox">
+                        <p class="errorMessage"></p>
+                    </div>
+                    <div class="loginBtnBox">
+                        <button type="submit" id="loginBtn">확인</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="js/login.js"></script>
+</body>
+</html>
+
