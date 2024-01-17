@@ -4,22 +4,30 @@ a{text-decoration: none;} /* a태그 기본서식 - 밑줄 없애기*/
 
 body{background-color: #222;}
 
-.login{height: 100vh;}
-.login .title{margin: 0 0 20px; font: bold 24px 'inherit'; text-align: center;}
+.login{height: 100vh; padding: 150px 0;}
+.login .title{margin: 0 0 20px; font: bold 24px 'inherit'; text-align: center; color: #fff;}
 
-.login .loginBox{padding: 30px; background-color: #fff;}
-.login .loginBox .boxColor{position: relative;}
-.login .loginBox .boxColor .idBox{border-radius: 5px 5px 0 0;}
-.login .loginBox .boxColor .pwBox{border-radius: 0 0 5px 5px;}
+
+/*
+클래스 추가
+input의 내용이 있으면, .boxColor에 .check 클래스 추가하고 없으면 추가 안하기
+*/
+
+.login .loginBox{padding: 30px; background-color: #fff; max-width: 400px;}
+.login .loginBox .boxColor{position: relative; border: #ccc 1px solid; margin: 5px 0;}
+.login .loginBox .idBox{border-radius: 10px;}
+.login .loginBox .pwBox{border-radius: 10px;}
 
 .login .loginBox .boxColor label{
   position: absolute; left: 10px; top: 8px;
   line-height: 40px;
   transition: 0.2s;
 }
-.login .loginBox .boxColor:hover label{
-  top: 5px; 
-  font-size: 10px; line-height: 10px;
+.login .loginBox .boxColor.check{border-color: #03c75b;}
+.login .loginBox .boxColor.focuson label{
+  top: -5px; padding: 0 3px;
+  background-color: white;
+  font-size: 12px; line-height: 10px;
 }
 
 
