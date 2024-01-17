@@ -12,38 +12,38 @@
   <h1>this 연습문제</h1>
 
 <script>
+// 변수값 초기화 되어 있지 않을때도 undefined 
+// 해당하는 속성의 값이 없어도 - undefined가 나온다
 
-let printThisTitle = function() {
-  console.log(this.title)
+
+// fuction의 this는 나를 호출한 객체랑 연결함 - 누가 나를 호출했어?
+// 화살표 함수의 this는 부모의 this와 연결함
+
+let printThisTitle = function () {
+  console.log(this.title)  // 나를 호출한 곳이 전역임
 }
-
-printThisTitle() 
-// 객체의 함수에 printThisTitle이름의 함수를 연결
+printThisTitle()// window 가리키고 있고 undefined - 왜냐면 title이 없음
 
 const courseA = {
   title: '프로그래밍 기초 in JavaScript',
-  printTitle: printThisTitle // 함수연결
+  printTitle: printThisTitle, // 함수연결
 };
-// 여기서의 this는 상위 부모가 전역이므로 window를 가리킴.
-// undefined - window를 가리키고 있고 , title 없음
-courseA.printTitle();
-
-// 여기서의 this는 호출한 대상이 courseA이므로 이곳에서의 title을 연결하게 된다.
-// 함수가 객체에 연결되면서 this가 객체에  연결됨.
+courseA.printTitle() // 함수가 객체에 연결되면서 this가 객체에 연결됨.
 
 const courseB = {
   title: '컴퓨터 개론',
-  printTitle: printThisTitle // 함수연결
+  printTitle: courseA.printTitle,
 };
-courseB.printTitle();
-
+courseB.printTitle() // 호출한 객체와 this 연결함
 
 const courseC = {
   title: '웹 퍼블리싱',
-  printTitle: printThisTitle // 함수연결
+  printTitle: courseB.printTitle,
 };
 courseC.printTitle();
 
 </script>
 </body>
 </html>
+
+ 

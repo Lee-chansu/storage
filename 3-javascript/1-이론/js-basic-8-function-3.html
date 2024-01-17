@@ -12,47 +12,50 @@
   <h1>함수 3 - 매개변수</h1>
   <p>매개변수 = parameter</p>
   <p>넘겨주는 값 = arguments</p>
-
-
+  
 <script>
 
-//매개변수의 기본값 설정
-//매개변수 값이 채워지면 앞쪽부터 값을 채우기 때문에
-//기본값 설정이 필요한 매개변수는 뒤 쪽으로 보낸다.
-function sayHi(money, name = '누군지 모르겠지만'){
-  console.log(`${name} 안녕~! / 현재 잔액 : ${money}원`);
+// 매개변수의 기본값 설정
+// 매개변수값이 채워지면 앞쪽부터 값을 채우기 때문에,
+// 기본값이 설정되어 있는 매개변수는 뒷쪽으로 보낸다
+function sayHi(money, name = '누군지 모르겠지만', ){
+  console.log(`${name} 안녕! / 현재 잔액 : ${money} `)
 }
+sayHi(3000, '아이유')
+sayHi(2000, '홍길동')
+sayHi(3000)
 
-sayHi('아이유', 1000);
-sayHi('홍길동',10000);
-sayHi(30000);
-
-//매개변수 여러개 처리할 수 있다.
-function printArguments( ...args ){
-  for(const arg of args){
-    console.log(arg)//arguments 형태로 가져오기
-    //배열관련 함수 불가능
+// 매개변수 여러개 처리할 수 있다.
+// 먁
+function printAguments( ){
+  for(const arg of arguments){
+    console.log(arguments) //arguments 형태로 가져오기
+    // 배열관련 함수 사용 불가능
   }
 }
-printArguments('monday', 'sunday', 'friday');
-//호출할 때 넘겨준 값을 인자, arguments
+printAguments('monday','sunday','friday') // 호출할 때 넘겨준 값을 인자, arguments
 
+
+
+// parameter = 여러개 파라미터 ... 문법으로 해체하기
+
+function printRestAguments(...args){
+  for(const arg of args){
+    console.log("참가자 : " , arg)
+  }
+}
 // rest parameter = 변수로 받아와서 처리하기
-function printRestArguments(first, second, ...args ){
+function printRestAguments2(first, second, ...args ){
   for(const arg of args){
-    console.log("1등 : ", first) 
-    console.log("2등 : ", second) 
-    console.log("참가자 : " , args) 
-  }
-}
-function printRestArguments2(...args ){
-  for(const arg of args){
-    console.log("참가자 : ", args) 
+    console.log("1등 : " , first) // 배열  형태로 가져옴 - 배열관련 함수 사용가능
+    console.log("2등 : " , second)
+    console.log("참가자 : " , args)
   }
 }
 
-printRestArguments("홍길동", "이몽룡", "성춘향", "방자", "향단이");
-printRestArguments2("홍길동", "이몽룡", "성춘향", "방자", "향단이");
+printAguments()
+printRestAguments("홍길동","이몽룡","성춘향","방자","향단이")
+printRestAguments2("홍길동","이몽룡","성춘향","방자","향단이")
 
 
 </script>

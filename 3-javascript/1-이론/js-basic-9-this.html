@@ -19,18 +19,19 @@
 console.log("전역 : window")
 console.log(this)
 
-//함수 선언
+// 1) 전역함수 -  function
 function myThis(){
-  console.log("함수 : window")
+  console.log("전역 함수 function : window")
   console.log(this)
 }
 myThis()
 
-// 객체 - 일반 함수표현식
+// 2) 객체 안의 함수 = 메서드 -  function
 let obj = {
+  val : 10,
   myObjThis : function(){
-    console.log("객체-function : 현재 객체")
-    console.log(this)
+    console.log("객체-function : 현재 객체 정보 전체 출력")
+    console.log(this) // 객체정보 출력
   }
 }
 obj.myObjThis()
@@ -38,11 +39,10 @@ obj.myObjThis()
 // 객체 - 화살표 함수
 let objArrow = {
   myObjThis : () => {
-    console.log("객체-화살표함수 : 상위 스코프의 this 상속")
+    console.log("화살표함수 : 부모 범위(스코프) this 값을 상속 받는다")
     console.log("ㄴ화살표 함수는 this를 현재 객체, 매개변수에 연결하지 않는다.")
     console.log("ㄴ상위 범위(스코프)의 this를 그대로 상속한다.")
-    console.log(this)
-    
+    console.log(this) // 부모가 전역이니까 window 상속받아서 출력
   }
 }
 objArrow.myObjThis()
@@ -53,24 +53,43 @@ objArrow.myObjThis()
 let btn1 = document.getElementById('btn-1')
 let btn2 = document.getElementById('btn-2')
 
-//콜백함수 - 어떤 동작이 처리된 이후에 실행될 함수
+// 콜백함수 - 어떤 동작이 처리된 이후에 실행될 함수
 btn1.addEventListener('click', function() {
-  // 3) 이벤트 클릭한 요소 - this
-  console.log('클릭한 대상 : ')
-  console.log(this) //클릭한 그 요소 - 해당 html이 출력됨.
+  // 3) 이벤트 클릭한 요소 - this 
+  console.log('부모가 클랙한 대상 = this : ')
+  console.log(this) // 클릭한 그 요소 - 해당 html이 출력됨
 
-  let test = () => {
-    console.log('화살표 함수는 부모의 this를 가져옴')
-    console.log(this) // 부모의 this가 클릭한 요소를 가져옴 -> btn-1을 출력하게 됨.
+  // 하위 - 화살표 함수 1개 더 작성
+  let test = ()=>{
+    console.log('화살표 함수는 부모의 this를 가져옴 : ')
+    console.log(this) // 부모의 this가 클릭한 요소
   }
-  test();
+  test()
+
 });
 
 // 화살표 함수로 쓰면 - 상위 this 상속
 btn2.addEventListener('click', () => {
-  console.log('상위 this 상속 : ')
-  console.log(this) // = windows 출력, btn-2(X)
+  console.log('부모 = 전역, 상위 this 상속 : window ')
+  console.log(this) // = windows
 });
+
+
+//
+/*
+fuction 함수 안에서 this 위치에 따라 다르다
+- 전역 위치 : window
+- 객체 안에서 : 객체정보
+- 이벤트 안에서 : 이벤트 발생한 요소
+
+화살표 함수 안에서 this 
+- 부모요소의 this 값을 그대로 가져온다
+
+*/
+
+
+
+
 
 
 

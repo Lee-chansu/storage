@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    main{display: flex; justify-content: center; align-items: center;}
-  </style>
-</head>
-<body>
-  <main class="login">
-    <form action="파일명.jsp">
-      <fieldset>
-        <legend>제목</legend>
-        <div class="box">
-          <label for="">아이디 : </label>
-          <input type="text" id="idBox">
-        </div>
-        <div class="box">
-          <label for="">패스워드 : </label>
-          <input type="password" id="pwBox" name="password">
-        </div>
-        <div class="box">
-          <!-- 라디오는 같은 name 안에서 하나만 선택할 수 있게끔 한다.-->
-          <span>성별 : </span>
-          <input type="radio" id="genderMale" name="gender" value="male"/>
-          <label for="genderMale">남자</label>
-          <input type="radio" id="genderMale" name="gender" value="female"/>
-          <label for="genderMale">여자</label>
-        </div>
-        <div class="box">
-          <span>취미 : </span>
-          <span>
-            <input type="checkbox" id="hobby01" name="hobby" value="exercise" />
-            <label for="hobby01">운동</label>
-            <input type="checkbox" id="hobby02" name="hobby" value="movie"/>
-            <label for="hobby02">영화보기</label>
-            <input type="checkbox" id="hobby03" name="hobby" value="reading" />
-            <label for="hobby03">독서</label>
-            <input type="checkbox" id="hobby04" name="hobby" value="game" />
-            <label for="hobby04">게임</label>
-          </span>
-        </div>
-        <div class="">
-          <!--input 버튼의 3가지 종류-->
-          <input type="submit" value="제출">
-          <input type="reset" value="취소">
-          <input type="button" value="버튼">
-          <!--button 태그 : defalut : submit-->
-          <button type="button">기능실행</button>
-        </div>
-      </fieldset>
-  </form>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+  
+    </script>
+    <style>
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 폼 -  -->
+    <main class="login">
+      <form action="파일명.jsp">
+        <fieldset>
+          <legend>제목</legend>
+          <div>
+            <label for="idBox">아이디 : </label>
+            <input type="text" id="idBox" name="id"/>
+          </div>
+          <div>
+            <label for="pwBox">패스워드 : </label>
+            <input type="password" id="pwBox" name="password"/>
+          </div>
+          <div>
+            <span>성별 : </span>
+            <span>
+              <input type="radio" id="genderMale" name="gender" value="male"/>
+              <label for="genderMale">남자</label>
+              <input type="radio" id="genderFemale" name="gender" value="female"/>
+              <label for="genderFemale">여자</label>
+            </span>
+          </div>
+          <div>
+            <span>취미 : </span>
+            <span>
+              <input type="checkbox" id="hobby01" name="hobby" value="exercise" />
+              <label for="hobby01">운동</label>
+              <input type="checkbox" id="hobby02"  name="hobby" value="movie"/>
+              <label for="hobby02">영화보기</label>
+              <input type="checkbox" id="hobby03" name="hobby" value="reading"/>
+              <label for="hobby03">독서</label>
+            </span>
+          </div>
+          <hr>
+          <div>
+            <!-- 버튼의 3가지 종류 -->
+            <input type="submit" value="제출">
+            <input type="reset" value="취소">
+            <input type="button" value="버튼">
+            <br><br>
+            <!-- 버튼태그 : type기본값 - submit -->
+            <button type="submit">제출-기본값</button>
+            <button type="reset">취소</button>
+            <button type="button">기능실행</button>
+          </div>
+          <hr>
+        </fieldset>
+      </form>
+    </main>
+  </body>
 </html>

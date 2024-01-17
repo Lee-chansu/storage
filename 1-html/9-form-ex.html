@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="form.css">
-</head>
-<body>
-  <main>
-    <fieldset>
-      <h1>contact us</h1>
-    <form action="form.jsp">
-      <div class="email">
-        <span>YourEmail</span>
-        <input type="email" placeholder="email@exmaple.com"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+      *{margin: 0; padding: 0; box-sizing: border-box;}
+      a {text-decoration: none;}
+
+      body{background-color: #222;}
+      main{ height: 100vh; display: flex; justify-content: center; align-items: center;} 
+      .wrap{
+        padding: 40px;background-color: #fff; 
+        border-radius: 3px;
+      }
+      .wrap > div{margin: 10px 0;}
+      .wrap label{display: block; font-size: 14px; color: #444; margin-bottom: 5px;}
+      
+      .wrap input, .wrap textarea{ padding: 5px 10px; border-radius: 5px;  color: #666;}
+      
+      .w100{width: 100%;}
+      .nameBox{display: flex; justify-content: space-between;}
+      .nameBox div{width: 48.5%;}
+      .msgBox textarea{width: 100%; height: 100px;}
+
+      .btnBox label{display: inline;}
+      .btnBox{display: flex; justify-content: space-between; align-items: center;}
+      .btnBox .btn-warning{border-radius: 3px; color: #fff; padding: 4px 12px;}
+      .btnBox .form-check-input{padding: 0; height: 18px; border-color: #ddd;}
+      .btnBox .form-check-input:checked{background-color: orange; border-color: orange;}
+    </style>
+    
+    
+  </head>
+  <body>
+    <main>
+      <div class="wrap">
+        <h2 class="title">Contact Us</h2>
+        <div class="emailBox">
+          <label for="email" >Your Email</label>
+          <input type="email" id="email" name="email" placeholder="email@example.com" class="w100">
+        </div>
+        <div class="nameBox">
+          <div class="firstNameBox">
+            <label for="firstName">FirstName</label>
+            <input type="text" id="fristName" class="w100">
+          </div>
+          <div class="lastNameBox">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName"  class="w100">
+          </div>
+          </div>
+          <div class="msgBox">
+            <label for="msgBox">Message</label>
+            <textarea name="message" id="msgBox" cols="50" rows="10"></textarea>
+          </div>
+          <div class="btnBox">
+            <span>
+              <input type="checkbox" id="optCheck" class="form-check-input">
+              <label for="optCheck" class="form-check-label">Subscribe</label>
+            </span>
+            <span>
+              <button class="btn btn-warning">SEND</button>
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="name">
-        <span>First Name</span>
-        <input type="text"/>
-      </div>
-      <div class="name">
-        <span>Last Name</span>
-        <input type="text"/>
-      </div>
-      <div class="text">
-        <span>Message</span>
-        <textarea name="textarea" id="textarea" cols="42" rows="10"></textarea>
-      </div>
-      <div class="buttons">
-        <div class="scribe_box">
-        <input type="checkbox" id="subscribe" value="isSubscribe">
-        <label for="subscribe">Subscribe</label>
-      </div>
-        <input type="submit" value="SEND">
-      </div>
-    </form>
-  </fieldset>
-  </main>
-</body>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p{font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>this 연습문제2</h1>
+
+<script>
+
+function sumNumber(){
+  // 여기 아래의 함수를 화살표 함수로 바꿔보세요
+  const sum = (a,b) => a + b
+
+  return sum(40, 10)
+}
+
+console.log( sumNumber() )
+
+
+function sumNumber2(){
+
+  // 호출 되기 전에 반드시 존재해야 함
+  let addNumber = (a) => (b) => (c) => a + b + c
+  return addNumber(1)(2)(3)
+}
+
+console.log(sumNumber2())
+
+
+
+
+
+
+function getFullName () {
+  return this.firstName + ' ' + this.lastName
+}
+
+const user = {
+  firstName: 'Ted',
+  lastName: 'Chang',
+  getFullName: getFullName,
+};  
+
+console.log(user.getFullName())
+
+
+</script>
+</body>
+</html>
+
+ 

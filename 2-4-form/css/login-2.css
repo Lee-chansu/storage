@@ -1,0 +1,39 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} /* 리스트 기호,숫자 없애기 */
+a{text-decoration: none;} /* a태그 기본서식 - 밑줄 없애기*/
+
+
+
+.login .title{text-align: center;}
+.login .loginBox{
+  max-width: 400px;
+    padding: 30px; margin: 0 auto;
+    border: 1px solid black;
+} 
+
+.login .loginBox div{
+  height: 40px;
+  display: flex; justify-content: center; font-size: 14px;
+}
+
+.login .loginBox .boxColor{position: relative; 
+  display: flex; align-items: flex-end;
+  border: 1px solid #ddd; padding: 0 5px 0 0;}
+.login .loginBox .boxColor.check{border-color: rgb(71, 199, 71);}
+
+.login .loginBox .boxColor label{
+  position: absolute; left: 0; top: 0;
+  width: 100%; padding: 5px 10px; line-height: 30px;
+  color: #666; transition: 0.2s;
+}
+.login .loginBox .boxColor.check label{width: auto; font-size: 8px; line-height: 8px;}
+
+.login .loginBox .boxColor .idBox{border-radius: 5px 5px 0 0 ;}
+.login .loginBox .boxColor .pwBox{border-radius: 0 0 5px 5px;}
+
+.login .loginBox .boxColor input{width: 100%; height: 30px; padding: 0 10px;border: 0; outline: 0;}
+
+.login .loginBox .loginBtnBox #loginBtn{width: 100%; height: 30px;}
+.login .loginBox .errorMessage{color: red;}
+
+.login .bi{font-size: 18px; color: #999; }
