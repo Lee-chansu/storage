@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <!--
+        container - 중단점 키워드
+        -중단점 위치 이하로는~~ 너비가 100%가 적용된다.(가변형, 고정X)
+
+
+        max-width가 = 000px 이하로는~
+        - sm : 576px
+        - md : 768px
+        - lg : 992px
+        - xl : 1200px
+        - xxl : 1400px
+
+        col-중단점키워드
+        - 중단점 이하로 100%로 설정되서
+        - 줄이 바뀌게 된다.
+    -->
+    <section class="content">
+        <div class="container-lg">
+            <h1>title</h1>
+            <div class="row">
+                <!--총 비율은 12가 기준이고 12 비율을 박스끼리 나눠갖는다.-->
+                <div class="box col-lg-8"> 1번박스</div>
+                <div class="box col-lg"> 2번박스</div>
+                <div class="box col-sm"> 3번박스</div>
+                <div class="box col-sm"> 4번박스</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
