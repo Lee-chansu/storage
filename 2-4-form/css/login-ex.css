@@ -15,8 +15,8 @@ input의 내용이 있으면, .boxColor에 .check 클래스 추가하고 없으�
 
 .login .loginBox{padding: 30px; background-color: #fff; max-width: 400px;}
 .login .loginBox .boxColor{position: relative; border: #ccc 1px solid; margin: 5px 0;}
-.login .loginBox .idBox{border-radius: 10px;}
-.login .loginBox .pwBox{border-radius: 10px;}
+/*.login .loginBox .idBox{border-radius: 10px;}
+.login .loginBox .pwBox{border-radius: 10px;}*/
 
 .login .loginBox .boxColor label{
   position: absolute; left: 10px; top: 8px;
@@ -30,10 +30,14 @@ input의 내용이 있으면, .boxColor에 .check 클래스 추가하고 없으�
   font-size: 12px; line-height: 10px;
 }
 
-
-
 .login .loginBox .boxColor .inputBox{
   width: 100%;
   line-height: 40px; border: 0; outline: 0;
   padding: 10px 10px 0;
+}
+
+.errorBox.blind{display: none;}
+.errorBox{display: block;}
+.errorMessage{
+  font-size: 10px; color: red;
 }

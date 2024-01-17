@@ -1,0 +1,6 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;} /* 리스트 기호,숫자 없애기 */
+a{text-decoration: none;} /* a태그 기본서식 - 밑줄 없애기*/
+
+.content {width: 100%; padding: 60px 0;}
+.intro .box{border: 1px solid #444; background-color: pink;}

@@ -1,8 +1,20 @@
 *{padding: 0; margin: 0; box-sizing: border-box;}
 .wrap{height: 100%;}
-main{
-    display: flex; justify-content: center; align-items: center;
-    height: 70%;
-}
+main{display: flex; justify-content: center; align-items: center;}
 ul, li, ol{list-style: none;}
 a{text-decoration: none; color: black;}
+
+body{height: 100vh;}
+
+.header{}
+.header .container{}
+.header .container .logo{margin-top: 120px; text-align: center;}
+
+section .container{
+    width: 460px; margin: 0 auto;
+}
+section .row{}
+fieldset{
+    border: 1px solid #ccc; 
+    margin: 0 auto;
+}
