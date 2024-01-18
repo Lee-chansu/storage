@@ -8,23 +8,22 @@
     <link rel="stylesheet" href="css/test.css">
 </head>
 <body>
-    <tabe>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tabe>
+    <!-- 
+        거터 : 2의 제곱수
+        g-1 : 2 / g-2 : 4 / g-3 : 8 / g-4 : 12 / g-5 : 24
+
+        패딩 : 4의 제곱수
+        p-1 : 4 / p-2 ; 8 / p-3 : 16 p-4 : 24
+    -->
     <section class="service">
         <div class="container-xl">
             <h2 class="title">Service</h2>
-            <div class="row row-cols-md-2 gy-4">
+            <div class="row row-cols-md-2 g-3 g-md-4">
                 <!--gx0~5 / 2의 배수값으로 설정이 된다.
                 bootstrap에서는 소수점 지원X, 그냥 CSS설정해라-->
                 <div class="box col-md d-flex">
                     <div class="icon"></div>
-                    <div class="info p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit enim molestiae adipisci aspernatur totam eligendi dolorum corporis labore. Odit ipsa a iusto placeat adipisci exercitationem ipsum doloremque saepe recusandae quo.</div>
+                    <div class="info p-3"></div>
                 </div>
                 <div class="box col-md d-flex">
                     <div class="icon"></div>
@@ -45,8 +44,13 @@
         <div class="container-fluid">
             <h2 class="title">About</h2>
             <div class="row">
-                <div class="box col-md">1</div>
-                <div class="box col-md">2</div>
+                <div class="box col-md-6 col-xl-6">1</div>
+                <div class="box col-md-6 col-xl-4">
+                    <h2 class="title">WE HELP YOU LOOK
+                        GREAT EVERY DAY</h2>
+                        <p class="txt">Brazer is San Francisco's premier barber shop for stylish men looking for a place where they can feel comfortable, speak their minds, and leave satisfied.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
             </div>
         </div>
     </section>
@@ -56,19 +60,19 @@
             <div class="row row-3 gx-5">
                 <div class="box col-md">
                     <div class="box col-md">
-                        <div class="icon"></div>
+                        <div class="pic"></div>
                         <div class="info"></div>
                     </div>
                 </div>
                 <div class="box col-md">
                     <div class="box col-md">
-                        <div class="icon"></div>
+                        <div class="pic"></div>
                         <div class="info"></div>
                     </div>
                 </div>
                 <div class="box col-md">
                     <div class="box col-md">
-                        <div class="icon"></div>
+                        <div class="pic"></div>
                         <div class="info"></div>
                     </div>
                 </div>
@@ -87,9 +91,26 @@
         <div class="container-xl">
             <h2 class="title">Blog</h2>
             <div class="row row-3">
-                <div class="box col-md-12">1</div>
-                <div class="box col-md-12">2</div>
-                <div class="box col-md-12">3</div>
+                <div class="box col-md-12">
+                    <a href="#">sub-title</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, debitis iste! Omnis quo quos provident obcaecati veniam laudantium totam perferendis eius, suscipit dolorem. Delectus, harum sunt corrupti est tenetur odit!</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+                <div class="box col col-cols-2 d-flex col-md-12 p-0">
+                    <div class="box pic col-6 p-0">
+                        img
+                    </div>
+                    <div class="box info col-6">
+                        <a href="#">sub-title</a>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, culpa a. Corporis repudiandae quaerat atque dignissimos quibusdam quasi asperiores, quas ab quam inventore eos, natus exercitationem harum vero magni neque.</p>
+                        <a href="#" class="button">Read More</a>
+                    </div>
+                </div>
+                <div class="box col-md-12">
+                    <a href="#">sub-title</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, debitis iste! Omnis quo quos provident obcaecati veniam laudantium totam perferendis eius, suscipit dolorem. Delectus, harum sunt corrupti est tenetur odit!</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
             </div>
         </div>
     </section>

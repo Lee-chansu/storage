@@ -3,10 +3,36 @@ ul, ol, li{list-style: none;}
 a{text-decoration: none;} 
 
 section{padding: 120px 0;}
-.box {height: 100px;}
-.icon{background-color: yellow; width: 25%;}
-.info{background-color: pink; width: 75%;}
-.our_barbers .icon{background-color: yellow; width: 100%; height: 50%;}
-.our_barbers .info{background-color: pink; width: 100%; height: 50%;}
+.box{height: 200px;}
+
+
+.service .box {height: 200px;}
+.service .icon{height: 200px; background-color: yellow; width: 25%;}
+/*flex박스 - 자식에게 적용하는 옵션, 배치 순서 변경 : order*/
+.service .box:nth-of-type(2n+1) .icon{order: 1;}
+.service .info{background-color: pink; width: 75%;}
+@media screen and(max-width:768px) {
+    .service .box {max-width: 400px;}
+}
+
+.about .box{background-color: #ddd; height: auto;}
+.about .box:nth-of-type(2){padding: 80px;}
+@media screen and(max-width: 992px) {
+    .about .box:nth-of-type(2){padding: 40px;}
+}
+
+.our_barbers .box{max-width: 400px;}
+.our_barbers .pic{background-color: #ddd; height: 200px;}
+.our_barbers .info{padding: 24px 0;}
+@media screen and(max-width: 768px) {
+    .our_barbers .box{max-width: 400px;}
+}
+
+.blog .box{
+    height: auto;
+    background-color: #ddd;
+}
+.blog .pic{}
+.blog .box .box.info{padding: 40px;}
 
 .footer{padding: 60px 0; background-color: #1111;}
