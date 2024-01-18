@@ -13,7 +13,6 @@ let loginBtn = document.getElementById("loginBtn");
 let errorBox = document.querySelector(".errorBox");
 let errorMessage = document.querySelector(".errorMessage");
 let regex = /(?=.*[a-z])(?=.*[\d])(?=.*[@#$%^&*!?])[a-z\d@#$%^&*!?]+/
-let regex2 = /(?=.*[a-z])+(?=.*[\d])+(?=.*[!@#$%^&*()?])/
 
 // forEach는 배열의 갯수만큼 한개씩 반복해서 적용
 inputBox.forEach( function( el, idx){
@@ -36,37 +35,52 @@ inputBox.forEach( function( el, idx){
 loginBtn.addEventListener('click', function(){
   let idValue= userId.value;
   let pwValue= userPw.value;
+  let result = checkValid(idValue, pwValue);
 
-  if(idValue == "" && pwValue == ""){
-    errorMessage.innerHTML="아이디와 비밀번호를 입력하세요"
-    errorBox.classList.remove('blind')
-  }
-  else if(idValue == ""){
-    errorMessage.innerHTML="아이디를 입력하세요"
-    errorBox.classList.remove('blind')
-  }
-  else if(pwValue == ""){
-    errorMessage.innerHTML="비밀번호를 입력하세요"
-    errorBox.classList.remove('blind')
-  }//4~12
-  else if(idValue.length < 4 || idValue.length > 12){
-    errorMessage.innerHTML="아이디는 4~12글자입니다."
-    errorBox.classList.remove('blind')
-  }//소문자, 숫자, 특수문자 1개 이상씩
-  else if(pwValue != regex){
-    errorMessage.innerHTML="비밀번호 형식이 올바르지 않습니다."
-    errorBox.classList.remove('blind')
-  }
-  else if(idValue == userInfo.id && pwValue == userInfo.pw){
-    alert("로그인 성공");
-    return;
+  if(result == ''){
+    checkLogin()
   }
   else{
-    alert("알 수없는 오류로 인해 로그인이 되지 않습니다. 지속적인 문제가 발생하는 경우 관리자에게 문의해주시기 바랍니다.");
-    return;
+  errorMessage.innerHTML = result;
   }
-
-
 })
 
 
+function checkValid(idValue, pwValue){
+  let errMsg = "";
+
+  if(idValue == "" && pwValue == ""){
+    errMsg ="아이디와 비밀번호를 입력하세요"
+    errorBox.classList.remove('blind')
+  }
+  else if(idValue == ""){
+    errMsg ="아이디를 입력하세요"
+    errorBox.classList.remove('blind')
+  }
+  else if(pwValue == ""){
+    errMsg ="비밀번호를 입력하세요"
+    errorBox.classList.remove('blind')
+  }//4~12
+  else if(idValue.length < 4 || idValue.length > 12){
+    errMsg="아이디는 4~12글자입니다."
+    errorBox.classList.remove('blind')
+  }//소문자, 숫자, 특수문자 1개 이상씩
+  else if(pwValue != regex){
+    errMsg="비밀번호 형식이 올바르지 않습니다."
+    errorBox.classList.remove('blind')
+  }
+  else{
+    checkLogin(idValue, pwValue)
+  }
+  return errMsg;
+}
+
+function checkLogin(){
+  let status = ""
+  if(idValue == userInfo.id && pwValue == userInfo.pw){
+    status = "로그인 성공";
+  }
+  else{
+    status = "아이디 또는 비밀번호를 잘못입력하셨습니다. 다시 확인해주세요.";
+  }
+}
