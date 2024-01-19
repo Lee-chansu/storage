@@ -1,4 +1,98 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 ul, li, ol{list-style: none;}
-a{list-style: none;}
+a{text-decoration: none; color: black; text-align: center;}
+img{display: block; width: 100%;}
+
+header{
+    justify-content: space-between; align-items: center;
+    position: fixed; top: 0; left: 0;
+    padding: 32px 64px 16px;
+    overflow-y: hidden;
+    transition: 0.3s ease;
+}
+
+.menu-list{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 16px 0;
+}
+.head.middle .menu-list{
+    height: 0;
+}
+.head.middle .depth-01{
+    margin: 0 24px; 
+    text-align: center;
+    position: relative;
+    text-align: center; font-size: 18px;
+}
+
+.head.middle .menu-item.depth-01>ul{
+    width: max-content;
+    transform: translateX(-50%);
+    transition: 1s ease; 
+    position: absolute; top: 16px; left: 50%;
+    padding: 24px 0;
+    opacity: 0;
+}
+.head.middle .menu-item.depth-01:hover>ul{
+    opacity: 1;
+}
+.middle .depth-01 .depth-02 a>span{
+    margin: 20px 0; 
+    font-size: 12px;
+}
+
+.head.right .menu-list span{color: #e5e7eb;}
+.head.right .login:hover .login-btn>span,
+.head.right .cart:hover>.cart-btn>span{color:black}
+
+
+
+.visual{padding-top: 130px}
+.visual .container .row .img_link{width: 100%;}
+.visual .container .row img{width: 100%; border-radius: 5px;}
+
+
+/*section common*/
+.title_wrap .title{text-align: center; font-size: 48px;}
+.container .content_wrap .item-container{width: calc(100% / 5);}
+
+.item-container .img_wrap{
+    display: block;
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.item-container .info{
+    width: 100%;
+    padding: 5px;
+    text-align: center; font-size: 18px;
+}
+.row .item-container .info .price{color: #ffa2cb;}
+
+/*section-Online_Shop*/
+
+.Online_Shop .item-container .info .item_info{
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Online_Shop .item-container .img-wrap {position: relative;}
+.Online_Shop .item-container .img-wrap .hover-img{
+    position: absolute; top: 0; left: 0;
+    display: none; opacity: 0;
+}
+.Online_Shop .img-wrap:hover .basic-img {
+    opacity: 0;
+    display: none;
+}
+.Online_Shop .img-wrap:hover .hover-img {
+    opacity: 1;
+    display: block;
+}
+.Online_Shop .item-container .info{margin-bottom: 10px;}
 
