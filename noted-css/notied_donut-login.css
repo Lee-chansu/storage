@@ -1,0 +1,38 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, li, ol{list-style: none;}
+a{text-decoration: none; color: black; text-align: center;}
+img{display: block; width: 100%;}
+
+fieldset{
+    border: 1px solid #eee;
+    width: 480px;
+    position: relative;
+}
+
+.close{
+    width: 24px;  height: 24px;
+    position: absolute; top: 16px; right: 16px;
+    opacity: 0;
+    float: none;
+}
+.bi{
+    display: inline-block;
+    font: normal normal normal 14px/1 "Black Tie";
+    font-size: 'inherit';
+    
+}
+
+.title{
+    display: inline-block; justify-content: center; 
+    text-align: center;
+}
+
+input[type=button]{
+    border-style: none; border-radius: 2px;
+    background-color: #ffec9f;
+}
+
+.box-wrap{
+    width: 100%;
+    align-items: center; justify-content: space-between;
+}
