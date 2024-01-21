@@ -3,24 +3,27 @@ ul, li, ol{list-style: none;}
 a{text-decoration: none; color: black; text-align: center;}
 img{display: block; width: 100%;}
 
+.inner{height: 100%;}
+
 fieldset{
     border: 1px solid #eee;
-    width: 480px;
+    width: 360px;
     position: relative;
 }
 
 .close{
     width: 24px;  height: 24px;
     position: absolute; top: 16px; right: 16px;
-    opacity: 0;
+    opacity: 0.3; background-color: transparent; border: none;
     float: none;
+    text-rendering: auto;
 }
 .bi{
     display: inline-block;
-    font: normal normal normal 14px/1 "Black Tie";
+    font-size: 24px;
     font-size: 'inherit';
-    
 }
+.close:hover .bi{color: black;}
 
 .title{
     display: inline-block; justify-content: center; 
@@ -32,7 +35,48 @@ input[type=button]{
     background-color: #ffec9f;
 }
 
+#id{border-radius: 5px 5px 0 0; border: 1px solid #e7eaee;}
+#password{border-radius: 0 0 5px 5px; border: 1px solid #e7eaee;}
+
 .box-wrap{
     width: 100%;
     align-items: center; justify-content: space-between;
+    font-size: 12px;
+}
+
+
+.divier{position: relative; text-align: center;}
+
+.line{
+    position: absolute; 
+    height: 1px; width: 40%;
+    background-color: #e7eaee;
+}
+
+.left.line{top: 50%; left: 0;}
+.right.line{top: 50%; right: 0; left: auto;}
+
+.login-box{
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 12px 49%;
+    font-size: 14px; color: #3c1e1e;
+    width: 100%; height: 100%;
+}
+.login{display: block;}
+
+.kakao.login-box{
+    background-color: #FFEB00;
+    background-image: url(https://vendor-cdn.imweb.me/images/kakao_icon.png);
+}
+.naver.login-box{
+    background-color: #27d34a;
+    background-image: url(https://vendor-cdn.imweb.me/images/naver_login2x.png);
+    
+}
+
+.no-login-btn{
+    background-color: #8393a7;
+    color: white;
+    line-height: 42px;
 }

@@ -1,4 +1,6 @@
-*{margin: 0; padding: 0; box-sizing: border-box;}
+*{margin: 0; padding: 0; box-sizing: border-box;
+font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
 ul, li, ol{list-style: none;}
 a{text-decoration: none; color: black; text-align: center;}
 img{display: block; width: 100%;}
@@ -6,8 +8,13 @@ img{display: block; width: 100%;}
 /*header*/
 
 header{
+    display: flex;
     justify-content: space-between; align-items: center;
     position: fixed; top: 0; left: 0;
+    z-index: 1;
+}
+
+.header{
     padding: 32px 64px 16px;
     overflow-y: hidden;
     transition: 0.3s ease;
@@ -50,9 +57,46 @@ header{
 .head.right .cart:hover>.cart-btn>span{color:black}
 
 /*header-media*/
+.header-slide{display: none;}
+.header-slide .inner{
+    display: table;
+    position: relative; min-height: 30px; width: 100%;
+    z-index: 999;
+    position: fixed; top: 0; left: 0;
+}
+.header-slide .inner .col_group{
+    padding: 20px 0;
+    display: table-cell;
+}
+.header-slide .inner .slide_menu{width: 121px;}
+.header-slide .inner .slide_menu i{
+
+}
+.header-slide .inner .slide_logo{}
+.header-slide .inner .slide_logo a{}
+.header-slide .inner .slide_cart{width: 111px;}
+
+@media screen and (max-width: 1280px) {
+    .header{display: none;}
+    .header-slide{display: block;}
+}
+
 
 /*main*/
-main{padding: 130px 20px}
+main{padding: 130px 20px; position: relative;}
+main .body-bg .tms-bg{
+    position: fixed; top: 0; left: 0; z-index: -1;
+    width: 100%; height: 100%;
+}
+main .body-bg .tms-bg svg{
+    position: absolute;
+}
+
+.tms-bg1{right: 5%; top: 50%;}
+.tms-bg2{left: 10%; top: 50%;}
+.tms-bg3{left: 20%; top: 100%;}
+.tms-bg4{right: 20%; top: 100%;}
+.tms-bg5{left: 30%; top: 100%;}
 
 /*visual*/
 .visual .container .row .img_link{width: 100%;}
@@ -176,13 +220,66 @@ main{padding: 130px 20px}
     margin-bottom: 10px;
 }
 
-.footer .container .footer-top{}
-.footer .container .footer-top ul{margin-top: 24px;}
-.footer .container .footer-top .footer-company{}
-.footer .container .footer-top .footer-social{}
-.footer .container .footer-top .footer-social a img{
+.footer {
+    background-color: #bee1f0;
+    border-radius: 64px 64px 0 0;
+}
+.footer .con{position: relative;}
+.footer .con .footer-gb1{
+    position: absolute; top: 5%; left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+}
+.tms-footer-bg1 svg {
+    min-height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.kakao_add{
+    padding: 100px 0;
+    position: relative;
+    text-align: center; 
+    display: flex; justify-content: center; align-items: center;
+    flex-direction: column;
+}
+.kakao_add h2{
+    font-size: 48px; font-weight: 600;
+    line-height: 1.6em;
+    margin: 0; 
+}
+.kakao_add p{
+    display: block; 
+    margin-top: 64px; 
+    margin-bottom: 32px;
+    line-height: 1.6em; font-size: 20px;
+}
+.kakao_add .button{
+    background-color: #ffec9f;
+    font-size: 20px; line-height: 1em; font-weight: 600;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.footer .con .footer-top{position: relative;}
+.footer .con .footer-top ul{margin-top: 24px;}
+.footer .con .footer-top .footer-social{position: relative; z-index: 2;}
+.footer .con .footer-top .footer-social a img{
     margin-right: 8px; width: 16px; height: 16px;
 }
-.footer .container .footer-bottom{
-    color: #e5e7eb;
+
+.footer .con .footer-bottom {position: relative;}
+
+
+.fooer-gb{width: 100%; position: relative;}
+.fooer-gb2{width: 100%; position: relative;}
+.footer-gb-3{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    width: 25%;
 }
