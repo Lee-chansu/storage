@@ -37,6 +37,7 @@ input[type=button]{
 
 #id{border-radius: 5px 5px 0 0; border: 1px solid #e7eaee;}
 #password{border-radius: 0 0 5px 5px; border: 1px solid #e7eaee;}
+#errormessage{font-size: 15px; color: red;}
 
 .box-wrap{
     width: 100%;

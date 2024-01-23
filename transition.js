@@ -1,11 +1,11 @@
 window.onload = function(){
-	let images = document.querySelectorAll(".banner_img");
+	let images = document.querySelectorAll(".bg");
 	let current_idx = 0;
 	let position = 0;
 	const img_width = 1105;  // css에서 설정한 width 값과 동일하게 맞춰주세요
-	const left_btn = document.querySelector(".left")
-	const right_btn = document.querySelector(".right")
-	const container = document.querySelector(".img_container")
+	const left_btn = document.querySelector(".prev-btn")
+	const right_btn = document.querySelector(".next-btn")
+	const container = document.querySelector(".row")
 
 	function previous(){
 	if(current_idx > 0){

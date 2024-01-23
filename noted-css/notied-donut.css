@@ -107,9 +107,14 @@ main .body-bg .tms-bg .tms-bg4{right: 20%; top: 100%;}
 main .body-bg .tms-bg .tms-bg5{left: 30%; top: 100%;}
 
 /*visual*/
-.visual {width: 100%; height: 700px; transition: 0.3s;}
-.visual .con {height: 100%;}
-.visual .row {height: 100%; border-radius: 20px; overflow: hidden;}
+.visual {width: 100%; height: 100vh; transition: 0.3s;}
+.visual .con {height: 100%; position: relative;}
+.visual .row {
+    justify-content: space-between; flex-wrap: nowrap;
+    height: 100%; 
+    border-radius: 20px; 
+    overflow: hidden;
+}
 .visual .row .bg-1{
     width: 100%; height: 100%; 
     background-image: url('../knotted_images/knotted_banner.jpg');
@@ -119,16 +124,31 @@ main .body-bg .tms-bg .tms-bg5{left: 30%; top: 100%;}
 .visual .row img{
     display: none; 
     width: 100%; min-width: 1114px; min-height: 1114px;
-
-
+}
+.visual .nav{
+    width: auto; height: 100%;
+}
+.visual .nav .btn{
+    position: absolute; top: 45%;
+    cursor: pointer;
+}
+.visual .nav .prev-btn{left: 0;}
+.visual .nav .next-btn{right: 0;}
+.visual .nav .bi::before{
+    display: flex; justify-content: center; align-items: center;
+    width: 48px; height: 48px;
+    background-color: #fff; 
+    border-radius: 100%;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+    font-size: 16px; font-weight: 700; color: #3c3c3c;
 }
 
 @media screen and (max-width: 992px) {
+    main{padding: 0;} 
+    .visual{padding: 0;}
     .visual .row .bg-1{display: none;}
     .visual .row img{display: block;}
-    main{padding: 0;} .visual{padding: 0;}
-    
-    
+    .visual .nav .btn{display: none;}
 }
 
 /*section common*/
@@ -143,39 +163,43 @@ section .item{
 }
 
 section .wrap{background-color: #fff; border-radius: 10px;}
-section .item-info{padding: 15px;}
+section .info{padding: 5px;}
 section .ttl{margin: 0; font-size: 20px; color: #3c3c3c;}
 section .price{font-size: 18px; color: #ffa2cb;}
 
 
-/*section-Online_Shop*/
-.Online_Shop .item {
+/*section-Online-Shop*/
+.Online-Shop .item {
     display: block;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.Online_Shop .item .box {background-color: #fff;}
-.Online_Shop .item .box .img-wrap{
+.Online-Shop .item .box {background-color: #fff;}
+.Online-Shop .item .box .img-wrap{
     display: block; position: relative;
 }
-.Online_Shop .item .box .img-wrap .hover-img{
+.Online-Shop .item .box .img-wrap .hover-img{
     display: none; position: absolute; top: 0; left: 0;
 }
-.Online_Shop .item .box .img-wrap:hover .basic-img {opacity: 0;}
-.Online_Shop .item .box .img-wrap:hover .hover-img {display: block;}
+.Online-Shop .item .box .img-wrap:hover .basic-img {opacity: 0;}
+.Online-Shop .item .box .img-wrap:hover .hover-img {
+    display: block;
+    border-radius: 10px;
+}
 
-.Online_Shop .box .ttl{
+.Online-Shop .item-info{padding: 15px;}
+.Online-Shop .box .ttl{
     margin-top: 10px; 
     text-overflow: ellipsis; white-space: nowrap;
     overflow-x: hidden;
 }
-.Online_Shop .box .price{
+.Online-Shop .box .price{
     margin: 0;
     font-size: 18px; white-space: nowrap;
 }
 
-.Online_Shop .to-cart{
+.Online-Shop .to-cart{
     display: block; 
     width: 100%; padding: 5px;
     background-color: #fdfaf7;
@@ -204,17 +228,15 @@ section .price{font-size: 18px; color: #ffa2cb;}
 
 /*Instagram*/
 
-.Instagram .container{}
-.Instagram .content-wrap{}
 .Instagram .content-wrap .star-img{
     position: relative; 
     padding: 6px;
 }
 .Instagram .content-wrap .star-img a .img-wrap{
-    min-height: 180px;
-    background-size: cover; background-position: center center;
+    min-height: 180px; height: 24vh;
+    background-size: cover; background-position: center;
     background-repeat: no-repeat;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .Instagram .follow span{
@@ -240,7 +262,7 @@ section .price{font-size: 18px; color: #ffa2cb;}
     width: 100%;
     overflow: hidden;
 }
-.footer .tms-footer-bg1 svg {
+.footer .tms-footer-bg1 svg{
     width: 100%; min-height: 100%;
     object-fit: cover;
 }
@@ -295,8 +317,7 @@ section .price{font-size: 18px; color: #ffa2cb;}
 .footer .con .footer-inner .footer-bottom {
     position: relative; display: flex;
 }
-.footer .con .footer-bottom ul{}
-.footer .con .footer-bottom ul li{}
+
 .footer .con .footer-inner .footer-bottom ul li::before{
     content: "";
     width: 1px; height: 40px;  margin: 0 16px;
@@ -333,8 +354,8 @@ section .price{font-size: 18px; color: #ffa2cb;}
         font-size: 10px;
     }
     .footer con .footer-gb-1{
-    transform: scale(1.5) translate(30%, -16px);
-}
+        transform: scale(1.5) translate(30%, -16px);
+    }
     .footer .footer-gb .footer-gb-3{
         transform: scale(1.5) translate(30%, -16px);
     }
