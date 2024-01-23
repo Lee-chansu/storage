@@ -19,7 +19,6 @@ header{
     transition: 0.3s ease;
 }
 
-.header:hover{overflow-y: visible;}
 
 .header .logo {width: 160px;}
 .header .logo sgv{height: 60px; transition: 0.3s ease;}
@@ -69,17 +68,13 @@ header{
     height: 70px;
 }
 
-.header-slide .inner .slide-logo .img-box{
-    position: relative; height: 100%;
-}
+.header-slide .inner .slide-logo .img-box{position: relative; height: 100%;}
 .header-slide .inner .slide-logo img{
     position: absolute; top: 0; left: 35%;
     width: auto; height: 100%;
 }
 
-.header-slide .inner .slide-cart{
-    display: flex; justify-content: flex-end;
-}
+.header-slide .inner .slide-cart{display: flex; justify-content: flex-end;}
 
 @media screen and (max-width: 1280px) {
     .header{display: none;}
@@ -87,10 +82,7 @@ header{
 }
 
 /*nav*/
-nav{
-    position: absolute; top: 0; left: 0;
-    height: 100vh;
-}
+nav{position: absolute; top: 0; left: 0; height: 100vh;}
 
 /*main*/
 main{padding: 130px 0; position: relative;}
@@ -125,13 +117,8 @@ main .body-bg .tms-bg .tms-bg5{left: 30%; top: 100%;}
     display: none; 
     width: 100%; min-width: 1114px; min-height: 1114px;
 }
-.visual .nav{
-    width: auto; height: 100%;
-}
-.visual .nav .btn{
-    position: absolute; top: 45%;
-    cursor: pointer;
-}
+.visual .nav{width: auto; height: 100%;}
+.visual .nav .btn{position: absolute; top: 45%; cursor: pointer;}
 .visual .nav .prev-btn{left: 0;}
 .visual .nav .next-btn{right: 0;}
 .visual .nav .bi::before{
@@ -153,9 +140,7 @@ main .body-bg .tms-bg .tms-bg5{left: 30%; top: 100%;}
 
 /*section common*/
 section {padding: 100px 0;}
-
 section .title{margin: 80px 0; font-size: 48px; font-weight: 600;}
-
 section .item{
     display: block;
     border-radius: 5px;
@@ -228,10 +213,7 @@ section .price{font-size: 18px; color: #ffa2cb;}
 
 /*Instagram*/
 
-.Instagram .content-wrap .star-img{
-    position: relative; 
-    padding: 6px;
-}
+.Instagram .content-wrap .star-img{position: relative; padding: 6px;}
 .Instagram .content-wrap .star-img a .img-wrap{
     min-height: 180px; height: 24vh;
     background-size: cover; background-position: center;
@@ -246,16 +228,10 @@ section .price{font-size: 18px; color: #ffa2cb;}
     border: #e5e7eb 1px solid; border-radius: 20px;
     text-align: center; font-size: 16px; font-weight: 600;
 }
-.Instagram .follow span:hover{
-    background-color: #ffeea4;
-    cursor: pointer;
-}
+.Instagram .follow span:hover{background-color: #ffeea4; cursor: pointer;}
 
 /*footer*/
-.footer {
-    background-color: #bee1f0;
-    border-radius: 64px 64px 0 0;
-}
+.footer {background-color: #bee1f0; border-radius: 64px 64px 0 0;}
 .footer .con{position: relative;}
 .footer .con .footer-gb1{
     position: absolute; bottom: 0;
