@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      *{margin: 0; padding: 0; box-sizing: border-box;}
+      .sec {padding: 100px 0;}
+      .sec .box img{width: 100%;}
+
+      /* 거터가 사실 있음 .box안에 패딩이 거터 역할 함 */
+      .best-item .box{border: 1px solid #000;}
+      
+      /* 테두리가 있는 박스 디자인을 하고 싶다면 .box 안에 구조를 하나 더 만들어야 한다. */
+      .new-item .box .gt{border: 1px solid #000; }
+      
+
+      .event .box .gt{border: 1px solid #000;}
+      .sns .box img{width: 100%;}
+    </style>
+</head>
+<body>
+  
+
+  <!-- 반응형 조절 col 가지고 한다 -->
+  <section class="sec event">
+    <div class="container">
+      <h2 class="title">Title - h2</h2>
+      <div class="row gy-4">
+        <!-- 기본 12개 - 전체크기 ----- md 이후로 6개니까 반절크기 된다. -->
+        <div class="box col-12 col-md-6">
+          <div class="gt">
+
+          </div>
+        </div>
+        <div class="box col-12 col-md-6">
+          <div class="gt">
+          
+          </div>
+        </div>
+        <div class="box col-12">
+          <div class="gt">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 반응형 row가지고 한다 -->
+  <section class="sec best-item">
+    <div class="container">
+      <h2 class="title">거터 있음 0 - box에 테두리 하면? x </h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+        <div class="box col">
+          <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+          <div class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+          </div>
+        </div>
+        <div class="box col">
+          <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+          <div class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+          </div>
+        </div>
+        <div class="box col">
+          <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+          <div class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+          </div>
+        </div>    
+        <div class="box col">
+          <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+          <div class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+          </div>
+        </div>    
+      </div>
+    </div>
+  </section>
+  <section class="sec new-item">
+    <div class="container">
+      <h2 class="title">거터 있음 0 - box에 테두리 적용하려면? div(gt)구조 하나 더 넣기</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+        <div class="box col">
+          <div class="gt">
+            <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+            </div>
+          </div>
+        </div>
+        <div class="box col">
+          <div class="gt">
+            <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+            </div>
+          </div>
+        </div>
+        <div class="box col">
+          <div class="gt">
+            <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+            </div>
+          </div>
+        </div>
+        <div class="box col">
+          <div class="gt">
+            <div class="pic"><img src="imgs/lg.webp" alt=""></div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eum inventore ab non tenetur omnis velit dolor minus! Blanditiis voluptate culpa obcaecati itaque porro, accusantium qui? Ducimus quisquam voluptatem explicabo?
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

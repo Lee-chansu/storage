@@ -5,89 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/noted-css/notied_donut.css">
 </head>
 <body>
     <header class="header container-fluid px-5">
-            <div class="head left row-3 ps-3">
-                <div class="logo_box">
-                    <a href="#" class="logo">
-                        <svg viewBox="0 0 158 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="user-select: auto !important;">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 158 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="user-select: auto !important;">
                             <path d="M23.361 51.2016C20.4064 47.7143 13.5019 34.1355 9.43827 31.1873C11.5337 30.0291 16.761 24.7265 18.2519 23.2481C20.8837 20.641 29.2655 10.5707 29.3246 7.92992C29.3474 6.80537 27.7519 6.29575 26.7519 6.48528C25.4428 6.73799 25.0201 7.91729 24.4019 8.87336C22.911 11.173 18.8837 16.9136 16.0292 20.0514C11.8337 24.6717 9.67463 26.984 6.3019 28.0917C6.17463 26.1711 6.59736 19.8956 6.67463 17.7686C6.78827 14.6393 7.37464 8.50693 8.50191 6.89382C8.32918 6.67481 5.61098 4.58157 3.87462 6.4895C2.47916 8.02258 0.970084 14.2434 0.820084 16.7157C0.751902 17.8234 1.27917 19.1416 1.43826 19.6176C1.58826 20.8221 0.33826 33.5754 0.160988 36.3425C-0.307194 43.6626 0.288275 49.0199 1.39737 51.3996C2.16555 53.0506 3.20645 53.7624 4.51099 53.7624C6.29281 53.7624 7.5928 52.6252 8.25644 51.1595C7.11553 50.6499 6.77462 49.4116 6.40644 48.0386C5.59735 45.0482 6.23825 34.86 6.06098 33.3395C7.72007 34.86 12.511 43.8058 13.5973 45.7642C15.3383 48.8936 18.8246 54.6426 21.6292 57.3803C23.3155 59.0229 25.1564 60 26.6928 60C27.8928 60 28.8519 59.6757 29.5564 59.0313C30.261 58.3911 30.6155 57.5067 30.6155 56.4116C27.9337 56.3863 25.9792 54.2931 23.3565 51.2016H23.361Z" fill="black" style="user-select: auto !important;"></path>
                             <path d="M147.265 7.28129C147.87 1.78072 148.629 1.28794 148.052 0.567726C147.593 -0.00507429 144.861 -0.358863 144.075 0.580361C142.179 3.23378 140.115 20.5189 139.506 26.0194C134.556 22.9533 126.447 26.6133 125.102 39.2444C121.365 45.7095 117.82 47.7438 114.897 47.7817C111.975 47.8196 109.711 44.526 109.406 40.8828C113.502 41.2408 116.834 36.5194 117.438 33.3563C118.015 30.3407 116.697 26.1037 112.702 26.2932C108.206 26.508 104.425 30.1554 103.806 38.082C102.502 42.4664 100.225 47.7269 97.72 47.5626C95.5109 47.4152 95.37 35.0495 95.4928 31.2294C97.2291 25.7752 98.4973 16.7283 98.5836 14.3613C100.788 14.3192 108.347 14.4118 110.07 14.3191C111.365 14.2475 110.37 11.7289 109.602 11.7121C106.925 11.6531 100.465 11.7795 98.5836 11.7795C98.6291 10.0231 98.9155 4.82583 97.0246 2.93895C96.0473 1.96604 93.2791 1.47746 92.0746 2.76205C90.3291 4.61944 89.8064 7.50451 89.5109 11.7121C88.9018 11.7121 85.9019 11.7795 85.3291 11.7795C85.3791 10.3559 85.7519 5.81559 84.2519 3.55808C83.4019 2.28192 81.1927 1.27951 79.0927 2.51356C77.3882 3.51596 76.3109 7.2181 76.2291 12.0659C75.4473 12.1627 63.1837 13.0177 62.2973 13.1399C61.9337 13.1904 61.4882 13.5315 61.5109 13.8685C61.5973 15.1362 62.5291 15.3468 63.5245 15.2963C65.8791 15.1994 75.6655 14.7361 76.1791 14.7867C75.8882 20.1735 75.8473 30.3323 76.2246 33.1795C74.9564 33.8323 73.5791 34.3672 71.9655 34.801C71.9337 32.4929 70.9336 27.8431 68.5882 26.15C67.72 25.5225 65.1609 24.3305 62.9882 25.7794C61.7382 26.6133 61.1291 28.7234 61.2518 30.3828C60.3291 29.7469 58.2336 29.5826 56.8882 30.5892C55.27 31.8022 54.8791 34.7462 55.02 37.3702C54.2882 38.7095 51.6064 42.8792 50.2746 43.7173C49.0109 44.5091 48.1427 44.1764 47.5655 42.7149C46.8427 40.887 45.7882 36.1867 44.5836 33.8154C43.7836 32.2402 42.3609 30.1512 40.0473 30.1512C38.1746 30.1512 36.6428 31.1831 35.6018 33.0405C35.9018 29.2162 35.6337 26.7607 33.5155 26.449C31.0518 26.091 29.7246 26.706 29.9246 28.7571C30.2246 31.819 28.7791 44.2732 31.0564 48.0638C31.7018 49.1378 32.4064 49.8875 34.3973 49.837C36.4609 49.7822 37.1064 48.603 36.8927 47.4363C36.5564 45.5873 36.2336 40.6006 36.5746 37.7871C36.8746 35.3106 37.8564 33.1163 39.5609 33.2258C41.2655 33.3353 42.2382 36.7173 43.0746 40.3268C43.7246 43.1445 45.2109 45.2293 45.9882 45.8779C47.5382 47.1752 49.8382 46.8677 50.8155 46.5982C52.2427 46.2022 54.6564 43.9784 55.4109 42.6601C55.8109 44.6649 56.6382 46.7666 58.27 48.2113C61.6609 51.2142 66.5518 50.4351 69.0927 47.0404C70.5882 45.0398 72.0973 40.5374 72.0427 37.3028C73.4973 37.109 74.9791 36.6752 76.4882 36.0182C76.7109 41.3503 77.3382 46.1054 79.6655 48.5819C82.3655 51.4585 86.42 50.751 88.7518 48.4934C89.67 47.6048 90.42 46.6824 91.1018 45.5368C92.2291 48.2576 93.9427 50.852 98.0836 50.3424C102.238 49.8328 104.047 46.198 104.815 44.7113C106.143 47.6048 109.693 50.3719 114.197 50.4351C119.125 50.5067 122.556 48.0681 125.47 44.1216C126.229 46.1222 127.793 47.8701 131.565 47.8575C135.788 47.8406 138.434 44.3112 140.302 38.52C140.343 47.1457 141.679 54.9796 143.729 58.3237C145.175 60.6823 148.325 59.4019 150.447 58.4079C143.447 43.5278 146.02 18.6868 147.275 7.26865L147.265 7.28129ZM63.6064 46.4929C61.8837 46.1138 60.5928 34.9273 61.6382 31.6422C62.2564 34.464 65.0337 37.7324 67.5291 37.2228C66.9564 39.9899 65.9927 47.0193 63.6064 46.4929ZM65.6018 27.5188C67.2064 27.2745 67.6927 32.8594 67.7973 33.9586C64.8427 32.434 64.5337 27.6831 65.6018 27.5188ZM95.6018 5.605C96.5791 5.66396 96.5791 9.99788 96.4836 11.7163C96.4791 11.7163 95.4291 11.7163 94.8155 11.7163C94.7882 10.4949 94.92 5.5671 95.6018 5.60921V5.605ZM82.3427 5.605C83.32 5.65554 83.2427 10.3432 83.2064 11.8553H81.5564C81.5518 10.4822 81.6291 5.56709 82.3427 5.605ZM81.6018 24.8022C81.4473 21.1422 81.5246 15.8312 81.5246 15.1615C82.0791 15.1362 82.62 15.1068 83.1473 15.0857C82.97 17.5875 82.4427 22.0225 81.6018 24.8022ZM84.4609 47.5669C82.1609 47.4868 82.1473 33.9376 82.2291 31.2336C83.9609 24.8275 84.9473 18.9563 85.3064 14.9762C86.6337 14.9172 88.0109 14.854 89.4473 14.7909C88.9609 21.9256 89.0109 31.8949 90.0746 39.5603C89.1609 42.1884 87.3109 47.6595 84.4609 47.5626V47.5669ZM94.8609 24.8022C94.7109 23.7746 94.77 18.0845 94.7836 14.3908C94.7836 14.3908 96.0154 14.3908 96.4291 14.3908C96.3973 16.3829 95.6655 21.6055 94.8564 24.8022H94.8609ZM109.788 33.887C110.52 30.7029 111.438 28.7066 113.065 28.5212C114.106 28.357 114.425 30.3913 113.456 33.668C113.061 35.0074 111.761 38.6 109.797 39.0886C108.688 39.3665 109.543 34.94 109.788 33.887ZM136.129 37.5934C135.656 38.899 133.525 44.8208 131.579 44.8924C129.634 44.964 130.238 37.665 131.161 34.3924C132.625 29.212 134.606 27.0218 135.588 26.8829C137.052 26.6723 138.588 28.2096 138.952 28.5886C138.847 28.9677 136.597 36.2919 136.129 37.5976V37.5934Z" fill="black" style="user-select: auto !important;"></path>
                             <path d="M156.134 54.2131C156.515 54.411 156.815 54.6848 157.034 55.0302C157.252 55.3755 157.361 55.7504 157.361 56.1547C157.361 56.559 157.252 56.9423 157.034 57.2835C156.815 57.6246 156.515 57.8942 156.134 58.0963C155.752 58.2943 155.329 58.3954 154.861 58.3954C154.393 58.3954 153.97 58.2943 153.588 58.0963C153.206 57.8984 152.906 57.6246 152.688 57.2835C152.47 56.9423 152.361 56.5675 152.361 56.1547C152.361 55.742 152.47 55.3755 152.688 55.0302C152.906 54.6848 153.206 54.4153 153.588 54.2131C153.97 54.0151 154.393 53.9141 154.861 53.9141C155.329 53.9141 155.752 54.0151 156.134 54.2131ZM155.884 57.7257C156.184 57.5699 156.415 57.3551 156.579 57.0813C156.743 56.8075 156.829 56.5001 156.829 56.1547C156.829 55.8093 156.747 55.5103 156.579 55.2366C156.415 54.9628 156.179 54.748 155.879 54.5922C155.579 54.4363 155.238 54.3563 154.861 54.3563C154.484 54.3563 154.143 54.4363 153.843 54.5922C153.543 54.748 153.306 54.9628 153.143 55.2366C152.979 55.5103 152.893 55.8178 152.893 56.1547C152.893 56.4917 152.974 56.8075 153.143 57.0813C153.306 57.3551 153.538 57.5699 153.838 57.7257C154.138 57.8815 154.479 57.9616 154.861 57.9616C155.243 57.9616 155.584 57.8815 155.884 57.7257ZM155.797 56.1168C155.724 56.2221 155.624 56.3063 155.497 56.3569L156.074 57.1445H155.438L154.924 56.4074H154.497V57.1445H153.938V55.1186H155.206C155.42 55.1186 155.588 55.1818 155.715 55.3039C155.843 55.4261 155.906 55.5777 155.906 55.7588C155.906 55.8894 155.87 56.0073 155.802 56.1168H155.797ZM154.497 55.9568H155.097C155.17 55.9568 155.224 55.9399 155.265 55.902C155.306 55.8683 155.329 55.8178 155.329 55.7588C155.329 55.6999 155.306 55.6493 155.265 55.6156C155.224 55.5819 155.17 55.5609 155.097 55.5609H154.497V55.9568Z" fill="black" style="user-select: auto !important;"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="head middle row-6 text-algin-center">
-                <ul class="menu-list col p-3">
-                    <li class="menu-item depth-01">
-                        <a href="#"><span>Reservation</span></a>
-                        <ul>
-                            <li class="depth-02">
-                                <a href="#"><span>픽업 예약</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>대량 주문</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>매장소개</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item depth-01">
-                        <a href="#"><span>Online Shop</span></a>
-                        <ul>
-                            <li class="depth-02">
-                                <a href="#"><span>푸드</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>리빙</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item depth-01">
-                        <a href="#"><span>Event</span></a>
-                        <ul>
-                            <li class="depth-02">
-                                <a href="#"><span>이벤트</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>공지사항</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item depth-01">
-                        <a href="#"><span>Help</span></a>
-                        <ul>
-                            <li class="depth-02">
-                                <a href="#"><span>자주 묻는 질문</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>1:1 문의</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>만족도 조사</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item depth-01">
-                        <a href="#">Brand<span></span></a>
-                        <ul>
-                            <li class="depth-02">
-                                <a href="#"><span>스토리</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>채용안내</span></a>
-                            </li>
-                            <li class="depth-02">
-                                <a href="#"><span>제안하기</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            </svg>
+        </a>
+        <div class="head middle row text-center">
+            <ul class="menu-list col p-3">
+                <li class="menu-item depth-01">
+                    <a href="#"><span>Reservation</span></a>
+                    <ul>
+                        <li class="depth-02">
+                            <a href="#"><span>픽업 예약</span></a>
+                        </li>
+                        <li class="depth-02">
+                            <a href="#"><span>대량 주문</span></a>
+                        </li>
+                        <li class="depth-02">
+                            <a href="#"><span>매장소개</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item depth-01">
+                    <a href="#"><span>Online Shop</span></a>
+                    <ul>
+                        <li class="depth-02">
+                            <a href="#"><span>푸드</span></a>
+                        </li>
+                        <li class="depth-02">
+                            <a href="#"><span>리빙</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item depth-01">
+                    <a href="#"><span>Event</span></a>
+                    <ul>
+                        <li class="depth-02">
+                            <a href="#"><span>이벤트</span></a>
+                        </li>
+                        <li class="depth-02">
+                            <a href="#"><span>공지사항</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item depth-01">
+                    <a href="#"><span>Help</span></a>
+                    <ul>
+                        <li class="depth-02">
+                            <a href="#"><span>자주 묻는 질문</span></a>
+                        </li>
+                        <li class="depth-02">
+                            <a href="#"><span>1:1 문의</span></a>
+                        </li>
+                        <li class="depth-02">
+                            <a href="#"><span>만족도 조사</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item depth-01">
+                    <a href="#">Brand<span></span></a>
+                    <ul>
+                        <li class="depth-02">
+                            <a href="#"><span>스토리</span></a></li>
+                        <li class="depth-02">
+                            <a href="#"><span>채용안내</span></a>
+                        </li>
+                        <li class="depth-02">
+                            <a href="#"><span>제안하기</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
             <div class="head right row-3">
                 <ul class="menu-list">
                     <li class="login">
@@ -100,23 +96,26 @@
                 </ul>
             </div>
     </header>
-    
     <header class="header-slide container-fluid p-0 m-0">
-        <div class="inner row px-3">
-            <div class="col_group slide_menu">
+        <div class="inner row w-100 m-0 px-5">
+            <div class="col col-group slide-menu">
                 <a href="#">
                     <i class="bi bi-list"></i>
                 </a>
             </div>
-            <div class="col_group slide_logo">
-                <a href="/">
-                    <img src="" alt="노티드 스토어" style="max-width: 100%; height: auto;">
-                    <img src="https://cdn.imweb.me/thumbnail/20231025/3054b63a0e4c0.png" alt="노티드 스토어" style="max-width: 100%; height: auto;">
+            <div class="col col-group slide-logo">
+                <div class="img-box">
+                    <a href="#">
+                        <img class="logo-img" src="https://cdn.imweb.me/thumbnail/20231025/3054b63a0e4c0.png" alt="노티드 스토어">
+                    </a>
+                </div>
+            </div>
+            <div class="col col-group slide-cart">
+                <a href="#" class="cart-link">
+                    <i class="bi bi-bag"></i>
                 </a>
             </div>
-            <div class="col_group slide_cart"></div>
         </div>
-
     </header>
 
     <main>
@@ -186,185 +185,145 @@
             </div>
         </div>
         <section class="visual">
-            <div class="container">
+            <div class="con container-fluid px-0 px-lg-5">
                 <div class="row justify-content-center">
-                    <div class="left_btn-1"></div>
-                    <div class="img_box col-12">
-                        <a href="#" class="img_link">
-                            <img src="knotted_images/knotted_banner.jpg" alt="노티드배너1">
-                        </a>
-                    </div>
-                    <div class="right_btn"></div>
+                    <div class="bg-1 col-12"></div>
+                    <img src="https://cdn.imweb.me/thumbnail/20240115/b3a4eb0aada85.png" alt="배너이미지1">
                 </div>
             </div>
         </section>
-        <section class="Best_Menu">
-            <div class="container container-fluid">
-                <div class="title_wrap row my-5">
-                    <div class="col my-5">
-                        <h2 class="title">Best Menu</h2>
-                    </div>
-                </div>
-                <div class="content_wrap row px-5 d-flex">
-                <div class="left_btn"></div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
-                        <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
+        
+        <section class="best-menu">
+            <div class="con container-fluid text-center">
+                <h2 class="title">Best Menu</h2>
+                <div class="row row-cols-lg-5  row-cols-md-3 row-cols-2 g-3">
+                    <div class="item col">
+                        <div class="wrap">
+                            <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
+                            <div class="info">
+                                <p class="ttl">우유생크림도넛</p>
                                 <p class="price">3,900원</p>
-                            </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231027/1c2c5f6eb4a3f.png&quot;); min-height: 228px; height: 228px;">
-                        </div>
+                    <div class="item col">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
+                    <div class="item col ">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
+                    <div class="item col ">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
+                    <div class="item col ">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                </div>
-                <div class="right_btn"></div>
             </div>
         </section>
         <section class="New_Menu">
-            <div class="container container-fluid">
-                <div class="title_wrap row my-5">
-                    <div class="col my-5">
-                        <h2 class="title">New Menu</h2>
-                    </div>
-                </div>
-                <div class="content_wrap row px-5 d-flex">
-                <div class="left_btn"></div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
-                        <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
+            <div class="con container-fluid text-center">
+                <h2 class="title">New Menu</h2>
+                <div class="row row-cols-lg-5  row-cols-md-3 row-cols-2 g-3">
+                    <div class="item col">
+                        <div class="wrap">
+                            <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
+                            <div class="info">
+                                <p class="ttl">우유생크림도넛</p>
                                 <p class="price">3,900원</p>
-                            </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231027/1c2c5f6eb4a3f.png&quot;); min-height: 228px; height: 228px;">
-                        </div>
+                    <div class="item col ">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
+                    <div class="item col ">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
+                    <div class="item col ">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img_wrap" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg&quot;); min-height: 228px;">
-                        </div>
+                    <div class="item col ">
+                        <div class="wrap">
+                        <div class="pic"><img src="https://cdn.imweb.me/thumbnail/20231018/ca7258ae791da.jpg" alt="우유 생크림 도넛"></div>
                         <div class="info">
-                            <p class="item_info">
-                                우유생크림도넛
-                                <p class="price">3,900원</p>
-                            </p>
+                            <p class="ttl">우유생크림도넛</p>
+                            <p class="price">3,900원</p>
+                        </div>
                         </div>
                     </div>
-                </div>
-                <div class="right_btn"></div>
             </div>
         </section>
         <section class="Online_Shop">
-            <div class="container container-fluid">
-                <div class="title_wrap row my-5">
-                    <div class="col my-5">
-                        <h2 class="title">Online Shop</h2>
-                    </div>
-                </div>
-                <div class="content_wrap row px-5 d-flex">
-                    <div class="left_btn"></div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img-wrap">
-                            <a href="#" class="img_link">
-                                <img src="https://cdn.imweb.me/thumbnail/20231116/511b6330c7dec.jpg" style="opacity: 1; display: block;" alt="기획전 이미지" class="basic-img">
-                                <img src="https://cdn.imweb.me/thumbnail/20231116/412814d487cd8.jpg" alt="기획전 이미지" class="hover-img">
+            <div class="con container-fluid text-center">
+                <h2 class="title">Online Shop</h2>
+                <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 gx-3">
+                    <div class="item col">
+                        <div class="box">
+                            <a href="#" class="img-wrap">
+                                <img src="https://cdn.imweb.me/thumbnail/20231116/511b6330c7dec.jpg"alt="크림버니 위클리 플래너" class="basic-img">
+                                <img src="https://cdn.imweb.me/thumbnail/20231116/412814d487cd8.jpg" alt="크림버니 위클리 플래너" class="hover-img">
                             </a>
-                        </div>
-                        <div class="info">
-                            <h2 class="item_info">
-                                크림버니 위클리 플래너
-                            </h2>
+                            <div class="item-info">
+                                <p class="ttl">크림버니 위클리 플래너</p>
                                 <p class="price">10,500원</p>
+                            </div>
                         </div>
                         <span class="to-cart">
-                            <a href="#" class="cart-link">
-                                <span>담기</span>
-                            </a>
+                            <a href="#" class="cart-link"><span>담기</span></a>
                         </span>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img-wrap">
-                            <a href="#" class="img_link">
-                                <img src="https://cdn.imweb.me/thumbnail/20231122/40c37c4070e0f.jpg" alt="기획전 이미지" class="basic-img">
-                                <img src="https://cdn.imweb.me/thumbnail/20231122/aec3d6511551b.jpg" alt="기획전 이미지"
-                                class="hover-img">
+                    <div class="item col">
+                        <div class="box">
+                            <a href="#" class="img-wrap">
+                                <img src="https://cdn.imweb.me/thumbnail/20231122/40c37c4070e0f.jpg" alt="스마일 키링" class="basic-img">
+                                <img src="https://cdn.imweb.me/thumbnail/20231122/aec3d6511551b.jpg" alt="스마일 키링" class="hover-img">
                             </a>
-                        </div>
-                        <div class="info">
-                            <h2 class="item_info">
-                                스마일 키링
-                            </h2>
+                            <div class="item-info">
+                                <p class="ttl">스마일 키링</p>
                                 <p class="price">5,000원</p>
+                            </div>
                         </div>
                         <span class="to-cart">
                             <a href="#" class="cart-link">
@@ -372,19 +331,16 @@
                             </a>
                         </span>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img-wrap">
-                            <a href="#" class="img_link">
-                                <img src="https://cdn.imweb.me/thumbnail/20231218/c49596223a1fc.jpg" alt="기획전 이미지" class="basic-img">
-                                <img src="https://cdn.imweb.me/thumbnail/20231218/7dfc75d7dcec3.jpg" alt="기획전 이미지"
-                                class="hover-img">
+                    <div class="item col">
+                        <div class="box">
+                            <a href="#" class="img-wrap">
+                                <img src="https://cdn.imweb.me/thumbnail/20231218/c49596223a1fc.jpg" alt="하트 체리 바닐라빈 케이크" class="basic-img">
+                                <img src="https://cdn.imweb.me/thumbnail/20231218/7dfc75d7dcec3.jpg" alt="하트 체리 바닐라빈 케이크" class="hover-img">
                             </a>
-                        </div>
-                        <div class="info">
-                            <h2 class="item_info">
-                                하트 체리 바닐라빈 케이크
-                            </h2>
+                            <div class="item-info">
+                                <p class="ttl">하트 체리 바닐라빈 케이크</p>
                                 <p class="price">35,000원</p>
+                            </div>
                         </div>
                         <span class="to-cart">
                             <a href="#" class="cart-link">
@@ -392,19 +348,18 @@
                             </a>
                         </span>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img-wrap">
-                            <a href="#" class="img_link">
-                                <img src="https://cdn.imweb.me/thumbnail/20231123/96c320079732d.jpg" alt="기획전 이미지" class="basic-img">
-                                <img src="https://cdn.imweb.me/thumbnail/20231123/e8d3adde28e72.jpg" alt="기획전 이미지"
-                                class="hover-img">
+                    <div class="item col">
+                        <div class="box">
+                            <a href="#" class="img-wrap">
+                                <img src="https://cdn.imweb.me/thumbnail/20231123/96c320079732d.jpg" alt="노티드 X 몬다리즈 프리미엄 제로 콜라" class="basic-img">
+                                <img src="https://cdn.imweb.me/thumbnail/20231123/e8d3adde28e72.jpg" alt="기노티드 X 몬다리즈 프리미엄 제로 콜라" class="hover-img">
                             </a>
-                        </div>
-                        <div class="info">
-                            <h2 class="item_info">
-                                노티드 X 몬다리즈 프리미엄 제로 콜라
-                            </h2>
+                            <div class="item-info">
+                                <p class="ttl">
+                                    노티드 X 몬다리즈 프리미엄 제로 콜라
+                                </p>
                                 <p class="price">2,500원</p>
+                            </div>
                         </div>
                         <span class="to-cart">
                             <a href="#" class="cart-link">
@@ -412,19 +367,16 @@
                             </a>
                         </span>
                     </div>
-                    <div class="item-container" style="display: block;">
-                        <div class="img-wrap">
-                            <a href="#" class="img_link">
-                                <img src="https://cdn.imweb.me/thumbnail/20231205/3b51223132c23.jpg" alt="기획전 이미지" class="basic-img">
-                                <img src="https://cdn.imweb.me/thumbnail/20231205/0a6f5ea56c524.jpg" alt="기획전 이미지"
-                                class="hover-img">
+                    <div class="item col">
+                        <div class="box">
+                            <a href="#" class="img-wrap">
+                                <img src="https://cdn.imweb.me/thumbnail/20231205/3b51223132c23.jpg" alt="플러피 블루 레인보우 침구 세트" class="basic-img">
+                                <img src="https://cdn.imweb.me/thumbnail/20231205/0a6f5ea56c524.jpg" alt="플러피 블루 레인보우 침구 세트" class="hover-img">
                             </a>
-                        </div>
-                        <div class="info">
-                            <h2 class="item_info">
-                                플러피 블루 레인보우 침구 세트
-                            </h2>
+                            <div class="item-info">
+                                <p class="ttl">플러피 블루 레인보우 침구 세트</p>
                                 <p class="price">94,500원</p>
+                            </div>
                         </div>
                         <span class="to-cart">
                             <a href="#" class="cart-link">
@@ -432,141 +384,129 @@
                             </a>
                         </span>
                     </div>
-                    <div class="right_btn"></div>
                 </div>
             </div>
         </section>
-        <section class="Event">
-            <div class="container container-fluid">
-                <div class="title_wrap row my-5">
-                    <div class="col my-5">
-                        <h2 class="title">Event</h2>
-                    </div>
-                </div>
-                <div class="content_wrap row px-5 d-flex">
-                    <div class="item col col-4 p-3">
-                        <div class="card" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231128/edca4488d6720.png&quot;); background-size: cover; background-position: 50% 50%; user-select: auto !important;">
-                            <a href="" class="card-link">
-                                <div class="card-wrap" style="background-size: cover; background-position: 50% 50%; user-select: auto !important; height: 280px;"></div>
-                            </a>
+        <section class="event">
+            <div class="con container-fluid text-center">
+                <h2 class="title">Event</h2>
+                <div class="content-wrap row row-cols-md-3 row-cols-1 px-md-5 px-0">
+                    <div class="item col">
+                        <div class="card">
+                            <div class="cover"><span>노티드 크리스마스 시즌 메뉴 출시</span></div>
+                            <img src="https://cdn.imweb.me/thumbnail/20231128/edca4488d6720.png" alt="이벤트이미지1">
                         </div>
                     </div>
-                    <div class="item col col-4 p-3">
-                        <div class="card" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231109/e40e9bec8c4f2.jpg&quot;); background-size: cover; background-position: 50% 50%;">
-                            <a href="" class="card-link">
-                                <div class="card-wrap" style="background-size: cover; background-position: 50% 50%; user-select: auto !important; height: 280px;"></div>
-                            </a>
+                    <div class="item col">
+                        <div class="card">
+                            <div class="cover"><span>노티드X최고심 콜라보 도넛 출시</span></div>
+                            <img src="https://cdn.imweb.me/thumbnail/20231109/e40e9bec8c4f2.jpg" alt="이벤트이미지2">
                         </div>
                     </div>
-                    <div class="item col col-4 p-3">
-                        <div class="card" style="background-image: url(&quot;https://cdn.imweb.me/thumbnail/20231107/c54400f08b864.jpg&quot;); background-size: cover; background-position: 50% 50%;">
-                            <a href="" class="card-link">
-                                <div class="card-wrap" style="background-size: cover; background-position: 50% 50%; user-select: auto !important; height: 280px;"></div>
-                            </a>
+                    <div class="item col">
+                        <div class="card">
+                            <div class="cover"><span>노티드 도넛 6+1 이벤트</span></div>
+                            <img src="https://cdn.imweb.me/thumbnail/20231107/c54400f08b864.jpg" alt="이벤트이미지3">
                         </div>
                     </div>
                 </div>
         </section>
         
         <section class="Instagram">
-            <div class="container container-fluid">
-                <div class="title_wrap row my-5">
-                    <div class="col my-5">
-                        <h2 class="title">Instagram</h2>
-                    </div>
-                </div>
-                <div class="content_wrap row px-5 d-flex">
-                    <div class="star_img col-2">
+            <div class="con container-fluid text-center">
+                    <h2 class="title">Instagram</h2>
+                <div class="content-wrap row row-cols-md-6 row-cols-3 px-md-5 px-0">
+                    <div class="star-img col">
                         <a href="#">
-                            <div class="img_wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/419334956_412771754515478_7020420120375756654_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=384e48&_nc_ohc=UAYxTef95iUAX8lmpfx&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDELjON0kd8HjP7NF7LY4_N5GXt96PeD9JJHnqJuxB5Jg&oe=65AECAD2&quot;);">
+                            <div class="img-wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/419334956_412771754515478_7020420120375756654_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=384e48&_nc_ohc=UAYxTef95iUAX8lmpfx&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDELjON0kd8HjP7NF7LY4_N5GXt96PeD9JJHnqJuxB5Jg&oe=65AECAD2&quot;);">
                             </div>
                         </a>
                     </div>
-                    <div class="star_img col-2">
+                    <div class="star-img col">
                         <a href="#">
-                            <div class="img_wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/419531035_908929097598868_4649308648094171156_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=384e48&_nc_ohc=9A3Hjcloc4IAX_Cx9Yn&_nc_oc=AQl7pc7c9i91OBI5LCmb_oovFyJlv50-c3qG3NMcZHo7J-ngdLMqFOPZyyux7Ds21as&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDwEb_U2DJ2XnHF7R58fsDxzuD5X5sHqSrCQsFFKLfJ0g&oe=65AED34A&quot);">
+                            <div class="img-wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/419531035_908929097598868_4649308648094171156_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=384e48&_nc_ohc=9A3Hjcloc4IAX_Cx9Yn&_nc_oc=AQl7pc7c9i91OBI5LCmb_oovFyJlv50-c3qG3NMcZHo7J-ngdLMqFOPZyyux7Ds21as&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDwEb_U2DJ2XnHF7R58fsDxzuD5X5sHqSrCQsFFKLfJ0g&oe=65AED34A&quot);">
                             </div>
                         </a>
                     </div>
-                    <div class="star_img col-2">
+                    <div class="star-img col">
                         <a href="#">
-                            <div class="img_wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/419346122_2069889906702412_6138693749083792152_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=384e48&_nc_ohc=krqQBL9mQfkAX-XtLh8&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAVxXr96tgRgo8SYhLNH1Jg1ZI3pdsGCSPnWuVU9In_yw&oe=65AEAF54&quot;);">
+                            <div class="img-wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/419346122_2069889906702412_6138693749083792152_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=384e48&_nc_ohc=krqQBL9mQfkAX-XtLh8&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAVxXr96tgRgo8SYhLNH1Jg1ZI3pdsGCSPnWuVU9In_yw&oe=65AEAF54&quot;);">
                             </div>
                         </a>
                     </div>
-                    <div class="star_img col-2">
+                    <div class="star-img col">
                         <a href="#">
-                            <div class="img_wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/418793307_401469535780710_5846584487944474521_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=384e48&_nc_ohc=vJ8npCKV2nIAX8BdHr4&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfC5lIXd6vKRBYumjTQLufpBgqv7iKIKn1aYPE01X0rS0w&oe=65AF789B&quot;);">
+                            <div class="img-wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/418793307_401469535780710_5846584487944474521_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=384e48&_nc_ohc=vJ8npCKV2nIAX8BdHr4&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfC5lIXd6vKRBYumjTQLufpBgqv7iKIKn1aYPE01X0rS0w&oe=65AF789B&quot;);">
                             </div>
                         </a>
                     </div>
-                    <div class="star_img col-2">
+                    <div class="star-img col">
                         <a href="#">
-                            <div class="img_wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/418762158_401825318885679_2865612742764424132_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=384e48&_nc_ohc=d8y4bsMiwNAAX_e_-ko&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDs4ePukAu_2K16QHGEErwvTNT_VbVqIaUYOZtNMKeEPA&oe=65AE1BCF&quot;);">
+                            <div class="img-wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/418762158_401825318885679_2865612742764424132_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=384e48&_nc_ohc=d8y4bsMiwNAAX_e_-ko&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDs4ePukAu_2K16QHGEErwvTNT_VbVqIaUYOZtNMKeEPA&oe=65AE1BCF&quot;);">
                             </div>
                         </a>
                     </div>
-                    <div class="star_img col-2">
+                    <div class="star-img col">
                         <a href="#">
-                            <div class="img_wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/418816446_372286995485799_6072314795078533245_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=384e48&_nc_ohc=l86IlLbrzxAAX-QUdqD&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBm0YQGXU6ULkezv_LT-3hjtlsgv2V8HcrWfDMs6MkuGQ&oe=65AE96DA&quot;);">
+                            <div class="img-wrap" style="background-image: url(&quot;https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/418816446_372286995485799_6072314795078533245_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=384e48&_nc_ohc=l86IlLbrzxAAX-QUdqD&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBm0YQGXU6ULkezv_LT-3hjtlsgv2V8HcrWfDMs6MkuGQ&oe=65AE96DA&quot;);">
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="follow">
-                    <a href="#"><span>팔로우 하기</span></a>
+                    <span>팔로우 하기</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="con container-fluid m-0">
-            <div class="footer-gb1">
+    <footer class="footer m-0 p-0">
+        <div class="con container-fluid m-0 p-0">
+            <div class="footer-gb1 mt-5 pt-5">
                 <svg viewBox="0 0 1728 919" fill="none" xmlns="http://www.w3.org/2000/svg" style="user-select: auto !important;">
                     <path d="M1660.33 282.531C1626.15 288.915 1595.86 312.987 1582.13 344.643C1549.62 338.706 1514.4 350.173 1491.76 374.021C1469.12 397.89 1459.74 433.429 1467.7 465.227C1404.8 459.311 1339.7 488.872 1303.14 539.965C1266.58 591.057 1259.93 661.708 1286.34 718.615C1252.61 700.012 1207.75 707.515 1178.44 732.42C1172.05 737.849 1166.39 743.968 1161.43 750.617C1109.84 716.521 1038.6 706.437 977.649 725.304C995.45 682.649 985.38 631.903 952.22 597.116C919.041 562.329 864.053 544.844 813.317 552.936C835.186 500.055 775.458 435.991 712.354 444.632C746.144 394.739 762.215 332.383 739.837 277.712C717.46 223.042 649.595 181.627 585.392 194.842C599.327 162.19 589.461 122.707 561.265 98.2281C533.069 73.7493 488.111 65.6575 451.269 78.4052C454.341 32.0906 397.014 -5.5628 344.854 0.678893C292.674 6.92058 251.621 46.8105 236.12 91.1529C198.444 77.8969 153.181 82.9797 120.489 104.145C89.7099 124.069 71.0551 157.616 71.5434 191.203C38.9943 185.327 3.45474 195.249 -20.2247 217.999C-45.1451 241.95 -55.744 278.912 -48.1966 312.133C-49.8648 312.519 -51.5125 312.946 -53.1603 313.414C-72.2626 318.903 -89.5543 329.943 -102.757 344.48C-120.578 336.002 -140.86 333.013 -160.166 336.673C-173.348 305.017 -202.418 280.965 -235.212 274.561C-268.005 268.177 -303.544 279.623 -327 304.143V911.05H71.8486V919H1756V312.113C1731.57 287.593 1694.5 276.147 1660.35 282.531H1660.33Z" fill="white" style="user-select: auto !important;"></path>
                 </svg>
             </div>
-            <div class="kakao_add row">
-                <div class="title_wrap col-12">
+            <div class="kakao-add row row-cols-1">
+                <div class="title-wrap col">
                     <h2 class="title">Kakaotalk Channel</h2>
                     <p>카카오톡 채널을 통해 <br>
-                        노티드의 신제품, 이벤트 소식을 받아보실 수 있습니다.</p>
-                        <a href="#" class="button p-3 mt-2"><span>채널 추가하기</span></a>
+                    노티드의 신제품, 이벤트 소식을 받아보실 수 있습니다.</p>
+                    <a href="#" class="button p-3 mt-2"><span>채널 추가하기</span></a>
                 </div>
             </div>
-            <div class="footer-inner row">
-                <div class="footer-top d-flex">
+            <div class="footer-inner row ps-5">
+                <div class="footer-top">
                     <div class="footer-company">
                         <h3>COMPANY INFORMATION</h3>
                         <ul class="p-0 mt-4">
-                            <li class="company_info">
+                            <li class="company-info">
                                 주식회사 지에프에프지
                             </li>
-                            <li class="company_info">
+                            <li class="company-info">
                                 서울특별시 강남구 도산대로53길 15
                             </li>
-                            <li class="company_info">
+                            <li class="company-info">
                                 사업자등록번호 : 248-81-00620
                             </li>
-                            <li class="company_info">
+                            <li class="company-info">
                                 통신판매업신고번호 : 2020-서울강남-02297
                             </li>
-                            <li class="company_info">
+                            <li class="company-info">
                                 대표이사 : 이준범
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-social ms-5"> 
+                    <div class="footer-social ms-lg-5"> 
                         <h3>SOCIAL</h3>
                         <ul class="p-0 mt-4">
-                            <li class="social_instargram d-flex">
+                            <li class="social-instargram">
                                 <a href="#" class="d-flex">
                                     <img src="https://cdn.imweb.me/upload/S2023090509034a75f0994/80c9dc4c1e02f.png" alt="인스타그램">
-                                    <p class="m-0">Instagram</p>
+                                    <p>Instagram</p>
                                 </a>
                             </li>
-                            <li class="social_instargram">
+                            <li class="social-instargram">
                                 <a href="#" class="d-flex">
                                     <img src="https://cdn.imweb.me/upload/S2023090509034a75f0994/0b167ff912c07.png" alt="카카오톡">
                                     <p>Kakaotalk Channel</p>
@@ -582,12 +522,13 @@
                 </div>
                 <div class="footer-bottom my-4">
                     <ul class="d-flex m-0 p-0">
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#" class="link">이용약관</a></li>
+                        <li><a href="#" class="link">개인정보처리방침</a></li>
                         <li><a href="#">Copyright © 2023 Knotted. All Rights Reserved.</a></li>
                     </ul>
                 </div>
-                <div class="fooer-gb">
+            </div>
+            <div class="fooer-gb">
                     <div class="footer-gb2">
                         <svg viewBox="0 0 1728 189" fill="none" xmlns="http://www.w3.org/2000/svg" style="user-select: auto !important;">
                             <path d="M1053.78 79.489H567.444C509.964 79.489 457.141 79.6071 415.542 79.8097C394.75 79.9447 376.743 80.0628 362.348 80.164C355.159 80.2484 348.881 80.316 343.582 80.3666C338.451 80.4679 334.3 80.5353 331.195 80.6028C331.127 78.5946 331.076 77.0588 331.026 76.0125C330.975 74.8987 330.908 74.3418 330.857 74.3418C330.806 74.3418 330.739 74.8987 330.688 76.0125C330.671 76.5694 330.638 77.2614 330.604 78.0714C330.587 78.9996 330.553 80.0628 330.52 81.261C333.777 81.3117 338.164 81.396 343.565 81.4973C348.847 81.5648 355.142 81.6323 362.331 81.6998C376.726 81.801 394.733 81.9192 415.525 82.0542C457.141 82.2567 509.947 82.3748 567.427 82.3748H1053.76C1120.91 82.3748 1181.72 82.206 1225.72 81.9529C1247.72 81.8179 1265.53 81.666 1277.83 81.4973C1283.97 81.3791 1288.73 81.2947 1292 81.2272C1295.24 81.126 1296.95 81.0416 1296.95 80.9404C1296.95 80.8391 1295.24 80.7378 1292 80.6535C1288.75 80.586 1283.97 80.5016 1277.83 80.3834C1265.53 80.2147 1247.72 80.0628 1225.72 79.9278C1181.72 79.6747 1120.91 79.5059 1053.76 79.5059L1053.78 79.489Z" fill="#8ABAD3" style="user-select: auto !important;"></path>
@@ -803,11 +744,9 @@
                             <path d="M309.549 370.333C310.141 370.668 310.609 371.128 310.953 371.711C311.298 372.294 311.466 372.922 311.466 373.602C311.466 374.282 311.298 374.927 310.953 375.502C310.609 376.076 310.149 376.535 309.549 376.871C308.957 377.207 308.294 377.375 307.569 377.375C306.845 377.375 306.182 377.207 305.59 376.871C304.998 376.535 304.53 376.076 304.185 375.502C303.841 374.927 303.673 374.291 303.673 373.602C303.673 372.913 303.841 372.294 304.185 371.711C304.53 371.128 304.989 370.677 305.59 370.333C306.182 369.997 306.845 369.829 307.569 369.829C308.294 369.829 308.957 369.997 309.549 370.333ZM309.16 376.244C309.628 375.979 309.99 375.616 310.247 375.157C310.503 374.698 310.635 374.176 310.635 373.593C310.635 373.01 310.503 372.506 310.247 372.047C309.99 371.587 309.628 371.225 309.151 370.96C308.683 370.695 308.153 370.562 307.561 370.562C306.969 370.562 306.438 370.695 305.97 370.96C305.502 371.225 305.14 371.587 304.874 372.047C304.618 372.506 304.486 373.019 304.486 373.593C304.486 374.167 304.618 374.698 304.874 375.157C305.131 375.616 305.493 375.979 305.961 376.244C306.43 376.509 306.96 376.641 307.561 376.641C308.161 376.641 308.692 376.509 309.16 376.244ZM309.027 373.54C308.921 373.717 308.762 373.858 308.559 373.947L309.46 375.272H308.462L307.658 374.026H306.995V375.272H306.12V371.861H308.1C308.435 371.861 308.691 371.967 308.895 372.171C309.089 372.374 309.195 372.63 309.195 372.939C309.195 373.16 309.142 373.363 309.027 373.54ZM306.995 373.266H307.932C308.046 373.266 308.126 373.24 308.197 373.178C308.259 373.116 308.294 373.036 308.294 372.939C308.294 372.842 308.259 372.754 308.197 372.701C308.135 372.639 308.046 372.612 307.932 372.612H306.995V373.275V373.266Z" fill="#F193BD" style="user-select: auto !important;"></path>
                         </svg>
                     </div>
-                </div>
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
