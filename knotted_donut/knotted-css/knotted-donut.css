@@ -89,13 +89,18 @@ header{
 }
 /*.header-slide-nav*/
 
+
 .header-slide .slide-mobile-menubar{
     display: none;
     position: fixed; top: 0; left: 0; z-index: 99999;
     width: 25%; height: 100%;
     background-color: #fff;
-    opacity: 1;
 }
+.header-slide .inner .slide-menu .slide-toggle:hover .slide-mobile-menubar{
+    display: block;
+}
+
+
 
 .header-slide .slide-mobile-menubar .menu-bar-back{
     width: 100vw; height: 100vh;
@@ -121,28 +126,30 @@ header{
     margin: 0; padding: 0; height: 100%;
 }
 .header-slide .slide-mobile-menubar .menu-list a{
-    display: inline-block; width: 100%; text-align: left;
+    display: inline-block;
+    width: 100%; padding: 10px 0;
+    text-align: left;
 }
 .header-slide .slide-mobile-menubar .menu-list .menu-item.depth-01{
     position: relative;
-    margin: 12px 24px; 
+    margin: 12px 24px;
     border-bottom: 1px solid #a5a5a5;
     text-align: left; font-size: 18px;
 }
 .header-slide .slide-mobile-menubar .menu-list .menu-item.depth-01 .toggle-btn::after{
-    content: '▼';
-    position: absolute; right: 0; top: 10%;
+    display: inline-block; position: absolute; right: 0; top: auto;
+    content: '▼'; 
     font-size: 15px; color: #a5a5a5;
 }
 
 .header-slide .slide-mobile-menubar .menu-list .menu-item.depth-01 ul{
-    width: 100%; max-height: 0; padding: 0;
+    width: 100%; max-height: 0px; padding: 0;
     transition: 0.5s ease; 
+    overflow: hidden;
 }
 .header-slide .slide-mobile-menubar .menu-list .menu-item.depth-01 ul .depth-02{
-    margin: 20px 0;
+    margin: 20px 0; padding: 0 0 5px;
     font-size: 12px; font-weight: 400; color: #a5a5a5;
-    opacity: 0;
 }
 .header-slide .slide-mobile-menubar .menu-list .menu-item.depth-01 ul .depth-02 span{
     display: inline-block; 
