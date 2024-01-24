@@ -77,7 +77,6 @@ class DonationAccount extends BankAccount {
   donate(rate){
     this._balance *= (1-rate);
   }
-
 }
 
 const sa1 = new SavingsAccount('Kate', 50000);
@@ -85,13 +84,9 @@ const da1 = new DonationAccount('Mike', 90000, 0.05);
 
 sa1.years++;
 sa1.addInterest(0.02);
-da1.donate();
-sa1.years++; 
-sa1.addInterest(0.05);
-da1.donate();
-sa1.years++;
-sa1.addInterest(0.07);
-da1.donate();
-
 console.log(Math.floor(sa1.balance));
+
+da1.donate();
+da1.donate();
+da1.donate();
 console.log(Math.floor(da1.balance));

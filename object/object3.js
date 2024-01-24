@@ -10,10 +10,11 @@ class User{
     }
 }
 
+//자식클래스 - 추가된 변수, 기능을 정의
 class VipUser extends User{
     constructor(email, birth, point){
         super(email, birth) 
-        //부모 생성자를 호출하여 값 설정
+        //자식생성자-부모 생성자를 호출하여 / 부모생성자가 필ㅇ한 매개변수에 값을 전달
         this.point = point
     }
 
