@@ -43,6 +43,8 @@ class Car2 {
     }
 }
 
+//-------------------------------------------------------------------------------
+
 //캡슐화 
 // - 변수 값에 접근을 함부로 하지 못하도록 제한을 두는 것.
 // - 필요에 따라 값을 검사하는 로직
@@ -84,30 +86,44 @@ class User{
 //_email 지역변수로 선언
 //Factory 방식으로 객체를 생성할 수 있도록 함수 만든다. 
 
-function CreateUser(email, birth){
-    let _email = email // 선언된 위치를 기억하자.
+
+//클로저
+//자바스크립트에서 어떤 함수와 그 함수가 참조할 수 있는 값들로
+//이루어진 환경을 하나로 묶은 것.
+function createUser(email, birthdate) {
+
+    //원래는 지역변수이기 때문에 createUser 함수가 호출되었다가
+    //사라지면 같이 소멸된다. = 값을 사용x
+    //get email() 함수가 _new_email을 참조하고 있음
+    //클로저 환경에서는 _new_email값이 소멸되지 않고 계속 유지하고 있다.
+    let _new_email = email;
+
     const user = {
-        birth,
-        get email(){
-            return this._email
-        },
-        set email(address){
-            if(address.includes('@')){
-            this._email = address;
-            }else{
-                //예외처리 - 에러를 발생시켜서 이메일 형식에 맞지 않음을 알려주는 메서드
-                throw new Error('이메일 형식 아니야!')
-            }
-        },
-        start(){
-            console.log(this)
-            console.log(this._email)
+    birthdate,
+
+    get email() {
+        return  _new_email;
+    },
+
+    set email(address) {
+        if (address.includes('@')) {
+        _email = address;
+        } else {
+        throw new Error('invalid email address');
         }
-    }
-    console.log(user.start())
+    },
+    };
+
+    return user;
 }
 
-CreateUser('email@','birth')
+const user11 = createUser('chris123@google.com', '19920321');
+const user22 = createUser('abc@google.com', '19920321');
+console.log('user11.email:'+user11.email);
+console.log('user22.email:'+user22.email);
+//get 함수 호출해서 _new_email 값을 가져옴.
+
+console.log(user11._new_email) //직접 new_email값에 접근하려고 하면 undefined가 출력.
 
 
 
