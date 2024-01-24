@@ -108,7 +108,7 @@ function createUser(email, birthdate) {
 
     set email(address) {
         if (address.includes('@')) {
-        _email = address;
+        _new_email = address;
         } else {
         throw new Error('invalid email address');
         }

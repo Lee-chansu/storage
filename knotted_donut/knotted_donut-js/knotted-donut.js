@@ -9,6 +9,7 @@ for(let i of item){
         
         
         if(list2.style.maxHeight == 0+'px'){
+            i.style.maxHeight = 0+'px';
             list2.style.maxHeight = scrollheight;
         }
         else{
