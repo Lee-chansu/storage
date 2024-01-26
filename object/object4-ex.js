@@ -1,6 +1,6 @@
 class BankAccount {
     constructor(name, money) {
-    this.holder = name;
+    this.name = name;
     this.balance = money;
     }
     //잔액 조회
@@ -60,7 +60,7 @@ class SavingsAccount extends BankAccount {
       this.balance *= (1+(rate * this.year))
     }
 
-    give(mone, anotherAccount){
+    transfer(money, anotherAccount){
         super.transfer(money, anotherAccount);
         this.balance -= money * 0.05;
     }
@@ -82,12 +82,34 @@ class DonationAccount extends BankAccount {
     donate(rate){
       this._balance *= (1-rate);
     }
-
-
 }
-const ba1 = new BankAccount('Tom', 2000)
-const sa1 = new SavingsAccount('Kate', 1000);
-const da1 = new DonationAccount('Mike', 3000);
-const sa2 = new SavingsAccount('Alice', 3000);
 
-ba1.transfer(800, accountForVacation);
+const ba1 = new BankAccount('Tom', 2000);
+const sa1 = new SavingsAccount('Jerry', 500);
+const da1 = new DonationAccount('Kate', 3000);
+const sa2 = new SavingsAccount('Alice', 9000);
+
+const accountForVacation = new BankAccount('Vacation', 0);
+
+// forEach를 통해서 모든 계좌에서 여행적금 계좌로 500원씩 이체
+//모든 계좌의 잔액을 출력.
+
+const user_list = [ba1, sa1, da1, sa2];
+
+user_list.forEach((el) => {
+    el.transfer(500, accountForVacation)
+    console.log(`이름 : ${el.name} / 잔액: ${el._balance}`);
+});
+console.log('여행적금 이만큼 모았어:'+accountForVacation._balance);
+
+
+// ba1.transfer(800, accountForVacation);
+// sa1.give(800, accountForVacation);
+// da1.send(800, accountForVacation);
+// sa2.give(800, accountForVacation);
+
+// console.log(ba1.balance);
+// console.log(sa1.balance);
+// console.log(da1.balance);
+// console.log(sa2.balance);
+// console.log(accountForVacation.balance);
