@@ -10,6 +10,7 @@ ul, li, ol{list-style: none;}
 a{text-decoration: none; color: black; text-align: center;}
 img{display: block; width: 100%;}
 body{background-color: rgba(252, 245, 219, 0.3);}
+
 /*header*/
 
 header{
@@ -86,7 +87,6 @@ header{
 }
 
 /*.header-slide-nav*/
-
 
 .header-slide  .slide-mobile-menubar{
     display: block;
