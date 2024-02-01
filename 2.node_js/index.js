@@ -9,7 +9,8 @@ const dbConfig = { //리터럴 객체
     host : 'localhost',
     user : 'root',
     password : '1234',
-    database : 'mall'
+    database : 'mall',
+    post : '3306'
 }
 
 const db = mysql.createConnection(dbConfig);
@@ -30,7 +31,7 @@ app.get('/', (req,res) => {
     let sql = 'SELECT * FROM member'
 
     db.query(sql, (에러, 데이터) => {
-        res.render('main.ejs',{person : 데이터})
+        res.render('main.ejs', {person : 데이터})
     })
 
 })
