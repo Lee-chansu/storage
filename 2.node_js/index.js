@@ -2,7 +2,11 @@
 const express = require('express');
 const app = express() // app 객체 생성
 
+// static 파일 등록
+app.use(express.static(__dirname + '/public'))
+//view engine 지정
 app.set("veiw engine","ejs");
+
 
 const mysql = require('mysql')
 const dbConfig = { //리터럴 객체
@@ -10,6 +14,7 @@ const dbConfig = { //리터럴 객체
     user : 'root',
     password : '1234',
     database : 'mall',
+    dateStrings : 'date',
     post : '3306'
 }
 
