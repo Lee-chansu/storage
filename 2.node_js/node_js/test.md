@@ -6,4 +6,12 @@
 
 # 터미널 열기 단축키 : ctrl + shift + `(백틱)
 # 패키지설치
-- npm init -y 
+- npm init -y
+# 라이브러리 설치
+(서버 개발)
+- npm install express
+(자바 스크립트 코드를 사용한 html - view 생성)
+- npm install ejs
+
+(db 연동) - 연동할 db를 설치해준다.
+- npm install mysql
