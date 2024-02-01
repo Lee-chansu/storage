@@ -12,13 +12,15 @@ a {text-decoration: none;}
 
 /*header*/
 .header{width: 100%; height: 100px; background-color: #333;}
+.hdaer .row {align-items: center; height: 100px;}
+
 .header nav{}
 
 .header .global{display: flex; justify-content: flex-end;}
 .header .global > li{}
 .header .global > li > a{display: block; font-size: 15px;}
-.header .global > li > a::after{content:'|'; padding: 0 15px;}
 .header .global > li:last-of-type > a{padding-right: 0;}
+.header .global > li > a::after{content:'|'; padding: 0 15px; font-size: 10px;}
 .header .global > li:last-of-type > a::after{display: none;}
 
 .header a{color: #fff;}
@@ -32,10 +34,7 @@ a {text-decoration: none;}
 }
 
 
-.hdaer .row {align-items: center; height: 100px;}
-.header .gnb{
-    display: flex; justify-content: space-between; align-items: center;
-}
+.header .gnb{display: flex; justify-content: flex-end;}
 .header .gnb > li{display: flex;}
 .header .gnb > li > a{display: block; padding: 0 30px;}
 .header .gnb > li:last-of-type > a{padding-right: 0;}

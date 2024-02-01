@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/public'))
 app.set("veiw engine","ejs");
 
 
-const mysql = require('mysql')
+const mysql = require('mysql');
 const dbConfig = { //리터럴 객체
     host : 'localhost',
     user : 'root',
@@ -32,11 +32,20 @@ app.listen(8082, () => {
 //1. views라는 파일을 만든다.
 //2. ejs파일을 연결할 때 경로를 따로 설정할 필요가 없다.
 app.get('/', (req,res) => {
+    res.render('main.ejs')
+})
+
+app.get('/member', (req,res) => {
     //res.render('파일이름.ejs', {'데이터객체명' : '데이터객체'})
     let sql = 'SELECT * FROM member'
 
     db.query(sql, (에러, 데이터) => {
-        res.render('main.ejs', {person : 데이터})
+        res.render('member.ejs', {person : 데이터})
     })
-
+})
+app.get('/shop', (req,res) => {
+    res.render('shop.ejs')
+})
+app.get('/contact', (req,res) => {
+    res.render('contact.ejs')
 })
