@@ -49,3 +49,16 @@ app.get('/shop', (req,res) => {
 app.get('/contact', (req,res) => {
     res.render('contact.ejs')
 })
+
+app.post('/add', (req,res)=>{
+    
+})
+
+// 자바스크립트 -- mysql2로 생성하 객체 = (클라이언트 객체 : db) --> mysql db 
+// 1) 클라이언트객체를 통해서 dbms로 sql문을 직접 전송해서
+// 2) ORM기술을 통해서 자바스ㅡ립트로 작성한 데이터베이스 관련 코드를 SQL 변환해서 DBMS에 전송하여 처리
+
+// SQL을 다뤄주는 ORM 관련 패키지 - 종류가 여러가지 있음.
+//npm install sequelize sequelize-c
+
+
