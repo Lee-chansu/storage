@@ -1,0 +1,7 @@
+//http://webtton.naver.com?name=홍길동&age=30
+//{name:'홍길동',age:30} <-이러한 형식(qureyString)으로 해석한다는 것.
+
+[{
+    "name": "홍길동",
+    "age" : 30
+}]

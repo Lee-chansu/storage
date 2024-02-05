@@ -19,7 +19,7 @@ const dbConfig = { //리터럴 객체
     password : '1234',
     database : 'mall',
     dateStrings : 'date',
-    port : '3306'
+    port : '3306'//생략 가능
 }
 
 const db = mysql.createConnection(dbConfig);

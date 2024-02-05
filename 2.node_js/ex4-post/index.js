@@ -10,7 +10,7 @@ const dbConfig = { // 리터럴 객체에 값을 담아서 정보를 넘겨줌
   password : '1234',
   database : 'mall',
   dateStrings : 'date',
-  post : '3306'
+  port : '3306'
 }
 const db = mysql.createConnection(dbConfig)
 
