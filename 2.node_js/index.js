@@ -19,7 +19,7 @@ const dbConfig = { //리터럴 객체
     password : '1234',
     database : 'mall',
     dateStrings : 'date',
-    post : '3306'
+    port : '3306'
 }
 
 const db = mysql.createConnection(dbConfig);
@@ -56,10 +56,11 @@ app.get('/contact', (req,res) => {
 
 app.post('/add', (req, res)=>{
 
-    console.log(req.body)
+    // console.log(req.body)
     
-    let  = req.body;
-    let values = [name, age];
+    // let {name, age} = req.body;
+    // let values = [name, age];
+    let values = Object.values(req.body);
     let sql = 'INSERT INTO test (name, age) VALUES(?,?)'
     
 
@@ -69,9 +70,6 @@ app.post('/add', (req, res)=>{
         console.log('success!')
 
     })
-    console.log(name)
-    console.log(age)
-
-
-
+    // console.log(name)
+    // console.log(age)
 })

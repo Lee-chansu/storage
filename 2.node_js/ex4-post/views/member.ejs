@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+ <script>
+  function date(){
+    let now  = new Date()
+    let year = now.getFullYear()
+    console.log(year)
+  }
+  
+ </script>
+</head>
+<body>
+
+  <%- include('nav.ejs') %>
+
+  <section class="sec member">
+    <div class="container">
+      <h2 class="title">MEMBER</h2>
+      <div class="row text-center">
+        <div class="col">
+          <table>
+            <tr>
+              <th class="col-1">NO</th>
+              <th class="col-4">Email</th>
+              <th class="col-3">Birthday</th>
+              <th class="col-1">Gender</th>
+              <th class="col-1">Age</th>
+              <th class="col-1">Height</th>
+              <th class="col-1">Weight</th>
+              
+            </tr>
+            <% for(let i = 0; i < person.length; i++){ %>
+              <tr>
+                <td class="no"><%= person[i].id %></td>
+                <td class="email"><%= person[i].email %></td>
+                <td class="birthday"><%= person[i].birthday %></td>
+                <td class="gender"><%= (person[i].gender === 'm' ? "남" : "여") %></td>
+                <td class="age"><%= person[i].age %></td>
+                <td class="height"><%= person[i].height %></td>
+                <td class="weight"><%= person[i].weight %></td>
+                
+              </tr>
+            <% } %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- embedded JavaScript : 자바스크립트가 포함된 -->
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script>
+    
+  </script>
+</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <h2>회원리스트</h2>
+  <table>
+    <tr>
+      <th>no</th>
+      <th>이름</th>
+      <th>나이</th>
+      <th>이메일</th>
+    </tr>
+
+    <% for(let i = 0; i < member.length; i++)  { %>
+
+    <tr>
+      <td><%= member[i]._id %></td>
+      <td><%= member[i].name %></td>
+      <td><%= member[i].age %></td>
+      <td><%= member[i].email %></td>
+    </tr>
+
+    <% } %>
+    
+  </table>
+  <!-- 서버사이드 렌더링
+    html을 서버측에서 데이터를 채워서 완성해서 
+    유저에게 보내주는 것
+   -->
+</body>
+</html>
