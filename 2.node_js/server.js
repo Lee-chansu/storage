@@ -51,7 +51,12 @@ app.get('/contact', (req,res) => {
 })
 
 app.post('/add', (req,res)=>{
+    let values = Object.values(req.body);
+    let query ='INSERT INTO test VALUES (?, ?)';
     
+    db.query(sql, values, (err, result) => {
+        console.log('success')
+    })
 })
 
 // 자바스크립트 -- mysql2로 생성하 객체 = (클라이언트 객체 : db) --> mysql db 
@@ -62,3 +67,21 @@ app.post('/add', (req,res)=>{
 //npm install sequelize sequelize-c
 
 
+/*npm과 npx의 차이점
+    npm : 모듈 패키지를 로컬에 설치
+    package.json 파일에 의존성 정보 기록
+    모듈이 업데이트되었는지 확인x
+    create-react-app 같은 모듈 - 변경사항이 잦은 모듈의 경우 매번 npm으로 버전을 새로 설치해야 한다.
+
+
+    npx : 패키지를 실행, 관리하는데 사용
+    - 로컬에 설치된 패키지를 직접 실행할 때 유용, 일회성 명령어
+    - 로컬에 설치않되도 npm 레지스트리에서 패키지를 다운로드하여 실행 가능, 그냥 실행X, 입력한 패키지를 가지고 
+    - 특정 버전의 패키지 사용, 다른 환경변수 설정하여 실행
+    - 매번 최신 버전을 가져와서 설치해줌.
+*/
+
+//npx sequelize model:generate --name Member --attributes name:string,team:string,position:string,emailAddress:string,phoneNumber:string,admissionDate:date,birthday:date,profileImage:string
+//--> sql쿼리문에서 테이블을 생성하는 명령문에 해당함(실제db에 아직 만들어지기 전 단계)
+
+//npx sequelize db:migrate --> 실제 db에 실행하도록 만듦
