@@ -2,6 +2,10 @@
 const express = require('express');
 const app = express() // app 객체 생성
 
+//POST로 파일을 보낼 경우 작성해야 하는 코드
+app.use(express.json());
+app.use(express.urlencoded({extended : true}));
+
 // static 파일 등록
 app.use(express.static(__dirname + '/public'))
 //view engine 지정
@@ -48,4 +52,26 @@ app.get('/shop', (req,res) => {
 })
 app.get('/contact', (req,res) => {
     res.render('contact.ejs')
+})
+
+app.post('/add', (req, res)=>{
+
+    console.log(req.body)
+    
+    let  = req.body;
+    let values = [name, age];
+    let sql = 'INSERT INTO test (name, age) VALUES(?,?)'
+    
+
+    console.log(values);
+    db.query(sql, values, (err, result)=>{
+        if(err) throw err;
+        console.log('success!')
+
+    })
+    console.log(name)
+    console.log(age)
+
+
+
 })

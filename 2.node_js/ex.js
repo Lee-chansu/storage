@@ -55,7 +55,7 @@ let [전공1, 전공2] = 전공과목;
 //Rest destructuring
 let [교양, ...나머지] = ['철학', '심리','미술'];
 
-//Spread
+//Spread    
 let 이수과목2 = [...전공, ...교양];
 console.log(이수과목2);
 

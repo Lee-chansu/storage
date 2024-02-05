@@ -15,8 +15,21 @@
         <div class="title">
             <h1>Main</h1>
         </div>
-        <div class="row member text-center">
-            
+        <div class="row text-center">
+            <div class="col">
+                <form class="form-box" action="/add" method="POST">
+                    <h3>글쓰기</h3>
+                    <div class="box">
+                        <label>이름</label>
+                        <input name="name" type="text">
+                    </div>
+                    <div class="box">
+                        <label>나이</label>
+                        <input name="age" type="text">
+                    </div>
+                    <button type="submit">전송</button>
+                </form>
+            </div>
         </div>  
     </div>  
 
