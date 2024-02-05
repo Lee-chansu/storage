@@ -85,3 +85,4 @@ app.post('/add', (req,res)=>{
 //--> sql쿼리문에서 테이블을 생성하는 명령문에 해당함(실제db에 아직 만들어지기 전 단계)
 
 //npx sequelize db:migrate --> 실제 db에 실행하도록 만듦
+
