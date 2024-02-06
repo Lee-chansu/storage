@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn-1">1번 클릭</button>
+    <button type="button" id="btn-2">2번 클릭</button>
+    <script>
+        let btn1 = document.getElementById('btn-1')
+        let btn2 = document.getElementById('btn-2')
+
+        // this 부모가 가리키는 요소를 상속해서 온다.
+        btn1.addEventListener('clikck', function(){
+            //this - btn1 요소가 된다.
+            console.log(this.innerText)
+        })
+
+        //
+        btn2.addEventListener('clikck',()=>{
+            // this - windows 도큐먼트를 가리킴. innerText 프로퍼티 없음. 그래서 undefined가 나옴.
+            console.log(this.innerText)
+        })
+    </script>
+</body>
+</html>
