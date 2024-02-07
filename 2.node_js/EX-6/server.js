@@ -1,30 +1,25 @@
-// 모듈 - require
+// express 라이브러리 준비
 const express = require('express');
 const app = express();
 
+// db 설정 준비
 const mysql = require('mysql2');
 const dbConfig = require('./db');
-const db = mysql.createConnection(dbConfig);
+const mydb = mysql.createConnection(dbConfig);
 
-// 2. use, set - 등록
+//app.use app.set
 app.set('view engine', 'ejs');
-app.set(express.static(__dirname + '/public'));
+app.set(express.static(__dirname + './public'));
 
-app.use(express.json()) //json 형식으로 데이터 처리
-app.use(express.urlencoded({extended : true})); // queryString 방식의 데이터 처리
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
-// 3. listen - 포트번호 지정
-app.listen('8082', ()=>{console.log('접속성공 - http://localhost:8082')})
-
-
-// 4. 라우팅 - 하위 페이지 생성
-app.get('/', (req,res) => {
-    res.send('index 접속성공');
+//listen - 포트번호 설정
+app.listen(8082, (req,res) => {
+    console.log('접속 http://localhost:8082')
 })
 
-app.get('/add', (req,res) => {
-    res.send('add 접속 성공')
-})
-app.post('/add', (req,res) => {
-
+// 라우팅 - 하위페이지 신설
+app.get('/', (req,res)=>{
+    res.render('index')
 })
