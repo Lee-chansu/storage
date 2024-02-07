@@ -1,0 +1,56 @@
+npm ini -y
+
+npm install express ejs nodemon mysql2 sequeliz sequeliz-cli
+
+publlic > image 파일 만들기
+
+views 파일 생성
+------------------------------------------------------------------------------------------------------
+ORM 세팅
+
+(초기파일 세팅)
+npx sequelize init
+
+(db생성)
+
+주의사항 : config/config.json - user/name/password/database/host 설정해놓기
+파일형식이 json이므로 주석x, ""쌍따옴표 사용
+명령어 : npx sequelize db:create --env development
+
+
+(Model 생성 - 테이블이 될 모델 먼저 생성) - 파일 2개 생성(model, migration)
+npx sequelize model:generate --name Member --attributes name:string,team:string,position:string,emailAddress:string,phoneNumber:string,admissionDate:date,birthday:date,profileImage:string
+※ 주의사항 : --attributes 뒤부터 띄어쓰기 없이 작성
+
+migration 파일 내가 설정한 데이터베이스 정보에 맞게 변경하기.
+(테이블 실제로 생성하는 구문)
+npx sequelize db:migrate
+
+(테이블을 삭제하는 구문
+npx sequelize db:migrate:undo
+
+
+모델 기본세팅
+
+1. 데이터 타입
+각 프로퍼티에 설정했던 데이터 타입 - 각 컬럼(열)의 데이터 타입으로 적용
+Sequelize.STRING : 문자열 - VARCHAR(255)
+Sequelize.STRING(20) -> 문자열의 길이를 직접 정해줄 때 쓰는 방식
+sEQUELIZE.INTEGER
+
+2.기본값 - defaultValue
+- 값추가 할 때 값 설정하지 않았다면? defaultValue이 자동으로 설정됨.
+
+3, Sequelize.fn('now')
+- 데이터베이스에서 지원하는 함수를 사용할 수 있도록 Sequelize.fn으로 감싸준다.
+migrations 폴더 >
+createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue : Sequelize.fn('now') -- 디폴트값으로 현재시간이 들어가도록 추가
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue : Sequelize.fn('now') -- 디폴트값으로 현재시간이 들어가도록 추가
+      }

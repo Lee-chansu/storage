@@ -7,8 +7,8 @@ const dbConfig = require('./db');
 const db = mysql.createConnection(dbConfig);
 
 // 2. use, set - 등록
-app.use('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
+app.set(express.static(__dirname + '/public'));
 
 app.use(express.json()) //json 형식으로 데이터 처리
 app.use(express.urlencoded({extended : true})); // queryString 방식의 데이터 처리
