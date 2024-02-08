@@ -1,6 +1,6 @@
 npm ini -y
 
-npm install express ejs nodemon mysql2 sequeliz sequeliz-cli
+npm install express, ejs, nodemon, mysql2, sequeliz, sequeliz-cli
 
 publlic > image 파일 만들기
 
@@ -26,23 +26,41 @@ migration 파일 내가 설정한 데이터베이스 정보에 맞게 변경하�
 (테이블 실제로 생성하는 구문)
 npx sequelize db:migrate
 
-(테이블을 삭제하는 구문
+(테이블을 삭제하는 구문)
 npx sequelize db:migrate:undo
+
+
+(데이터 추가를 위한 - seeder 세팅 파일)
+npx sequelize seed:generate --name initailMembers
+
+>> seeder 폴더 안에 파일 생성됨
+
+(데이터 생성한 것 적용하기)
+npx sequelize db:seed:all
+
+
 
 
 모델 기본세팅
 
 1. 데이터 타입
 각 프로퍼티에 설정했던 데이터 타입 - 각 컬럼(열)의 데이터 타입으로 적용
-Sequelize.STRING : 문자열 - VARCHAR(255)
-Sequelize.STRING(20) -> 문자열의 길이를 직접 정해줄 때 쓰는 방식
-sEQUELIZE.INTEGER
 
-2.기본값 - defaultValue
-- 값추가 할 때 값 설정하지 않았다면? defaultValue이 자동으로 설정됨.
+Sequelize.STRING : 문자열 	-  VARCHAR(255)
+Sequelize.STRING(20)	-  VARCHAR(20)
+Sequelize.INTEGER : 정수형 - INTEGER
+Sequelize.FLOAT : 실수형 - FLOAT
+Sequelize.DATE : 날짜형 - DATETIME
 
-3, Sequelize.fn('now')
-- 데이터베이스에서 지원하는 함수를 사용할 수 있도록 Sequelize.fn으로 감싸준다.
+
+2. 기본값 - defaultValue 
+- 값추가 할때 값 설정 X다면? defaultValue에 있는 값으로 설정
+
+3. Sequelize.fn('now')
+- now : MySQL 데이터베이스에서 사용할 수 있는 now라는 함수
+- 데이터베이스에서 지원하는 함수를 사용할 수 있도록 하기 위해서
+	ㄴ Sequelize.fn('db 함수 이름') 형식으로 기록
+
 migrations 폴더 >
 createdAt: {
         allowNull: false,
