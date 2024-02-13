@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <%-include('nav.ejs')%>
+    <form action="/member" method="post">
+        <div class="name">
+            <label>name:</label>
+            <input name="name" type="text">
+        </div>
+        <div class="team">
+            <label>team:</label>
+            <input name="team" type="text">
+        </div>
+        <div class="position">
+            <label>position:</label>
+            <input name="position" type="text">
+        </div>
+        <div class="emailAddress">
+            <label>emailAddress:</label>
+            <input name="emailAddress" type="text">
+        </div>
+        <div class="admissionDate">
+            <label>admissionDate:</label>
+            <input name="admissionDate" type="date">
+        </div>
+        <div class="birthday">
+            <label>birthday:</label>
+            <input name="birthday" type="date">
+        </div>
+        <input type="submit" value="add">
+    </form>
+</body>
+</html>

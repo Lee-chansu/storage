@@ -1,0 +1,40 @@
+get http://localhost:8082
+
+
+### 
+
+POST http://localhost:8082/member
+Content-Type: application/json
+
+{
+    "name" : "Yoon jung hyeon",
+    "team" : "chatgpt",
+    "position" : "iphone",
+    "emailAddress" : "jung@google.com",
+    "phoneNumber" : "010-1234-5678",
+    "admissionDate" : "2021/03/1",
+    "birthday" : "1995/09/27",
+    "profileImage" : "profile11.png"
+}
+
+
+###
+
+PUT http://localhost:8082/member/12
+Content-Type: application/json
+
+{
+    "id" : "12",
+    "name" : "Hong_gil",
+    "team" : "Manager",
+    "position" : "Manageer",
+    "emailAddress" : "jung@google.com",
+    "phoneNumber" : "010-1234-5678",
+    "admissionDate" : "2021/03/1",
+    "birthday" : "1995/09/27",
+    "profileImage" : "profile11.png"
+}
+
+
+###
+DELETE http://localhost:8082/member/13

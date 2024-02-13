@@ -72,3 +72,6 @@ createdAt: {
         type: Sequelize.DATE,
         defaultValue : Sequelize.fn('now') -- 디폴트값으로 현재시간이 들어가도록 추가
       }
+
+
+

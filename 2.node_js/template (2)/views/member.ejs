@@ -18,24 +18,41 @@
                     <th class="col">team</th>
                     <th class="col">position</th>
                     <th class="col">emailAdress</th>
+                    <th class="col">phoneNumber</th>
                     <th class="col">admissionDate</th>
                     <th class="col">birthday</th>
+                    <th class="col colspan-2">update/delete</th>
                 </tr>
                 <% for(i of member) {%>
+                <% let thisDate = new Date(i.birthday)%>
+                <% let thisDate2 = new Date(i.admissionDate)%>
+                <% let birthday = `${thisDate.getFullYear()}-${thisDate.getMonth()+1}-${thisDate.getDate()}` %>
+                <% let admissionDate = `${thisDate2.getFullYear()}-${thisDate2.getMonth()+1}-${thisDate2.getDate()}` %>
                 <tr>
                     <td><%= i.id %></td>
                     <td><%= i.name %></td>
                     <td><%= i.team %></td>
                     <td><%= i.position %></td>
                     <td><%= i.emailAddress %></td>
-                    <td><%= i.admissionDate.toLocaleDateString()%></td>
-                    <td><%= i.birthday.toLocaleDateString() %></td>
+                    <td><%= i.phoneNumber %></td>
+                    <td><%= admissionDate%></td>
+                    <td><%= birthday %></td>
+                    <td>
+                        <button action="modify()" type="button">수정</button>
+                        <button type="button">제거</button>
+                    </td>
+                    
                 </tr>
                 <% } %>
             </table>
+            <button onclick="location.href='insert'" type="button">정보추가</button>
         </div>
     </section>
 
+    <script>
+        
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
