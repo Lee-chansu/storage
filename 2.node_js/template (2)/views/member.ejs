@@ -21,7 +21,6 @@
                     <th class="col">phoneNumber</th>
                     <th class="col">admissionDate</th>
                     <th class="col">birthday</th>
-                    <th class="col colspan-2">update/delete</th>
                 </tr>
                 <% for(i of member) {%>
                 <% let thisDate = new Date(i.birthday)%>
@@ -30,18 +29,13 @@
                 <% let admissionDate = `${thisDate2.getFullYear()}-${thisDate2.getMonth()+1}-${thisDate2.getDate()}` %>
                 <tr>
                     <td><%= i.id %></td>
-                    <td><%= i.name %></td>
+                    <td><a href="/member/<%= i.id %>"><%= i.name %></a></td>
                     <td><%= i.team %></td>
                     <td><%= i.position %></td>
                     <td><%= i.emailAddress %></td>
                     <td><%= i.phoneNumber %></td>
                     <td><%= admissionDate%></td>
                     <td><%= birthday %></td>
-                    <td>
-                        <button action="modify()" type="button">수정</button>
-                        <button type="button">제거</button>
-                    </td>
-                    
                 </tr>
                 <% } %>
             </table>

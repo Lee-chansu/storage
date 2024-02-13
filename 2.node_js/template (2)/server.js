@@ -1,8 +1,8 @@
 // 1. 모듈 - require
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-const db = require('./models/index');
+const db = require('./models/index'); //디렉토리일경우 그 안에 index.js 파일을 불러온다.
 const {Member} = db;
 
 // 2. use, set - 등록
@@ -25,104 +25,105 @@ app.get('/', (req, res)=>{
   res.send('메인 접속성공!')
 })
 
-app.get('/insert', (req, res) => {
-  res.render('insert')
-})
 
-// 쿼리스트링 - 전체 데이터 조회
-app.get('/member', async (req, res)=>{
-  //user의 쿼리스트링 추출
-  const {team} = req.query;
+//API : 어떤 기능들을 처리해주는 단위
+app.get('/member', memberSearchQuery) // (1)데이터 조회 - 쿼리스트링
+app.get('/member/:id', memberSearchParams)// (2)데이터 조회 - 파라미터
+app.post('/add', memberInsert)     // (3)추가
+app.put('/edit/:id', memberUpdate)      // (4)수정
+app.delete('/member/:id', memberDelete)   // (5)삭제
 
-  //team에 값이 있으면 해당 데이터 조회하여 출력 없으면 전체 출력
-  if(team){
-    const teamMembers = await Member.findAll({where:{team}})
-    res.render('member.ejs', {member:teamMembers})
+
+// 멤버 조회 - 쿼리스트링 - url : // http://localhost:8082/member?team=aa&position=bb...
+async function memberSearchQuery(req,res) {
+  const {id} = req.query;
+  try {
+    const member = await Member.findAll()
+    res.render('member.ejs', {member})
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('서버 오류 발생');
   }
-  else{
-    const members = await Member.findAll()
-    res.render('member.ejs', {member:members})
-  }
-
-})
-// 파라미터로 - 데이터 조회
-app.get('/member/:id', async(req,res)=>{
+}
+// 멤버 조회 - 파라미터 - url : // http://localhost:8082/member/300
+async function memberSearchParams(req,res) {
   const {id} = req.params;
-  const member= await Member.findAll({where : {id}}) 
-  //한개씩 값을 찾을 때 -findOne
-  if(member){
-    res.render('member',{member : member})
+  try {
+    const member = await Member.findOne({where : {id}})
+    if(member){
+      res.render('member-detail.ejs', {member})
+    }
+    else{
+      res.send('값을 찾을 수 없습니다.')
+    }
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('서버 오류 발생');
   }
-  else{
-    res.status(404).send({message : 'I cannot search!'})
+
+}
+// 멤버 추가
+async function memberInsert(req,res) {
+  const newMmeber = req.body;
+  try{
+    const member = Member.build(newMmeber);
+    await member.save();
+    res.render('member.ejs', {member})
+  }catch (error){
+    console.log(error);
+    res.status(500).send('서버 오류 발생');
   }
-})
+  
+  
+  /*
+  const member = await Member.create(newMember);
+  */
 
 
-// 데이터 추가
-app.post('/member', async(req, res) => {
-  // const newMember = req.body; 
-  // //req.body에서 받아온 내용을 newMember에 저장 (form에서 직원정보 받아온 것이 req.body에 담김)
-  // const member = Member.build(newMember); //
-  // await member.save() //새로운
-  // res.render('member', {member});
 
-  // case2
-  const newMmeber = req.body
-  const member = await Member.create(newMmeber) // build() + save()
-  res.redirect('member');
+}
 
+// 멤버 수정
+async function memberUpdate(req,res) {
+  const {id} = req.params;
+  const newInfo = req.body;
+  try {
+    const member = await Member.findOne({where : {id}});
+    Object.keys(newInfo).forEach((prop)=>{
+      member[prop] = newInfo[prop]
+    })
+    await member. save()
+    res.render('member.ejs',{member})
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('서버 오류 발생');
+  }
+}
 
-})
+// 멤버 삭제
+async function memberDelete(req,res) {
+  const {id} = req.params;
+
+  try {
+    await Member.destroy({where : {id}});
+    res.render('member.ejs', {member})
+    
+  } catch (error) {
+    res.status(500).send('서버 오류 발생');
+  }
+}
+
 /*
-  http://localhost:8082/member?name=hong&age=30
-
-  req.body = queryString로 들어온 데이터가 객체형태로 저장이 되어 있음
-  newMember에 저장
-  Member모델과 연결된 테이블에 들어갈 수 있는 형태로 build해준다.
-  member 저장 ( = 테이블에 row 추가)
+  1. 데이터 받아오기 - query, params, body
+  2. 데이터 처리
+    - 조회 : db.findAll({where : {값}})
+    - 추가 : db.create(객체)
+    - 수정 : db.findOne({where : {값}})
+            Object.keys(새로운 값).forEach((prop)={
+              기존값[prop] = 새로운 값[prop]
+            })
+            db.save()
+    - 삭제 : db.destroy({where : 값})
 */
-
-// app.put('/member/:id', async(req,res)=>{
-
-//   const {id} = req.params;
-//   const newInfo = req.body;
-//   const result =  await Member.update(newInfo, {where : {id}}) 
-
-//   if(result[0]){
-//     res.send({message : `${result[0]} row(s) affeted`})
-//   }
-//   else{
-//     res.status(404).send({message : 'I cannot search!'})
-//   }
-// })
-
-app.put('/member/:id', async(req,res)=>{
-  const {id} = req.params;
-  const newInfo = req.body
-  const member = await Member.findOne({where : {id}})
-
-  Object.keys(newInfo).forEach((prop)=>{
-    member[prop] = newInfo[prop]
-  })
-
-  await member.save()
-  res.send(member)
-
-})
-
-//찾는 id 값이 있다면 첫번째 데이터니까 0번지의 데이터임
-//그래서 result[0] ===찾는 데이터가 있다.
-app.delete('/member/:id', async(req,res)=>{
-  const {id} = req.params;
-  const deleteCount = await Member.destroy({where : {id}});
-  //destroy : mysql에서 delete와 같은 명령이다.
-  if(deleteCount){
-    res.send({message : ` ${deleteCount} row(s) Deleted`})
-  }
-  else{
-    res.status(404).send({message : 'i connot find the id'})
-  }
-})
-
-

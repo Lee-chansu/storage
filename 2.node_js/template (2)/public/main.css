@@ -37,7 +37,6 @@ a{text-decoration: none;}
 .member th,
 .member td{border-top: 1px solid #ddd; padding: 5px 0;}
 .member th{background-color: #fdd;}
-.member table td.email{text-align: left;}
 
 .member tr:nth-of-type(2n-1){background-color: #f9f9f9;}
 
@@ -51,13 +50,14 @@ a{text-decoration: none;}
   }
 
   .member td{text-align: left;}
-  .member td.no{text-align: center; background-color: #eee;}
-  .member td.email{font-weight: bold; text-align: center; background-color: #eee;}
+  .member td.id{text-align: center; background-color: #eee;}
+  .member td.name{font-weight: bold; text-align: center; background-color: #eee;}
 
   .member td::before{ display: inline-block; padding: 0 20px; width: 100px;} 
-  .member td:nth-of-type(3)::before{content: 'birtday';}
-  .member td:nth-of-type(4)::before{content: 'gender';}
-  .member td:nth-of-type(5)::before{content: 'age'; }
-  .member td:nth-of-type(6)::before{content: 'hegith';}
-  .member td:nth-of-type(7)::before{content: 'weight';}
+  .member td.team::before{content: 'team';}
+  .member td.position::before{content: 'position';}
+  .member td.email::before{content: 'email'; }
+  .member td.phone::before{content: 'phone';}
+  .member td.admission::before{content: 'admission';}
+  .member td.birthday::before{content: 'birthday';}
 }
