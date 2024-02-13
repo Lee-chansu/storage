@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%-include('nav.ejs') %>
+    <section class="sec member">
+        <div class="container text-center">
+            <form action="/add" method="post">
+                <!--상세페이지 조회하기-->
+                <table>
+                    <tr>
+                        <th class="col"><label for="addName">Name</label></th>
+                        <td class="name"><input type="text" id="addName" name="name"></td>
+                    </tr>
+                    <tr>
+                        <th class="col"><label for="addTeam">Team</label></th>
+                        <td class="team"><input type="text" id="addTeam" name="team"></td>
+                    </tr>
+                    <tr>
+                        <th class="col"><label for="addPosition">Position</label></th>
+                        <td class="position"><input type="text" id="addPosition" name="position"></td>
+                    </tr>
+                    <tr>
+                        <th class="col"><label for="addEmailAddress">Email</label></th>
+                        <td class="emailAddress"><input type="text" id="addEmailAddress" name="emailAddress"></td>
+                    </tr>
+                    <tr>
+                        <th class="col"><label for="addPhoneNumber">Phone</label></th>
+                        <td class="phoneNumber"><input type="text" id="addPhoneNumber" name="phoneNumber"></td>
+                    </tr>
+                    <tr>
+                        <th class="col"><label for="addadmissionDate">admissionDate</label></th>
+                        <td class="admissionDate"><input type="date" id="addadmissionDate" name="admissionDate"></td>
+                    </tr>
+                    <tr>
+                        <th class="col"><label for="addBirthday">birthday</label></th>
+                        <td class="birthday" id="addBirthday"><input type="date" name="birthday"></td>
+                    </tr>
+                </table>
+                    <!-- 사용자 정의 속성
+                        형식) data-이름="값"
+                        사용자가 원하는 값을 담아 노는 html속성을 만들 때
+                        자바스크립트에서 해당값을 불러오고 싶을 때
+                    -->
+                    <div class="btn-wrap">
+                        <button class="add" type="submit">확인</button>
+                        <button class="cansle" type="button">취소</button>
+                    </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+    const cansle = document.getElementsByClassName("cansle")[0];
+
+    cansle.addEventListener('click', function(e){
+        location.href="/member"
+    })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>`

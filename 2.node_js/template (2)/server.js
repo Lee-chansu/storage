@@ -29,8 +29,13 @@ app.get('/', (req, res)=>{
 //API : 어떤 기능들을 처리해주는 단위
 app.get('/member', memberSearchQuery) // (1)데이터 조회 - 쿼리스트링
 app.get('/member/:id', memberSearchParams)// (2)데이터 조회 - 파라미터
+
+app.get('/addPage', addPageSearch)     // (3)멤버 추가 페이지 보여주기
 app.post('/add', memberInsert)     // (3)추가
+
+app.get('/edit', updatePage)      // (4)수정
 app.put('/edit/:id', memberUpdate)      // (4)수정
+
 app.delete('/member/:id', memberDelete)   // (5)삭제
 
 
@@ -62,27 +67,29 @@ async function memberSearchParams(req,res) {
     console.log(error);
     res.status(500).send('서버 오류 발생');
   }
-
 }
+
+async function addPageSearch(req,res) {
+  res.render('add-page.ejs')
+}
+
 // 멤버 추가
 async function memberInsert(req,res) {
-  const newMmeber = req.body;
+  const newMember = req.body;
   try{
-    const member = Member.build(newMmeber);
-    await member.save();
-    res.render('member.ejs', {member})
+    const member = await Member.create(newMember);
+    // const member = Member.build(newMmeber);
+    // await member.save();
+    res.redirect('/member')
   }catch (error){
-    console.log(error);
+    console.log("검색 중 오류 발생", error);
     res.status(500).send('서버 오류 발생');
   }
-  
-  
-  /*
-  const member = await Member.create(newMember);
-  */
+}
 
-
-
+//멤버 수정 페이지
+async function updatePage(req,res) {
+  res.render('edit.ejs')
 }
 
 // 멤버 수정

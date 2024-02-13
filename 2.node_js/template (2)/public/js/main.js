@@ -1,3 +1,4 @@
+console.log('main.js 접속')
 let del = document.getElementsByClassName('delete')[0];
 
 del.addEventListener('click', function(e){
@@ -7,7 +8,6 @@ del.addEventListener('click', function(e){
     fetch('/member/'+id, {method : 'delete'})
     then(r => r.text())
     .then(r=> {
-        console.log(r)
         //성공했을 대 실행하는 결과
         window.location.href="/member" //해당 url로 이동하라.
     })
@@ -15,3 +15,5 @@ del.addEventListener('click', function(e){
         console.log(err)
     })
 })
+
+
