@@ -33,7 +33,7 @@ app.get('/member/:id', memberSearchParams)// (2)데이터 조회 - 파라미터
 app.get('/addPage', addPageSearch)     // (3)멤버 추가 페이지 보여주기
 app.post('/add', memberInsert)     // (3)추가
 
-app.get('/edit', updatePage)      // (4)수정
+app.get('/edit-page/:id', updatePage)      // (4)수정 페이지 변환
 app.put('/edit/:id', memberUpdate)      // (4)수정
 
 app.delete('/member/:id', memberDelete)   // (5)삭제
@@ -43,8 +43,8 @@ app.delete('/member/:id', memberDelete)   // (5)삭제
 async function memberSearchQuery(req,res) {
   const {id} = req.query;
   try {
-    const member = await Member.findAll()
-    res.render('member.ejs', {member})
+    const member = await Member.findAll();
+    res.render('member.ejs', {member});
     
   } catch (error) {
     console.log(error);
@@ -87,12 +87,39 @@ async function memberInsert(req,res) {
   }
 }
 
+// 수정할 페이지 보여주기
+/*
+  수정할 페이지를 보여주기 위해서는
+  1. 수정할 요소를 입력하는 페이지를 만들어야 한다.
+    -> /edit/:id은 수정한 데이터를 넘기는 경로, 수정할 페이지는 /edit-page/:id로 하자. 
+  2. 수정한 요소를 받아올 수 있는 방법이 필요하다.
+    -> form 태그는 put method로 접근할 수 없으니 fetch로 받아온다.
+  3. 수정된 요소를 데이터베이스에 넣어야 한다.
+    -> server에서 데이터베이스에 연결한 후 foreach를 통해 요소들을 대입해준다.
+  4. 수정된 요소가 반영된 테이블을 출력하도록 코드를 짠다.
+    -> fetch 처리 후에 then을 통해 돌아갈 페이지의 주소창을 입력하도록 한다.
+*/
+
+
 //멤버 수정 페이지
 async function updatePage(req,res) {
-  res.render('edit.ejs')
+  const {id} = req.params;
+  try {
+    const member = await Member.findOne({where : {id}})
+    if(member){
+      res.render('edit.ejs', {member})
+    }
+    else{
+      res.send('값을 찾을 수 없습니다.')
+    }
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('서버 오류 발생');
+  }
 }
 
-// 멤버 수정
+// 멤버 수정 처리
 async function memberUpdate(req,res) {
   const {id} = req.params;
   const newInfo = req.body;
@@ -101,8 +128,8 @@ async function memberUpdate(req,res) {
     Object.keys(newInfo).forEach((prop)=>{
       member[prop] = newInfo[prop]
     })
-    await member. save()
-    res.render('member.ejs',{member})
+    await member.save()
+    res.redirect('/member')
   } catch (error) {
     console.log(error);
     res.status(500).send('서버 오류 발생');

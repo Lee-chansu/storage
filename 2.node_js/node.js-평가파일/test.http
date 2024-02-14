@@ -1,0 +1,38 @@
+GET http://localhost:3000/member
+
+###
+
+POST http://localhost:3000/member
+Content-Type : application/json
+
+{
+  "name" : "Hong Gildong",
+  "team" : "student",
+  "position" : "student",
+  "emailAddress" : "gildong@naver.com",
+  "phoneNumber" : "010-xxxx-xxxx",
+  "admissionDate" : "2023/04/19",
+  "birthday" : "1996/04/22",
+  "profileImage" : "profile12.png"
+}
+
+###
+
+PUT http://localhost:3000/member/13
+Content-Type : application/json
+
+{
+  "id" : 13,
+  "name" : "Hong Gildong",
+  "team" : "Student Manageer",
+  "position" : "Manageer",
+  "emailAddress" : "gildong@naver.com",
+  "phoneNumber" : "010-xxxx-xxxx",
+  "admissionDate" : "2023/04/19",
+  "birthday" : "1996/04/22",
+  "profileImage" : "profile12.png"
+}
+
+###
+
+DELETE  http://localhost:3000/member/12

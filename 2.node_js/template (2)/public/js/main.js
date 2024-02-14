@@ -6,12 +6,12 @@ del.addEventListener('click', function(e){
 
     //fetch 서버로 요청 날려주는 함수
     fetch('/member/'+id, {method : 'delete'})
-    then(r => r.text())
+    .then(r => r.text())
     .then(r=> {
         //성공했을 대 실행하는 결과
         window.location.href="/member" //해당 url로 이동하라.
     })
-    .catch(err => {
+    .catch((err) => {
         console.log(err)
     })
 })

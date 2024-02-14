@@ -22,11 +22,7 @@
                     <th class="col">admissionDate</th>
                     <th class="col">birthday</th>
                 </tr>
-                <% for(i of member) {%>
-                <% let thisDate = new Date(i.birthday)%>
-                <% let thisDate2 = new Date(i.admissionDate)%>
-                <% let birthday = `${thisDate.getFullYear()}-${thisDate.getMonth()+1}-${thisDate.getDate()}` %>
-                <% let admissionDate = `${thisDate2.getFullYear()}-${thisDate2.getMonth()+1}-${thisDate2.getDate()}` %>
+                <% for(i of member) { %>
                 <tr>
                     <td><%= i.id %></td>
                     <td><a href="/member/<%= i.id %>"><%= i.name %></a></td>
@@ -34,8 +30,8 @@
                     <td><%= i.position %></td>
                     <td><%= i.emailAddress %></td>
                     <td><%= i.phoneNumber %></td>
-                    <td><%= admissionDate%></td>
-                    <td><%= birthday %></td>
+                    <td><%= i.admissionDate.toLocaleString("ko-kr",{dateStyle:'long'})%></td>
+                    <td><%= i.birthday.toLocaleString("ko-kr",{dateStyle:'long'}) %></td>
                 </tr>
                 <% } %>
             </table>
