@@ -5,51 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/blog.css">
 </head>
 <body>
-  <%-include('nav.ejs')%>
+  <%-include('nav.ejs') %>
 
-  <form action="/add" method="post" id="post-form">
-    <div class="blog-post">
-      <h2 class="title">Blog Post!</h2>
-      <div>
-        <label for="post-title">제목</label>
-        <input type="text" name="title" id="post-title">
+  <div class="sec">
+    <form action="/add" method="post" id="post-form">
+      <div class="blog-post container">
+        <h2 class="title text-center">✨Blog Post✨</h2>
+        <div>
+          <label for="post-title">제목</label>
+          <input type="text" name="title" id="post-title">
+        </div>
+        <div>
+          <label for="post-content">내용</label>
+          <input type="text" name="content" id="post-content">
+        </div>
+        <button type="submit" id="post-commit">등록</button>
+        <button type="reset"id="post-cancel">취소</button>
       </div>
-      <div>
-        <label for="post-content">내용</label>
-        <textarea cols="30" rows="5" name="content" id="post-content"></textarea>
+    </form>
+    <hr>
+    <div class="blog-list container">  
+    <h2 class="title text-center">Blog List</h2>
+      <% for(let i = 0; i < blog.length ; i++) { %>  
+      <div class="blog-item item">
+        <div class="blog-title-wrap">
+          <label for="blogTitle">제목</label>
+          <input type="text" name="title" class="blog-title" readonly value="<%= blog[i].title %>">
+        </div>
+        <div class="blog-content-wrap">
+          <label for="blog-content">내용</label>
+          <input type="text" name="Content" class="blog-content" readonly value="<%= blog[i].content %>">
+        </div>
+        <button type="button" class="edit" data-id="<%=blog[i].id %>">수정</button>
+        <button type="button" class="del" data-id="<%=blog[i].id %>">삭제</button>
       </div>
-      <button type="submit" id="post-commit">등록</button>
-      <button type="reset"id="post-cancel">취소</button>
-    </div>
-  </form>
-  <hr>
-  <h2 class="title">Blog List</h2>
-  <div class="blog-list">  
-    <% for(let i = 0; i < blog.length ; i++) { %>  
-      <p><%= blog[i].id %></p>
-    <div class="blog-item">
-      <div class="blog-title-wrap">
-        <label for="blogTitle">제목</label>
-        <input type="text" name="title" class="blog-title" readonly value="<%= blog[i].title %>">
-      </div>
-      <div class="blog-content-wrap">
-        <label for="blog-content">내용</label>
-        <input type="text" name="Content" class="blog-content" readonly value="<%= blog[i].content %>">
-      </div>
-      <button type="button" class="edit" data-id="<%=blog[i].id %>">수정</button>
-      <button type="button" class="del" data-id="<%=blog[i].id %>">삭제</button>
-    </div>
-    <% } %>
-    <div class="paging">
-      <% for(let page = 1; page <= totalPage; page++) { %>
-        <a href="/page/<%= page %>"><%= page %></a>
       <% } %>
+      <div class="pagination">
+        <% for(let page = 1; page <= totalPage; page++) { %>
+          <a href="/page/<%= page %>"><%= page %></a>
+        <% } %>
+      </div>
     </div>
   </div>
-
   <script src="/js/main.js"></script>
 
 </body>

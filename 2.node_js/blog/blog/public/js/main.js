@@ -104,3 +104,4 @@ function postEdit(newPost){
       })
         .then(r => r.text())
   }
+  

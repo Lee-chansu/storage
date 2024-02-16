@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+<body>
+
+  <form action="/login" method="post">
+    <section class="blog-post sec">
+      <div class="container">
+        <h2 class="title text-center">✨User Login✨</h2>
+        <div class="item">
+          <input type="text" name="username" id="username" placeholder="아이디" value="tutle">
+        </div>
+        <div class="item">
+          <input type="password" name="password" id="password" placeholder="비밀번호"  value="1234">
+        </div>
+        <button type="submit" id="post-commit">로그인</button>
+        <button type="reset"id="post-cancel">취소</button>
+      </div>
+    </section>
+  </form>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

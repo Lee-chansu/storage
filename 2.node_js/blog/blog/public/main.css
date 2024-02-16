@@ -21,3 +21,12 @@ header .container .row .login-wrap{margin: 0; right: 0;}
 header .container .row .login-wrap .login{}
 header .container .row .login-wrap .login a{}
 header .container .row .login-wrap .login a span{}
+
+.sec input[type="text"],
+.sec input[type="password"]{
+    width: 80%;
+    margin: 3px 10px; padding: 3px 15px;
+    border: 1px solid transparent; outline: 0;
+    transition: 0.3s;
+    background-color: lightgoldenrodyellow;
+}
