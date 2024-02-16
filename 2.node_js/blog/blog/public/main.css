@@ -1,0 +1,23 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li, ol, ul{list-style: none;}
+a{text-decoration: none;}
+img{display: block;}
+body{height: 100%;}
+
+/*header*/
+header{background-color: #eef;}
+header .container{
+    position: relative; margin: 0; padding: 20px 0;
+    width: 2000px;
+}
+header .container .row{}
+header .container .row .logo{margin: 0;}
+header .container .row .gnb-menubar{
+    justify-content: space-between;
+}
+header .container .row .gnb-menubar a{}
+header .container .row .gnb-menubar a span{}
+header .container .row .login-wrap{margin: 0; right: 0;}
+header .container .row .login-wrap .login{}
+header .container .row .login-wrap .login a{}
+header .container .row .login-wrap .login a span{}

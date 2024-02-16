@@ -16,6 +16,7 @@ app.use(express.urlencoded({extended : true}))  // queryString 방식의 데이�
 // 3. listen - 포트번호 지정
 app.listen(3000 , ()=>{
   console.log('접속 성공! - http://localhost:3000 ')
+  console.log('접속 성공! - http://localhost:3000/blog ')
 })
 
 
@@ -24,19 +25,49 @@ app.listen(3000 , ()=>{
 app.get('/', (req, res)=>{
   res.send('메인 접속성공!')
 })
-// 추가 페이지 작성
-app.get('/blog', async (req, res)=>{
-  res.render('add-page.ejs')
-})
+// 블로그 게시물 확인
 app.get('/blog', async (req, res)=>{
 
   try {
     const blog = await Blog.findAll();
     res.render('index.ejs', {blog})
-    
   } catch (error) {
     console.log(error);
     res.status(500).send('서버 오류 발생');
   }
   
+})
+// 추가 페이지 작성
+app.get('/add-page', async (req, res)=>{
+  res.render('add-page.ejs')
+})
+
+// 수정 페이지 작성
+app.get('/blog:id', async(req,res)=>{
+  let {id} = req.params;
+  const blog = await Blog.findOne({where : {id}})
+  res.render('blog-detail.ejs', {blog})
+})
+
+
+// 추가
+app.post('/add', async (req,res) => {
+  const info = req.body;
+  await Blog.create(info)
+  res.redirect('/blog')
+  
+})
+
+
+//삭제
+app.delete('/blog:id', async (req,res) =>{
+  const {id} = req.params
+  try {
+    await Blog.destroy({where: {id}});
+    res.redirect('/blog')
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('서버 오류 발생');
+    
+  }
 })

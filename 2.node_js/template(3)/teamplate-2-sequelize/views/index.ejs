@@ -12,15 +12,35 @@
       <h2 class="title">Blog Post!</h2>
       <div class="blog-title">
         <label for="blogTitle">제목</label>
-        <input type="text" name="title" class="blog-title" value="<%= blog[0].title%>">
+        <input type="text" name="title" class="title" readonly value="<%= blog[0].title%>">
       </div>
       <div class="blog-content">
         <label for="blogContent">내용</label>
-        <input type="text" name="content" class="blog-content" readonly value="<%= blog[0].content %>">
+        <input type="text" name="content" class="content" readonly value="<%= blog[0].content %>">
       </div>
     </div>
     <button class="toAdd" type="button">등록하기</button>
+    
+    <hr>
+    <% for(let i of blog) {%>
+    <div class="blog-list">
+      <h2 class="title">Blog List!</h2>
+      <div class="blog-title">
+        <label for="blogTitle">제목</label>
+        <input type="text" name="title" class="title" readonly value="<%=i.title%>">
+      </div>
+        
+      <div class="blog-content">
+        <label for="blogContent">내용</label>
+        <input type="text" name="content" class="content" readonly value="<%=i.content %>">
+      </div>
+
+      <button class="modify" type="button" data-id="<%= i.id %>">수정하기</button>
+      <button class="del" type="button" data-id="<%= i.id %>">삭제하기</button>
+    </div>
+    <% } %>
   </form>
-  <script src="./public/js/main.js"></script>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>
