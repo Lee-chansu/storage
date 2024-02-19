@@ -8,8 +8,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
 // db
-
-
+const db = require('./models');
 
 // 2. use, set - 등록
 app.set('view engine', 'ejs')
@@ -27,7 +26,7 @@ app.listen(3000 , ()=>{
 // 4. 하위페이지들 - 라우팅 
 
 app.get('/', (req, res)=>{
-  res.send('메인 접속성공!')
+  res.render('index.ejs')
 })
 
 app.get('/login', (req, res)=>{

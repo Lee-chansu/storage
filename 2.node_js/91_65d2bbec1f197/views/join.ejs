@@ -34,13 +34,17 @@
 <script src="/js/main.js"></script>
 
 <script>
-  let isFind = (<%= isFind %>);
-  let error = document.querySelector('.error')
-
-  if(isFind){
-    error.textContent='이미 가입된 회원의 정보가 있습니다.'}
-  else{
-    error.textContent='가입 했습니다.'
+  
+  let isJoined = ('<%= isJoined.message %>')
+  let errorMessage = document.querySelector('.error');
+  console.log(isJoined)
+  
+  if (isJoined =='success') {
+    errorMessage.textContent = '가입되었습니다';
+  } else if(isJoined =='fail') {
+    errorMessage.textContent = '이미 가입된 회원이 있습니다';
+  } else{
+    errorMessage.textContent = '';
   }
 </script>
 

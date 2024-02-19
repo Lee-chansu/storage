@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "1234",
-    "database": "knotted-member",
+    "database": "members",
     "host": "localhost",
     "dialect": "mysql"
   },

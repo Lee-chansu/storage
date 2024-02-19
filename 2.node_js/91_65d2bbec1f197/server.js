@@ -115,8 +115,8 @@ app.get('/logout', (req, res)=>{
 })
 
 // 회원가입
-app.get('/join', (req,res)=>{
-  res.render('join.ejs');
+app.get('/join', async (req, res)=>{
+  res.render('join.ejs', {isJoined : {message : ''}})
 })
 
 
@@ -176,21 +176,23 @@ app.post('/add', async function (req, res) {
 
 })
 
-app.post('/join', async function (req,res) {
-  const newUser = {username : req.body.username, password : req.body.password};
-  let result = await User.findOne({where : {username : newUser.username}});
-
-  try {
-    if(!result.username){
-    let isFind = await User.create(newUser);
-    res.redirect('/page/1');
-    }
-    else{
-      res.render('join.ejs', {joinState : true})
-    }
-  } catch(error){
-    res.status(500).send('서버 오류!'+error)
+app.post('/join', async (req, res)=>{
+  // req에 담긴 username과 password로 새로운 객체를 만든다. newUser
+  const newUser = {
+    username : req.body.username, 
+    password : req.body.password
   }
+  // db에서 username과 일치하는 username 있는지 검사해서 결과를 result에 받는다
+  const result = await User.findOne({where : {username : newUser.username}})
+  let isJoined = ''
+  if(result){
+    isJoined ='fail'
+  }else{
+    await User.create(newUser)
+    isJoined ='success'
+  }
+  res.render('join.ejs', {isJoined : {message : isJoined}})
+  
 })
 
 
@@ -206,8 +208,8 @@ app.delete('/:id', async function (req, res) {
 
 
 app.put('/:id', async function (req, res) {
-  const {id} = req.params
-  const newPost = req.body
+  const {id} = req.params;
+  const newPost = req.body;
 
   try{
     // 원본값 찾기
@@ -215,7 +217,7 @@ app.put('/:id', async function (req, res) {
 
     // 내용 바꾸기
     Object.keys(newPost).forEach((prop)=>{
-      post[prop] = newPost[prop]
+      post[prop] = newPost[prop];
     })
     
     // db저장

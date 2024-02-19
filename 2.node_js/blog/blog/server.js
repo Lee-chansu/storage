@@ -9,7 +9,7 @@ const LocalStrategy = require('passport-local');
 
 // db
 const db = require('./models');
-const {Blog} = db
+const {Blog} = db;
 const {User} = db;
 
 // 2. use, set - 등록
