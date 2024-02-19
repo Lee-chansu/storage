@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+  <header class="header">
+    <div class="container">
+      <div class="loginInfo-wrap">
+        <span class="message"><%= loginInfo %>님 반가워요!</span>
+        <a href="#" class="login-info"><%= (loginInfo)? '로그아웃' : '로그인' %></a>
+      </div>
+    </div>
+  </header>
+  <section class="blog-post sec text-center">
+    <form action="/add" method="post" id="post-form">
+      <div class="container">
+        <h2 class="title">✍ Memo Write!</h2>
+        <div class="row row-cols-1 blog-post-wrap">
+          <div class="col">
+            <!-- <label for="post-title">제목</label> -->
+            <input type="text" name="title" id="post-title" placeholder="제목">
+          </div>
+          <div class="col">
+            <!-- <label for="post-content">내용</label> -->
+            <input type="text" name="content" id="post-content"  placeholder="내용">
+          </div>
+          <div class="col">
+            <button type="submit" id="post-commit" class="btn btn-success">등록</button>
+            <button type="reset"id="post-cancel" class="btn btn-secondary">취소</button>
+          </div>
+        </div>
+    </div>
+  </form>
+</section>
+
+<section class="blog-list sec" id="blog-list">
+  <div class="container">  
+    <h2 class="title  text-center">📜 Memo List!</h2>
+    <% for(let i = 0; i < blog.length ; i++) { %>  
+    <div class="row row-cols-1">
+      <div class="col item d-flex">
+        <p class="col-1"><%=blog[i].id %></p>
+        <div class="col title-wrap">
+          <div>
+            <label for="blogTitle">제목</label>
+            <input type="text" name="title" class="blog-title" readonly value="<%= blog[i].title %>">
+          </div>
+          <div>
+            <label for="blog-content">내용</label>
+            <input type="text" name="Content" class="blog-content" readonly value="<%= blog[i].content %>">
+          </div>
+        </div>
+        <div class="col-1 content-wrap">
+          <a class="edit" data-id="<%=blog[i].id %>">✏</a>
+          <a class="del" data-id="<%=blog[i].id %>">🗑</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="row pagination d-flex justify-content-center">
+      <% for(let page = 1; page <= totalPage ; page++) { %>  
+        <a href="/page/<%= page %>#blog-list"> <%= page %> </a>
+      <% } %>
+    </div>
+  </div>
+</section>  
+
+<script src="/js/memo.js"></script>
+<script src="/js/login.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let loginInfo = document.querySelector('.login-info')
+    let loginState = loginInfo.innerHTML
+    if(loginState.trim() == '로그인'){
+      loginInfo.setAttribute('href','/login')
+    }else{
+      loginInfo.setAttribute('href','/logout')
+    }
+  })
+</script>
+</body>
+</html>

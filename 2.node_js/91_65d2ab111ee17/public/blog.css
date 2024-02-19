@@ -1,0 +1,33 @@
+*{margin:0; padding:0; box-sizing:border-box}
+ul, ol, li{list-style: none;}
+a{text-decoration: none;}
+body{background-color: #444;}
+
+.header{padding: 12px 0 ; text-align: right;}
+.header .message,
+.header a{ color: #ddd;}
+.header .message{padding-right: 20px;}
+
+.sec {width: 100%; padding: 30px 0; }
+.sec .container{max-width: 600px; padding: 40px; border-radius: 5px; background-color: #fff;}
+.sec h2{margin: 0 0 20px }
+.sec input[type="text"]{
+  width: 80%;
+  margin: 3px 10px; padding : 3px 15px; 
+  border: 1px solid transparent; outline: 0; 
+  transition: 0.3s;
+  background-color: lightgoldenrodyellow;
+}
+
+.blog-post{padding: 0 0 30px;}
+.blog-post input[type="text"]{border-bottom-color: #ddd; margin: 10px 0;}
+
+.blog-list .item{padding: 20px; border-bottom: 1px dotted #aaa;}
+.blog-list .item label{color: #444;}
+
+.blog-list .blog-title.edit{border: 1px solid #ddd; background-color: rgba(230, 230, 250, 0.8);}
+.blog-list .blog-content.edit{border: 1px solid #ddd; background-color: rgba(230, 230, 250, 0.8);}
+
+
+.pagination{margin: 20px 0 0 ;}
+.pagination a{width: auto;}
