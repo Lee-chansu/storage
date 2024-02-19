@@ -5,9 +5,20 @@ img{display: block; width: 100%;}
 
 
 /* header */
-.head{}
+.head{background-color: #ddd; display: block;}
+.head .container{margin: 0; padding: 0; width: 100%;}
+.head .container .row{margin: 0; padding: 0;}
+.head .container .row .logo{position: relative; left: 0;}
+.head .container .row .gnb-menubar{position: relative; right: 0;}
+.head .container .row .gnb-menubar .login-wrap{display: flex; justify-content: right; align-items: center; }
+.head .container .row .gnb-menubar .login-wrap a{padding-right: 15px;}
+.head .container .row .gnb-menubar .login-wrap a:last-of-type{padding-right: 0;}
 
 
 
 
 /* section */
+.sec{background-color: #eee;}
+.sec .container{}
+.sec .container .row{border: blue 5px solid;}
+.sec .container .row .col{}

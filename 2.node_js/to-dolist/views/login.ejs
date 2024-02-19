@@ -14,10 +14,11 @@
             <div class="title-wrap row pt-2">
                 <h1 class="title my-3">로그인</h1>
             </div>
-            <form action="#">
-                <button class="close p-1">
-                    <a href="notied-donut.html"></a>
+            <form action="/join" method="post">
+                <button type="button" class="close p-1">
+                    <a href="/">
                     <i class="bi bi-x"></i>
+                    </a>
                 </button>
                 <div class="content-wrap row">
                     <input type="text" id="email" class="p-2" placeholder="이메일"/>
@@ -27,36 +28,16 @@
                         <span>로그인 상태 유지</span>
                         <p id="errormessage"></p>
                     </div>
-                    <input type="button" name="login-btn" class="login-btn p-2" value="로그인">
+                    <input type="submit" name="login-btn" class="login-btn p-2" value="로그인">
                 </div>
                 <div class="box-wrap d-flex my-3 py-2">
                     <div class="regist">
-                        <a href="#"><span>회원가입</span></a>
+                        <a href="/regist"><span>회원가입</span></a>
                     </div>
                     <div class="find-info">
                         <a href="#"><span>아이디 찾기</span></a>
                         <a href="#"><span>비밀번호 찾기</span></a>
                     </div>
-                </div>
-                <div class="divier my-3">
-                    <div class="left line"></div>
-                            또는
-                    <div class="right line"></div>
-                </div>
-                <div class="kakao login-box mb-2">
-                        <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fknottedstore.com%2Foauth&client_id=42c87f83ebedb6f0b394bdc1499b49bc&state=Lw%253D%253D%7Ckakao_sync%7CY%7C%7C"class="kakao login p-2">
-                        카카오로 로그인 시도
-                    </a>
-                </div>
-                <div class="naver login-box mb-2">
-                    <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&svctype=0&redirect_uri=https%3A%2F%2Fknottedstore.com%2Foauth&client_id=qrC2eIwkC55NjnkFKRYe&state=Lw%253D%253D%7Cnaver%7CY%7C%7C" class="naver login py-2">
-                        네이버로 로그인 시도
-                    </a>
-                </div>
-                <div class="divier my-3">
-                    <div class="left line"></div>
-                            또는
-                    <div class="right line"></div>
                 </div>
             </form>
         </fieldset>

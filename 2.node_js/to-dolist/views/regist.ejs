@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <div class="inner container-fluid m-0 px-5 mt-5 d-flex justify-content-center">
+        <fieldset class="px-5 py-3">
+            <div class="title-wrap row pt-2">
+                <h1 class="title my-3">로그인</h1>
+            </div>
+            <form action="#">
+                <button class="close p-1">
+                    <a href="notied-donut.html"></a>
+                    <i class="bi bi-x"></i>
+                </button>
+                <div class="content-wrap row">
+                    <input type="text" id="email" class="p-2" placeholder="이메일"/>
+                    <input type="password" id="password" class="p-2" placeholder="비밀번호"/>
+                    <div class="checkbox my-2 p-0">
+                        <input type="checkbox" class="auto-login"/>
+                        <span>로그인 상태 유지</span>
+                        <p id="errormessage"></p>
+                    </div>
+                    <input type="button" name="login-btn" class="login-btn p-2" value="로그인">
+                </div>
+                <div class="box-wrap d-flex my-3 py-2">
+                    <div class="regist">
+                        <a href="#"><span>회원가입</span></a>
+                    </div>
+                    <div class="find-info">
+                        <a href="#"><span>아이디 찾기</span></a>
+                        <a href="#"><span>비밀번호 찾기</span></a>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

@@ -30,7 +30,7 @@ fieldset{
     text-align: center;
 }
 
-input[type=button]{
+.login-btn{
     border-style: none; border-radius: 2px;
     background-color: #ffec9f;
 }

@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <%- include('nav.ejs') %>
-    
+    <section>
+        <div class="sec">
+            <div class="container">
+                <div class="row">
+                    <h2 class="title">~~님의 to-dolist</h2>
+                </div>
+                <div class="row">
+                    <div class="col d-flex">
+                        <div class="add-btn">
+                            <button class="add">
+                                
+                            </button>
+                        </div>
+                        <div class="to-dolist">to-dolist1</div>
+                        <div class="to-dodate">date</div>
+                        <div class="btn-wrap">
+                            <button class="edit-btn">수정</button>
+                            <button class="del-btn">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="/js/index.js"></script>
 </body>
 </html>
