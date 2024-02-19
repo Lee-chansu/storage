@@ -4,9 +4,11 @@ const app = express()
 const session = require('express-session')
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
+const port = 3000;
 
 // db
 const db = require('./models')
+const { where } = require('sequelize')
 const {Blog, User} = db
 
 // 2. use, set - 등록
@@ -20,8 +22,8 @@ app.use(express.urlencoded({extended : true}))  // queryString 방식의 데이�
 app.use(passport.initialize()) // 언제 어떻게 세션을 만들지 설정
 app.use(session({
   secret : '1234',  // 세션문자열 암호화 할때 쓰는 비번, 가능한 길게, 오픈 x
-  resave : false,  // 유저가 로그인 안해도 세션 저장할꺼니? (false 추천)
-  saveUninitialized : false, // 유저가 요청날릴 때마다 session데이터 갱신할꺼니(false 추천)
+  resave : false, // 유저가 요청날릴 때마다 session데이터 갱신할꺼니(false 추천)  
+  saveUninitialized : false, // 유저가 로그인 안해도 세션 저장할꺼니? (false 추천)
   cookie : {maxAge : 60*60*1000} // 1000ms = 1s - ms단위로 유효기간을 설정 - 1시간 설정
 }))
 app.use(passport.session())
@@ -32,7 +34,7 @@ passport.use(new LocalStrategy( async (id, pw, done)=>{
   let result = await User.findOne({where : {username : id }})
 
   if(!result){
-    return done(null, false, {message : '아이디 db 없음'})
+    return done(null, false, {message : '아이디 db 없음'}) // 각 파라미터는 error, user(유저 정보), 출력될 메시지 순으로 이해하면 된다.
   }
 
   if(result.password != pw){
@@ -63,19 +65,22 @@ passport.serializeUser((user, done) => {
 // 세션 데이터와 비교해보고 이상 없으면 로그인도니 유저 정보를 API의 요청. user에 담음
 
 passport.deserializeUser(async (user, done) => {
-  
+
   let result = await User.findOne({ where : { id : user.id}})
-  delete result.password // 객체에서 파라미터 지움. password 파라미터 필요없어서 지움
+  let newUser = {
+    id : result.id,
+    username : result.username // password를 제외한 새로운 객체를 만든다.
+  }
   process.nextTick(() => {
-    return done(null, result)
+    return done(null, newUser)
   })
 })
 
 
 
 // 3. listen - 포트번호 지정
-app.listen(3000 , ()=>{
-  console.log('접속 성공! - http://localhost:3000 ')
+app.listen(port , ()=>{
+  console.log('접속 성공! - http://localhost:'+port)
 })
 
 
@@ -147,12 +152,12 @@ app.get('/page/:pageNum', async (req, res)=>{
   
   const loginInfo = (req.user)? req.user.username : null
 
-  let {pageNum} = req.params
-  let limit = 3
-  let offset = (pageNum - 1) * limit
+  let {pageNum} = req.params;
+  let limit = 3;
+  let offset = (pageNum - 1) * limit;
   let totalPost = await Blog.count() // select count(*) from blogs
   //  토탈페이지수 = 올림( 전체게시물수 / 페이지당 숫자(limit) )
-  let totalPage = Math.ceil( totalPost /limit)
+  let totalPage = Math.ceil( totalPost /limit);
 
   // 시퀄라이즈 - 정렬, createAt : 내림차순 
   let blog = await Blog.findAll({ 
@@ -163,6 +168,9 @@ app.get('/page/:pageNum', async (req, res)=>{
   res.render('index.ejs', {blog, totalPage, loginInfo})
 })
 
+app.get('/resister', async function (req, res) {
+  res.render('join.ejs')
+})
 
 
 app.post('/add', async function (req, res) {
@@ -173,8 +181,28 @@ app.post('/add', async function (req, res) {
   } catch{
     res.status(500).send('서버 오류!')
   }
-
 })
+
+app.post('/join', async function (req,res) {
+  const newInfo = req.body;
+  try {
+    let result = await User.findOne({where : {username : newInfo.username}})
+    console.log(result.username);
+    
+    if(!result.username){
+      await User.create(newInfo);
+      res.redirect('/page/1')
+    }
+    else{
+      res.send('이미 가입한 회원입니다.')
+      setTimeout(function(){res.redirect('/resister')}
+        , 3000)
+    }
+  } catch (error) {
+    res.status(500).send('서버 오류!'+error)
+  }
+})
+
 
 app.delete('/:id', async function (req, res) {
   const {id} = req.params // 객체 안의 파라미터 값을 뽑아야함
@@ -184,7 +212,6 @@ app.delete('/:id', async function (req, res) {
   } catch{
     res.status(500).send('서버 오류!')
   }
-
 })
 
 app.put('/:id', async function (req, res) {
@@ -194,15 +221,12 @@ app.put('/:id', async function (req, res) {
   try{
     // 원본값 찾기
     const post = await Blog.findOne({where: {id}}) 
-
     // 내용 바꾸기
     Object.keys(newPost).forEach((prop)=>{
       post[prop] = newPost[prop]
     })
-    
     // db저장
-    await post.save()
-
+    await post.save();
   } catch{
     res.status(500).send('서버 오류!')
   }
