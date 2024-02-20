@@ -19,6 +19,18 @@ img{display: block; width: 100%;}
 
 /* section */
 .sec{background-color: #eee;}
-.sec .container{}
-.sec .container .row{border: blue 5px solid;}
-.sec .container .row .col{}
+.sec .container{padding-top: 80px;}
+.sec .container .row{margin: 10px 0;}
+.sec .container .row{align-items: center;}
+.sec .container .row .add-btn{width: 20px; padding: 0; align-items: center;}
+.sec .container .row .add-btn i{
+    width: 20px; height: 20px;
+    margin: 0; padding: 0;
+}
+.sec .container .row .add-btn i::before{
+    display: flex; justify-content: center; align-items: center;
+    width: 40px; height: 40px;
+}
+.sec .container .row .list-wrap{justify-content: space-between; align-items: center;}
+.sec .container .row .list-wrap .to-dolist{padding-left: 30px;}
+.sec .container .row .list-wrap .to-dolist input[type=text]{width: 500px;}

@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "1234",
-    "database": "members",
+    "database": "to-dolist",
     "host": "localhost",
     "dialect": "mysql"
   },

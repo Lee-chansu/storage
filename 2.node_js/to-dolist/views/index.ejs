@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
@@ -16,14 +17,18 @@
                     <h2 class="title">~~님의 to-dolist</h2>
                 </div>
                 <div class="row">
-                    <div class="col d-flex">
-                        <div class="add-btn">
-                            <button class="add">
-                                
-                            </button>
+                    <div class="add-btn">
+                        <i class="bi bi-plus-circle"></i>
+                    </div>
+                    <div class="list-wrap col d-flex">
+                        <div class="to-dolist">
+                            <label for="date">📝</label>
+                            <input type="text" class="to-do" name="content" placeholder="content" value="">
                         </div>
-                        <div class="to-dolist">to-dolist1</div>
-                        <div class="to-dodate">date</div>
+                        <div class="to-dodate">
+                            <label for="date">⏰</label>
+                            <input type="date" class="date" name="date"  value="">
+                        </div>
                         <div class="btn-wrap">
                             <button class="edit-btn">수정</button>
                             <button class="del-btn">삭제</button>

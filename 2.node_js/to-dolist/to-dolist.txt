@@ -2,7 +2,7 @@
 
 테이블에서 필요한 데이터(테이블)
 테이블 (유저)	: id, username ,password
-테이블 (스케줄)	: id, user_id, username, title, content, work_date
+테이블 (스케줄)	: id, user_id, username, title, content, date
 
 페이지
 - 로그인
