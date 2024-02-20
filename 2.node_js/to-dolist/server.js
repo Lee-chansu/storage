@@ -103,7 +103,7 @@ async function toJoinPage(req,res){
 }
 
 
-
+// 로그인 db에 있는지 비교 후 로그인
 async function checkedLogin(req, res) {
   // 제출한 아이디, 비번이 db에 있는거랑 일치 여부 확인 -> 세션생성
   
