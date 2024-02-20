@@ -173,7 +173,6 @@ app.post('/add', async function (req, res) {
   } catch{
     res.status(500).send('서버 오류!')
   }
-
 })
 
 app.post('/join', async (req, res)=>{

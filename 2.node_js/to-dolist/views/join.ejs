@@ -19,16 +19,13 @@
                     <i class="bi bi-x"></i>
                 </a>
             </button>
-            <form action="/join" method="post">
+            <form action="/join" method="post" id="form-id">
                 <div class="content-wrap row">
-                    <input type="text" id="username" class="p-2" placeholder="아이디"/>
-                    <input type="password" id="password" class="p-2" placeholder="비밀번호"/>
-                    <div class="checkbox my-2 p-0">
-                        <input type="checkbox" class="auto-login"/>
-                        <span>로그인 상태 유지</span>
-                        <p id="errormessage"></p>
-                    </div>
-                    <input type="submit" class="login-btn p-2" value="완료">
+                    <input type="text" id="username" name="useranme" class="p-2" placeholder="아이디"/>
+                    <input type="password" id="password" name="password" class="p-2" placeholder="비밀번호"/>
+                    <input type="text" id="phoneNum" name="phoneNum" class="p-2" placeholder="tel"/>
+                    <p id="errormessage"></p>
+                    <input type="button" onclick="" class="join-btn p-2" value="완료">
                 </div>
             </form>
         </fieldset>
@@ -36,6 +33,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="/js/login.js"></script>
+    <script src="/js/join.js"></script>
 </body>
 </html>

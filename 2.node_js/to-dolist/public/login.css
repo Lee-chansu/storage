@@ -30,13 +30,14 @@ fieldset{
     text-align: center;
 }
 
-.login-btn{
+.login-btn, .join-btn{
     border-style: none; border-radius: 2px;
     background-color: #ffec9f;
 }
 
-#id{border-radius: 5px 5px 0 0; border: 1px solid #e7eaee;}
+#username{border-radius: 5px 5px 0 0; border: 1px solid #e7eaee;}
 #password{border-radius: 0 0 5px 5px; border: 1px solid #e7eaee;}
+#phoneNum{border-radius: 0 0 5px 5px; border: 1px solid #e7eaee; margin-bottom: 10px;}
 #errormessage{font-size: 15px; color: red;}
 
 .box-wrap{

@@ -4,11 +4,14 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class user extends Model {
-    static associate(models) {}
+    static associate(models) {
+      user.hasMany(models.schedule,{foreignKey : "user_id"});
+    }
   }
   user.init({
     username: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    phoneNum: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'user',
