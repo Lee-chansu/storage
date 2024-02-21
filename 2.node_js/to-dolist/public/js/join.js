@@ -4,7 +4,7 @@ let phoneNum = document.getElementById("phoneNum");
 let errormessage = document.getElementById("errormessage");
 
 let joinBtn = document.querySelector(".join-btn");
-let regex = /(?=.*[a-z])(?=.*[\d])(?=.*[@#$%^&*!?])[a-z\d@#$%^&*!?]+/
+const regex = /(?=.*[a-z])(?=.*[\d])(?=.*[@#$%^&*!?])[a-z\d@#$%^&*!?]+/
 
 joinBtn.addEventListener('click', function(){
     let usernameValue = username.value;

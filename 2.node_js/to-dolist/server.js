@@ -9,7 +9,7 @@ const LocalStrategy = require('passport-local');
 
 // db
 const db = require('./models');
-const {User, Schedule} = db;
+
 
 // 2. use, set - 등록
 app.set('view engine', 'ejs');
@@ -36,15 +36,15 @@ passport.use(new LocalStrategy(
   {usernameField:"username",
   passwordField : "password"
 },
-async (username, pw, done) => {
-  console.log(username, pw)
-  let result = await User.findOne({ where : { username : username}})
+async (username, password, done) => {
+  console.log(username, password)
+  let result = await db.user.findOne({ where : { username : username}})
   // 찾는게 없으면  rejected = fasle처리 - ! -? true로 바꿔서
   if (!result) {
     return done(null, false, { message: '아이디 DB에 없음' })
   }
 
-  if (result.password != pw) {
+  if (result.password != password) {
     return done(null, false, { message: '비번불일치' });
   }
   
@@ -55,13 +55,13 @@ async (username, pw, done) => {
 // 세션 생성
 passport.serializeUser( (user, done)=>{
   process.nextTick(()=>{
-    done(null, {id : user.id, username : user.name})
+    done(null, {id : user.id, username : user.username})
   })
 })
 
 //세션 검사
 passport.deserializeUser(async(user,done)=>{
-  let result = await user.findOne({where: {id : user.id}})
+  let result = await db.user.findOne({where: {id : user.id}})
 
   if(result){
     const newUserInfo = {
@@ -79,7 +79,6 @@ passport.deserializeUser(async(user,done)=>{
 app.listen(3000 , async()=>{
   console.log('접속 성공! - http://localhost:3000 ')
 
-  await User.findAll()
 })
 
 
@@ -89,7 +88,7 @@ app.listen(3000 , async()=>{
 app.get('/', toIndexPage); // index.ejs 보여주기
 
 app.get('/login', toLoginPage);  //login.ejs 보여주기
-app.post('/login', checkedLogin);  //login 하기
+app.post('/login', login);  //login 하기
 app.get('/login/:state', toLoginFail);  //login.ejs 보여주기
 
 app.get('/join', toJoinPage); //regist.ejs 보여주기
@@ -97,7 +96,7 @@ app.post('/join', join); //-회원가입 처리
 app.put('/update', updateUser); //회원정보 수정
 
 
-// app.get('/:id', toIndexLoginPage); // 로그인한 후의 index.ejs 보여주기
+app.get('/:id', toIndexLoginPage); // 로그인한 후의 index.ejs 보여주기
 app.get('/logout', toLogout);
 
 app.post('/add', add); // to-dolist 등록하기
@@ -111,7 +110,6 @@ app.delete('/del/:id', );
 
 async function toIndexPage(req,res){res.render('index.ejs')}
 
-
 async function toLoginPage(req,res){res.render('login.ejs')}
 async function toLoginFail(req,res){
   let {state} = req.params;
@@ -119,6 +117,8 @@ async function toLoginFail(req,res){
   res.render('login-fail.ejs');
 }
 async function toJoinPage(req,res){res.render('join.ejs')}
+
+
 //회원가입
 async function join(req, res){
   const newUser = {
@@ -126,34 +126,50 @@ async function join(req, res){
     password : req.body.password,
     phoneNum : req.body.phoneNum
   }
-  const result = await User.findOne({where : {username : newUser.username}})
-  console.log(result);
-  // let isJoined = '';
-  // if(result){
-  //   isJoined = 'fail'
-  // }
-  // else{
-  //   await User.create(newUser)
-  //   isJoined = 'success'
-  // }
-  // res.render('join.ejs', {isJoined: {message : isJoined}})
+  const result = await db.user.findOne({where : {username : newUser.username}})
+  let isJoined = '';
+  if(result){
+    isJoined = 'fail'
+    res.render('join.ejs')
+  }
+  else{
+    await db.user.create(newUser)
+    isJoined = 'success'
+    res.redirect('/:id')
+  }
 }
 
+// 로그인 후 스케줄러 페이지(get)
 async function toIndexLoginPage(req,res){
   let {id} = req.params;
-  let user = await User.findOne({where : {id: session.id}});
-
+  let user = await db.user.findOne({where : {id}});
+  if(!req.user){
+    res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"})
+    res.write("<script>alert('로그인이 필요한 서비스입니다.')</script>")
+    res.write("<script>location.href='/login'</script>")
+    return;
+  }
+  else if(req.user.id != id){
+    res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"})
+    res.write("<script>alert('잘못된 url입니다.')</script>")
+    res.write(`<script>location.href='/${req.user.id}'</script>`)
+    return;
+  }
   try {
+    let schedule = await db.schedule.findAll({where : {user_id: user.id}});
+
     if(user.id == id)
-    res.render('index-login.ejs', {user});
+    res.render('index-login.ejs', {user, schedule});
     else{
       res.redirect('logout');
     }
   } catch (error) {
-    res.status(500).send('에러가 발생했습니다.',error)
-  }
+    res.status(500).send('에러가 발생했습니다.', error)
+  }  
+
 }
 
+// 로그아웃(get)
 async function toLogout(req,res){
   req.logout(()=>{
     res.redirect('/')
@@ -161,22 +177,18 @@ async function toLogout(req,res){
 }
 
 
-// 로그인 db에 있는지 비교 후 로그인
-async function checkedLogin(req, res) {
+// 로그인 기능(post)
+async function login(req, res) {
   // 제출한 아이디, 비번이 db에 있는거랑 일치 여부 확인 -> 세션생성
   passport.authenticate('local', (error, user, info)=>{
     
-    if (error) return res.status(500).json(error); // 인증과정에서 오류 발생
+    if (error) return res.status(500).json(error); 
     
-    if (!user) return res.redirect('/login/fail'); // 로그인 실패했을때 (아이디 비번 안 맞아서)
+    if (!user) return res.redirect('/login/fail'); 
 
-    // 사용자를 로그인 상태로 변경 -  세션 생성
-    // user, 로그인할 사용자 객체 정보a임
-    // err : 에러가 나면 처리할 콜백함 수
     req.logIn(user, (err) => {  
-      if (err) return next(err); // 오류가 나면 next 미들웨어로 오류처리를 넘김  
-      console.log('로그인 성공')
-      res.redirect('/') // 그게 아니라면 index:id로 이동
+      if (err) return next(err); 
+      res.redirect('/' + user.id)
     })
   })(req,res)
 }
@@ -190,7 +202,7 @@ async function add(req, res){
 
 async function updateUser(req,res){
   const newInfo = req.body;
-  const info = await User.findOne({where: {id}})
+  const info = await db.user.findOne({where: {id}})
 
   newInfo.array.forEach(element => {
     info[element] = newInfo[element]

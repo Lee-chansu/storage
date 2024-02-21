@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class schedule extends Model {
     static associate(models) {
-      schedule.belongsTo(models.user,{foreignKey : 'id'})
+      schedule.belongsTo(models.user, {foreignKey : "id"})
     }
   }
   schedule.init({

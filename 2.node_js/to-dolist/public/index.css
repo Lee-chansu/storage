@@ -20,9 +20,13 @@ img{display: block; width: 100%;}
 /* section */
 .sec{background-color: #eee;}
 .sec .container{padding-top: 80px;}
-.sec .container .row{margin: 10px 0;}
-.sec .container .row{align-items: center;}
-.sec .container .row .add-btn{width: 20px; padding: 0; align-items: center;}
+.sec .container .row{margin: 10px 0;align-items: center;}
+.sec .container .row .add-btn{
+    width: 20px; padding: 0; align-items: center;
+}
+.sec .container .row .add-btn:hover{
+    cursor: pointer;
+}
 .sec .container .row .add-btn i{
     width: 20px; height: 20px;
     margin: 0; padding: 0;

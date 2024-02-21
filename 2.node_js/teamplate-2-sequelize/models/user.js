@@ -5,7 +5,6 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class user extends Model {
     static associate(models) {
-      user.hasMany(models.schedule, {foreignKey:"user_id"})
     }
   }
   user.init({
