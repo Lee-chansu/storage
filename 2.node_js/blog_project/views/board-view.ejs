@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/board-view.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+    <section class="section">
+        <div class="container">
+            <div class="title">
+                <%= data.title %>
+            </div>
+            <hr>
+            <div class="content">
+                <%= data.content %>
+            </div>
+            <hr>
+            <div class="info">
+                <span>
+                    작성자 : <%= data.member.nickname %> | 조회수 : <%= data.readhit %> | 작성일 : <%= data.createdAt.toLocaleDateString() %>
+                </span>
+                <% if((user && user.id == data.writer)||(user && user.id == 1)){ %>
+                <span class="btns">
+                    <button type="button" onclick="del('<%= data.id %>')">삭제</button>
+                    <button type="button" onclick="update('<%= data.id %>')">수정</button>
+                </span>
+                <% } %>
+            </div>
+        </div>
+    </section>
+    <script src="/js/board-view.js"></script>
+</body>
+</html>

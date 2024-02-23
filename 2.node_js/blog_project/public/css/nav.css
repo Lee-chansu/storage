@@ -1,0 +1,5 @@
+.header{width: 100%; background-color: lightgray;}
+.header .container{width: 100%; max-width: 1200px; padding:10px 24px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;}
+.header .container .logo-wrapper{}
+.header .container .gnb{display: flex; gap:24px;}
+.header .container .gnb > li > span{cursor: pointer;}

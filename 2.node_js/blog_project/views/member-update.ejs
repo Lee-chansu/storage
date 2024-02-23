@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원정보 수정</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/member-update.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <%- include ('nav.ejs') %>
+        <section class="section">
+            <div class="container">
+                <h2 class="title">회원정보 수정</h2>
+                <form action="/signup" method="post" id="update-form" class="update-form">
+                    <div class="wrapper">
+                        <label for="email" class="label">Email</label>
+                        <input type="text" id="email" name="email" class="input" autoComplete="off"
+                            value="<%= userData.email %>">
+                    </div>
+
+                    <div class="wrapper">
+                        <label for="nickname" class="label">Nickname</label>
+                        <input type="text" id="nickname" name="nickname" class="input" autoComplete="off"
+                            value="<%= userData.nickname %>">
+                        <button type="button" class="nicknameCheck btns" onclick="nicknameChecking()">중복확인</button>
+                    </div>
+                    <div class="alert nickname-alert"></div>
+
+                    <div class="wrapper pwd-wrapper">
+                        <label for="pwd" class="label">Password</label>
+                        <input type="password" id="pwd" name="pwd" class="input" autoComplete="off"
+                            value="<%= userData.pwd %>">
+                        <i class="bi bi-eye-slash" id="pwd-toggle"></i>
+                        <p id="capslock-alert">
+                            <strong>CapsLock</strong>이 켜져있습니다.
+                        </p>
+                    </div>
+                    <div class="alert pwd-alert"></div>
+
+                    <div class="btn-wrapper">
+                        <button type="button" id="updateBtn" class="updateBtn" onclick="send(this.form)">수정</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        <script src="/js/member-update.js"></script>
+</body>
+
+</html>

@@ -1,52 +1,71 @@
-<% let year = schedule.date.getFullYear(); %>
-<% let month = ('0' + (schedule.date.getMonth() + 1)).slice(-2); %>
-<% let day = ('0' + schedule.date.getDate()).slice(-2); %>
-<% let date = year + '-' + month + '-' + day; %>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/index.css">
-    <script src="/js/index.js"></script>
-</head>
-<body>
-    <%- include('nav.ejs') %>
-    <section>
-        <div class="sec">
-            <div class="container">
-                <div class="row">
-                    <h2 class="title"><%= user.username%>님의 to-dolist</h2>
-                </div>
-                <div class="row">
-                    <% for(let i = 0; i < schedule.length; i++) { %>
-                    <div class="add-btn">
-                        <i class="bi bi-plus-circle"></i>
-                    </div>
-                    <div class="list-wrap col d-flex">
-                        <div class="to-dolist">
-                            <label for="content">📝</label>
-                            <input type="text" class="to-do" name="content" placeholder="content" value="<%= schedule.content %>">
-                        </div>
-                        <div class="to-dodate">
-                            <label for="date">⏰</label>
-                            <input type="text" class="date" name="date" value="<%= schedule.date %>">
-                        </div>
-                        <div class="btn-wrap">
-                            <button class="edit-btn">수정</button>
-                            <button class="del-btn">삭제</button>
-                        </div>
-                    </div>
-                    <% } %>
-                </div>
-            </div>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <header class="head">
+      <div class="container container-fluid">
+          <div class="row">
+              <div class="logo col"><a href="/<%= user.id %>">📝</a></div>
+              <div class="gnb-menubar col">
+                  <div class="login-wrap">
+                      <a href="/logout" class="logout">로그아웃</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+  <section>
+    <div class="sec">
+      <div class="container">
+        <div class="row">
+          <h2 class="title"><a href="/update/<%= user.id %>"><%= user.username%></a>님의 to-dolist</h2>
+          <p>이름을 누르면 회원수정페이지로 이동합니다.</p>
+          <div class="btn-wrap">
+            <button class="add-btn btn" data-id="<%= user.id %>">스케줄 추가</button>
+            <button class="edit-btn btn" data-id="<%= user.id %>">스케줄 수정</button>
+            <select id="month-select">
+              <% for(month = 1; month < 13; month++){ %>
+              <option value="<%= month %>월"><%= month %>월</option>
+              <% } %>
+            </select>
+          </div>
         </div>
+        <div class="row schedule-wrap">
+          <% for(let i = 0; i < schedule.length; i++) { %>
+            <input type="hidden" id="user_id" name="user_id" value="<%= schedule[i].user_id %>">
+            <div class="list-wrap col d-flex">
+              <div class="to-dotitle">
+                <p><%= schedule[i].title %>:</p>
+              </div>
+              <div class="to-dolist">
+                <p>📝<%= schedule[i].content %></p>
+              </div>
+              <div class="to-dodate">
+                <p>⏰<%= schedule[i].date.toISOString().slice(0, 10) %> </p>
+              </div>
+              <div class="btn-wrap">
+                <button class="del-btn btn" data-id="<%= schedule[i].id %>">스케줄 삭제</button>
+              </div>
+            </div>
+            <% } %>
+          </div>
+      </div>
     </section>
-    
-</body>
+    <script src="/js/index.js"></script>
+  </body>
 </html>

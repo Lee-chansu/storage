@@ -1,0 +1,9 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li,ol,ul{list-style: none;}
+a{text-decoration: none;}
+
+.section{width: 100%;}
+.section .container{width: 100%; max-width: 1000px; margin: 0 auto; padding:24px;}
+.section .container .title{padding:24px 0;}
+.section .container .content{padding:24px 0;}
+.section .container .info{padding:24px 0;}

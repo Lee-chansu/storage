@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/board.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+    <section class="section">
+        <div class="container">
+            <h2 class="board-title">게시판</h2>
+            <div class="bar">
+                <button type="button" onclick="location.href='/board/post'">작성</button>
+            </div>
+            <table class="board">
+                <tr>
+                    <th class="id">글번호</th>
+                    <th class="title">제목</th>
+                    <th class="writer">작성자</th>
+                    <th class="readhit">조회수</th>
+                    <th class="createdAt">작성일</th>
+                </tr>
+                <% if(boardList.length > 0){ %>
+                    <% for(i of boardList){ %>
+                        <tr>
+                            <td><%= i.id %></td>
+                            <td class="title"><a href="/board/<%= i.id %>"><%= i.title %></a></td>
+                            <td><a href="/member/<%= i.writer %>"><%= i.member.nickname %></a></td>
+                            <td><%= i.readhit %></td>
+                            <td><%= i.createdAt.toLocaleDateString() %></td>
+                        </tr>
+                    <% } %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="5">등록된 게시글이 없습니다.</td>
+                    </tr>
+                <% } %>
+            </table>
+                
+            <div class="paging">
+                <% for(let i=1; i <= totalPage; i++){ %>
+                    <a href="/board?page=<%= i %>"><%= i %></a>
+                <% } %>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

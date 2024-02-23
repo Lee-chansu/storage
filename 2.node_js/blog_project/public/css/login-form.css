@@ -1,0 +1,61 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li,ol,ul{list-style: none;}
+a{text-decoration: none;}
+
+.container{width: 768px; margin:50px auto 0; box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.15); transition: all .3s;}
+
+    .container .header{border-bottom: 1px solid lightgray; position: relative; padding:5px 0;}
+    .container .header > h2{display: block; width: 200px; cursor: pointer; transition: all .3s; margin:0 auto; text-align: center;}
+    .container .header > i{position: absolute; right: 20px; top: 6px; font-size: 24px; cursor: pointer;}
+
+    /* main */
+    .container .main{display: flex; flex-flow: column; max-width: 320px; margin:0 auto;}
+
+        .container .main > h2{text-align: center; padding:40px 0; font-weight: 500;}
+        .container .main .input-form{display: flex; flex-flow: column; align-items: center; gap: 10px;}
+
+        /* wrapper */
+        .container .main .input-form .wrapper{width: 100%; padding:10px 15px; border:1px solid lightgray; position: relative; border-radius: 5px;}
+        .container .main .input-form .wrapper:focus-within{border:1px solid #006938;}
+        .container .main .input-form .wrapper .label{position: absolute; font-size: 18px; color: lightgray; top: 10px; left: 15px; transition: all .1s;}
+        .container .main .input-form .wrapper.label-up .label{top:-10.5px; left: 9px; font-size: 14px; background-color: white; padding:0 3px; color: gray;}
+        .container .main .input-form .wrapper:focus-within .label{color:#006938;}
+        .container .main .input-form .wrapper > input{width: 100%; font-size: 18px; font-family: sans-serif; border:none; outline: none;}
+        .container .main .input-form .wrapper #pwd{width: 90%;}
+        .container .main .input-form .wrapper > input:focus{color:#006938;}
+        .container .main .input-form .wrapper #pwd-toggle{position: absolute; top: 7px; right: 10px; font-size: 25px; color: gray; cursor: pointer;}
+        .container .main .input-form .wrapper #capslock-alert{position: absolute; bottom: -22px; display: none; font-size: 13px; font-family: 'Pretendard-Regular';}
+        .container .main .input-form .wrapper #capslock-alert.show{display: block;}
+
+        /* error-alert */
+        .container .main .input-form .error{display: none; margin:30px 0 0; font-family: 'Pretendard-Regular'; color: red; font-size: 15px;}
+        .container .main .input-form .error.show{display: block;}
+    
+
+        /* buttons */
+        .container .main .input-form .buttons{width: 100%; padding: 30px 0 20px; display: flex; flex-flow: column; gap:20px;}
+        .container .main .input-form .buttons > button{width: 100%; border-radius: 50px; padding:15px 0; font-size: 18px; border:none; transition: all .1s; cursor: pointer; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05), -5px -5px 10px rgba(0, 0, 0, 0.05), 5px -5px 10px rgba(0, 0, 0, 0.05), -5px 5px 10px rgba(0, 0, 0, 0.05);}
+        .container .main .input-form .buttons .sign-in{background-color: #e01d3a; color: white;}
+        .container .main .input-form .buttons .sign-in:hover{background-color: #ff2f4e;}
+        .container .main .input-form .buttons .create{background-color: white; color: #006938;}
+        .container .main .input-form .buttons .create:hover{background-color: #006938; color: white;}
+        
+        /* forgot */
+        .container .main .input-form .forgot{margin-bottom: 10px;}
+        .container .main .input-form .forgot > a{text-align: center; font-weight: 300; position: relative;}
+        .container .main .input-form .forgot > a::after{content: ''; position: absolute; width: 0; height: 2px; background-color: black; bottom: -3px; left: 0; transition: all .1s;}
+        .container .main .input-form .forgot > a:hover::after{width: 100%;}
+
+        /* sign in with google */
+        .container .main .input-form .sign-in-google{text-align: center; margin:0 0 50px;}
+        .container .main .input-form .sign-in-google > p{margin: 0 0 20px;}
+        .container .main .input-form .sign-in-google > button{font-size: 18px; padding: 10px 24px; border:none; border-radius: 50px; color: #4285F4; background-color: white; font-family: 'Pretendard-Regular'; cursor: pointer; transition: all .1s;}
+        .container .main .input-form .sign-in-google > button:hover{background-color: #4285F4; color: white; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05), -5px -5px 10px rgba(0, 0, 0, 0.05), 5px -5px 10px rgba(0, 0, 0, 0.05), -5px 5px 10px rgba(0, 0, 0, 0.05);}
+        .container .main .input-form .sign-in-google > button > i{margin-right: 5px;}
+
+@media screen and (max-width:768px){
+    .container{width: 100%; min-width: 320px; margin:0 auto;}
+    .container .main{padding:0 24px;}
+    .container .header > img{width: 150px;}
+}
