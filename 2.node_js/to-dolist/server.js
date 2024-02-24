@@ -154,7 +154,7 @@ async function join(req, res) {
 
 // 로그인 후 스케줄러 페이지(get)
 async function toIndexLoginPage(req, res) {
-  let { id } = req.params;
+  let {id} = req.params;
   let user = await db.user.findOne({ where: { id } });
   if (!req.user) {
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
@@ -167,10 +167,12 @@ async function toIndexLoginPage(req, res) {
     res.write(`<script>location.href='/${req.user.id}'</script>`);
     return;
   }
+
   try {
     let schedule = await db.schedule.findAll({ where: { user_id: user.id } });
 
-    if (user.id == id) res.render("index-login.ejs", { user, schedule });
+    if (user.id == id) 
+      res.render("index-login.ejs", { user, schedule });
     else {
       res.redirect("logout");
     }
@@ -234,7 +236,7 @@ async function updateUser(req, res) {
     res.write(`<script>location.href='/${req.user.id}'</script>`);
     return;
   }
-  const info = await db.user.findOne({ where: { id } });
+  const info = await db.user.findOne({ where: { id }, logging: console.log });
 
   newInfo.array.forEach((element) => {
     info[element] = newInfo[element];
@@ -342,12 +344,12 @@ async function removeUser(req, res) {
     return;
   }
   try {
-    await db.user.destroy({ where: { id: id } });
-    const delCheck = await db.user.findOne({ where: { id: id } });
-    if(delCheck) {
-      res.send("fail")
-    }else{
-      res.send("success");
+    const delCheck = await db.user.destroy({ where: { id: id } });
+    if (delCheck == 0) {
+      return res.send("fail");
+    } else {
+      await req.session.destroy();
+      return res.send("success");
     }
   } catch (error) {
     res.status(500).send("서버 에러", toString(error));

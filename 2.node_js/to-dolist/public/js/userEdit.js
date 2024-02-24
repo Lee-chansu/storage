@@ -45,7 +45,7 @@ joinBtn.addEventListener("click", function () {
 cancleBtn.addEventListener("click", (e) => {
   let id = e.target.dataset.id;
 
-  location.href = "/" + id;
+  location.href = "/page/" + id;
 });
 
 delBtn.addEventListener("click", (e) => {
@@ -60,6 +60,7 @@ delBtn.addEventListener("click", (e) => {
         if (r == "success") {
           alert("서비스를 이용해주셔서 감사합니다.")
           location.href = "/";
+          return;
         } else {
           alert("오류 발생");
         }

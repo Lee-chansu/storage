@@ -1,7 +1,19 @@
-*{margin: 0; padding: 0; box-sizing: border-box;}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Pretendard-Regular;}
 ul, li, ol{list-style: none;}
 a{text-decoration: none; color: black; text-align: center;}
 img{display: block; width: 100%;}
+.btn{
+    width: 85px;
+    background-color: #ffec9f;
+    border-style: none; border-radius: 10px;
+}
+
 
 .inner{height: 100%;}
 
@@ -11,74 +23,37 @@ fieldset{
     position: relative;
 }
 
-.close{
+fieldset .title-wrap{}
+fieldset .title-wrap .title{
+    display: inline-block; justify-content: center; 
+    text-align: center;
+}
+
+fieldset .close{
     width: 24px;  height: 24px;
     position: absolute; top: 16px; right: 16px;
     opacity: 0.3; background-color: transparent; border: none;
     float: none;
     text-rendering: auto;
 }
-.bi{
+fieldset .close .bi{
     display: inline-block;
-    font-size: 24px;
-    font-size: 'inherit';
+    font-size: 24px; font-size: 'inherit';
 }
-.close:hover .bi{color: black;}
+fieldset .close .close:hover .bi{color: black;}
 
-.title{
-    display: inline-block; justify-content: center; 
-    text-align: center;
+fieldset .content-wrap.row {}
+fieldset .content-wrap.row .btn-wrap{
+    display: flex; justify-content: space-between;
+    padding: 0;
 }
+fieldset .content-wrap.row .btn-wrap .login-btn,fieldset .content-wrap.row .btn-wrap .join-btn{width: 100%; border-radius: 5px;}
 
-.login-btn, .join-btn{
-    border-style: none; border-radius: 2px;
-    background-color: #ffec9f;
-}
+fieldset .box-wrap{justify-content: space-between;}
+
+
 
 #username{border-radius: 5px 5px 0 0; border: 1px solid #e7eaee;}
 #password{border-radius: 0 0 5px 5px; border: 1px solid #e7eaee;}
 #phoneNum{border-radius: 0 0 5px 5px; border: 1px solid #e7eaee; margin-bottom: 10px;}
 #errormessage{font-size: 15px; color: red;}
-
-.box-wrap{
-    width: 100%;
-    align-items: center; justify-content: space-between;
-    font-size: 12px;
-}
-
-
-.divier{position: relative; text-align: center;}
-
-.line{
-    position: absolute; 
-    height: 1px; width: 40%;
-    background-color: #e7eaee;
-}
-
-.left.line{top: 50%; left: 0;}
-.right.line{top: 50%; right: 0; left: auto;}
-
-.login-box{
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: 12px 49%;
-    font-size: 14px; color: #3c1e1e;
-    width: 100%; height: 100%;
-}
-.login{display: block;}
-
-.kakao.login-box{
-    background-color: #FFEB00;
-    background-image: url(https://vendor-cdn.imweb.me/images/kakao_icon.png);
-}
-.naver.login-box{
-    background-color: #27d34a;
-    background-image: url(https://vendor-cdn.imweb.me/images/naver_login2x.png);
-    
-}
-
-.no-login-btn{
-    background-color: #8393a7;
-    color: white;
-    line-height: 42px;
-}

@@ -15,7 +15,7 @@
                 <h1 class="title my-3"><%= user.username %>님의 정보</h1>
             </div>
             <button class="close p-1">
-                <a href="/<%= user.id %>">
+                <a href="/page/<%= user.id %>">
                     <i class="bi bi-x"></i>
                 </a>
             </button>
@@ -26,9 +26,9 @@
                     <input type="text" id="phoneNum" name="phoneNum" class="p-2" placeholder="tel" value="<%= user.phoneNum %>"/>
                     <p id="errormessage"></p>
                     <div class="btn-wrap">
-                        <input type="button" class="join-btn p-2" data-id="<%= user.id %>" value="완료">
-                        <input type="button" class="cancle-btn p-2" data-id="<%= user.id %>" value="취소">
-                        <input type="button" id="del-btn" data-id="<%= user.id %>" value="회원 탈퇴">
+                        <input type="button" class="join-btn btn p-2" data-id="<%= user.id %>" value="완료">
+                        <input type="button" class="cancle-btn btn p-2" data-id="<%= user.id %>" value="취소">
+                        <input type="button" id="del-btn" class="btn" calss="btn" data-id="<%= user.id %>" value="회원 탈퇴">
                     </div>
                 </div>
             </form>

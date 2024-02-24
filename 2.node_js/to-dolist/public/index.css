@@ -4,7 +4,7 @@
     font-weight: 400;
     font-style: normal;
 }
-*{margin: 0; padding: 0; box-sizing: border-box;}
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Pretendard-Regular;}
 ul, li, ol{list-style: none;}
 a{text-decoration: none; color: black; text-align: center;}
 img{display: block; width: 100%;}
@@ -26,7 +26,6 @@ img{display: block; width: 100%;}
     padding: 15px 15px 15px 15px; 
     border-radius: 20px;
     text-align: center; font-size: 48px;
-    font-family: Pretendard-Regular;
 }
 .head .container .row .gnb-menubar .login-wrap a:last-of-type{padding-right: 0;}
 
@@ -42,7 +41,7 @@ img{display: block; width: 100%;}
 }
 .sec .container .schedule-wrap p{
     display: block; margin: 0;
-    font-size: 20px; font-family: Pretandard-Regular; text-align: left;
+    font-size: 20px; text-align: left;
 }
 .sec .container .row .btn-wrap{display: flex; justify-content: right;}
 .sec .container .row .btn-wrap .btn{

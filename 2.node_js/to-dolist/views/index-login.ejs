@@ -20,7 +20,7 @@
     <header class="head">
       <div class="container container-fluid">
           <div class="row">
-              <div class="logo col"><a href="/<%= user.id %>">📝</a></div>
+              <div class="logo col"><a href="/page/<%= user.id %>">📝</a></div>
               <div class="gnb-menubar col">
                   <div class="login-wrap">
                       <a href="/logout" class="logout">로그아웃</a>
@@ -39,10 +39,12 @@
             <button class="add-btn btn" data-id="<%= user.id %>">스케줄 추가</button>
             <button class="edit-btn btn" data-id="<%= user.id %>">스케줄 수정</button>
             <select id="month-select">
+              <option value=""></option>
               <% for(month = 1; month < 13; month++){ %>
-              <option value="<%= month %>월"><%= month %>월</option>
+              <option value="<%= month %>"><%= month %>월</option>
               <% } %>
             </select>
+            <button class="search-btn btn" data-id="<%= user.id %>">검색</button>
           </div>
         </div>
         <div class="row schedule-wrap">

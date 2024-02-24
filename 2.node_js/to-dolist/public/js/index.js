@@ -1,6 +1,7 @@
 const addBtn = document.querySelector(".add-btn");
 const editBtn = document.querySelector(".edit-btn");
 const delBtn = document.querySelectorAll(".del-btn");
+const searchBtn = document.querySelector(".search-btn");
 const userId = document.getElementById("user_id");
 
 addBtn.addEventListener("click", (e) => {
@@ -30,3 +31,15 @@ delBtn.forEach((el) => {
     }
   });
 });
+
+searchBtn.addEventListener('click', (e)=>{
+  let month = document.querySelector('#month-select').value;
+  let id = e.target.dataset.id;
+
+  if(monthVal == ''){
+    location.href="/page/"+"?id="+id;
+  }else{
+    location.href="/page/"+"?id="+id+"&month="+month;
+  }
+
+})

@@ -41,3 +41,4 @@ cancleBtn.addEventListener('click', (e)=>{
 
     location.href="/page/"+id;
 })
+
