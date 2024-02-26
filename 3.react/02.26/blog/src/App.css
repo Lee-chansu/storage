@@ -1,0 +1,18 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+a{text-decoration: none;}
+ul, ol, li{list-style: none;}
+
+.header{width: 100%; padding: 30px 0; background-color: #444;}
+
+.header a{color: #fff;}
+
+.sec{width: 100%; background-color: #efefef;}
+.sec .item{margin: 30px 0; padding: 30px 0; background-color: #fff;}
+.sec .item h3 span{display: block; }
+.sec .item h3 span{display: inline-block; }
+
+.detail{
+  margin: 20px 0 0;
+  padding: 30px; background-color: #fff;
+
+}
