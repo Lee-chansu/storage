@@ -1,6 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
+function Sample(){
+  return (
+    <div>
+      만들 내용
+
+    </div>
+  )
+}
+
+
 function App() {
   return (
     <div className="App">
