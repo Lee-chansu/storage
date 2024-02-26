@@ -14,7 +14,6 @@ img{display: block; width: 100%;}
     border-style: none; border-radius: 10px;
 }
 
-
 .inner{height: 100%;}
 
 fieldset{
@@ -47,7 +46,11 @@ fieldset .content-wrap.row .btn-wrap{
     display: flex; justify-content: space-between;
     padding: 0;
 }
-fieldset .content-wrap.row .btn-wrap .login-btn,fieldset .content-wrap.row .btn-wrap .join-btn{width: 100%; border-radius: 5px;}
+fieldset .content-wrap.row .btn-wrap .login-btn,
+fieldset .content-wrap.row .btn-wrap .findId-btn,
+fieldset .content-wrap.row .btn-wrap .findPassword-btn{
+    width: 100%; border-radius: 5px;
+}
 
 fieldset .box-wrap{justify-content: space-between;}
 

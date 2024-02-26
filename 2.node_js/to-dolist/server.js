@@ -88,6 +88,10 @@ app.get("/login", toLoginPage); //login.ejs 보여주기
 app.post("/login", login); //login 하기
 app.get("/login/:state", toLoginFail); //login.ejs 보여주기
 
+app.get("/findId", toFindIdPage) //아이디 찾기 페이지
+app.get("/findPassword", toFindPasswordPage) //비밀번호 찾기 페이지
+
+
 app.get("/join", toJoinPage); //regist.ejs 보여주기
 app.get("/join/fail", toJoinFailPage); //회원가입 실패 페이지 보여주기
 app.post("/join", join); //-회원가입 처리
@@ -117,6 +121,13 @@ async function toLoginPage(req, res) {
 async function toLoginFail(req, res) {
   let { state } = req.params;
   if (state == "fail") res.render("login-fail.ejs");
+}
+
+async function toFindIdPage(req, res){
+  res.render("find-id.ejs");
+}
+async function toFindPasswordPage(req, res){
+  res.render("find-password.ejs");
 }
 
 //회원 가입 페이지(get)
