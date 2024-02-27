@@ -6,11 +6,7 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  let [글제목, 글제목변경] = useState([
-    "짱아는 못말려",
-    "도라에몽",
-    "이웃집 토토로",
-  ]);
+  let [글제목, 글제목변경] = useState(["짱아는 못말려", "도라에몽", "이웃집 토토로"]);
   let [글날짜, 글날짜변경] = useState(['2024-02-06','2024-02-27','2024-03-01'])
   let [좋아요, 좋아요변경] = useState([0, 0, 0]);
   let [detail, setDetail] = useState(false); //닫힘 : 0, 열림 : 1
@@ -53,8 +49,7 @@ function App() {
                       let copy = [...좋아요];
                       copy[i] += 1;
                       좋아요변경(copy)
-                    }}
-                  >👍</span>{좋아요[i]}
+                    }}>👍</span>{좋아요[i]}
                 </h3>
                 <p>{글날짜[i]}</p>
               </div>
