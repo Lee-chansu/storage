@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard-Regular';}
+a{text-decoration: none;}
+ul, li, ol{list-style: none;}
+img{display: block;}
+
+.header{background-color: #ddd;}
+
+.sec{}
+.sec .container{}
+.sec .container .row.btn-wrap{margin: 20px 0;}
+.sec .container .row.btn-wrap button{margin: 0 10px; border: none;}
+
+.sec .container .row{}
+.sec .container .row .col{border-bottom: 1px solid #ddd; padding: 20px 0;}
+.sec .container .row .col ul{ align-items: center;}
+.sec .container .row .col ul li{display: inline-block; margin: 0; align-items: center;}
+.sec .container .row .col ul .content{text-align: center;}
+.sec .container .row .col ul .calorie{text-align: center;}
+.sec .container .row .col ul li h2{display: inline-block; margin-top: 20px;}
+.sec .container .row .col ul .title{font-size: 24px; font-weight: 500}
+.sec .container .row .col ul li img{
+  width: 100%; object-fit: cover; 
+  border-radius: 20px;
+}
+.sec .container .row .col ul .createdAt{text-align: center;}
+.sec .container .row .col ul li p{display: inline-block; margin-top: 20px;}
