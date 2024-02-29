@@ -1,0 +1,20 @@
+*{margin: 0 ; padding: 0; box-sizing: border-box;}
+ul, ol, li{list-style: none;}
+a{text-decoration: none;}
+
+body{background-color: #efefef;}
+
+.header{width: 100%;padding: 30px 0;background-color: #444;}
+.header a{color: #fff;}
+
+.sec{width: 100%; padding: 50px 0;}
+.sec .item{
+  margin: 20px 0; padding: 30px; 
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.detail{
+  margin: 20px 0 0 ;
+  padding: 30px; background-color: #fff;
+}

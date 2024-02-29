@@ -19,11 +19,16 @@ img{display: block;}
 .sec .container .row .col .inner .id p{}
 .sec .container .row .col .inner .title{}
 .sec .container .row .col .inner .title p{text-align: center; font-size: 60px; font-weight: 600;}
-.sec .container .row .col .inner .img{padding: 20px; height: 50%;}
+.sec .container .row .col .inner .img{padding: 20px; height: 300px;}
 .sec .container .row .col .inner .img img{width: auto; height: 100%; object-fit: contain; }
-.sec .container .row .col .inner .content{width: auto;}
-.sec .container .row .col .inner .content p{display: inline-block;}
+.sec .container .row .col .inner .content{width: auto; padding: 10px 20px;}
+.sec .container .row .col .inner .content p{display: inline-block; 
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
 .sec .container .row .col .rating{}
-.sec .container .row .col .rating p{}
+.sec .container .row .col .rating p{padding: 10px 20px;}
 .sec .container .row .col .date{}
-.sec .container .row .col .date p{}
+.sec .container .row .col .date p{padding: 10px 20px;}
