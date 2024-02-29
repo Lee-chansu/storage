@@ -20,3 +20,7 @@ img{display: block;}
 .sec .row{}
 .sec .row .item{}
 .sec .row .item img{width: 400px;}
+.sec .row .item-detail img{width: 600px; }
+.sec .row .item-detail img:hover{box-shadow: 5px 5px #eee;}
+
+.wrap{font-size: 90px; font-weight: 600; text-align: center;}

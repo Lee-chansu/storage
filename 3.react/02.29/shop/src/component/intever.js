@@ -1,3 +1,4 @@
+function Intever() {
 let star = document.getElementsByClassName('star')[0];
 let star2 = document.getElementsByClassName('star2')[0];
 
@@ -9,4 +10,6 @@ setInterval(() => {
     star2.classList.toggle('off');
     lunch.classList.toggle('off');
     lunch2.classList.toggle('off');
-}, 1000);
+  }, 1000);
+}
+export default Intever;
