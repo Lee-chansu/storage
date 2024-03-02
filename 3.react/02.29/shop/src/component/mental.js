@@ -19,10 +19,6 @@ function Mental() {
           <div className="wrap"><sapn className="">★☆★☆★☆★☆정신차리세요★☆★☆★☆★☆</sapn>
           <span className=""> ヽ(　･∀･)ﾉ┌┛Σ≡( #･３･)</span></div>
       }
-    
-    
-    
-
     </>
   )
 }
