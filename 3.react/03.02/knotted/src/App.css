@@ -4,57 +4,67 @@
     font-weight: 400;
     font-style: normal;
 }
-*{margin: 0; padding: 0; box-sizing: border-box;}
-a{text-decoration: none; color: black;}
+
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard-Regular'}
+li>a{text-decoration: none; color: black;}
 ul, ol, li{list-style: none;}
 img{display: block; width: 100%;}
 
 /*header*/
 
-header{
-  position: fixed; top: 0; left: 0; z-index: 1000;
-  display: flex; justify-content: space-between; align-items: center;
-  background-color: transparent;
-}
-
 .header{
-  padding: 32px 64px 16px;
+  position: fixed; top: 0; left: 0; z-index: 1000;
+  padding: 30px 64px 16px; width: 100%;
+  background-color: transparent;  
   font-size: 14px; font-weight: 600;
   overflow-y: hidden;
   transition: 0.3s ease;
 }
 
-.header .logo {width: 160px;}
-.header .logo sgv{height: 60px; transition: 0.3s ease;}
+.header .container{max-width: 100%;}
 
-.header .menu-list{
-  display: flex; justify-content: space-between; align-items: center;
-  height: 0; padding: 16px 0;
+.header .container .row .logo {}
+.header .container .row .logo img{transition: 0.3s ease;}
+
+.header .container .row .menu-list{
+  display: flex; justify-content: center; align-items: center;
+  max-height: 0; padding: 0;
+  transition: 0.3s ease;
 }
-.header .head.middle .depth-01{
+
+.header .container .row .menu-list:hover{
+  height: 170px;
+}
+
+@media screen and (max-width: 1440px) {
+  .header .container .row .menu-list:hover{height: 130px;}
+}
+
+.header .container .row .menu-list .depth-01{
   position: relative;
-  margin: 0 24px; 
+  margin: 0 32px; 
   text-align: center; font-size: 18px;
 }
 
-.header .head.middle .menu-item.depth-01 ul{
+.header .container .row .menu-list .menu-item.depth-01 ul{
   position: absolute; top: 16px; left: 50%; transform:translateX(-50%);
   width: max-content; padding: 24px 0;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
   opacity: 0;
 }
-
-.header .head.middle .menu-item.depth-01:hover ul{
-  min-height: scrollheight;
+.header .container .row .menu-list:hover ul{
   opacity: 1;
 }
 
-.header .middle .depth-01 .depth-02 a span{
+.header .container .row .menu-list .depth-01 .depth-02 a span{
   margin: 20px 0; 
   font-size: 12px; font-weight: 400; color: #a5a5a5;
 }
 
-.head.right .menu-list span{color: #e5e7eb;}
-.head.right .login:hover .login-btn>span,
-.head.right .cart:hover>.cart-btn>span{color:black}
+.head .container .row .btn-wrap{display: flex; justify-content: end; align-items: center;}
+.head .container .row .btn-wrap .btn{}
+.head .container .row .btn-wrap .btn a{}
+.head .container .row .btn-wrap .btn a > span{color: #e5e7eb;}
+.head .login-btn:hover .login > span,
+.head .cart-btn:hover>.cart-btn .cart > span{color:black}
 
