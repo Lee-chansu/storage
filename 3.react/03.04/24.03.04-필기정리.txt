@@ -1,0 +1,98 @@
+## 1단계 - 라이브러리 설치
+* 설치 명령어
+npm install react-router-dom@6
+npm i react-router-dom@6
+npm install react-router-dom@latest
+
+* 최신버전으로 업데이트
+npm update react-router-dom@latest
+
+## 2단계 - import  명령어
+
+* rount 라이브러리 항목들 임포트
+import { Route, Routes } from 'react-router-dom'
+
+* 컴포넌트 임포트
+
+## 3단계 - index.js 파일에 설정
+
+1) import { BrowserRouter } from 'react-router-dom
+2) 태그
+root.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+);
+
+## 4단계 - App.js
+
+route 만드는 문법 정리
+<Routes>
+      <Route path="/경로" element={ <컴포넌트/>  } >
+          <Route path="하위경로" element={<컴포넌트/  프로터티명={내용} >}></Route>
+          <Route path="하위경로" element={<컴포넌트/  프로터티명={내용} ></Route>
+        </Route>
+</Routes>
+
+
+## 해당하는 페이지로 이동하기 위해서는??
+2가지 방법, 필요한것만 import 해라
+import {  Link, useNavigate } from 'react-router-dom';
+
+1) Link
+<Link to="/경로">
+
+2) useNavigate
+<button onClick={ ( )=>{ navigate('/경로') } }>텍스트</button>
+
+## JSX에서 IF문 문법 사용하려면? 불가 - 삼항연산자
+
+{
+  (조건) 
+  ? 참 
+  : (조건)
+    ? 참 
+    : (조건)
+      ? 참
+      : 거짓
+}
+
+## FOR문 대신 forEach , map, filter 등을 적절하게 사용해라
+
+## 자주 변경되는 값을 useState 에 담아라
+useState에 값을 변경할 때는 변경함수를 이용해라
+변경함수를 작명할 때는 set 이름을 붙인다
+
+let [arr, setArr] = useState( 값 )
+
+* useState를 이용해서 요소를 보이고 안보이고 설계하는 방법
+let [show, setShow] = useState(false)
+
+1) 몇 초 뒤 - 사라진다  
+
+useEffect( ()=>{
+	setTimeout(()=>{ setShow(false) }, 시간)
+}, [] )
+
+2) 클릭했을 때 보인다 
+ex) 
+* 토글형태
+<button onClick={()=>{  setShow(!show) }}>
+
+* 한번 클릭하면 계속 보이는 상태
+<button onClick={()=>{  setShow( true ) }}>
+
+* 한번 클릭하면 사라지고 계속 보이지 않음
+<button onClick={()=>{  setShow( false ) }}>
+
+
+
+
+
+
+
+
+
+
+
+
