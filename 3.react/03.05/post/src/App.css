@@ -1,0 +1,56 @@
+*{margin:0; padding:0; box-sizing:border-box}
+ul, ol, li{list-style: none;}
+a{text-decoration: none;}
+body{background-color: #444;}
+
+.header{width: 100%; padding: 20px 0; color: #ddd; text-align: right;}
+.header .container{max-width: 600px;}
+.header .username{color: deeppink;}
+.header .login{margin-left: 20px; color : #ddd; }
+
+.sec {width: 100%; padding: 30px 0; }
+.sec .container{max-width: 600px; padding: 40px; border-radius: 5px; background-color: #fff;}
+.sec h2{margin: 0 0 20px }
+.sec .row{width: 100%;}
+.sec input[type="text"], 
+.sec input[type="password"]
+{
+  width: 100%;
+  margin: 5px 0; padding : 3px 15px; 
+  border: 1px solid transparent; outline: 0; 
+  transition: 0.3s;
+  background-color: lightgoldenrodyellow;
+}
+.sec button{border: 0; outline: 0; background-color: transparent; margin: 0 5px;}
+
+
+.blog-post{padding: 0 0 30px;}
+.blog-post input[type="text"]{border-bottom-color: #ddd; }
+
+.blog-list .item{padding: 30px 20px; border-bottom: 1px dotted #aaa;}
+.blog-list .item label{color: #444;}
+.blog-list .item .user-info .name{line-height: 40px;}
+
+.blog-list .item .user-info{line-height: 20px;}
+.blog-list .item.edit .blog-title,
+.blog-list .item.edit .blog-content{
+  border: 1px solid #ddd; background-color: rgba(230, 230, 250, 0.8);
+}
+
+.blog-list .item.active{background-color: #eee;}
+.blog-list .item.active .name{color: red;}
+
+/* 페이지 네이션 */
+
+.pagination{margin: 20px 0 0 ;}
+.pagination a{width: auto;}
+
+
+/* 회원가입 */
+
+.error{margin: 15px 0 ;color: red; font-size: 14px; line-height: 1;}
+.join .joined{line-height : 8em; font-size: 24px; text-align: center; }
+
+
+/* 로그인 */
+.sec .link{margin: 20px 0 0 ;}

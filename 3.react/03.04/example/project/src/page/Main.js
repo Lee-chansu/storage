@@ -1,4 +1,5 @@
-function Main(){
+function Main(props){
+  let {bread} = props
   return(
     <section className="sec">
       <div className="container">
