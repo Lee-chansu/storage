@@ -1,18 +1,18 @@
-import SecTitle from './SecTitle'
+import SecTitle from "./SecTitle";
 
 function Sec(props) {
-  const defalutClass = 'sec text-center '
-  const {area} = props
+  const defalutClass = "sec text-center ";
+  const { area } = props;
 
-  return(
+  return (
     <>
       <section className={`sec text-center ${area}`}>
-        <div className='container'>
+        <div className="container">
           <SecTitle>{props.title}</SecTitle>
           {props.children}
         </div>
       </section>
     </>
-  )
+  );
 }
-export default Sec
+export default Sec;

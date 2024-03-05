@@ -21,7 +21,7 @@ body{background-color: #444;}
   transition: 0.3s;
   background-color: lightgoldenrodyellow;
 }
-.sec button{border: 0; outline: 0; background-color: transparent; margin: 0 5px;}
+.sec button{border: 0; outline: 0; margin: 0 5px;}
 
 
 .blog-post{padding: 0 0 30px;}

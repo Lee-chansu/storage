@@ -43,6 +43,7 @@ function Post(props) {
         <div className='row m-0 p-0 user-post'>
           <div className='d-flex align-items-center'>
             <label htmlFor='blogTitle' className='col-2'>제목</label>
+            <div>{post.id}</div>
             <input 
               type='text' name='title' className='blog-title' 
               readOnly={readonly} 

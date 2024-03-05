@@ -6,12 +6,12 @@ const { Blog, User } = db; // User 모델을 사용하기 위해 불러옴
 // 추가
 router.post('/add', async function (req, res) {
   // 객체로 받으면 됨
-  const user_id = req.isAuthenticated() ? req.user.id : false
+  // const user_id = req.isAuthenticated() ? req.user.id : false
   
-  if(!user_id)  return res.status(500).send('서버 오류!')
+  // if(!user_id)  return res.status(500).send('서버 오류!')
   
   const newPost = {
-    user_id,
+    user_id : 1,
     title : req.body.title,
     content : req.body.content
   } 

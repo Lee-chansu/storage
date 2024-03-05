@@ -1,5 +1,6 @@
 // 1. 모듈 - require
 const express = require('express')
+const cors = require('cors');
 const app = express()
 
 const session = require('express-session')
@@ -9,7 +10,7 @@ const LocalStrategy = require('passport-local')
 const bcrypt = require('bcrypt')
 
 // port 지정
-const port = 3000
+const port = 4000
 
 // 세션 생성하기
 // npm install express-mysql-session
@@ -21,6 +22,11 @@ const dbOption = {
   password: '1234',
   database: 'blog',
 }
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 
 // sequelize로 설정한 db 불러오기
@@ -35,7 +41,7 @@ app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 app.use(express.json()) // json형태로 데이터 처리
 app.use(express.urlencoded({extended : true}))  // queryString 방식의 데이터 처리
-
+app.use(cors());
 
 // 로그인 - 미들웨어
 // 아래 3가지 순서 지킬것 - 초기화, 사용자 인증 요청 처리할수 있도록 함
