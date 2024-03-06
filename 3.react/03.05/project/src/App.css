@@ -1,0 +1,65 @@
+*{margin: 0; padding:0; box-sizing:border-box;}
+ul, ol, li{list-style: none;}
+a{text-decoration: none;}
+
+
+/* 헤더영역 */
+.header{background-color: #333; color: #fff;}
+.header .container{max-width: 100%;}
+.header .row {width: 100%; height: 100px; justify-content: center; align-items: center;}
+
+.header .logo{
+  display: inline-block;
+  width: 111px; height: 40px;
+  background-image: url('./img/logo_dunkindonuts.png');
+  text-indent: 100%; white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.header nav{}
+
+.header .global{display: flex; justify-content: flex-end;}
+.header .global > li{}
+.header .global > li > span{ display: block; font-size: 14px;}
+.header .global > li > span::after{content: '|'; padding: 0 15px; font-size: 10px;}
+.header .global > li:last-of-type > a::after{display: none}
+
+.header .gnb{display: flex; justify-content: flex-end;}
+.header .gnb > li {display: flex;}
+.header .gnb > li > span{display: block; padding: 0 30px;}
+.header .gnb > li:last-of-type > span{padding-right: 0;}
+
+
+
+/* section영역 */
+.sec{width: 100%;padding: 100px 0;}
+.sec .title{margin: 0 0 40px; font: bold 24px 'inherit'; text-align: center;}
+
+.member table{width: 100%; border-spacing: 0; border-collapse: collapse; border-bottom: 1px solid #ddd;}
+.member th,
+.member td{border-top: 1px solid #ddd; padding: 5px 0;}
+.member th{background-color: #fdd;}
+
+.member tr:nth-of-type(2n-1){background-color: #f9f9f9;}
+
+@media screen and (max-width: 768px) {
+  
+  .member th{display: none;}
+  .member td{display:block;}
+  .member td:first-of-type{
+    display: table-cell; 
+    background-color: #f9f9f9; 
+  }
+
+  .member td{text-align: left;}
+  .member td.id{text-align: center; background-color: #eee;}
+  .member td.name{font-weight: bold; text-align: center; background-color: #eee;}
+
+  .member td::before{ display: inline-block; padding: 0 20px; width: 100px;} 
+  .member td.team::before{content: 'team';}
+  .member td.position::before{content: 'position';}
+  .member td.email::before{content: 'email'; }
+  .member td.phone::before{content: 'phone';}
+  .member td.birthday::before{content: 'birthday';}
+}

@@ -1,0 +1,22 @@
+fieldset{
+  display: block; 
+  position: relative; top: 0; left: 500px;
+  width: 700px;
+  padding: 20px;
+}
+
+fieldset img{
+  display: block;
+  position: relative;
+  max-height: 400px;
+}
+
+fieldset .ReviewForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+fieldset .ReviewForm > :not(:last-child) {
+  margin-bottom: 20px;
+}
