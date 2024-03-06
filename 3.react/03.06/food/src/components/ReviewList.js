@@ -16,7 +16,7 @@ function ReviewListItem(props) {
         <p>{item.rating}</p>
         <p>{formatDate(item.createdAt)}</p>
         <p>{item.content}</p>
-        <button onClick={handleDeleteClick}>삭제</button>
+        <button>삭제</button>
       </div>
     </div>
   );
