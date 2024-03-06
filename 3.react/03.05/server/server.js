@@ -1,13 +1,13 @@
 // 1. 모듈 - require
-const express = require('express')
+const express = require('express');
 const cors = require('cors');
-const app = express()
+const app = express();
 
-const session = require('express-session')
-const passport = require('passport')
-const LocalStrategy = require('passport-local')
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 
 // port 지정
 const port = 4000
@@ -30,22 +30,22 @@ const dbOption = {
 
 
 // sequelize로 설정한 db 불러오기
-const db = require('./models')
-const {Blog, User} = db
+const db = require('./models');
+const {Blog, User} = db;
 
 
 // 2. set 설정
 app.set('view engine', 'ejs')
 
 // 2. 미들웨어 등록 - use, set 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
 app.use(express.json()) // json형태로 데이터 처리
-app.use(express.urlencoded({extended : true}))  // queryString 방식의 데이터 처리
+app.use(express.urlencoded({extended : true}));  // queryString 방식의 데이터 처리
 app.use(cors());
 
 // 로그인 - 미들웨어
 // 아래 3가지 순서 지킬것 - 초기화, 사용자 인증 요청 처리할수 있도록 함
-app.use(passport.initialize()) 
+app.use(passport.initialize()); 
 app.use(session({
   secret: '1234567890!@#$%^&*()',
   resave : false, // 
@@ -70,7 +70,6 @@ passport.use(new LocalStrategy(async (username, pw, done) => {
  
   // 정상일 때
   return done(null, result)
-
 }))
 
 // 세션생성
