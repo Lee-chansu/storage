@@ -50,9 +50,9 @@ function App() {
   const handleDelete = async id => {
     const result = await deleteReview(id);
     if (!result) return;
-    setItems(prevItems => {
-      prevItems.filter(item => item.id == id);
-    });
+
+    const nextItems = items.filter((item)=>item.id != id)
+    setItems(nextItems);
   };
 
   useEffect(() => {
