@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import "./ReviewForm.css";
+import { createReview } from "../api";
 import FileInput from "./FileInput";
 
 //제어 컴포넌트 : input의 value 값을 리액트에서 지정하고 제어
 //비제어 컴포넌트 : input의 value값을 리액트에서 저장하지 않음 (ex- input(type="file"))
 
+const INITAIL_VALUES = { title: "", rating: 0, content: "", imgFile: "" };
+
 function ReviewForm() {
-  //입력받은 값을 임시로 저장할 useState만들기
-  const [values, setValues] = useState({
-    title: "",
-    rating: 0,
-    content: "",
-    imgFile: "",
-  });
+  const [values, setValues] = useState(INITAIL_VALUES);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submittingError, setSubmittingError] = useState(null);
+
   //입력 받은 값들로 state 업데이트
   const handleChange = (name, value) => {
     // state 변경 함수에 콜백함수를 적용 - 매개변수에 현재 state의 값을 가져온다.
@@ -25,9 +25,25 @@ function ReviewForm() {
     handleChange(name, value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    console.log(values);
+    const formData = new FormData();
+    formData.append("title", values.title);
+    formData.append("rating", values.rating);
+    formData.append("content", values.content);
+    formData.append("imgFile", values.imgFile);
+
+    try {
+      setSubmittingError(null); // 처리중 에러x
+      setIsSubmitting(true); //값을 처리 중
+      await createReview(formData);
+    } catch (error) {
+      setSubmittingError(error); //에러 캐치
+      return;
+    } finally {
+      setIsSubmitting(false);
+    }
+    setValues(INITAIL_VALUES);
   };
 
   const titleRef = useRef();
@@ -44,9 +60,9 @@ function ReviewForm() {
     titleNode.value = ""; //태그가 있으면 값 비우기
     ratingNode.value = ""; //태그가 있으면 값 비우기
     contentNode.value = ""; //태그가 있으면 값 비우기
-    handleChange("title", null); 
-    handleChange("rating", null); 
-    handleChange("content", null); 
+    handleChange("title", null);
+    handleChange("rating", null);
+    handleChange("content", null);
   };
 
   return (
