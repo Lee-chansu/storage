@@ -4,6 +4,6 @@
   padding: 10px 0;
 }
 
-.ReviewForm > :not(:last-child) {
+.ReviewForm> :not(:last-child) {
   margin-bottom: 20px;
 }

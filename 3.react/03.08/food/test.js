@@ -6,6 +6,15 @@ result = [...arr, ...arr2]
 
 console.log(result)
 
+let info = {
+    name : '홍길동',
+    age : 30
+}
+
+
+let newInfo = {...info, [info.age] : 20}
+
+console.log(newInfo);
 
 
 
