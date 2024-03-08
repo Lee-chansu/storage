@@ -58,7 +58,7 @@ function App() {
   useEffect(() => {
     handleLoad({ order, offset: 0, limit: LIMIT });
   }, [order]); // 정렬 조건 바뀔때마다, 데이터 다시 가져오기
-
+ 
   return (
     <div className="App">
       <div>
