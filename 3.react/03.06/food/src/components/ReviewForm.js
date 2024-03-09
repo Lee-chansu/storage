@@ -9,9 +9,19 @@ import FileInput from "./FileInput";
 const INITAIL_VALUES = { title: "", rating: 0, content: "", imgFile: "" };
 
 function ReviewForm() {
+<<<<<<< HEAD
   const [values, setValues] = useState(INITAIL_VALUES);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittingError, setSubmittingError] = useState(null);
+=======
+  //입력받은 값을 임시로 저장할 useState만들기
+  const [values, setValues] = useState({
+    title: "",
+    rating: 0,
+    content: "",
+    imgFile: "",
+  });
+>>>>>>> newlcs
 
   //입력 받은 값들로 state 업데이트
   const handleChange = (name, value) => {
