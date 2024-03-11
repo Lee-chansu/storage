@@ -5,7 +5,6 @@ import { getReviews } from "../api";
 
 //컴포넌트
 import ReviewList from "./ReviewList";
-import ReviewForm from "./ReviewForm";
 
 function App() {
   let [items, setItems] = useState([]);
@@ -14,12 +13,12 @@ function App() {
   let [limit, setLimit] = useState(10);
 
   const handleLoad = async option => {
-    const { reviews, page } = await getReviews(option);
+    const { review, page } = await getReviews(option);
 
     if (option.offset == 0) {
-      setItems(reviews);
+      setItems(review);
     } else {
-      setItems(prevItems => [...prevItems, ...reviews]);
+      setItems(prevItems => [...prevItems, review]);
     }
     setOffset(option.offset + option.limit);
   };
@@ -30,16 +29,14 @@ function App() {
 
   useEffect(() => {
     handleLoad({ order, offset: 0, limit });
-  }, [order]);
+  });
 
   return (
     <div className="App">
-      <div className="contianer">
-        <div className="row">
-          <ReviewForm></ReviewForm>
+      <div>
+        <ul>
           <ReviewList items={items} />
-        </div>
-        <button onClick={handleLoadMore}>더 보기</button>
+        </ul>
       </div>
     </div>
   );

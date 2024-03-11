@@ -7,6 +7,18 @@ function FileInput({ name, value, onChange, onClearClick }) {
   const inputRef = useRef();
 
   const handleChange = e => {
+<<<<<<< HEAD
+    const nextValue = e.target.files[0];
+    onChange(name, nextValue);
+    //부모의 handleChange를 onChange에 받아와서 실행
+  };
+
+    useEffect(()=>{
+      if(!value) return;
+      const nextPreview = URL.createObejctURL(value)
+      setPreview(nextPreview)
+    }, [value])
+=======
     if (!e.target.value) {
       setImg(null);
       return;
@@ -28,6 +40,7 @@ function FileInput({ name, value, onChange, onClearClick }) {
   //     const nextPreview = URL.createObejctURL(value)
   //     setPreview(nextPreview)
   //   }, [value])
+>>>>>>> newlcs
 
   onClearClick = () => {
     const inputNode = inputRef.current;
