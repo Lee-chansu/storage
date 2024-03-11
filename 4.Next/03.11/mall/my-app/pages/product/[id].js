@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import SizeReviewList from "@/components/SizeReviewList";
 
 export default function Product() {
-  const [sizeReviews, setSizeReviews] = useState();
-  const [product, setProduct] = useState();
+  const [sizeReviews, setSizeReviews] = useState([]);
+  const [product, setProduct] = useState([]);
   const router = useRouter();
   const { id } = router.query;
 
@@ -39,7 +39,6 @@ export default function Product() {
     <>
       <h1>{product.name} 페이지</h1>
       <img src={product.imgUrl} alt={product.name} />
-      {console.log('sizeReviews : ',sizeReviews)}
       <SizeReviewList sizeReviews={sizeReviews}></SizeReviewList>
     </>
   );

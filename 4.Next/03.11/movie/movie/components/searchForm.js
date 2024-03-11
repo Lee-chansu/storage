@@ -5,7 +5,7 @@ export default function SearchForm({ InitialValue = "" }) {
   const router = useRouter();
   const [value, setValue] = useState(InitialValue);
   const handleChange = e => {
-    setValue(e.target.vale);
+    setValue(e.target.value);
   };
 
   const handleSubmit = e => {
@@ -16,7 +16,7 @@ export default function SearchForm({ InitialValue = "" }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="q" value={value} onChange={handleChange} />
+        <input name="q" value={value} onChange={handleChange} />
         <button>검색</button>
       </form>
     </>

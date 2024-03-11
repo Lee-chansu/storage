@@ -13,7 +13,7 @@ const labels = {
   fit: { small: "작음", good: "적당함", big: "큼" },
 };
 
-function SizeReviewList({ sizeReviews }) {
+function SizeReviewList({ sizeReviews = [] }) {
   return (
     <ul>
       {sizeReviews.map(el => {
