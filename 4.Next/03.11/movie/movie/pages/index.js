@@ -9,7 +9,6 @@ import MovieReviewList from "@/components/MovieReviewList";
 export default function Home() {
   const [movieReviews, setMovieReviews] = useState([]);
 
-
   const newMovieReviews = async () => {
     const data = await getMovieReviews();
     setMovieReviews(data);
@@ -17,7 +16,6 @@ export default function Home() {
 
   useEffect(() => {
     newMovieReviews();
-    
   }, []);
 
   return (
