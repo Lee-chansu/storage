@@ -1,0 +1,147 @@
+
+
+.empty {
+  color: #b5b5b5;
+}
+
+.movieReviewList {
+  padding: 0;
+  height: 300px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.movieReviewList > .movieReview {
+  margin: 16px 0;
+}
+
+.movieReview {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  padding: 25px;
+}
+
+.date {
+  color: #b5b5b5;
+  font-weight: 300;
+}
+
+.age {
+  flex-grow: 1;
+}
+
+.loading {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.poster {
+  aspect-ratio: 27 / 40;
+  width: 350px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.englishTitle {
+  margin: 0;
+  color: #b5b5b5;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.title {
+  margin: 5px 0 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.infoTable {
+  margin: -15px -40px;
+  border-spacing: 40px 15px;
+}
+
+.infoTable th {
+  color: #b5b5b5;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+}
+
+.starRating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section {
+  margin: 60px 0;
+}
+
+.description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.readMore {
+  color: #b5b5b5;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 38px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.reviewSections {
+  display: flex;
+  gap: 20px;
+  
+}
+
+.reviewSections>section {
+  width: 50%;
+  
+}
+
+.sectionTitle {
+  margin: 15px 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+}
+
+.reviewForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 10px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  padding: 25px;
+}
+
+.dropdown {
+  margin-top: 10px;
+}
+
+.submit {
+  grid-column: 1/3;
+  margin-top: 10px;
+}
