@@ -1,4 +1,4 @@
-import styles from "@/styles/Movie.module.css";
+import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -22,8 +22,8 @@ export default function Home() {
 
   return (
     <>
-      <h1 className={styles.center}>Movie Site</h1>
-      <SearchForm />
+      <h1>Movie Site</h1>
+      <SearchForm className={styles.margin} />
         <MovieList className={styles.movieList} movies={movies}></MovieList>
     </>
   );

@@ -1,3 +1,7 @@
-*{margin: 0; padding: 0; box-sizing: border-box;}
+*{margin: 0; padding: 0; box-sizing: border-box; text-align: center;}
+a{text-decoration: none;}
+ol, ul, li{list-style: none;}
+
+Link{color: white;}
 
 body{background-color: #222; color: white;}
