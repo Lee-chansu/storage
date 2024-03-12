@@ -2,24 +2,15 @@
   text-align: center;
 }
 
-.movieList {
-  margin-top: 60px;
-}
-
-.link{
-  color: white;
-  text-decoration: none;
-}
-
 .header {
   display: flex;
   align-items: flex-start;
   gap: 30px;
+  overflow-x: auto;
 }
 
 .poster {
   aspect-ratio: 27 / 40;
-  display: block;
   width: 350px;
 }
 
@@ -87,7 +78,7 @@
   gap: 20px;
 }
 
-.reviewSections>section {
+.reviewSections > section {
   width: 50%;
 }
 

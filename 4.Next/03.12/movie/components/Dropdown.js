@@ -22,7 +22,7 @@ export default function Dropdown({
   useEffect(() => {
     function handleClickOutside(e) {
       const isInside = inputRef.current?.contains(e.target);
-      if (!isInside) {
+      if (!isInside) { //원하는 대상을 찾을 수 없음
         setIsOpen(false);
       }
     }
@@ -45,14 +45,7 @@ export default function Dropdown({
       onBlur={handleBlur}
       ref={inputRef}>
       {selectedOption.label}
-      <span>▽</span>
-      <img
-        className={styles.arrow}
-        src={arrowImg.src}
-        width={12}
-        height={9}
-        alt="▼"
-      />
+      <span className={styles.arrow}>▲</span>
       <div className={styles.options}>
         {options.map(option => {
           const selected = value === option.value;

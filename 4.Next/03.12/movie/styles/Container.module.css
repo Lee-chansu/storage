@@ -1,12 +1,10 @@
 .container {
+  margin: 0 auto;
   width: 100%;
-  max-width: 1020px;
-  margin-right: auto;
-  margin-left: auto;
-  overflow-x: hidden;
+  max-width: 950px;
 }
 
 .page.container {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }

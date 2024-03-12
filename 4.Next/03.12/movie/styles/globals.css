@@ -1,7 +1,29 @@
-*{margin: 0; padding: 0; box-sizing: border-box; text-align: center;}
-a{text-decoration: none;}
-ol, ul, li{list-style: none;}
+html {
+  font-size: 18px;
+}
 
-Link{color: white;}
+body.dark {
+  background-color: #121212;
+}
 
-body{background-color: #222; color: white;}
+body.dark,
+body.dark a {
+  color: #f9f9f9;
+}
+
+body.light {
+  background-color: #ededed;
+}
+
+body.light,
+body.light a {
+  color: #1e1e1e;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

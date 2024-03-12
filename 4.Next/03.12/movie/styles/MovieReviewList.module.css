@@ -1,10 +1,13 @@
-
-
 .empty {
   color: #b5b5b5;
 }
 
+.movieList {
+  margin-top: 60px;
+}
+
 .movieReviewList {
+  width: 100%;
   padding: 0;
   height: 300px;
   overflow-y: auto;
@@ -22,6 +25,7 @@
   border-radius: 10px;
   background: #1f1f1f;
   padding: 25px;
+  color: white;
 }
 
 .date {
@@ -32,6 +36,7 @@
 .age {
   flex-grow: 1;
 }
+
 
 .loading {
   text-align: center;
@@ -97,7 +102,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
-  text-align: center;
 }
 
 .readMore {
@@ -109,14 +113,12 @@
 }
 
 .reviewSections {
-  display: center;
+  display: flex;
   gap: 20px;
-  
 }
 
-.reviewSections>section {
+.reviewSections > section {
   width: 50%;
-  
 }
 
 .sectionTitle {

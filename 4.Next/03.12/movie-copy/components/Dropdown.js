@@ -38,6 +38,7 @@ export default function Dropdown({
   } ${className}`;
   const selectedOption = options.find((option) => option.value === value);
 
+  // onFocus : 포커스 위치, onBlur : 포커스 벗어 났을 때
   return (
     <div
       className={classNames}

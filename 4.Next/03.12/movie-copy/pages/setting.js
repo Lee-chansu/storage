@@ -7,9 +7,9 @@ export default function Setting() {
 
   return (
     <div>
-      <h1 className={styles.title}>설정</h1>
+      <h2 className={styles.title}>설정</h2>
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>테마 설정</h2>
+        <h3 className={styles.sectionTitle}>테마 설정</h3>
         <Dropdown
           className={styles.input}
           name="theme"
