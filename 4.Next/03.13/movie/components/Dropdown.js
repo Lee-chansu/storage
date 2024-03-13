@@ -19,10 +19,13 @@ export default function Dropdown({
     setIsOpen(false);
   }
 
+  //해당 태그 말고 다른 곳을 눌러도
+  //이벤트가 발동하게끔 useEffect를 사용
   useEffect(() => {
     function handleClickOutside(e) {
       const isInside = inputRef.current?.contains(e.target);
-      if (!isInside) { //원하는 대상을 찾을 수 없음
+      if (!isInside) {
+        //원하는 대상을 찾을 수 없음
         setIsOpen(false);
       }
     }
