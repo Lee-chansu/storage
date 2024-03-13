@@ -31,6 +31,7 @@ export default function Search() {
       <h1>검색페이지!</h1>
       <SearchForm initialValue={q} />
       <h2>{q} 검색결과</h2>
+      <span> 건 검색</span>
       <ProductList products={products}></ProductList>
     </>
   );
