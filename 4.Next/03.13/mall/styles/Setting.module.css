@@ -16,6 +16,10 @@
   line-height: 26px;
 }
 
+.input_wrap {
+  display: flex;
+}
+
 .input {
   width: 205px;
 }

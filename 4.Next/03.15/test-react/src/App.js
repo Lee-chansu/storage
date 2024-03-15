@@ -7,16 +7,13 @@ function App() {
 
   const plusGood = () => {
     setValue(value + 1);
-    if(value >= 10){
-      console.log(value, heart)
-    }
-    
   };
 
   useEffect(() => {
     if (value >= 10) {
       setHeart("💛");
-    }if (value >= 20) setHeart("💗");
+    }
+    if (value >= 20) setHeart("💗");
   }, [value, heart]);
 
   const cssStyle = { cursor: "pointer" };
