@@ -1,32 +1,30 @@
-import { useRouter, navigator } from "next/router";
-import axios from "@/lib/axios";
-import { useEffect, useState } from "react";
 import styles from "@/styles/Product.module.css";
-
-//컴포넌트
-import SizeReviewList from "@/components/SizeReviewList";
+import { getProduct, getReview } from "../api/Api";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import SizeReivewList from "@/components/SizeReviewList";
 
 export default function Product() {
-  const [sizeReviews, setSizeReviews] = useState([]);
   const [product, setProduct] = useState([]);
+  const [review, setReivew] = useState([]);
+
   const router = useRouter();
   const { id } = router.query;
 
-  async function getProducts(targetId) {
-    const res = await axios.get(`/products/${targetId}`);
-    const nextProducts = res.data;
-    setProduct(nextProducts);
-  }
-  async function getSizeReviews(targetId) {
-    const res = await axios.get(`/size_reviews?product_id=${targetId}`);
-    const nextSizeReviews = res.data.results ?? []; // ?? 왼쪽의 결과가 null, undefined면 오른쪽 결과를
-    setSizeReviews(nextSizeReviews);
-  }
+  const loadProduct = async id => {
+    const data = await getProduct(id);
+    setProduct(data);
+  };
+
+  const loadReview = async id => {
+    const data = await getReview(id);
+    setReivew(data);
+  };
 
   useEffect(() => {
     if (!id) return;
-    getProducts(id);
-    getSizeReviews(id);
+    loadProduct(id);
+    loadReview(id);
   }, [id]);
 
   if (!product) return null;
@@ -43,15 +41,11 @@ export default function Product() {
               <tr>
                 <th>브랜드/품번</th>
                 <td>
-                  {product.brand} / {product.productCode}
+                  {product.brand}/{product.productCode}
                 </td>
               </tr>
               <tr>
                 <th>제품명</th>
-                <td>{product.name}</td>
-              </tr>
-              <tr>
-                <th>가격</th>
                 <td>
                   <span className={styles.salePrice}>{product.price}원</span>{" "}
                   {product.salePrice}원
@@ -73,7 +67,7 @@ export default function Product() {
           </table>
         </div>
       </section>
-      <SizeReviewList sizeReviews={sizeReviews}></SizeReviewList>
+      <SizeReivewList SizeReivew={review} />
     </>
   );
 }

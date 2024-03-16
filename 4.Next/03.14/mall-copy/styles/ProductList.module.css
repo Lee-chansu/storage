@@ -1,0 +1,85 @@
+.productList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.product {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  color: #f9f9f9;
+  text-decoration: none;
+  background-color: #1f1f1f;
+  border: 1px solid #252525;
+  border-radius: 10px;
+}
+
+:global(.light) .product {
+  color: #121212;
+  background: #f9f9f9;
+  border: 1px solid #e1e1e1;
+}
+
+.image {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  letter-spacing: -0.03em;
+}
+
+.divider {
+  margin: 13px 0;
+  border: 0;
+  border-bottom: 1px solid #252525;
+}
+
+:global(.light) .divider {
+  border-color: #ededed;
+}
+
+.name {
+  font-size: 18px;
+  line-height: 26px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.prices {
+  font-size: 15px;
+}
+
+.originalPrice {
+  margin-right: 5px;
+  color: #505050;
+  text-decoration: line-through;
+}
+
+:global(.light) .originalPrice {
+  color: #b5b5b5;
+}
+
+.starRating {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #fdc04a;
+  font-size: 15px;
+}
+
+.likeCount {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #e85b81;
+  font-size: 15px;
+}
