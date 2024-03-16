@@ -14,10 +14,26 @@ export default function Setting() {
       <h2 className={styles.title}>설정</h2>
       <section className={styles.section}>
         <h3 className={styles.sectionTitle}>테마 설정</h3>
-        <input type="radio" name="theme" value="light" onClick={handleChange} />
-        light
-        <input type="radio" name="theme" value="dark" onClick={handleChange} />
-        dark
+        <div className={styles.input_wrap}>
+          <div className={styles.input}>
+            <input
+              type="radio"
+              name="theme"
+              value="light"
+              onClick={handleChange}
+            />
+            light
+          </div>
+          <div className={styles.input}>
+            <input
+              type="radio"
+              name="theme"
+              value="dark"
+              onClick={handleChange}
+            />
+            dark
+          </div>
+        </div>
       </section>
     </div>
   );

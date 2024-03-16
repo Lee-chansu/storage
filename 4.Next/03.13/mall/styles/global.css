@@ -21,7 +21,10 @@ body {
 
 a {
   color: #f9f9f9;
+  text-decoration: none;
 }
+
+li, ul , ol{list-style: none;}
 
 html {
   font-size: 18px;

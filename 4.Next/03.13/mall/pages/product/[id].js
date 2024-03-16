@@ -1,6 +1,6 @@
-import { useRouter, navigator } from "next/router";
-import axios from "@/lib/axios";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import axios from "@/lib/axios";
 import styles from "@/styles/Product.module.css";
 
 //컴포넌트
