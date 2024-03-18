@@ -18,7 +18,7 @@
             <ul class="menu-list col p-3">
                 <li class="menu-item depth-01">
                     <a href="#"><span>Reservation</span></a>
-                    <ul>
+                    <ul class="menu-list2">
                         <li class="depth-02">
                             <a href="#"><span>픽업 예약</span></a>
                         </li>
@@ -32,7 +32,7 @@
                 </li>
                 <li class="menu-item depth-01">
                     <a href="#"><span>Online Shop</span></a>
-                    <ul>
+                    <ul class="menu-list2">
                         <li class="depth-02">
                             <a href="#"><span>푸드</span></a>
                         </li>
@@ -43,7 +43,7 @@
                 </li>
                 <li class="menu-item depth-01">
                     <a href="#"><span>Event</span></a>
-                    <ul>
+                    <ul class="menu-list2">
                         <li class="depth-02">
                             <a href="#"><span>이벤트</span></a>
                         </li>
@@ -54,7 +54,7 @@
                 </li>
                 <li class="menu-item depth-01">
                     <a href="#"><span>Help</span></a>
-                    <ul>
+                    <ul class="menu-list2">
                         <li class="depth-02">
                             <a href="#"><span>자주 묻는 질문</span></a>
                         </li>
@@ -68,7 +68,7 @@
                 </li>
                 <li class="menu-item depth-01">
                     <a href="#">Brand<span></span></a>
-                    <ul>
+                    <ul class="menu-list2">
                         <li class="depth-02">
                             <a href="#"><span>스토리</span></a></li>
                         <li class="depth-02">
@@ -95,10 +95,13 @@
     </header>
     <header class="header-slide container-fluid p-0 m-0">
         <div class="inner row w-100 m-0 px-5">
-            <div class="col col-group slide-menu">
-                <a href="#" class="slide-toggle">
-                    <div class="slide-mobile-menubar p-0 m-0">
-                            <div class="login-check d-flex">
+            <div class="col col-group slide-list">
+                    <i class="bi bi-list"></i>
+            </div>
+            <div class="col col-group slide-menu w-0">
+                <div class="slide-menu-backdrop "></div>
+                <div class="slide-mobile-menubar p-0 m-0">
+                        <div class="login-check d-flex">
                                 <span>로그인이 필요합니다.</span>
                                 <a href="login.html">로그인</a>
                             </div>
@@ -161,15 +164,13 @@
                                         <li class="depth-02">
                                             <a href="#"><span>채용안내</span></a>
                                         </li>
-                                        <li class="depth-02">
-                                            <a href="#"><span>제안하기</span></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                    </div>
-                    <i class="bi bi-list"></i>
-                </a>
+                                    <li class="depth-02">
+                                        <a href="#"><span>제안하기</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                </div>
             </div>
             <div class="col col-group slide-logo">
                 <div class="img-box">
@@ -433,6 +434,7 @@
                 </div>
             </div>
         </section>
+
         <section class="event">
             <div class="con container-fluid text-center">
                 <h2 class="title">Event</h2>
@@ -498,6 +500,7 @@
                 </div>
             </div>
         </section>
+        
     </main>
 
     <footer class="footer m-0 p-0">

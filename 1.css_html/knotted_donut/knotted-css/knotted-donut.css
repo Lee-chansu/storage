@@ -1,11 +1,10 @@
 @font-face {
-	font-family: 'Pretendard Variable';
-	font-weight: 45 920;
-	font-style: normal;
-	font-display: swap;
-	src: url('./woff2/PretendardVariable.woff2') format('woff2-variations');
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
-*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard Variable';}
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard-Regular';}
 ul, li, ol{list-style: none;}
 a{text-decoration: none; color: black; text-align: center;}
 img{display: block; width: 100%;}
@@ -22,8 +21,11 @@ header{
 .header{
     padding: 32px 64px 16px;
     font-size: 14px; font-weight: 600;
-    overflow-y: hidden;
     transition: 0.3s ease;
+}
+
+.header:hover{
+    background-color: #fdfaf7;
 }
 
 .header .logo {width: 160px;}
@@ -46,10 +48,10 @@ header{
     opacity: 0;
 }
 .header .head.middle .menu-item.depth-01:hover .header{
-    height: 100px; overflow-y: visible;
+    height: 160px;
 }
 .header .head.middle .menu-item.depth-01:hover ul{
-    height: 100px;
+    height: 160px;
     opacity: 1;
 }
 
@@ -87,11 +89,24 @@ header{
 }
 
 /*.header-slide-nav*/
+.header-slide{}
+.header-slide .inner{
+}
+.header-slide .inner .slide-menu{
+}
 
-.header-slide  .slide-mobile-menubar{
-    display: block;
-    position: fixed; top: 0; left: 0; z-index: 1000;
-    width: 25%; height: 100vh;
+.header-slide .inner .slide-menu .slide-menu-backdrop{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 1100;
+}
+
+.header-slide .slide-mobile-menubar{
+    display: none;
+    position: fixed; top: 0; left: 0; z-index: 1000; height: 100vh;
     background-color: #fff;
 }
 
@@ -206,6 +221,11 @@ main .con .nav .bi::before{
     font-size: 16px; font-weight: 700; color: #3c3c3c;
 }
 
+@media screen and (max-width: 1280px) {
+    main{padding: 0;} 
+    .visual{padding: 0; max-height: 530px;}
+    .visual .con .row .nav button{display: none;}
+}
 @media screen and (max-width: 992px) {
     main{padding: 0;} 
     .visual{padding: 0;}
@@ -228,6 +248,10 @@ section .wrap{background-color: #fff; border-radius: 10px;}
 section .info{padding: 5px;}
 section .ttl{margin: 0; font-size: 20px; color: #3c3c3c;}
 section .price{font-size: 18px; color: #ffa2cb;}
+
+@media screen and (max-width: 1280px) {
+    section .con .nav button{display: none;}
+}
 
 
 /*best-menu && new-menu*/
