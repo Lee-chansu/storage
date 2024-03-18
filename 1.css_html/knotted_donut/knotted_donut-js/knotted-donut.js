@@ -1,19 +1,18 @@
+const list = document.querySelector(".bi-list");
+const backDrop = document.getElementsByClassName("slide-menu-backdrop")[0];
+const slideMenu = document.getElementsByClassName("slide-menu")[0];
+const mobileBar = document.getElementsByClassName("slide-mobile-menubar")[0];
 
-let item = document.querySelectorAll(".it");
+list.addEventListener("click", function () {
 
-for(let i of item){
-    i.addEventListener('click', function(){
-        let list2 = i.nextElementSibling;
-        let scrollheight = list2.scrollHeight+'px';
-        
-        
-        if(list2.style.maxHeight == 0+'px'){
-            list2.style.maxHeight = scrollheight;
-        }
-        else{
-            list2.style.maxHeight = 0+'px';
-        }
-        
-        
-    })
-}
+  slideMenu.classList.add("open");
+  backDrop.classList.add("open");
+  mobileBar.classList.add("open");
+});
+
+
+backDrop.addEventListener("click", function(){
+    slideMenu.classList.remove("open");
+    backDrop.classList.remove("open");
+    mobileBar.classList.remove("open");
+})
