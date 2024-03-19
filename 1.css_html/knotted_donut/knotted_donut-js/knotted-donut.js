@@ -1,3 +1,14 @@
+const header = document.getElementsByClassName("header")[0];
+
+window.addEventListener("scroll", function(){
+  if(this.window.scrollY == 0){
+    header.classList.remove("fixed");
+  }else{
+    header.classList.add("fixed");
+  }
+})
+
+
 const list = document.querySelector(".bi-list");
 const backDrop = document.getElementsByClassName("slide-menu-backdrop")[0];
 const slideMenu = document.getElementsByClassName("slide-menu")[0];
