@@ -50,7 +50,7 @@ header {
     padding: 32px 64px 16px;
     font-size: 14px;
     font-weight: 600;
-    transition: 0.3s ease all;
+    transition: 0.3s ease;
 }
 
 .header:hover {
@@ -68,55 +68,42 @@ header {
 }
 
 .header .inner .logo-wrap .logo {
-    display: inline-block;
     width: 160px;
-}
-
-.header .inner .logo-wrap .logo img {
     height: 60px;
-    transition: 0.3s ease;
-}
-
-.header.fixed .inner .logo-wrap .logo img {
-    height: 40px;
     transition: 0.3s ease;
 }
 
 
 .header .inner .head.middle .menu-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    height: 32px;
-    padding: 16px;
+    padding-bottom: 16px 0;
     overflow-y: hidden;
     transition: 0.5s ease all;
 }
 
-.header.fixed .inner .head.middle .menu-list {
-    padding-bottom: 25px;
-    margin: 0;
+.header.fixed .inner .head.middle .menu-list{
+    padding: 8px 0;
 }
 
-.header .inner .head.middle .menu-list:hover {
-    height: 170px;
-}
 
 .header .inner .head.middle .menu-list .depth-01 {
     position: relative;
-    margin: 0 40px;
+    margin: 0 24px;
+    height: 0;
     text-align: center;
     font-size: 14px;
-    white-space: nowrap;
-    transition: 0.5s ease all;
 }
-
-.header .inner .head.middle .menu-list:hover .depth-01 {}
+.header .inner .head.middle .menu-list:hover{
+    height: 170px;
+}
 
 .header .inner .head.middle .menu-list .depth-01 a {}
 
 .header .inner .head.middle .menu-list .depth-01 a span {
     color: black;
+
 }
 
 .header .inner .head.middle .menu-list .menu-item.depth-01 .menu-list2 {
@@ -129,6 +116,8 @@ header {
     padding: 24px 0;
     transition: 0.5s ease;
 }
+
+
 
 .header .inner .middle .depth-01 .menu-list2 .depth-02 a span {
     margin: 20px 0;
@@ -300,6 +289,7 @@ header {
 
 /*main*/
 main {
+    padding-top: 108px;
     position: relative;
 }
 
@@ -314,7 +304,6 @@ main .body-bg .tms-bg {
 
 main .body-bg .tms-bg img {
     position: absolute;
-    object-fit: fill;
 }
 
 main .body-bg .tms-bg .tms-bg1 {
