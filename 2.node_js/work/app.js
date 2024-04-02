@@ -3,14 +3,37 @@ const app = express();
 
 const session = require("express-session");
 const passport = require("passport");
+const MySQLStore = require("express-mysql-session")(session);
 const LocalStrategy = require("passport-local");
 
 const db = require("./models");
-const { Member } = db;
+const { Member, User } = db;
 
 const port = 4000;
+
+const dbOption = {
+  host: "127.0.0.1",
+  port: "3306",
+  user: "root",
+  password: "1234",
+  database: "work",
+};
+
+const sessionOption = {
+  secret: "123456789!@#", //세션 문자열, 암호화 할 때 필요한 문자열
+  resave: false, //유저가 요청을 보낼때마다 session 데이터 갱신할지 여부
+  saveUninitialized: false, // 유저가 로그인을 하지 않아도 session을 저장해둘지
+  coocki: { maxAge: 60 * 1000 }, // 1s = 1000ms (쿠키 저장시간 설정) = 1시간
+  store: new MySQLStore(dbOption), //세션 저장위치 지정
+};
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//인증기능 위한 미들웨어 등록 - 3가지 등록
 app.use(passport.initialize());
+app.use(session(sessionOption));
+app.use(passport.session());
 
 app.listen(port, () => {
   console.log("접속 완료 - http://localhost:4000/");
