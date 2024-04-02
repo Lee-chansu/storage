@@ -1,0 +1,47 @@
+GET http://localhost:4000/api/members
+
+###
+GET http://localhost:4000/api/members?team=engineering
+
+
+###
+GET http://localhost:4000/api/members?team=engineering&position=Server%20Developer
+
+###
+GET http://localhost:4000/api/members/1
+
+###
+POST http://localhost:4000/api/members
+Content-Type: application/json
+
+{
+  "id": 11,
+  "name": "James",
+  "team": "engineering",
+  "position": "Frontend Developer",
+  "emailAddress": "james@google.com",
+  "phoneNumber": "010-xxxx-xxxx",
+  "admissionDate": "2023/12/10",
+  "birthday": "1996/11/08",
+  "profileImage": "profile11.png"
+}
+
+
+###
+PUT http://localhost:4000/api/members/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Alex",
+    "team": "engineering",
+    "position": "Backend Developer",
+    "emailAddress": "alex@google.com",
+    "phoneNumber": "010-xxxx-xxxx",
+    "admissionDate": "2018/12/10",
+    "birthday": "1994/11/08",
+    "profileImage": "profile1.png"
+  }
+
+###
+DELETE http://localhost:4000/api/members/10
