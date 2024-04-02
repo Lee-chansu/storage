@@ -45,3 +45,20 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:4000/api/members/10
+
+
+
+###
+GET http://localhost:4000/login
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "userID" : "tree", 
+  "password" : "1234"
+}
+
+###
+GET http://localhost:4000/logout
