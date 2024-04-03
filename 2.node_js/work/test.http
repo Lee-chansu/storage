@@ -62,3 +62,12 @@ Content-Type: application/json
 
 ###
 GET http://localhost:4000/logout
+
+###
+POST http://localhost:4000/join
+Content-Type: application/json
+
+{
+  "userID" : "test", 
+  "password" : "1234"
+}

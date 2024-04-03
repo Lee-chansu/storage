@@ -9,6 +9,8 @@ const LocalStrategy = require("passport-local");
 const db = require("./models");
 const { Member, User } = db;
 
+const bcrypt = require("bcrypt");
+
 const port = 4000;
 
 const dbOption = {
@@ -24,7 +26,7 @@ const sessionOption = {
   resave: false, //유저가 요청을 보낼때마다 session 데이터 갱신할지 여부
   saveUninitialized: false, // 유저가 로그인을 하지 않아도 session을 저장해둘지
   coocki: { maxAge: 24 * 60 * 60 * 1000 }, // 1s = 1000ms (쿠키 저장시간 설정)
-  store: new MySQLStore(dbOption), //세션 저장위치 지정
+  store: new MySQLStore(dbOption) //세션 저장위치 지정
 };
 
 app.set("view engine", "ejs");
@@ -37,6 +39,10 @@ app.use(passport.initialize());
 app.use(session(sessionOption));
 app.use(passport.session());
 
+app.use("/", require("./routes/join.js"));
+app.use("/", require("./routes/login.js"));
+app.use("/", require("./routes/api.js"))
+
 //입력한 아이디와 비밀번호가 db에 저장된 것과 일치한가를 검증하는 코드
 // cb : callback 함수의 약자, 인증 작업이 완료되면 호출.
 // cb(error, user, info) 순의 매개변수를 가진다.
@@ -46,20 +52,18 @@ app.use(passport.session());
   3) 
 
 */
-passport.use(
-  new LocalStrategy(
-    {
-      usernameField: "userID",
-      passwordField: "password",
-    },
-    async (userID, password, cb) => {
+passport.use(new LocalStrategy({ 
+  usernameField: "userID", 
+  passwordField: "password"
+}, async (userID, password, cb) => {
       let result = await User.findOne({ where: { userID } });
 
       if (!result) {
         return cb(null, false, { message: "아이디 DB에 없음" });
       }
+      const isPasswordCorrect = await bcrypt.compare(password, result.password);
 
-      if (result.password == password) {
+      if (isPasswordCorrect) {
         return cb(null, result);
       } else {
         return cb(null, false, { message: "비번 불일치" });
@@ -77,8 +81,7 @@ passport.serializeUser((user, done) => {
 
 /*
   유저가 요청을 보낼때마다, 쿠키에 뭐가 있으면 세션 데이터랑 비교해보고 별 이상 없으면
-  
-
+  그냥 패스.
 */
 
 passport.deserializeUser((user, done) => {
@@ -91,99 +94,4 @@ app.listen(port, () => {
   console.log("접속 완료 - http://localhost:4000/");
 });
 
-app.get("/", (req, res) => {
-  const result = req.user;
 
-  if (!result) {
-    return res.render("index.ejs", { result: "로그인 필요" });
-  }
-  res.render("index.ejs", { result });
-});
-
-app.get("/api/members", async (req, res) => {
-  const { team, position } = req.query;
-  try {
-    if (team && position) {
-      const findMembers = await Member.findAll({ where: { team, position } });
-      res.send(findMembers);
-    } else if (team) {
-      const teamMembers = await Member.findAll({ where: { team } });
-      res.send(teamMembers);
-    } else if (position) {
-      const positionMembers = await Member.findAll({ where: { position } });
-      res.send(positionMembers);
-    } else {
-      const members = await Member.findAll();
-      res.send(members);
-    }
-  } catch (error) {
-    res.status(400).send("404 error!" + error);
-  }
-});
-
-app.post("/api/members", async (req, res) => {
-  const newMember = req.body;
-  await Member.create(newMember);
-  res.send(newMember);
-});
-
-/*정보 수정 1 - forEach 활용*/
-/* app.put("/api/members/:id", async (req, res) => {
-  const { id } = req.params;
-  const newInfo = req.body;
-  const member = Member.findOne({ where: { id } });
-
-  if (member) {
-    Object.keys(newInfo).forEach(prop => {
-      member[prop] = newInfo[prop];
-    });
-    await member.save();
-  }
-}); */
-
-/*정보 수정 2 - update*/
-app.put("/api/members/:id", async (req, res) => {
-  const { id } = req.params;
-  const newInfo = req.body;
-  try {
-    await Member.update(newInfo, { where: { id } });
-    const member = await Member.findOne({ where: { id } });
-    res.send(member);
-  } catch (error) {
-    res.status(400).send("404 error!" + error);
-  }
-});
-
-app.delete("/api/members/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    await Member.destroy({ where: { id } });
-    res.send("이용해주셔서 감사합니다.");
-  } catch (error) {
-    res.status(400).send("404 error!" + error);
-  }
-});
-
-app.get("/login", (req, res) => {
-  res.render("login.ejs");
-});
-
-app.post("/login", (req, res) => {
-  //카카오나 구글의 경우 local => google || kakao
-  passport.authenticate("local", (error, user, info) => {
-    //에러 처리 방식 등은 커스텀 가능
-    if (error) return res.status(500).json(error);
-    if (!user) return res.status(401).send(info.message);
-
-    req.login(user, err => {
-      if (err) return next(err); //오류가 나면 next 미들웨어로 오류처리를 넘긴다.
-      res.redirect("/");
-    });
-  })(req, res);
-});
-
-app.get("/logout", (req, res) => {
-  req.logout(() => {
-    res.redirect("/");
-  });
-});
