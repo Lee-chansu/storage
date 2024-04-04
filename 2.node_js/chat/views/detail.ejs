@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/detail.css" />
+  </head>
+  <body>
+    <div class="detail-bg">
+      <div class="chat-screen">
+        <div class="chat-box"><span>안녕하세요</span></div>
+        <div class="chat-box"><span>안녕하세요</span></div>
+        <div class="chat-box"><span>안녕하세요</span></div>
+      </div>
+    </div>
+
+    <div class="chat-form">
+      <input class="chat-input" />
+      <button class="chat-button">전송</button>
+    </div>
+    <!-- 로그인상태, 로그인된 유저의 id를 wirteId에 담아서 요청한다. -->
+    <a href="/chat/request?writeId=<%= result.user %>">채팅하기</a>
+
+  </body>
+</html>

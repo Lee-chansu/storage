@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <%- include('nav.ejs') %>
+    <sction class="sec">
+      <div class="white-bg">
+        <%= loginInfo.userId %>
+        <h1>글 목록</h1>
+        <% for(let i = 0; i < list.length; i++) { %>
+        <div class="list-box">
+          <a href="/detail/<%= list[i]._id %>">
+            <h3><%= list[i].title %></h3>
+            <p><%= list[i].content %></p>
+          </a>
+          <a href="/edit/<%= list[i]._id%>">✏️</a>
+          <a
+            class="delete"
+            href="/delete/list[i]._id"
+            data-id="<%= list[i]._id %>"
+            >🗑️</a
+          >
+        </div>
+        <% } %>
+      </div>
+    </sction>
+
+    <script>
+      const BASE_URL = "http://localhost:4000/";
+      const del = document.querySelectorAll(".delete");
+
+      try {
+        del.forEach((el, i) => {
+          el.addEventListener("click", async e => {
+            e.preventDefault();
+            const id = e.target.dataset.id;
+            const response = await fetch(`${BASE_URL}/delete/${id}`, {
+              method: "DELETE",
+              headers: {"Content-Type":"application/json"},
+            });
+            if (!response.ok) {
+              console.log(response.statusText);
+            }
+
+            // e.target.parentElement.style.display = "none";
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    </script>
+  </body>
+</html>

@@ -28,9 +28,13 @@ router.post("/join", async (req, res) => {
 
 router.put("/put", async (req, res) => {
   let siteUser = { userId: req.userId, password: req.password };
-  if (!await bcrypt.compare(siteUser.password, checkPassword)) {
-    res.send('현재 비밀번호가 일치X')
+  if (!(await bcrypt.compare(siteUser.password, checkPassword))) {
+    res.send("현재 비밀번호가 일치X");
   }
+});
+
+router.delete("/delete", async (req, res) => {
+  
 });
 
 module.exports = router;

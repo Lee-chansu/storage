@@ -9,7 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
     "express": "^4.19.2",
-    "nodemon": "^3.1.0"
+    "express-session": "^1.18.0",
+    "mongodb": "^6.5.0",
+    "nodemon": "^3.1.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   }
 }

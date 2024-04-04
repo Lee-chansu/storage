@@ -1,0 +1,53 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+a{text-decoration: none; color: #333;}
+
+
+body{background-color: #333;}
+
+.header{padding: 0 40px;}
+.header a{color: #fff;}
+.header .inner{
+  height: 100px; 
+  display: flex; 
+  align-items: center; /* 현재 요소의 높이 안에서 세로 가운데 정렬 */
+}
+
+
+
+.sec{padding: 120px 40px;}
+.sec h2{margin: 0 0 20px; text-align: center; color: #ddd;}
+
+
+.white-bg{
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.list-box{border-bottom: 1px solid grey;}
+.list-box:last-of-type{border: 0;}
+
+
+input,div {
+  box-sizing: border-box;
+}
+.form-box {
+  background : white;
+  padding : 25px;
+  margin: 20px;
+  border-radius: 8px;
+}
+.form-box input {
+  padding : 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.form-box button {
+  padding: 10px;
+  border : none;
+  background : lightgrey;
+  border-radius: 5px;
+}

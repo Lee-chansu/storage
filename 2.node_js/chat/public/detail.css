@@ -1,0 +1,15 @@
+.chat-screen { width: 100%; }
+.chat-box { margin-top: 15px; display: flex; }
+.chat-box span { padding: 10px; background: #eee; }
+.mine { justify-content: end; }
+.chat-input {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.chat-button {
+  padding: 10px;
+  border : none;
+  background : lightgrey;
+  border-radius: 5px;
+}
