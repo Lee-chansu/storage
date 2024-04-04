@@ -90,8 +90,8 @@ router.post("/login", async (req, res, next) => {
 router.get("/logout", async (req, res) => {
   let session = req.session;
   req.logout(() => {
-    session.destroy()
-    res.send('세션 제거 완료')
+    session.destroy();
+    res.send("세션 제거 완료");
   });
 });
 
