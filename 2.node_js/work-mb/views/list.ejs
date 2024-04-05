@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>list</title>
-  <link rel="stylesheet" href="/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <%- include('nav.ejs') %>
 
-</head>
-<body>
-  
-  <%- include('nav.ejs') %>
-  
-  <section class="sec">
+    <section class="sec">
+      <h2>글 목록</h2>
 
-    <h2> 글 목록 </h2>
-
-    
-    <%= loginInfo.userid %>
-
-    <div class="white-bg">
-      <% if ( list.length == 0 ) {%>
-        <p> 새로운 글을 작성해주세요. 👉 <a href="/add" style="list-style:underline">글쓰기</a></p>
-      <% } else { %>
-
-      <% for(let i = 0; i < list.length; i++) { %>
-      <div class="list-box">
-        <div>
-          <a href="/detail/<%= list[i]._id %>">
-            <h3>
-              <%= list[i].title %>
-              <a href="/edit/<%= list[i]._id %>">✏️</a>
-              <a href="/delete/<%= list[i]._id %>" class="delete" data-id="<%= list[i]._id %>" >🗑️</a>
-            </h3>
-            <p><%= list[i].content %></p>
-          </a>
+      <div class="white-bg">
+        <% if ( list.length == 0 ) {%>
+        <p>
+          새로운 글을 작성해주세요. 👉
+          <a href="/add" style="list-style: underline">글쓰기</a>
+        </p>
+        <% } else { %> 
+          <% for(let i = 0; i < list.length; i++) { %> 
+            <% let checkLogin = list[i].userId %> 
+            <% let className = (checkLogin) ? 'writerlogin' : 'writer' %>
+        <div class="list-box">
+          <div>
+            <a href="/detail/<%= list[i]._id %>">
+              <h3>
+                <%= list[i].title %> 
+                <% if(checkLogin) { %>
+                <div class="btn">
+                  <a href="/edit/<%= list[i]._id %>">✏️</a>
+                  <a
+                    href="/delete/<%= list[i]._id %>"
+                    class="delete"
+                    data-id="<%= list[i]._id %>"
+                    >🗑️</a
+                  >
+                </div>
+                <% } %>
+                <p><%= list[i].userId %></p>
+              </h3>
+              <p><%= list[i].content %></p>
+            </a>
+          </div>
         </div>
-        <div>
-          
-        </div>
+        <% } %>
+        <% } %>
       </div>
+    </section>
 
-      <% } } %>
-    </div>
-  </section>
+    <script>
+      const BASE_URL = "http://localhost:4000";
+      const del = document.querySelectorAll(".delete");
 
-  <script>
-    const BASE_URL = 'http://localhost:3000'
-    const del = document.querySelectorAll('.delete');
+      del.forEach((el, i) => {
+        el.addEventListener("click", async function (e) {
+          e.preventDefault();
+          const id = e.target.dataset.id;
+          const listBox = document.querySelectorAll(".list-box")[i];
 
-    del.forEach((el, i)=>{
+          // 새로고침을 안하고 동작
+          const response = await fetch(`${BASE_URL}/delete/${id}`, {
+            method: "DELETE",
+          });
 
-      el.addEventListener('click', async function(e){
-          
-        e.preventDefault();
-        const id = e.target.dataset.id
-
-        // 새로고침을 안하고 동작
-        const response = await fetch(`${BASE_URL}/delete/${id}`, {
-          method: 'DELETE',
+          // listBox.style.display = "none";
         });
-
-        e.target.parentElement.style.display = 'none'
-
-      })
-    })
-
-    
-  </script>
-
-</body>
+      });
+    </script>
+  </body>
 </html>

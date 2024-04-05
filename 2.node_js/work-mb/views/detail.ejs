@@ -11,10 +11,40 @@
   <section class="sec">
     <div class="white-bg">
       <div class="list-box">
+        <p class="wirter">
+          작성자 : <%= result.userId %>
+          <a href="/chat/request?writerId=<%= result._id %>">채팅하기</a>
+          <% let checkLogin = loginInfo == result.userId %>
+          <% if(checkLogin) { %>
+            <div class="btn">
+              <a href="/edit/<%= list[i]._id %>">✏️</a>
+              <a href="/delete/<%= list[i]._id %>"
+                class="delete" data-id="<%= list[i]._id %>">🗑️</a>
+            </div>
+            <% } %>
+        </p>
+        
         <h3><%= result.title %></h3>
-        <p><%= result.content  %></p>
+        <p><%= result.content %></p>
       </div>
-    </div>
+
+      <div class="comment">
+        <form action="/comment" method="POST">
+          <label for="commentContent"><%= loginInfo.userId %></label>
+          <input type="text" name="content" id="commentContent">
+          <input id="<%= result._id %>" name="parentId" type="hidden">
+          <button>댓글 작성</button>
+        </form>
+      </div>
+
+      <div class="comment-list">
+        <% for(let i = 0; i < comment.length; i++) { %>
+          <p>
+            <span><%= comment[i].wirter %></span>
+            <span><%= comment[i].comment %></span>
+          </p>
+          <% } %>
+      </div>
   </section>
 
 </body>

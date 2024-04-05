@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>list</title>
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+  
+  <%- include('nav.ejs') %>
+  
+  <section class="sec">
+
+    <h2> 챗팅 목록 </h2>
+    <div class="white-bg">
+      <% for (let i = 0; i < result.length; i++){ %>
+        <div class="list-box">
+          <!-- id : chatroom의 _id 고유번호 -->
+          <a href="/chat/detail/<%= result[i]._id%>">
+            <h3><%= result[i].member[0]%></h3>
+            <p><%= result[i]._id%></p>
+            <p>test</p>
+          </a>
+        </div>
+      <% } %>
+  </div> 
+  </section>
+
+
+</body>
+</html>
