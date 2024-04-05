@@ -1,32 +1,40 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 a{text-decoration: none; color: #333;}
 
-
 body{background-color: #333;}
 
-.header{padding: 0 40px;}
+
+.header{padding: 0 40px; }
 .header a{color: #fff;}
 .header .inner{
-  height: 100px; 
-  display: flex; 
-  align-items: center; /* 현재 요소의 높이 안에서 세로 가운데 정렬 */
+  height: 80px; 
+  display: flex;
+  align-items: center; /* 현재요소의 높이 안에서 세로 가운데정렬*/
 }
 
+.header nav{margin-left: 30px;}
+.header nav a{}
+.header nav a::after{content: 'l';padding: 0 20px;}
+.header nav a:last-of-type:after{display: none;}
 
 
-.sec{padding: 120px 40px;}
-.sec h2{margin: 0 0 20px; text-align: center; color: #ddd;}
-
-
+.sec{padding: 40px 40px 120px}
+.sec h2{
+  margin: 0 0 20px;
+  text-align: center;
+  color: #ddd;
+}
 .white-bg{
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
 }
 
-.list-box{border-bottom: 1px solid grey;}
-.list-box:last-of-type{border: 0;}
-
+.list-box{
+  padding: 15px 0;
+  border-bottom: 1px dotted grey;
+}
+.list-box:last-of-type{border : 0}
 
 input,div {
   box-sizing: border-box;

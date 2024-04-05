@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="inner">
-        <a class="logo">Forum</a>
-        <nav class="nav">
-          <a href="/add">wrtie</a>
-          <a href="/list">list</a>
-          <% if(loginInfo.userId == null) { %>
-          <a href="/login">login</a>
-          <% } else { %> 
-            <a href="/logout">logout</a>
-            <% } %>
-        </nav>
-      </div>
-    </header>
-  </body>
-</html>
+<header class="header">
+  <div class="inner">
+    <h1><a class="logo">Forum</a></h1>
+    <nav class="nav">
+      <a href="/login">login</a>
+      <a href="/logout">logout</a>
+      <a href="/add">write</a>
+      <a href="/list">list</a>
+    </nav>
+  </div>
+</header>

@@ -1,6 +1,7 @@
-require("dotenv").config();
-const { MongoClient } = require("mongodb");
+require('dotenv').config() 
 
-let connectDB = new MongoClient(process.env.URL).connect();
+const { MongoClient } = require('mongodb')
 
-module.exports = connectDB;
+let connectDB = new MongoClient(process.env.URL).connect()
+
+module.exports = connectDB 
