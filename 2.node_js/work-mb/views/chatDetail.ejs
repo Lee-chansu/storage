@@ -13,15 +13,28 @@
       member[0] : 현재 로그인 아이디
       member[1] : 채팅 하고자하는 멤버의 아이디
      -->
+    <!-- 
+      chatInfo 객체
+      _id : 채팅방의 아이디(룸번호)
+      member : [0] : 현재 로그인 아이디 / [1] : 글 작성자 아이디
 
-    <p><%= result._id %></p>
-    <p><%= result.member[0] %></p>
-    <p><%= result.member[1] %></p>
+      chat 객체
+        실질적인 메시지
+      -->
+    <div class="members">
+      <span class="member"><%= chatInfo.member[0] %></span>
+      <span class="member"><%= chatInfo.member[1] %></span>
+    </div>
     <div class="detail-bg">
       <div class="chat-screen">
-        <div class="chat-box"><span>안녕하세요</span></div>
-        <div class="chat-box"><span>안녕하세요</span></div>
-        <div class="chat-box mine"><span>안녕하세요</span></div>
+        <% for(let c of chat) { %>
+        <span class="member"><%= c.who %></span>
+        <div class="chat-box">
+          <span><%= c.content %></span>
+        </div>
+        <span class="date"><%= c.date %></span>
+        <hr />
+        <% } %>
       </div>
     </div>
     <div class="chat-form">
@@ -31,24 +44,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/socket.io@4.7.2/client-dist/socket.io.min.js"></script>
     <script>
+      const sendMsg = document.querySelector(".chat-button");
+
       const socket = io();
 
-      socket.emit("ask-join", "<%= result._id %>");
-
-      document.querySelector(".chat-button").addEventListener("click", () => {
-        let content = document.querySelector(".chat-input").value;
-
-        socket.emit("message-send", { content, room: "<%= result._id %>" });
+      socket.emit("ask-join", "<%= chatInfo._id %>");
+      sendMsg.addEventListener("click", () => {
+        let msg = document.querySelector(".chat-input").value;
+        socket.emit("message-send", { room: "<%= chatInfo._id %>", msg });
+        //socket.emit('key', 'socket 룸 번호', value)
       });
 
-      socket.on("message-broadcast", async data => {
-        console.log(data);
-        document
-          .querySelector(".chat-screen")
-          .insertAdjacentHTML(
-            "beforeend",
-            `<div class="chat-box min"> <span>${data}</span> </div>`
-          );
+      socket.on("message-broadcast", data => {
+        document.querySelector(".chat-screen").insertAdjacentHTML(
+          "beforeend",
+          `
+          <div class="chat-box">
+            <span class="member">${data.who}</span>
+            <span>${data.content}</span>
+            <span class="date">${data.date}</span>
+          </div>
+           <hr />
+          `
+        );
       });
     </script>
   </body>

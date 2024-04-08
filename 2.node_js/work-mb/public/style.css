@@ -87,3 +87,18 @@ input,div {
   background : lightgrey;
   border-radius: 5px;
 }
+
+.date{
+  color: white;
+  font-size: 12px;
+}
+
+.members{
+  display: flex; justify-content: space-between;
+}
+
+.member{
+  display: inline-block;
+  padding: 5px;
+  background-color: #eee;
+}

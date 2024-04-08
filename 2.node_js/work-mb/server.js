@@ -10,6 +10,9 @@ const { Server } = require("socket.io");
 const server = createServer(app);
 const io = new Server(server);
 
+//시간 표시
+const moment = require("moment");
+
 const MongoStore = require("connect-mongo");
 const { ObjectId } = require("mongodb");
 let connectDB = require("./db.js");
@@ -54,6 +57,7 @@ const sessionOption = {
 app.use(passport.initialize());
 app.use(session(sessionOption));
 app.use(passport.session());
+io.engine.use(session(sessionOption));
 
 // 아이디, 비번 검사 (미들웨어)
 passport.use(
@@ -215,6 +219,10 @@ app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
 
+app.get("/alert-login", (req, res) => {
+  res.render("alert-login.ejs");
+});
+
 app.post("/login", async (req, res, next) => {
   passport.authenticate("local", (error, user, info) => {
     if (error) return res.status(500).json(error);
@@ -311,11 +319,35 @@ app.get("/chat/request", async (req, res) => {
   } else {
     loginInfo = { userId: req.user.userId, message: "님 안녕하세요!" };
   }
-  await db.collection("chatroom").insertOne({
-    member: [req.user.id, new ObjectId(req.query.writerId)],
-    date: new Date(),
+
+  const writerId = req.query.writerId;
+  console.log(writerId);
+  let writer = await db.collection("post").findOne({
+    _id: new ObjectId(req.query.writerId),
   });
-  res.redirect("/chat/list");
+
+  let result = await db.collection("chatroom").findOne({
+    //  _id: new ObjectId(id)
+    member: { $all: [req.user.userId, writer.userId] },
+  });
+
+  if (!result) {
+    if (req.user) {
+      await db.collection("chatroom").insertOne({
+        member: [req.user.userId, writer.userId],
+        date: moment(new Date()).format("YY-MM-DD HH:mm:ss"),
+      });
+      res.redirect("/chat/list");
+    } else {
+      res.redirect("/alert-login");
+    }
+  } else {
+    if (req.user) {
+      res.redirect(`/chat/detail/${result._id}`);
+    } else {
+      res.redirect("/alert-login");
+    }
+  }
 });
 
 //채팅방 목록 보여주기
@@ -330,7 +362,7 @@ app.get("/chat/list", async (req, res) => {
   //현재 로그인한 사용자의 채팅방 목록 검색해서 출력한다.
   let result = await db
     .collection("chatroom")
-    .find({ member: req.user.id })
+    .find({ member: req.user.userId })
     .toArray();
   res.render("chatList.ejs", { result, loginInfo });
 });
@@ -338,6 +370,10 @@ app.get("/chat/list", async (req, res) => {
 //채팅방 내용 확인하기
 app.get("/chat/detail/:id", async (req, res) => {
   const { id } = req.params;
+  //
+  //채팅방 목록 번호
+  //chatRoom : _id;
+  //chatMessage : parentRoom;
   let loginInfo;
 
   if (!req.user) {
@@ -346,38 +382,58 @@ app.get("/chat/detail/:id", async (req, res) => {
     loginInfo = { userId: req.user.userId, message: "님 안녕하세요!" };
   }
 
-  let result = await db
-    .collection("chatroom")
-    .findOne({ _id: new ObjectId(id) });
+  let chatInfo = await db.collection("chatroom").findOne({
+    _id: new ObjectId(id),
+  });
 
-  res.render("chatDetail.ejs", { result, loginInfo });
+  let chat = await db
+    .collection("chatMessage")
+    .find({ parentRoom: new ObjectId(id) })
+    .toArray();
+
+  //찾는 것에 대한 조건이 1개일 때 : find({member : 조건})
+  //찾는 것에 대한 조건이 2개 이상일 때
+  // : find( member : {$all : [조건1, 조건2, ...] })
+
+  res.render("chatDetail.ejs", { chatInfo, chat, loginInfo });
 });
 
 io.on("connection", socket => {
-  console.log("websocket 연결됨");
-  //실행할 코드
+  console.log("websocket 연결");
 
-  socket.on("ask-join", async data => {
+  socket.on("ask-join", data => {
     socket.join(data);
   });
 
+  //스크립트의 key값과 동일한 키값이 주어져야 데이터를 받아올 수 있다.
   socket.on("message-send", async data => {
-    // console.log(socket.request.session.passport.user.id);
+    // 만약 ejs에서 id검색을 new ObjectId로 했다면
+    // 채팅을 저장할 때도 반드시 new ObjectId를 붙여서 저장해줘야한다.
+    const date = moment(new Date());
 
-    // await db.collection("chatMessage").insertOne({
-    //   parentRoom: new ObjectId(String(data.room)),
-    //   content: data.content,
-    // });
-    console.log(data.content);
-    io.to(data.room).emit("message-broadcast", data.content);
+    await db.collection("chatMessage").insertOne({
+      parentRoom: new ObjectId(String(data.room)),
+      content: data.msg,
+      date: date.format("YY-MM-DD HH:mm:ss"),
+      who: socket.request.session.passport.user.userId,
+    });
+
+    const result = await db.collection("chatMessage").findOne(
+      {
+        parentRoom: new ObjectId(String(data.room)),
+      },
+      { sort: { _id: -1 } }
+    );
+
+    io.to(data.room).emit("message-broadcast", result);
   });
-
-  //서버만 룸에 유저 넣는 것 가능
-  //유저는 서버에 요청해야만 룸에 조인 가능
-  //유저들이 들어갈 수 있는 웹 소켓 방
-  //한 유저는 여러 room에 들어갈 수 있다.
-  //서버 -> room에 속한 유저에게 메시지 전송 가능
 });
+
+//서버만 룸에 유저 넣는 것 가능
+//유저는 서버에 요청해야만 룸에 조인 가능
+//유저들이 들어갈 수 있는 웹 소켓 방
+//한 유저는 여러 room에 들어갈 수 있다.
+//서버 -> room에 속한 유저에게 메시지 전송 가능
 
 //어떤 유저가 서버로 메시지 보내면
 //서버는 그 메시지를 같은 룸에 속한 사람들에게 모두 메시지를 전송한다.
