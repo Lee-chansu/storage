@@ -21,26 +21,32 @@
       chat 객체
         실질적인 메시지
       -->
+      <section class="sec">
     <div class="members">
-      <span class="member"><%= chatInfo.member[0] %></span>
-      <span class="member"><%= chatInfo.member[1] %></span>
+      <p><strong>참여멤버 : </strong></p>
+      <% for(let info of chatInfo.member) { %>
+        <span class="member"><%= info %></span>
+      <% } %>
     </div>
     <div class="detail-bg">
       <div class="chat-screen">
         <% for(let c of chat) { %>
-        <span class="member"><%= c.who %></span>
-        <div class="chat-box">
-          <span><%= c.content %></span>
+          <% let checkLogin = loginInfo.userId %>
+          <% let className = (checkLogin == c.who) ? 'mine' : '' %>
+          <div class="chat-box <%= className %>">
+            <p class="member"><%= c.who %></p>
+            <span><%= c.content %></span>
+            <p class="date"><%= c.date %></p>
+          </div>
+          <% } %>
         </div>
-        <span class="date"><%= c.date %></span>
-        <hr />
-        <% } %>
       </div>
     </div>
     <div class="chat-form">
       <input class="chat-input" />
       <button class="chat-button">전송</button>
     </div>
+  </section>
 
     <script src="https://cdn.jsdelivr.net/npm/socket.io@4.7.2/client-dist/socket.io.min.js"></script>
     <script>
@@ -56,15 +62,15 @@
       });
 
       socket.on("message-broadcast", data => {
+        let className = (data[1] == data[0].who) ? "mine" : "";
         document.querySelector(".chat-screen").insertAdjacentHTML(
-          "beforeend",
+          "beforeEnd",
           `
-          <div class="chat-box">
-            <span class="member">${data.who}</span>
-            <span>${data.content}</span>
-            <span class="date">${data.date}</span>
+          <div class="chat-box ${className}">
+            <p class="member">${data[0].who}</p>
+            <span>${data[0].content}</span>
+            <p class="date">${data[0].date}</p>
           </div>
-           <hr />
           `
         );
       });

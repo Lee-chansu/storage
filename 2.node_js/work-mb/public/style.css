@@ -50,6 +50,7 @@ input,div {
   margin: 20px;
   border-radius: 8px;
 }
+
 .form-box input {
   padding : 10px;
   font-size: 16px;
@@ -58,12 +59,14 @@ input,div {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 .form-box button {
   padding: 10px;
   border : none;
   background : lightgrey;
   border-radius: 5px;
 }
+
 .form-box .toJoin {
   padding: 10px;
   border : none;
@@ -73,14 +76,15 @@ input,div {
 }
 
 .chat-screen { width: 100%; }
-.chat-box { margin-top: 15px; display: flex; }
-.chat-box span { padding: 10px; background: #eee; }
+.chat-box { margin-top: 15px; display: flex; align-items: center;}
+.chat-box span { margin: 0 10px ; padding: 10px; background: #eee; }
 .mine { justify-content: end; }
 .chat-input {
   margin-top: 15px;
   padding: 10px;
   border-radius: 5px;
 }
+
 .chat-button {
   padding: 10px;
   border : none;
@@ -94,11 +98,19 @@ input,div {
 }
 
 .members{
-  display: flex; justify-content: space-between;
+  display: flex; align-items: center;
+}
+.members p{
+  color: #eee;
+  font-size: 18px;
+}
+.members span{
+  margin: 0 5px
 }
 
 .member{
   display: inline-block;
   padding: 5px;
   background-color: #eee;
+  border-radius: 10px;
 }

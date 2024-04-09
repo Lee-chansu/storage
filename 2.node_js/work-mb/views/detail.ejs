@@ -32,16 +32,20 @@
         <form action="/comment" method="POST">
           <label for="commentContent"><%= loginInfo.userId %></label>
           <input type="text" name="content" id="commentContent">
-          <input id="<%= result._id %>" name="parentId" type="hidden">
+          <input type="hidden" name="parentId" value="<%= result._id %>"
+          id="<%= result._id %>">
           <button>댓글 작성</button>
         </form>
       </div>
 
       <div class="comment-list">
-        <% for(let i = 0; i < comment.length; i++) { %>
+        <% for(let com of comment) { %>
           <p>
-            <span><%= comment[i].wirter %></span>
-            <span><%= comment[i].comment %></span>
+            <label for="writer"><strong>작성자 :</strong> </label>
+            <span name="writer"><%= com.writer %></span> <br>
+            <label for="content"><strong>내용 : </strong></label>
+            <span name="content"><%= com.content %></span>
+            <hr/>
           </p>
           <% } %>
       </div>

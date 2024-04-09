@@ -42,6 +42,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // res.body 여기서 데이터 꺼내기 쉽게 처리를 해준다
+app.use(methodOverride("_method"));
 
 const sessionOption = {
   secret: "secret-express-session",
@@ -165,7 +166,9 @@ app.get("/edit/:id", async (req, res) => {
 app.put("/edit", async (req, res) => {
   const { id, title, content } = req.body;
 
-  // let result = await db.collection('post').updateOne({수정할부분},{$set : {덮어쓸 내용}})
+  /* let result = await db
+  .collection('post').
+  updateOne({수정할부분},{$set : {덮어쓸 내용}})*/
 
   try {
     let result = await db
@@ -196,24 +199,45 @@ app.delete("/delete/:id", async (req, res) => {
   }
 });
 
-//--------------------------------------
+//-----------------------회원가입---------------
 
 app.get("/join", (req, res) => {
-  res.render("join.ejs");
+  let message;
+  res.render("join.ejs", { message });
+});
+
+app.post("/join/IdCheck", async (req, res) => {
+  const { userId } = req.body;
+  let checkId = await db.collection("user").findOne({ userId: req.body.userId });
+  let message = checkId ? "이미 존재하는 아이디입니다." : "사용할 수 있습니다.";
+
+  console.log(message);
+  res.render("join.ejs", { message });
 });
 
 app.post("/join", async (req, res) => {
   const { userId, password } = req.body;
-  let hash = await bcrypt.hash(password, 10);
 
-  await db.collection("user").insertOne({
-    userId,
-    password: hash,
-  });
-  res.redirect("/login");
+  try {
+    if (!userId) {
+      res.send("아이디를 입력해주세요. <a href='/join'>돌아가기</a>");
+    } else if (!password) {
+      res.send("비밀번호를 입력해주세요. <a href='/join'>돌아가기</a>");
+    } else {
+      let hash = await bcrypt.hash(password, 10);
+
+      await db.collection("user").insertOne({
+        userId,
+        password: hash,
+      });
+    }
+    res.redirect("/login");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
-//--------------------------------------
+//----------------로그인----------------------
 
 app.get("/login", (req, res) => {
   res.render("login.ejs");
@@ -235,6 +259,10 @@ app.post("/login", async (req, res, next) => {
       res.redirect("/list");
     });
   })(req, res, next);
+});
+
+app.get("/alert-logout", (req, res) => {
+  res.render("alert-logout.ejs");
 });
 
 app.get("/logout", (req, res) => {
@@ -282,7 +310,10 @@ app.get("/detail/:id", async (req, res) => {
 
   try {
     let result = await db.collection("post").findOne({ _id: new ObjectId(id) });
-    let comment = await db.collection("comment").find({ parentId: id });
+    let comment = await db
+      .collection("comment")
+      .find({ parentId: id })
+      .toArray();
 
     if (result == null) {
       res.status(400).send("글을 찾을 수 없습니다");
@@ -299,12 +330,12 @@ app.get("/detail/:id", async (req, res) => {
 app.post("/comment", async (req, res) => {
   const { content, parentId } = req.body;
   const writerId = req.user.id;
-  const wrtier = req.user.userId;
-  let result = await db.collection("comment").insertOne({
+  const writer = req.user.userId;
+  await db.collection("comment").insertOne({
     content,
     parentId, // post 컬렉션 _id 게시글 아이디
     writerId, // 로그인한 사람의 _id(현재 로그인 사용자)
-    wrtier,
+    writer,
   });
 
   res.redirect("back"); // 이전 페이지 돌아가기
@@ -320,8 +351,6 @@ app.get("/chat/request", async (req, res) => {
     loginInfo = { userId: req.user.userId, message: "님 안녕하세요!" };
   }
 
-  const writerId = req.query.writerId;
-  console.log(writerId);
   let writer = await db.collection("post").findOne({
     _id: new ObjectId(req.query.writerId),
   });
@@ -418,12 +447,15 @@ io.on("connection", socket => {
       who: socket.request.session.passport.user.userId,
     });
 
-    const result = await db.collection("chatMessage").findOne(
-      {
-        parentRoom: new ObjectId(String(data.room)),
-      },
-      { sort: { _id: -1 } }
-    );
+    const result = [
+      await db.collection("chatMessage").findOne(
+        {
+          parentRoom: new ObjectId(String(data.room)),
+        },
+        { sort: { _id: -1 } }
+      ),
+      socket.request.session.passport.user.userId,
+    ];
 
     io.to(data.room).emit("message-broadcast", result);
   });
