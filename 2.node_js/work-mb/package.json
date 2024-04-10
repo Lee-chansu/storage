@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
     "connect-mongo": "^5.1.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
@@ -22,6 +23,7 @@
     "override": "^0.0.1",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
+    "react-bootstrap": "^2.10.2",
     "sequelize": "^6.37.2",
     "sequelize-cli": "^6.6.2",
     "socket.io": "^4.7.5"
