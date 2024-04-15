@@ -1,0 +1,12 @@
+.sec{padding: 0 100px;}
+.sec .inner{}
+.sec .inner .logo{font-size: 60px;}
+.sec .inner .list-box{
+    margin-top: 20px; 
+    padding: 5px 2px;
+    border-bottom: 1px #eee;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px #5555;
+}
+.sec .inner .list-box .title{}
+.sec .inner .list-box .userId{padding-left: 10px;}
+.sec .inner .list-box .content{padding-left: 10px;}

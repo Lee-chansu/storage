@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list📃</title>
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/detail.css" />
+  </head>
+  <body>
+    <%- include ('./nav.ejs') %>
+
+    <section class="sec">
+      <div class="inner">
+        <h1><%= postOne.userId %> 님의 글</h1>
+        <div class="list-box">
+          <% if(!postOne) { %>
+          <h2>오류 발생 <a href="/list">돌아가기</a></h2>
+          <% } else{ %>
+          <h2 class="title"><%= postOne.title %></h2>
+          <p class="userId">
+            <strong>작성자 : <%= postOne.userId %></strong>
+          </p>
+          <p class="content"><%= postOne.content %></p>
+        </div>
+        <% } %>
+
+        <form class="form-box" action="/comment" method="POST">
+          <div class="inner">
+            <% if(loginInfo.userId == null) { %>
+            <a href="/login"><span>로그인 후 사용할 수 있습니다.</span></a>
+            <input readonly type="text" />
+            <% } else { %>
+            <span><strong><%= loginInfo.userId %> :</strong></span>
+            <input name="parentId" type="hidden" value="<%= postOne._id %>" />
+            <input class="content" name="content" type="text" />
+            <button>작성</button>
+            <% } %>
+          </div>
+        </form>
+
+        <div class="comment-wrap">
+          <h3>댓글</h3>
+          <% if(!comments) { %>
+            <div class="comment-box">
+            <p>작성된 댓글이 없습니다.</p>
+            </div>
+            <% } else{ %> 
+              <% for(let com of comments) { %>
+                <div class="comment-box">
+                  <h3><%= com.writer %></h3>
+                  <p><%= com.content %></p>
+               </div>
+            <% } %> <% }%>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

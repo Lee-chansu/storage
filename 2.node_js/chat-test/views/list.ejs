@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list📃</title>
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/list.css" />
+  </head>
+  <body>
+    <%- include ('./nav.ejs') %>
+
+    <section class="sec">
+      <div class="inner">
+        <h1 class="logo">List</h1>
+        <% if(!findPosts) { %>
+        <h2>글이 작성되지 않았습니다. 글을 작성해주세요👍</h2>
+        <% } else{ %> <% for (let list of findPosts) { %>
+        <a href="/detail/<%= list._id %>">
+          <div class="list-box">
+            <h2 class="title"><%= list.title %></h2>
+            <% let User = list.userId %> 
+            <% if(User == loginInfo.userId) {%>
+            <div class="btn">
+              <a href="/edit/<%= list._id %>">✏️</a>
+              <a
+                href="/delete/<%= list._id %>"
+                class="delete"
+                data-id="<%= list._id %>"
+                >🗑️</a
+              >
+            </div>
+            <% } %>
+            <p class="userId"><strong>작성자 : <%= list.userId %></strong></p>
+            <p class="content"><%= list.content %></p>
+          </div>
+        </a>
+        <% } %> <% } %>
+      </div>
+
+      <script>
+        const BASE_URL = "http://localhost:4000";
+        const del = document.querySelector(".delete");
+
+        del.forEach(el => {
+          el.addEventListener("click", async e => {
+            e.preventDefault();
+            if (!confirm("정말 삭제하시겠습니까?")) {
+              return;
+            }
+            const id = e.target.dataset.id;
+            const listBox = e.target.closest(".list-box");
+
+            const respone = await fetch(`${BASE_URL}/delete/${id}`, {
+              method: "DELETE",
+            });
+
+            listBox.style.display = "none";
+          });
+        });
+      </script>
+    </section>
+  </body>
+</html>

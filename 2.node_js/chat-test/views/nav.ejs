@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="inner">
+    <h1 class="logo">Forum</h1>
+    <nav class="nav">
+      <a href="/list">List</a>
+      <a href="/add">Write</a>
+      <% if(loginInfo.userId == null) { %>
+        <a href="/login"><%= loginInfo.message %></a>
+      <% } else { %>
+        <a href="/chat/list">chat</a>
+        <p><%= loginInfo.userId %> <%= loginInfo.message %></p>
+        <a href="/logout">Logout</a>
+      <% } %>
+    </nav>
+  </div>
+</header>

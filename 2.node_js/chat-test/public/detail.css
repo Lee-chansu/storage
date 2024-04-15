@@ -1,0 +1,16 @@
+.sec{padding: 0 100px;}
+.sec .inner{}
+.sec .inner .list-box{
+    margin-top: 20px; padding: 40px 0;
+    border-bottom: 1px solid #eee;  
+}
+.sec .inner .list-box .title{margin-top: 20px;}
+.sec .inner .list-box .userId{padding-left: 10px;}
+.sec .inner .list-box .content{padding-left: 10px;}
+
+.sec .inner .form-box {
+    padding: 20px 0;
+}
+
+.sec .inner .comment-wrap{margin: 10px 0; padding: 10px 0;}
+.sec .inner .comment-wrap .comment-box{margin: 10px 0;}

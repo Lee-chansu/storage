@@ -1,0 +1,5 @@
+.sec{padding: 0 100px;}
+.sec .inner{}
+.sec .inner .login-box{margin-top: 20px; border-bottom: 1px #eee;}
+.sec .inner .login-box .userId{padding-left: 10px;}
+.sec .inner .login-box .password{padding-left: 10px;}

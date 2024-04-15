@@ -1,0 +1,6 @@
+.sec{padding: 0 100px;}
+.sec .inner{}
+.sec .inner .chat-box{margin-top: 20px; border-bottom: 1px #eee;}
+.sec .inner .chat-box {}
+.sec .inner .chat-box .Id{padding-left: 10px;}
+.sec .inner .chat-box .content{padding-left: 10px;}

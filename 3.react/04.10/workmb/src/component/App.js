@@ -9,7 +9,9 @@ function App() {
   return (
     <>
       <Nav />
-      <Routes></Routes>
+      <Routes>
+        <Route path="/" element=""></Route>
+      </Routes>
     </>
   );
 }

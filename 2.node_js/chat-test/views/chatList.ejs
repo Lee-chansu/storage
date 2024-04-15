@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/chatlist.css" />
+    <title>chatList💭</title>
+  </head>
+  <body>
+    <%- include ('./nav.ejs') %>
+
+    <section class="sec">
+      <div class="inner">
+        <h1>chatList💭</h1>
+        <div class="chat-box">
+          <% for(let chatroom of findChatRoom) {%>
+          <a href="/chat/detail/<%= chatroom._id %>">
+            <p><strong><%= chatroom.member[0] %></strong></p>
+            <p><strong><%= chatroom.member[1] %></strong></p>
+            <p><%= chatroom.date %></p>
+          </a>
+          <%} %>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list📃</title>
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/chat-detail.css" />
+  </head>
+  <body>
+    <%- include ('./nav.ejs') %>
+
+    <section class="sec">
+      <div class="inner">
+        <div class="members">
+          <span><strong>참여한 멤버 : </strong></span>
+          <% for(let member of chatInfo.member) {%>
+          <span class="member">
+            <strong><%= member %></strong>
+          </span>
+          <%}%>
+        </div>
+        <div class="chat-screen">
+          <% for(let c of chat) {%> <% let checkUser = loginInfo.userId %> <%
+          let isMine = (checkUser == c.who) ? "mine" : "" %>
+          <div class="chat-box <%= isMine %>">
+            <span class="member"><%= c.who %></span>
+            <span class="content"><%= c.content %></span>
+            <span class="date"><%= c.date %></span>
+          </div>
+          <%} %>
+        </div>
+        <div class="form-box">
+          <input class="chat-input" name="content" type="text" />
+          <button class="chat-button">전송</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/socket.io@4.7.2/client-dist/socket.io.min.js"></script>
+    <script>
+      const sendMsg = document.querySelector(".chat-button");
+
+      const socket = io();
+
+      socket.emit("ask-join", "<%= chatInfo._id %>");
+      sendMsg.addEventListener("click", () => {
+        let message = document.querySelector(".chat-input").value;
+        socket.emit("message-send", { room: "<%= chatInfo._id %>", message });
+      });
+
+      socket.on("message-broadcast", newChat => {
+        const isMine = newChat[1] == newChat[0].who ? "mine" : "";
+        document.querySelector(".chat-screen").insertAdjacentHTML(
+          "beforeEnd",
+          `
+          <div class="chat-box ${isMine}">
+              <span class="member">${newChat[0].who}</span>
+              <span class="content">${newChat[0].content}</span>
+              <span class="date">${newChat[0].date}</span>
+            </div>
+          `
+        );
+      });
+    </script>
+  </body>
+</html>

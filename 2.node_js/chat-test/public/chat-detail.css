@@ -1,0 +1,22 @@
+.sec{padding: 0 100px;}
+.sec .inner{padding-top: 40px;}
+.sec .inner .members{font-size: 24px;}
+.sec .inner .members .member{}
+
+.sec .inner .chat-screen{margin: 10px 0; padding: 10px 0;}
+.sec .inner .chat-screen .chat-box{
+    display: flex; align-items: center;
+    margin: 10px; padding: 10px 0;
+}
+.sec .inner .chat-screen .chat-box span{
+    margin: 0 10px; padding: 2px;
+    border-radius: 10px;
+    box-shadow: 1.5px 1.5px 0 0 #5555;
+}
+.sec .inner .chat-screen .chat-box.mine{
+    justify-content: flex-end;
+    margin: 10px 0; padding: 10px 0;
+}
+.sec .inner .chat-screen .chat-box.mine .content{
+    background-color: beige;
+}
