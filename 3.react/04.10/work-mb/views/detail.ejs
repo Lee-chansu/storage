@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('nav.ejs') %>
+  <section class="sec">
+    <div class="white-bg">
+      <div class="list-box">
+        <p class="wirter">
+          작성자 : <%= result.userId %>
+          <a href="/chat/request?writerId=<%= result._id %>">채팅하기</a>
+          <% let checkLogin = loginInfo == result.userId %>
+          <% if(checkLogin) { %>
+            <div class="btn">
+              <a href="/edit/<%= list[i]._id %>">✏️</a>
+              <a href="/delete/<%= list[i]._id %>"
+                class="delete" data-id="<%= list[i]._id %>">🗑️</a>
+            </div>
+            <% } %>
+        </p>
+        
+        <h3><%= result.title %></h3>
+        <p><%= result.content %></p>
+      </div>
+
+      <div class="comment">
+        <form action="/comment" method="POST">
+          <label for="commentContent"><%= loginInfo.userId %></label>
+          <input type="text" name="content" id="commentContent">
+          <input type="hidden" name="parentId" value="<%= result._id %>"
+          id="<%= result._id %>">
+          <button>댓글 작성</button>
+        </form>
+      </div>
+
+      <div class="comment-list">
+        <% for(let com of comment) { %>
+          <p>
+            <label for="writer"><strong>작성자 :</strong> </label>
+            <span name="writer"><%= com.writer %></span> <br>
+            <label for="content"><strong>내용 : </strong></label>
+            <span name="content"><%= com.content %></span>
+            <hr/>
+          </p>
+          <% } %>
+      </div>
+  </section>
+
+</body>
+</html>

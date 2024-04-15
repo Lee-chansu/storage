@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>write</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('nav.ejs') %>
+
+  <section class="sec">
+    <h2>글 쓰기</h2>
+    <form class="form-box" action="/add" method="POST">
+      <input name="title" placeholder="title">
+      <input name="content" placeholder="content">
+      <button>전송</button>
+    </form> 
+  </section>
+</body>
+</html>

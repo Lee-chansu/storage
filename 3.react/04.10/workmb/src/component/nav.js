@@ -8,12 +8,12 @@ function Nav() {
           <a class="logo">Forum</a>
         </h1>
         <nav class="nav">
-          <Link to="/join">Join</Link>
-          <Link to="/list">List</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/add">Write</Link>
-          <Link to="/chat/list">Chat</Link>
-          <Link to="/loginout">Logout</Link>
+          <Link className="link" to="/join">Join</Link>
+          <Link className="link" to="/list">List</Link>
+          <Link className="link" to="/login">Login</Link>
+          <Link className="link" to="/list/write">Write</Link>
+          <Link className="link" to="/chat/list">Chat</Link>
+          <Link className="link" to="/loginout">Logout</Link>
         </nav>
       </div>
     </header>

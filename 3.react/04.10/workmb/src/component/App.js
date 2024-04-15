@@ -1,7 +1,11 @@
 import "./App.css";
-import List from "./list";
-import Nav from "./nav";
 import { Route, Routes } from "react-router-dom";
+
+//컴포넌트
+import Nav from "./nav";
+import List from "./list";
+import Login from "./login";
+import Write from "./write";
 
 /*eslint-disable*/
 
@@ -10,7 +14,11 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="/" element=""></Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="list">
+          <Route index element={<List />}></Route>
+          <Route path="write" element={<Write />}></Route>
+        </Route>
       </Routes>
     </>
   );

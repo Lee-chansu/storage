@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>write</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('nav.ejs') %>
+
+  <section class="sec">
+    <h2>글수정</h2>
+    <form class="form-box" action="/edit?_method=PUT" method="POST">
+      <input class="inputId" name="id" value="<%= result._id%>" type="hidden">
+      <input class="inputTitle" name="title" placeholder="title" value="<%= result.title%>">
+      <input class="inputContent" name="content" placeholder="content" value="<%= result.content%>">
+      <button class="edit">전송</button>
+    </form> 
+  </section>
+
+</body>
+</html>

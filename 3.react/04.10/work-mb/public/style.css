@@ -1,0 +1,116 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+a{text-decoration: none; color: #333;}
+
+body{background-color: #333;}
+
+
+.header{padding: 0 40px; }
+.header a{color: #fff;}
+.header .inner{
+  max-width: 100%;
+  height: 80px; 
+  display: flex;
+  align-items: center; /* 현재요소의 높이 안에서 세로 가운데정렬*/
+}
+
+.header nav{margin-left: 30px; display: flex; justify-content: flex-end;}
+.header nav a{}
+.header nav a::after{content: 'l';padding: 0 20px;}
+.header nav a:last-of-type:after{display: none;}
+
+
+
+.sec{padding: 40px 40px 120px}
+.sec h2{
+  margin: 0 0 20px;
+  text-align: center;
+  color: #ddd;
+}
+.white-bg{
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.list-box{
+  padding: 15px 0;
+  border-bottom: 1px dotted grey;
+}
+.list-box .btn{
+  display: inline-block;
+}
+.list-box:last-of-type{border : 0}
+
+input,div {
+  box-sizing: border-box;
+}
+.form-box {
+  background : white;
+  padding : 25px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.form-box input {
+  padding : 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-box button {
+  padding: 10px;
+  border : none;
+  background : lightgrey;
+  border-radius: 5px;
+}
+
+.form-box .toJoin {
+  padding: 10px;
+  border : none;
+  background : lightgrey;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.chat-screen { width: 100%; }
+.chat-box { margin-top: 15px; display: flex; align-items: center;}
+.chat-box span { margin: 0 10px ; padding: 10px; background: #eee; }
+.mine { justify-content: end; }
+.chat-input {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat-button {
+  padding: 10px;
+  border : none;
+  background : lightgrey;
+  border-radius: 5px;
+}
+
+.date{
+  color: white;
+  font-size: 12px;
+}
+
+.members{
+  display: flex; align-items: center;
+}
+.members p{
+  color: #eee;
+  font-size: 18px;
+}
+.members span{
+  margin: 0 5px
+}
+
+.member{
+  display: inline-block;
+  padding: 5px;
+  background-color: #eee;
+  border-radius: 10px;
+}

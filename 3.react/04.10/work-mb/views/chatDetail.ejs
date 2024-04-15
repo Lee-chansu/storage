@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <%- include('nav.ejs') %>
+    <!-- 
+      id : 채팅방 목록의 아이디
+      member[0] : 현재 로그인 아이디
+      member[1] : 채팅 하고자하는 멤버의 아이디
+     -->
+    <!-- 
+      chatInfo 객체
+      _id : 채팅방의 아이디(룸번호)
+      member : [0] : 현재 로그인 아이디 / [1] : 글 작성자 아이디
+
+      chat 객체
+        실질적인 메시지
+      -->
+      <section class="sec">
+    <div class="members">
+      <p><strong>참여멤버 : </strong></p>
+      <% for(let info of chatInfo.member) { %>
+        <span class="member"><%= info %></span>
+      <% } %>
+    </div>
+    <div class="detail-bg">
+      <div class="chat-screen">
+        <% for(let c of chat) { %>
+          <% let checkLogin = loginInfo.userId %>
+          <% let className = (checkLogin == c.who) ? 'mine' : '' %>
+          <div class="chat-box <%= className %>">
+            <p class="member"><%= c.who %></p>
+            <span><%= c.content %></span>
+            <p class="date"><%= c.date %></p>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="chat-form">
+      <input class="chat-input" />
+      <button class="chat-button">전송</button>
+    </div>
+  </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/socket.io@4.7.2/client-dist/socket.io.min.js"></script>
+    <script>
+      const sendMsg = document.querySelector(".chat-button");
+
+      const socket = io();
+
+      socket.emit("ask-join", "<%= chatInfo._id %>");
+      sendMsg.addEventListener("click", () => {
+        let msg = document.querySelector(".chat-input").value;
+        socket.emit("message-send", { room: "<%= chatInfo._id %>", msg });
+        //socket.emit('key', 'socket 룸 번호', value)
+      });
+
+      socket.on("message-broadcast", data => {
+        let className = (data[1] == data[0].who) ? "mine" : "";
+        document.querySelector(".chat-screen").insertAdjacentHTML(
+          "beforeEnd",
+          `
+          <div class="chat-box ${className}">
+            <p class="member">${data[0].who}</p>
+            <span>${data[0].content}</span>
+            <p class="date">${data[0].date}</p>
+          </div>
+          `
+        );
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+  1. 채팅방 상세페이지 들어가면 -> 해당 유저를 room에 넣어줌.
+  -> 해당 유저를 room 넣어줌
+
+  2. 유저가 글을 적고 전송버튼 누르면 서버에게 이 메시지를 특정 room에 
+
+  3. 서버는 그 메세지를 받으면 그 room에만 메시지 뿌리기
+
+-->
